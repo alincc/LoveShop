@@ -1,0 +1,13 @@
+page-changeTouchID {
+  .touch-setting {
+    ion-item {
+      background: #d3d3d3;
+      padding: 15px;
+    }
+  }
+  p {
+    >span {
+      font-size: 1.2rem;
+    }
+  }
+}

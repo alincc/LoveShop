@@ -1,0 +1,19 @@
+page-holidays {
+    .holidays {
+        .holidays__desc {
+            color: map-get($colors, secondary);
+            img {
+                min-width: 150px;
+                min-height: 150px;
+                background: #dddddd;
+            }
+            p {
+                margin: 0px 0;
+                color: map-get($colors, secondary);
+            }
+            strong {
+                color: map-get($colors, secondary);
+            }
+        }
+    }
+}

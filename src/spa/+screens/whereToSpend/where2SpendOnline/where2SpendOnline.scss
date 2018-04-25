@@ -1,0 +1,161 @@
+page-where2SpendOnline {
+
+  .toolbar-title {
+    font-size: 16px;
+    line-height: 42px;
+  }
+
+  .store-map-logged {
+    button.back-button{
+      display: none !important;
+    }
+  }
+  color: #616161;
+  .scroll-content {
+    padding-top: 0;
+    background: #eff9ff;
+  }
+  .three-em {
+    button {
+      height: 3em;
+    }
+  }
+  .card-info {
+    .card-content{
+      padding: 0px 10px;
+      h3 {
+        font-size: 10px !important;
+        line-height: 15px !important;
+        color: map-get($colors, primary);
+      }
+    }
+    .card-action {
+      align-items: center;
+      display: flex;
+    }
+    .link {
+      font-size: 12px;
+      line-height: 18px;
+      color: #00AAFF;
+    }
+    .card-title {
+      width: 100%;
+      margin: 0;
+      white-space: normal;
+      color: #006a8c;
+      text-transform: uppercase;
+      font-size: 14px !important;
+      line-height: 21px !important;
+    }
+  }
+  .card-stores {
+    button.button-default {
+      background-color: #f2f7f9 !important;
+      border-bottom: solid 1px #bfcde8 !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      color: map-get($colors, primary);
+      &.active {
+        background-color: map-get($colors, secondary-aero-blue-ligth) !important;
+        border-bottom: none !important;
+        border-top: solid 1px #bfcde8 !important;
+        color: #006a8c !important;
+      }
+
+      &.mid {
+        border-right: solid 1px #bfcde8 !important;
+        border-left: solid 1px #bfcde8 !important;
+      }
+
+      &.left {
+        /*border-right: solid 1px #bfcde8 !important;*/
+      }
+
+      &.right {
+        border-left: solid 1px #bfcde8 !important;
+      }
+
+      .button-inner {
+        font-family: 'OpenSans-Bold', sans-serif;
+        font-size: 10px !important;
+        line-height: 15px !important;
+      }
+    }
+  }
+  .list-stores-online {
+    background: #ffffff;
+    border: solid 1px map-get($colors, primary-boder);
+    margin-bottom: 8px;
+
+    .store-logo {
+      background: #dddddd;
+      width: 100%;
+      height: 100%;
+    }
+    .store-title {
+      color: map-get($colors, primary);
+      font-size: 16px !important;
+      line-height: 24px !important;
+    }
+    .store-link{
+      color: map-get($colors, primary-green);
+      width: 100%;
+      background: transparent;
+      border: solid 1px;
+      border-radius: 2px;
+      padding: 4px 10px;
+      text-align: left;
+      font-size: 12px;
+      line-height: 18px;
+      display: flex;
+      flex-flow: row;
+      justify-content: space-between;
+      align-items: center;
+  
+      .sm {
+        width: 87%;
+        display: inline-block;
+      }
+      .icon {
+        width: 10%;
+        display: inline-block;
+      }
+      ion-icon {
+        float: right;
+      }
+    }
+    button {
+      padding: 3px 6px;
+    }
+    .sm {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 500;
+      white-space: no-wrap;
+    }
+    .item {
+      border: solid 1px #b1b1b1;
+      margin: 5px;
+      padding: 0;
+      background: transparent;
+      [item-start] {
+        margin: 0;
+        height: 90px;
+      }
+    }
+  }
+  .three-em {
+    .button.button-default {
+      height: 40px !important;
+      .button-inner {
+        text-transform: uppercase;
+        font-family: 'OpenSans-Bold', sans-serif;
+        font-size: 10px !important;
+        line-height: 15px !important;
+      }
+      &.mid {
+        border-right: none !important;;
+      }
+    }
+  } 
+}

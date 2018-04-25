@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Alerts</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="content-wrapper">
+   <ion-row>
+      <ion-col>
+        <p>
+           {{sms_alerts_for_balance_and_threshold}}
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="m-b-20">
+      <ion-col>
+        <ion-list>
+          <ion-item no-padding>
+            <ion-input name="telephoneNumber" type="tel"
+                       [class.ng-valid]="!phoneError.errMsg"
+                       [class.ng-invalid]="phoneError.errMsg"
+                       maxlength="11" placeholder="Enter Mobile Number"
+                       (blur)="validateMobileNumber($event.target.value)" [(ngModel)]="model.telephoneNumber">
+            </ion-input>
+          </ion-item>
+          <ion-item-divider ion-item light no-lines class="error" *ngIf="phoneError.errMsg.length > 0">
+            <p class="p-t-0 p-b-0">{{ phoneError.errMsg }}</p>
+          </ion-item-divider>
+          <ion-item no-padding>
+            <p>Update alert type</p>
+          </ion-item>
+          <ion-item no-padding>
+            <ion-toggle class="new-style" [(ngModel)]="model.alertBalance" (ngModelChange)="toggleAlertBalance($event)"></ion-toggle>
+            <ion-label>
+              <h3 class="openSans-bold">Balance Alert</h3>
+              <p text-wrap>{{receive_balance_by_sms}}</p>
+            </ion-label>
+          </ion-item>
+          <ion-item-divider no-padding>
+            <div class="border-divider"></div>
+          </ion-item-divider>
+          <ion-item no-padding>
+            <ion-toggle  class="new-style" [(ngModel)]="model.alertThreshold" (ngModelChange)="toggleAlertThreshold($event)"></ion-toggle>
+            <ion-label>
+              <h3 class="openSans-bold">Threshold Alert</h3>
+                <p text-wrap>{{receive_sms_threshold_alert}}</p>
+            </ion-label>
+          </ion-item>
+          <ion-item no-padding id="input-curency-item"  *ngIf="model.alertThreshold" class="input-curency-item">
+            <ion-input name="threshold" type="tel" (blur)="validateThresholdValue($event.target.value)" [(ngModel)]="model.thresholdAmount" [class.ng-invalid]="model.alertThreshold && thresholdError.errMsg.length > 0" [class.ng-valid]="!model.alertThreshold && thresholdError.errMsg.length <= 0"></ion-input>
+          </ion-item>
+          <ion-item-divider *ngIf="model.alertThreshold && thresholdError.errMsg.length > 0" ion-item light no-lines class="error">
+              <p class="p-t-0 p-b-0">{{ thresholdError.errMsg }}</p>
+          </ion-item-divider>
+          <div *ngIf="isUpdateMode">
+              <ion-item-divider no-padding>
+                <div class="border-divider"></div>
+              </ion-item-divider>
+              <ion-item no-padding>
+                <ion-toggle [(ngModel)]="model.optOut" (ngModelChange)="toggleAlertOptOut($event)"></ion-toggle>
+                <ion-label>
+                  <h3 class="openSans-bold">Opt Out</h3>
+                </ion-label>
+              </ion-item>
+              <ion-item-divider no-padding>
+                <div class="border-divider"></div>
+              </ion-item-divider>
+            </div>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="footer-wrapper">
+      <ion-row>
+          <ion-col>
+            <ion-row>
+              <button ion-button large block [disabled]="!phoneError.valid || (model.alertThreshold && !thresholdError.valid) || (!model.alertBalance && !model.alertThreshold)" *ngIf='!isUpdateMode' (click)="registerAlert()">Register for alerts</button>
+              <button ion-button large block [disabled]="(!model.optOut && (!phoneError.valid || (model.alertThreshold && !thresholdError.valid) || (!model.alertBalance && !model.alertThreshold)))" *ngIf='isUpdateMode' (click)="updateAlertOptOut()">Update</button>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+
+          
+<ion-row style="display: none;" 
+(click)="navCtrl.pop()"
+id="viewAlertSettingsPage-back-button">
+</ion-row>

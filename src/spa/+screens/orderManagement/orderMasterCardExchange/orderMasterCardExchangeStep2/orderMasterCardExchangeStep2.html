@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      order complete
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="content-wrapper">
+    <ion-row class="card-item--wrapper" text-center>
+      <ion-col>
+        <p text-center>Order #{{orderComplete?.orderNumber}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div class="img--wrapper">
+          <div class="img-area p-t-15 p-b-15">
+            <img src="{{baseResourceUrl}}{{imageMasterCard}}"/>
+          </div>
+        </div>
+        <!---->
+        <!--<div class="img&#45;&#45;wrapper">-->
+          <!--<p class="card-number">-->
+            <!--{{cardVirtualToShowOnCard}}-->
+          <!--</p>-->
+          <!--<p class="card-cvv">-->
+            <!--{{orderComplete?.cvv}}-->
+          <!--</p>-->
+          <!--<p class="card-expire">-->
+            <!--EXP {{orderComplete?.expiryDate}}-->
+          <!--</p>-->
+          <!--<div class="img-area">-->
+              <!--<img src="assets/images/anywhere-success-mastercard.jpg"/>-->
+          <!--</div>-->
+        <!--</div>-->
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="info-bar">
+        <p class="info-title">{{purchasemastercard_form_label_card_details}}</p>
+        <p>
+          <span>Name of Virtual Card</span> {{orderComplete?.title}} {{orderComplete?.firstName}} {{orderComplete?.lastName}}
+        </p>
+        <p>
+          <span>Virtual Card Number</span> {{orderComplete?.cardNumber}}
+        </p>
+        <p>
+          <span>Expires</span> {{orderComplete?.expiryDate}}
+        </p>
+        <p>
+          <span>CVV</span> {{orderComplete?.cvv}}
+        </p>
+        <p>
+          <span>Virtual Card Balance</span> {{orderComplete?.totalPaymentAmount  | currency:'GBP':'symbol':'1.2-2'}}
+        </p>
+        <p>
+          <span>Virtual Card Reference</span> {{orderComplete?.nickname}}
+        </p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <div class="note">
+        {{order_confirmation_card_tfoot}}
+      </div>
+    </ion-row>
+
+
+  </ion-grid>
+  <ion-row class="footer-wrapper">
+    <ion-col>
+      <button ion-button block large (click)="goCardDetails()">
+        View your cards
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-content>

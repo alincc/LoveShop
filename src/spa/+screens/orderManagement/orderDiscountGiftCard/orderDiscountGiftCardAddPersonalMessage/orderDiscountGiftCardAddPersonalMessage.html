@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      add a message
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="content-wrapper">
+    <ion-row>
+      <ion-col>
+        <form [formGroup]="updatePersonalMsg">
+            <ion-input placeholder="To..." type="text" formControlName="to"></ion-input>
+            <ion-textarea maxlength="80" placeholder="Message..." class="text-area--wrapper" type="text"  formControlName="message"></ion-textarea>
+            <ion-textarea maxlength="40" placeholder="From..." class="text-area--wrapper" type="text"  formControlName="from"></ion-textarea>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-row class="footer-wrapper" >
+    <div>
+        <button ion-button block large color="primary" (click)="addPersonalMessage()">Save & Continue</button>
+    </div>
+    <div>
+        <button ion-button block [outline]="true" (click)="navCtrl.pop()">Cancel</button>
+    </div>
+  </ion-row>
+</ion-content>
+
+
+          
+<ion-row style="display: none;" 
+(click)="navCtrl.pop()"
+id="OrderDiscountGiftCardAddPersonalMessage-back-button">
+</ion-row>

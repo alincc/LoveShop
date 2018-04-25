@@ -1,0 +1,62 @@
+@import "../../../../../theme/colors";
+
+page-orderMixBasketStep2 {
+    ion-input {
+        &.ng-invalid.ng-dirty {
+            .text-input {
+                border-color: red !important;
+            }
+        }
+    }
+    .item-border {
+        border-bottom: 10px solid white;
+    }
+    .card-panel {
+        min-height: 60px;
+        padding-left: 90px;
+        position: relative;
+        img {
+            width: auto;
+            @include center(vertical);
+        }
+        &--right {
+            width: 100%;
+            p {
+                font-size: 12px;
+            }
+        }
+    }
+    .card-left-panel {
+        img,
+        div {
+            display: inline-block;
+            vertical-align: top;
+        }
+        img {
+            max-width: 50px;
+        }
+    }
+
+    .delivery-type--wrapper {
+       border: 1px solid map-get($colors, primary);
+       position: relative;
+       .checkmark {
+           color: map-get($colors, primary);
+           position: absolute;
+           top: 0;
+           right: 10px;
+           font-size: 4rem;
+           font-weight: bold;
+
+       }
+    }
+
+
+    .img-wrapper {
+        width: 90px;
+        height: 60px;
+        position: absolute;
+        left: 0;
+        overflow: hidden;
+    }
+}

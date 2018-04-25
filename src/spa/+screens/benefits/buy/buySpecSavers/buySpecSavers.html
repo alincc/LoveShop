@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Benefit Details
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="benefit-details">
+  <ion-grid class="content-wrapper" *ngIf="benefit">
+    <ion-row>
+      <div class="benefit-details__desc" [innerHTML]="benefit?.longDescription"></div>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="footer-wrapper" *ngIf="showLink">
+    <ion-row class="benefit-details__action">
+      <button ion-button block large (click)="onClickBenefitLink()">Benefit Link</button>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-row style="display: none;" 
+  (click)="navCtrl.pop()"
+  id="BuySpecSaversPage-back-button">
+  </ion-row>
+</ion-content>

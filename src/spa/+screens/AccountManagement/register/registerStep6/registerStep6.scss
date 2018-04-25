@@ -1,0 +1,66 @@
+page-registerStep6 {
+  //ion-header {
+  //  background: #FFFFFF !important;
+  //  border: none !important;
+  //  box-shadow: none !important;
+  //  &:after {
+  //    background: none !important;
+  //  }
+  //
+  //  ion-navbar {
+  //    height: 20px !important;
+  //    min-height: 20px !important;
+  //  }
+  //  * {
+  //    background: #FFFFFF !important;
+  //    border: none !important;
+  //    box-shadow: none !important;
+  //    border-image-width: 0 !important;
+  //
+  //  }
+  //}
+  //
+  .fixed-content, .scroll-content {
+    margin-top: 0px !important;
+  }
+
+
+  .header-content {
+    height: 10%;
+    h1 {
+      font-size: 30px !important;
+      text-transform: uppercase;
+      margin: 0 !important;
+      text-align: center;
+    }
+  }
+
+  .scroll-content {
+    > p {
+        width: 100%;
+        text-align: center;
+    }
+
+    ion-item-divider {
+      padding-left: 5px;
+      background: transparent;
+    }
+    ion-img {
+      background: transparent;
+    }
+    .content--wrapper {
+      min-height: calc(100% - 60px);
+    }
+  }
+
+  .footer-content {
+    height: 10%;
+  }
+
+  .button-md, .button-ios {
+    font-size: 1.6rem !important;
+    text-transform: initial;
+    width: 100%;
+    margin: 0.4rem 0;
+  }
+}

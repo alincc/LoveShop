@@ -1,0 +1,52 @@
+page-welcome {
+
+  .full-h-flex {
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .scroll-content {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: space-between;
+    padding-bottom: 10px;
+  }
+
+  .header-content {
+    order: 1;
+    h1 {
+      font-size: 30px !important;
+      text-transform: uppercase;
+      text-align: center;
+      width: 100%;
+      margin: 14% 0 !important;
+    }
+  }
+
+  .main-content {
+    order: 2;
+  }
+
+  .footer-content {
+    order: 3;
+  }
+
+  button {
+    .button-inner {
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+
+  @media screen and (max-width: 415px) {
+    .content {
+      .scroll-content {
+        overflow-y: hidden;
+      }
+    }
+  }
+
+}
+

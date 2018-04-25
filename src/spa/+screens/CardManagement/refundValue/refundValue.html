@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Refund Value
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding >
+  <ion-grid class="content-wrapper">
+    <ion-row text-center class="m-b-20 m-t-10" *ngIf=showContent>
+      <ion-col col-8 push-2>
+        <div class="card-infor-wrapper">
+
+        <p class="text-bold text-uppercase">{{this.cardFullInfor?.nickname}}</p>
+        <p class="text-small p-t-3 p-b-3">{{ this.cardCurrent?.productName}}</p>
+        <div text-center>
+          <img src="{{baseResourceUrl}}{{this.cardFullInfor?.cardLogoPath}}" alt="card logo" class="img-mastercard">
+        </div>
+        <p class="m-t-20 expire-information">
+          <span>
+            Expires {{this.cardFullInfor?.expiryDate}}
+          </span>|
+          <span>
+            Ends in {{this.cardFullInfor?.last4DigitCardNumber}}
+          </span>
+        </p>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="text-content" *ngIf=showContent>
+      <ion-col>
+         <div [innerHTML]="returnContent"></div>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+  <ion-grid  class="footer-wrapper">
+    <ion-row *ngIf=showContent>
+      <ion-col text-center>
+        <p class="openSans-bold p-b-10">{{account_management_click_to_refund_balance}}</p>
+        <p class="openSans-bold p-b-10">{{this.cardFullInfor?.totalRefund | currency:'GBP':'symbol':'1.2-2'}}</p>
+        <button ion-button  block large [disabled]="refundSucceed" (click)="performVirtualMasterCard()">
+          {{account_management_refund_full_value}}
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-row style="display: none;" 
+  (click)="navCtrl.pop()"
+  id="RefundValuePage-back-button">
+  </ion-row>
+</ion-content>

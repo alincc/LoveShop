@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Select Card Exchange
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid  class="content-wrapper">
+    <ion-row padding text-center class="sub-desc">
+      <p>{{exchange_value_to_vmc}}</p>
+    </ion-row>
+    <ion-row text-center class="card-info">
+      <p>
+        Your flexecash card <br>
+        <span class="text-16 openSans-bold text-uppercase">{{ primaryCard?.nickname }}</span> <br> 
+        has a balance of {{ primaryCard?.balance  | currency:'GBP':'symbol':'1.2-2'}}
+      </p>
+    </ion-row>
+    <ion-row class="card-topup p-b-15 input--wrapper">
+      <p>{{how_much_to_transfer}}</p>
+    </ion-row>
+
+    <ion-row class="p-b-15 input--wrapper">
+      <ion-col col-8 push-2 >
+        <div class="overlay" [ngClass]="{'not-show': firstTouch}" (click)="focusToInput()">
+        </div>
+        <form [formGroup]="exchangeForm" text-center>
+          <ion-item class="item-big" no-padding >
+            <ion-input id="inputAmount"
+                       inputmode="numeric"
+                       class="inputAmount topUpInputiOS"
+                       name="exchangeInput "
+                       type="number"
+                       placeholder="£0.00"
+                       formControlName="exchangeInput"
+                       (ionChange)="changeInput($event)" text-wrap></ion-input>
+            <ion-input id="inputAmount2" inputmode="numeric" class="inputAmount topUpInputandroid" name="exchangeInput " type="tel" placeholder="£0.00" formControlName="exchangeInput" (ionChange)="changeInput($event)" text-wrap></ion-input>
+          </ion-item>
+        </form>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p class="fee-msg">{{feeMsg}}</p>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+  <ion-grid class="footer--wrapper" padding>
+      <ion-row>
+        <ion-col col-12 class="t-and-c">
+            <form [formGroup]="exchangeForm">
+              <ion-item>
+                <ion-label class="m-l-10" text-wrap>
+                  I have read and accepted the <span class="link" (click)="goToTandC()">T&Cs</span>
+                </ion-label>
+                <ion-checkbox formControlName='termCondition'></ion-checkbox>
+              </ion-item>
+          </form>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <button class="m-b-0" [disabled]="!exchangeForm.valid" ion-button block large (click)="generateOrder()">Continue</button>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+
+
+  <ion-row style="display: none;" 
+  (click)="navCtrl.pop()"
+  id="MasterCardExchangePage-back-button">
+  </ion-row>
+</ion-content>

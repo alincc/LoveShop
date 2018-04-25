@@ -1,0 +1,48 @@
+@import "../../../../theme/colors";
+
+page-more {
+.scroll-content {
+  padding-top: 0;
+}
+
+  .list .item-block {
+    border-top: none !important;
+    padding-left: 0 !important;
+    &:last-child {
+      //border-bottom: 1px solid #c8c7cc;
+    }
+
+    .item-inner {
+      padding-right: 0;
+      border-bottom: 1px solid color($colors, primary-boder) !important;
+    }
+
+    
+
+    .label {
+      flex: none;
+      width: 95%;
+      margin: 11px auto;
+      padding: 0 10px;
+      line-height: 21px;
+      color: map-get($colors, primary);
+    }
+  }
+
+  @media screen and (min-width: 767px) {
+    .scroll-content {
+      padding: 0;
+    }
+  }
+}
+
+.l2s-alert--flat {
+  .alert-wrapper {
+    .main-button,
+    .cancel-button {
+      height: 35px !important;
+    }
+  }
+
+ 
+}

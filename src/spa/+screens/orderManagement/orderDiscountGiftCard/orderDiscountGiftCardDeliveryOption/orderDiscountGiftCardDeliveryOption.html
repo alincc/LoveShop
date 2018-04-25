@@ -1,0 +1,115 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Delivery
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="content-wrapper">
+    <ion-row>
+      <ion-col>
+        <p class="text-font-16 step"><b>Step 1 </b>Select Delivery Type</p>
+      </ion-col>
+    </ion-row>
+    <div *ngFor="let deliveryMethod of dataAfterGenerateOrder?.availableDeliveryMethods; let idx = index">
+      <ion-card (click)="selectDeliveryMethod(idx)"
+                [ngClass]="{'delivery-type--wrapper': selectedIndex === idx}"
+                class="card-item--wrapper card-item-step1 padding-20 m-b-12">
+        <p no-margin class="title">{{deliveryMethod?.title}} - {{deliveryMethod?.cost | currency:'GBP':'symbol':'1.2-2'}}</p>
+        <p no-margin [innerHTML]="deliveryMethod?.description"></p>
+        <ion-icon *ngIf="selectedIndex === idx" name="checkmark" class="checkmark"></ion-icon>
+      </ion-card>
+    </div>
+
+
+    <ion-row>
+      <ion-col>
+        <p class="text-font-16 step"><b>Step 2 </b>Select Delivery Address</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-card class="card-item--wrapper delivery-type--wrapper">
+      <div class="padding-10 ">
+        <p no-margin class="text-font-14 title" *ngIf="newAddressDelivery?.addressIsUpdated !== true">Deliver to billing
+          address</p>
+        <p no-margin class="text-font-14 title" *ngIf="newAddressDelivery?.addressIsUpdated === true">Deliver to alternate
+          address</p>
+      </div>
+      <div class="address__detail p-l-5" padding-vertical>
+        <p no-margin>{{dataAfterGenerateOrder?.title}} {{dataAfterGenerateOrder?.firstName}}
+          {{dataAfterGenerateOrder?.lastName}}</p>
+        <p no-margin>{{dataAfterGenerateOrder?.addressLine1}}</p>
+        <p no-margin>{{dataAfterGenerateOrder?.addressLine2}}</p>
+        <p no-margin>{{dataAfterGenerateOrder?.town}}</p>
+        <p no-margin>{{dataAfterGenerateOrder?.county}}</p>
+        <p no-margin>{{dataAfterGenerateOrder?.postcode}}</p>
+        <p no-margin>{{dataAfterGenerateOrder?.country}}</p>
+
+      </div>
+      <ion-icon name="checkmark" class="checkmark"></ion-icon>
+    </ion-card>
+
+    <ion-card
+            *ngIf="(dataAfterGenerateOrder?.alternateDeliveryAddressAllowed === true) && (newAddressDelivery?.addressIsUpdated !== true)"
+            class="card-item--wrapper m-t-10 tr-btn"
+            (click)="alternateAddress()">
+      <p no-margin>Deliver to alternate address</p>
+    </ion-card>
+    <ion-card
+            *ngIf="(dataAfterGenerateOrder?.alternateDeliveryAddressAllowed === true) && (newAddressDelivery?.addressIsUpdated === true)"
+            class="card-item--wrapper m-t-10  tr-btn" (click)="resetAddress()">
+      <p no-margin>Deliver to billing address</p>
+    </ion-card>
+    <ion-row class="p-t-15">
+      <ion-col>
+        <button block ion-button large (click)="updateOrderDeliveryDetail()">Continue to payment</button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="list-item-summary">
+      <ion-col class="list-item-card--wrapper">
+        <p class="label" no-margin class="text-font-16">Order Summary</p>
+        <table>
+          <thead>
+          <th>
+            Product
+          </th>
+          <th>
+            Quantity
+          </th>
+          <th>
+            Total
+          </th>
+          </thead>
+          <tbody>
+          <tr *ngFor="let product of dataAfterGenerateOrder?.orderlines">
+            <td>{{product.productDescription}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{(product.paymentAmount) | currency:'GBP':'symbol':'1.2-2'}}</td>
+          </tr>
+          <tr *ngIf="dataAfterGenerateOrder?.totalDiscount > 0">
+            <td colspan="2">Discount</td>
+            <td class="no-wrap-text">- {{dataAfterGenerateOrder?.totalDiscount | currency:'GBP':'symbol':'1.2-2'}}</td>
+          </tr>
+          </tbody>
+          <tfoot>
+          <td colspan="2">
+            Sub Total
+          </td>
+          <td>{{dataAfterGenerateOrder?.totalPaymentAmount | currency:'GBP':'symbol':'1.2-2'}}</td>
+          </tfoot>
+        </table>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+</ion-content>
+
+          
+<ion-row style="display: none;" 
+(click)="navCtrl.pop()"
+id="OrderDiscountGiftCardDeliveryOption-back-button">
+</ion-row>

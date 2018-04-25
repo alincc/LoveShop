@@ -1,0 +1,61 @@
+@import "../../../../../theme/colors";
+page-oderSupermarketStep2 {
+    p {
+        margin: 0;
+        padding-bottom: 5px;
+        color: map-get($colors, secondary);
+    }
+
+    .label {
+        font-size: 16px !important;
+        line-height: 24px !important;
+        font-family: 'Montserrat-Bold', sans-serif !important;
+        color: map-get($colors, primary-green);
+    }
+
+    table {
+        width: 100%;
+        th, td {
+            padding: 7px;
+            text-align: left;
+            font-weight: normal;
+            color: map-get($colors, secondary);
+            border-top: 1px solid;
+            border-bottom: 1px solid;
+            font-size: 14px !important;
+            line-height: 21px !important;
+            &:nth-child(2) {
+                text-align: center;
+            }
+            
+            &:last-child {
+                text-align: right;
+            }
+        }
+        
+        tbody {
+            tr {
+                &:last-child {
+                    td {
+                        padding-bottom: 25px;
+                    }
+                }
+            }
+        }
+    }
+
+    button.back-button{
+        display: none !important;
+    }
+
+    .order-num {
+        color: #fff;
+        background: map-get($colors, primary-green);
+        p {
+            font-size: 14px !important;
+            line-height: 21px !important;
+            color: #fff;
+        }
+    }
+
+}

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Touch ID
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-row padding>
+    <p>{{use_fingerprint_not_PIN}}</p>
+    <p>
+      <span>
+        {{use_same_finger}}
+      </span>
+    </p>
+  </ion-row>
+  <ion-row class="touch-setting">
+    <ion-item>
+      <ion-label>Touch ID</ion-label>
+      <ion-toggle class="new-style" [(ngModel)]="touchIDState" (ionChange)="changeTouchState()"></ion-toggle>
+    </ion-item>
+
+  </ion-row>
+</ion-content>
+
+
+          
+<ion-row style="display: none;" 
+(click)="navCtrl.pop()"
+id="ChangeTouchIDPage-back-button">
+</ion-row>

@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Settings
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ng-container *ngFor="let settingItem of settingsPage">
+      <button ion-item detail-none
+              (click)="gotoPage(settingItem.routeLink)"
+      >{{ settingItem.title }}</button>
+    </ng-container>
+    <button ion-item detail-none (click)="logout()">Logout</button>
+  </ion-list>
+
+
+  
+  <ion-row style="display: none;" 
+  (click)="navCtrl.pop()"
+  id="SettingsPage-back-button">
+  </ion-row>
+</ion-content>

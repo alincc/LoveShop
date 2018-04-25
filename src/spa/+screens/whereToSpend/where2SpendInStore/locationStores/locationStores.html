@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title item-centered>
+      Edit Location
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="content-wrapper">
+    <ion-row class="top-row" (click)="goToMapPage()">
+      <ion-item>
+        <ion-label>
+          <ion-icon name="md-locate"></ion-icon>
+          <span> {{use_current_location}}</span>
+        </ion-label>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-col class="or" padding text-center>
+        <p class="no-margin or">OR</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="lookup-address">
+      <ion-col class="location-row">
+        <ion-item>
+          <ion-input search [ngModel]="txtPostCode" (input)="search($event)" class="location-input" placeholder="{{enter_postcode_or_search_for_an_address}}"></ion-input>
+        </ion-item>
+        <ion-list padding *ngIf="showList" class="suggestion-address">
+          <ion-item *ngFor="let item of listAddressItems" (click)="pickupAddress(item)">
+            {{ formatLocationAddress(item) }}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="footer-wrapper">
+    <ion-row padding>
+      <ion-col>
+        <button [disabled]="!canApply" ion-button large full (click)="apply()">Apply</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-row style="display: none;" 
+  (click)="navCtrl.pop()"
+  id="LocationStoresPage-back-button">
+  </ion-row>
+</ion-content>

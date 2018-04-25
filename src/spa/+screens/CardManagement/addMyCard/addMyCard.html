@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title center>
+      Add My Card
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="content-wrapper">
+    <ion-row>
+    <ion-col>
+      <p class="no-mg">{{account_management_to_add_card_register}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-item-divider></ion-item-divider>
+    <ion-row>
+      <ion-col>
+        <button ion-button large  block (click)="navCtrl.push('RegisterStep1Page')">{{account_management_register_addcard}}</button>
+      </ion-col>
+    </ion-row>
+    <ion-item-divider></ion-item-divider>
+    <ion-row class="or-text">
+      <ion-col>
+        <p class="or-divider"><span>OR</span></p>
+        <p text-center>{{account_management_already_have_account}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+
+        <form [formGroup]="userLoginForm">
+          <ion-row class="m-b-10">
+            <ion-item>
+              <ion-label floating>Email Address</ion-label>
+              <ion-input name="emailAddress" formControlName="emailAddress" ></ion-input>
+            </ion-item>
+            <ion-item-divider ion-item light no-lines class="error"
+                              *ngIf="userLoginForm.get('emailAddress').dirty && !userLoginForm.get('emailAddress').valid">
+              <p>{{errorMessage('emailAddress')}}</p>
+            </ion-item-divider>
+          </ion-row>
+          <ion-row>
+            <ion-item class="l2s-input-md">
+              <ion-label floating>Password</ion-label>
+              <ion-input name="password" type="password" formControlName="password"></ion-input>
+            </ion-item>
+          </ion-row>
+
+          <ion-item-divider ion-item light no-lines class="error"
+                            *ngIf="userLoginForm.get('password').dirty && !userLoginForm.get('password').valid">
+            <p>{{errorMessage('password')}}</p>
+          </ion-item-divider>
+          <ion-item-divider></ion-item-divider>
+          <ion-row>
+            <ion-col>
+              <p class="text-link-item" text-center >
+                <a (click)="navCtrl.push('ForgotPasswordPage')">
+                  {{ForgotPassword_en_properties}}
+                </a>
+              </p>
+            </ion-col>
+          </ion-row>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-row class="footer-wrapper">
+    <ion-col>
+      <button ion-button block large [disabled]="!userLoginForm.valid" (click)="doLoginToAddCard()">Login & Add card</button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row style="display: none;" 
+  (click)="navCtrl.pop()"
+  id="AddMyCardPage-back-button">
+  </ion-row>
+</ion-content>

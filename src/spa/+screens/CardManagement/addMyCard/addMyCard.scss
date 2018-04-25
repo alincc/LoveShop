@@ -1,0 +1,68 @@
+page-addMyCard {
+  .or-text {
+    p {
+      margin: 25px 0;
+    }
+    .or-divider {
+      text-align: center;
+      line-height: 3px;
+    }
+    .or-divider span {
+      display: inline-block;
+      position: relative;
+      font-weight: bold;
+    }
+    .or-divider span:before,
+    .or-divider span:after {
+      content: "";
+      position: absolute;
+      border-bottom: 1px solid #ececec;
+      top: 10px;
+      width: 170px;
+    }
+    .or-divider span:before {
+      right: 100%;
+      margin-right: 15px;
+    }
+    .or-divider span:after {
+      left: 100%;
+      margin-left: 15px;
+    }
+  }
+
+  .no-mg {
+    margin: 0;
+  }
+  button.button {
+    span {
+      text-transform: capitalize;
+    }
+  }
+  .item-block {
+    //border-bottom: 1px solid #d9d9d9;
+  }
+  ion-item {
+    &.item {
+      padding-left: 0;
+    }
+  }
+  .item.item-block {
+    &.item-label-floating,
+    &.item-label-stacked {
+      @include border-radius(0);
+      .text-input,
+      ion-select,
+      ion-datetime {
+        border: none;
+        border-bottom: 1px solid map_get($colors, black);
+        @include border-radius(0);
+      }
+      &.input-has-focus,
+      &.input-has-value {
+        border: none;
+        border-bottom: 1px solid map_get($colors, black);
+        @include border-radius(0);
+      }
+    }
+  }
+}

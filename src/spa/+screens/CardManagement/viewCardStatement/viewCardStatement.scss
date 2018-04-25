@@ -1,0 +1,86 @@
+@import "../../../../theme/colors";
+
+page-viewCardStatement {
+  .main-content {
+    margin-top: 1px;
+    padding-bottom: 50px;
+  }
+
+  .scroll-content {
+    padding-top: 0;
+  }
+
+  h5 {
+    padding: 5px 10px;
+    margin: 0;
+    text-transform: uppercase;
+    background: map_get($colors, secondary-aero-blue-ligth);
+    color: map_get($colors, primary);
+    border-bottom: 1px solid map_get($colors, primary);
+    border-top: 1px solid map_get($colors, primary);
+  }
+
+  .footer-sticker--wrapper {
+    @include font-size-line-height(10px, 15px);
+    background: map_get($colors, primary-blue);
+    color: #FFF;
+    text-transform: uppercase;
+    font-family: 'OpenSans-Bold', sans-serif;
+  }
+
+  .list {
+    margin: 0;
+
+    &.list-ios {
+      .item-block:last-child, > .item-wrapper:last-child .item-block {
+        border-bottom: 0 !important;
+      }
+    }
+    .item {
+      padding-top: 3px;
+      padding-bottom: 3px;
+      .item-inner {
+        padding-right: 0;
+      }
+    }
+
+  }
+
+  .label {
+    margin: 0;
+  }
+
+  .item {
+    border: 0;
+  }
+
+  p {
+    font-size: 1.2rem;
+    white-space: normal;
+    word-wrap: break-word;
+    &.time {
+      font-size: 1.0rem;
+    }
+  }
+
+  .middle--wrapper {
+    display: flex;
+    align-items: center;
+    span {
+      margin-left: auto;
+      font-size: 1.4rem;
+      color: map_get($colors, primary);
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    ion-footer {
+      ion-row {
+        width: calc(70% + 56px);
+        margin: auto;
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+    }
+  }
+}

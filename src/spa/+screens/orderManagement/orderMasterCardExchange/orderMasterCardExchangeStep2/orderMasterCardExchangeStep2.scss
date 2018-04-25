@@ -1,0 +1,135 @@
+@import "../../../../../theme/colors";
+
+page-orderMasterCardExchangeStep2 {
+  .scroll-content {
+    margin-top: 50px !important;
+  }
+  .content-wrapper {
+    width: 100% !important;
+  }
+  .card-item--wrapper {
+    background: map-get($colors, primary-green);
+    color: #fff;
+    padding: 5px !important;
+  }
+
+  p {
+    margin: 0;
+    span {
+      font-weight: normal;
+      min-width: 100px;
+      display: inline-block;
+    }
+    
+    &.border-bottom {
+      border-bottom: 1px solid map-get($colors, primary);
+    }
+  }
+
+  button.back-button {
+    display: none !important;
+  }
+  .info-bar {
+    color: map-get($colors, secondary);
+    .info-title {
+      color: #fffefe;
+      padding: 5px 10px;
+      background: #2d6887;
+      font-family: 'OpenSans-Regular';
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 12px !important;
+      line-height: 24px !important;
+      font-family: 'OpenSans-Bold';
+      padding: 0 10px;
+      span {
+        width: 45%;
+        font-family: 'OpenSans-Regular';
+      }
+    }
+  }
+
+  .img--wrapper {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    .card-number, .card-cvv, .card-expire {
+      position: absolute;
+      left: 25%;
+      color: white;
+      font-size: 12px !important;
+      line-height: 18px !important;
+    }
+    .card-number {
+      top: 65%;
+      transform: translateY(-65%);
+    }
+    .card-cvv {
+      @include center(vertical);
+    }
+
+    .card-expire {
+      top: 80%;
+      transform: translateY(-80%);
+    }
+
+    .img-area {
+      width: 100%;
+      text-align: center;
+    }
+
+    img {
+      margin: 0 auto;
+      max-width: 60%;
+    }
+
+  }
+  .note {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background: map-get($colors, primary-green);
+    color: #fff;
+    font-family: 'OpenSans-Bold';
+  }
+
+  .footer-wrapper {
+    button {
+      margin-top: 5px !important;
+    }
+  }
+
+  @media screen and (max-height: 568px) {
+    .scroll-content {
+      margin-top: 45px !important;
+    }
+    .img--wrapper {
+      padding-top: 0;
+      padding-bottom: 0;
+      img {
+        max-width: 45%;
+      }
+
+      .card-number, .card-cvv, .card-expire {
+        left: 31%;
+      }
+
+    }
+    .info-bar {
+      .info-title {
+        margin-bottom: 5px;
+      }
+    }
+    .note {
+      margin-top: 0px;
+    }
+
+    .footer-wrapper {
+      height: auto;
+      
+      button {
+        margin-top: 3px !important;
+      }
+    }
+  }
+
+}

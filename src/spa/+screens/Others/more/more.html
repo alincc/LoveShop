@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      More
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ng-container *ngFor="let settingItem of settingsPage">
+      <button ion-item detail-none
+              (click)="gotoPage(settingItem.routeLink)"
+      >{{ settingItem.title }}</button>
+    </ng-container>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,59 @@
+@import "../../../../../theme/colors";
+
+page-addCardTesco {
+  .scroll-content {
+    ion-icon {
+      font-size: 2.7rem;
+      width: 3rem;
+      text-align: center;
+    }
+    ion-item {
+      &.item {
+        padding-left: 0;
+        max-height: 44px;
+      }
+    }
+    .item.item-block {
+      &.item-has-not-icon {
+        .item-inner {
+          .input-wrapper {
+            padding-right: 0;
+          }
+        }
+      }
+      .item-inner {
+        padding-right: 0;
+        .icon {
+          margin-right: 0;
+        }
+        .input-wrapper {
+          padding-right: 10px;
+        }
+
+      }
+      .text-input {
+        border: solid 1px #bbbbbb;
+        padding: 10px;
+        margin: 0;
+        @include border-radius(3px);
+        width: 100%;
+      }
+    }
+
+    ion-item-divider.short-msg {
+      width: calc(100% - 40px);
+    }
+  }
+
+  .item.item-block {
+    .item-inner {
+      padding-right: 0;
+    }
+  }
+
+  ion-input {
+    .text-input {
+      width: 100%;
+    }
+  }
+}

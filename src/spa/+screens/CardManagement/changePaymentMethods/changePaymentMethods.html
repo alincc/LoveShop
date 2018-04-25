@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Payment Methods
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="main-content">
+  <ion-grid padding>
+    <ion-row>
+      <ion-col>
+        <ion-row *ngIf="loadingCompleted && (!listCards || (listCards && listCards.length < 1))" padding>
+          <p class="text-14">{{account_management_no_cards_available}}</p>
+        </ion-row>
+        <ion-row *ngIf="listCards?.length > 0" padding>
+          <p class="text-14">{{account_management_set_default_card}}</p>
+        </ion-row>
+        <ion-list  *ngIf="listCards?.length > 0" class="list-card--wrapper">
+          <ion-item *ngFor="let cardItem of listCards; let index = index">
+            <ion-card [ngClass]="{'card-active' : (cardItem?.isDefault || cardItem?.default)}">
+              <ion-card-content>
+                <ion-grid>
+                  <ion-row>
+                    <ion-col>
+                      <ion-row >
+                        <ion-col class="card-details">
+                          <div class="img--wrapper">
+                            <div>
+                              <img src="assets/images/{{cardItem?.cardScheme}}.png" height="31" width="49"/>
+                              <!--<ion-icon name="card" item-start></ion-icon>-->
+                            </div>
+                            <div class="m-t-12 text-12" (click)="removeCard(index)">
+                              <ion-icon><i class="fa fa-trash" aria-hidden="true"></i></ion-icon>
+                              <span>Remove</span>
+                            </div>
+                          </div>
+                          <div class="main--content">
+                            <p class="openSans-bold text-14 text-uppercase">{{cardItem?.cardScheme}}</p>
+                            <p>.... .... .... <span>{{cardItem?.panLast4}}</span></p>
+                            <p class="text-12 text-uppercase">Exp {{cardItem?.expiryDate}}</p>
+                          </div>
+                          <div class="select-card-default">
+                            <input type="checkbox"  (click)="updateCardToken(index)" name="paymentMethod" [checked]="cardItem?.isDefault || cardItem?.default" class="m-b-2">
+                            <label (click)="updateCardToken(index)"></label>
+                            <p *ngIf="cardItem?.isDefault || cardItem?.default">Default</p>
+                          </div>
+                        </ion-col>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+            </ion-card>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+
+          
+<ion-row style="display: none;" 
+(click)="navCtrl.pop()"
+id="ChangePaymentMethodsPage-back-button">
+</ion-row>

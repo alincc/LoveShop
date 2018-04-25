@@ -1,0 +1,101 @@
+page-viewAlertSettings {
+  .scroll-content {
+    .list-md .item-input.item-input-has-focus:last-child{
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    .list {
+      width: 100%;
+      .item-block {
+        border: none;
+      }
+    }
+    ion-icon {
+      font-size: 3.0em;
+    }
+  }
+
+  .text-input::-webkit-input-placeholder {
+    color: map-get($colors, primary);
+    font-size: 12px;
+    line-height: 18px;
+    font-family: 'OpenSans-Regular', sans-serif;
+  }
+  .text-input::-moz-placeholder {
+    color: map-get($colors, primary);
+    font-size: 12px;
+    line-height: 18px;
+    font-family: 'OpenSans-Regular', sans-serif;
+  }
+  .text-input:-ms-input-placeholder {
+    color: map-get($colors, primary);
+    font-size: 12px;
+    line-height: 18px;
+    font-family: 'OpenSans-Regular', sans-serif;
+  }
+  .text-input:-moz-placeholder {
+    color: map-get($colors, primary);
+    font-size: 12px;
+    line-height: 18px;
+    font-family: 'OpenSans-Regular', sans-serif; 
+  }
+  .text-input {
+    font-size: 14px;
+    line-height: 21px;
+    color: map-get($colors, secondary);
+    font-family: 'OpenSans-Bold', sans-serif; 
+  }
+
+  .ng-invalid {
+    .text-input {
+      border: 1px solid #FF0000 !important; 
+    }
+  }
+  .input-curency-item {
+    .input, .input-ios {
+      //padding-left: 20px !important;
+    }
+    .text-input {
+      margin-left: 0px;
+      padding-left: 18px !important;
+    }
+  }
+  .input-curency-item::after {
+    content: "£";
+    color: map-get($colors, primary);
+    display: inline-block;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  ion-label.label {
+    margin: 0;
+    padding: 13px 8px 13px 0;
+    .openSans-bold {
+      color: map-get($colors, secondary);
+    }
+    h5 {
+      color: map-get($colors, primary);
+    }
+  }
+
+  .ng-invalid.ng-dirty {
+    border-color: color($colors, red-ca) !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    .text-input {
+      border-color: color($colors, red-ca) !important;
+      border-bottom-left-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+    }
+  }
+
+  .item-input {
+    .item-inner {
+      padding-right: 0 !important;
+    }
+  }
+
+}

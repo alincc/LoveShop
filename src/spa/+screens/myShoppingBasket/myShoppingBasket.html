@@ -1,0 +1,117 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons left>
+        <button  ion-button icon-only (click)="navCtrl.pop()">
+            <ion-icon name="ios-arrow-back"></ion-icon>
+        </button>
+    </ion-buttons>
+        <ion-title>
+            My shopping basket
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid  class="content-wrapper p-b-20">
+        <ion-row *ngIf="(products.length) > 0">
+            <ion-col>
+                <ion-row padding-horizontal class="m-b-5">
+                    <ion-col col-9>
+                        Product
+                    </ion-col>
+                    <ion-col col-3>
+                        Price
+                    </ion-col>
+                </ion-row>
+                <ion-card class="card-item--wrapper" id="productListid">
+                    <ion-row *ngFor="let product of products; let index = index">
+                        <ion-col col-9 align-self-center class="card-left-panel" >
+                            <img *ngIf="product?.subCategory?.image"
+                                 [src]="baseResourceUrl + product?.subCategory?.image"/>
+                            <div  class="product-infor--wrapper p-l-8" padding-right>
+                                <p>{{product.name}}</p>
+                                <div class="input-row">
+                                    <div class="input-quantity">
+                                        <p class="input-label">Quantity</p>    
+                                        <ion-input type="tel"
+                                                primary
+                                                class="input--border"
+                                                inputmode="numeric"
+                                                (focusout)='otherValueChange($event.target.value, index)'
+                                                [ngModel]="feeObject?.orderlines[index]?.quantity">
+                                        </ion-input>
+                                        <span class="error" *ngIf="quantityError">{{quantity_invalid}}</span>
+                                    </div>
+                                    <div class="input-value" *ngIf="product?.type === 'any-value'">
+                                        <p class="input-label">Value (&pound;)</p>
+                                        <ion-input type="text"
+                                        primary
+                                        class="input--border"
+                                        inputmode="numeric"
+                                        (focusout)='otherValuePriceChange($event.target.value, index)'
+                                        [ngModel]="feeObject?.orderlines[index]?.unitPrice">
+                                        </ion-input>
+                                        <span class="error" *ngIf="priceError">{{quantity_invalid}}</span>
+                                        <span class="error no-wrap" *ngIf="maxError">Max &#163;{{ product?.customAttributes?.UPPER_VALUE }}</span>
+                                        <span class="error no-wrap" *ngIf="minError">Min &#163;{{ product?.customAttributes?.LOWER_VALUE }}</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </ion-col>
+                        <ion-col col-3 class="remove__wrapper">
+                            <p>{{product?.price*product.quantity  | currency:'GBP':'symbol':'1.2-2'}}</p>
+                            <p *ngIf="totalFee> 0">Fees {{feeObject?.orderlines[index]?.feeAmount | currency:'GBP':'symbol':'1.2-2'}}</p>
+                            <ion-icon class='link--bottom' (click)="removeBasket(index)">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                <span>Remove
+                                </span>
+                            </ion-icon>
+                        </ion-col>
+                    </ion-row>
+                </ion-card>
+
+                <ion-row padding>
+                    <ion-col col-9 padding-right class="padding-r-30">
+                        <p text-right no-margin *ngIf="totalFee> 0">Total fees</p>
+                        <p class="openSans-bold" text-right no-margin>TOTAL</p>
+                    </ion-col>
+                    <ion-col col-3>
+                        <p no-margin *ngIf="totalFee> 0">{{totalFee | currency:'GBP':'symbol':'1.2-2'}}</p>
+                        <p class="openSans-bold" no-margin>{{totalPrice | currency:'GBP':'symbol':'1.2-2'}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-card class="card-item--wrapper" *ngIf="discount_applied_at_checkout.length > 0 && goToFromBuyDC">
+                    <p text-center class="padding-5 discount-note" [innerHTML]="discount_applied_at_checkout"></p>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="(products.length) < 1">
+            <ion-col>
+                <p>{{basket_form_no_products_basket}}</p>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-row class="footer-wrapper" *ngIf="(products.length) > 0">
+        <ion-col>
+            <ion-row class="p-b-10">
+                <button ion-button block color="primary" [disabled]="!productValid" (click)="checkOut()">Checkout</button>
+            </ion-row>
+
+            <ion-row>
+                <ion-col >
+                    <button ion-button block [outline]="true" [disabled]="!productValid" (click)="gotoBenefit()">Continue Shopping</button>
+                </ion-col>
+            </ion-row>
+        </ion-col>
+    </ion-row>
+
+
+    <ion-row style="display: none;" 
+    (click)="navCtrl.pop()"
+    id="MyShoppingBasketPage-back-button">
+    </ion-row>
+</ion-content>
+

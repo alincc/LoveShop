@@ -1,0 +1,97 @@
+@import "../../../../../theme/colors";
+
+page-registerStep3.ion-page {
+  .item-label-floating {
+    background: map-get($colors, input-background);
+  }
+  .item.item-block {
+    .text-input {
+      font-size: 12px;
+      line-height: 18px !important;
+    }
+  } 
+  .fake-back-btn {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    z-index: 11;
+  }
+
+  .scroll-content {
+
+    h1 {
+      font-size: 30px !important;
+      text-transform: uppercase;
+      margin: 0 !important;
+      text-align: center;
+    }
+    .title {
+      color: map_get($colors, primary-green);
+      >span {
+        color: map_get($colors, primary);
+        font-size: 1.5rem;
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .lookup-address {
+      position: relative;
+      .keyword {
+        background: map-get($colors, input-background);
+        border: solid 1px map-get($colors, primary);
+        border-radius: 10px;
+        .item-inner {
+          border-bottom: 0 !important;
+        }
+      }
+      .suggestion-address {
+        .item-block:first-child {
+          border-top: 0;
+        }
+        .item-block:last-child {
+          border-bottom: 0;
+        }
+        &.list-md {
+          margin: 3px 0 0 !important;
+        }
+        &.list-ios {
+          margin: 3px 0 32px;
+        }
+      }
+
+      .input-has-focus,
+      .input-has-value {
+        .label[floating] {
+          background-color: map-get($colors, input-background);
+        }
+      }
+    }
+
+    .label {
+      &.label-md{
+        font-size: 1.4rem !important;
+      }
+    }
+    
+    .madatory-note {
+      width: 40%;
+    }
+
+    .checkbox-icon {
+      border-color: map_get($colors, primary-green);
+      &.checkbox-checked {
+        background-color: map_get($colors, primary-green);
+      }
+    }
+    
+    .select-disabled {
+      opacity: 1;
+      .select-text {
+        color: map-get($colors, primary) !important;
+      }
+    }
+  }
+}

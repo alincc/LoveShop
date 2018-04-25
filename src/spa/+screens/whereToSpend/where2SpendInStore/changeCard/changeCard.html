@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title item-center>
+      Where To Spend
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-row class="txt-intro">
+          <p text-center>Please choose a card below</p>
+        </ion-row>
+        <ion-row class="list-cards">
+          <ion-list>
+            <ion-item *ngFor="let cardItem of listCards; let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }"
+              (click)="pickCardItem(cardItem)">
+              <ion-row>
+                <ion-col col-3>
+                  <img class="card-thumb" [src]="imageBaseUrl + cardItem.cardLogoPath">
+                </ion-col>
+                <ion-col col-8 padding>
+                  <h2 *ngIf="!cardItem?.nickname" class="card-title">&nbsp;</h2>
+                  <h2 *ngIf="cardItem?.nickname" class="card-title">{{ cardItem?.nickname }}</h2>
+                  <div class="card-subtitle">{{ cardItem?.propositionName }}</div>
+                </ion-col>
+                <ion-col col-1>
+                  <ion-icon class="icon-md" name="ios-arrow-forward"></ion-icon>
+                </ion-col>
+              </ion-row>
+            </ion-item>
+          </ion-list>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

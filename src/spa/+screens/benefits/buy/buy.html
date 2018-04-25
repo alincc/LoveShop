@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title center>
+      Your Benefits
+    </ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="navCtrl.push('MyShoppingBasketPage')">
+        <ion-icon name="ios-basket-outline">
+          <ion-badge *ngIf="this.productsOnBasket > 0" class="cart-badge" color="danger">{{this.productsOnBasket}}</ion-badge>
+        </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-row class="slide-row  background-white p-t-20">
+    <ion-col>
+      <ion-slides (ionSlideDidChange)="onSlideDidChange()" [attr.data-active-index]="currentCard" [attr.data-last-active]="currentCard >= lastIndex"
+        class="card-slides">
+        <ion-slide *ngFor="let cardItem of listCards; let cardIndex = index;">
+          <ion-card class="card-background-page">
+            <ion-card-header no-padding>
+              <div *ngIf="cardItem.nickname" class="card-title montserrat-regular">{{ cardItem.nickname }}</div>
+              <div *ngIf="!cardItem.nickname" class="card-title montserrat-regular">&nbsp;</div>
+            </ion-card-header>
+            <img class="card-img" src="{{baseResourceUrl}}{{cardItem.cardLogoPath}}" alt="card logo">
+            <ion-card-content no-padding>
+              <ion-row>
+                <ion-col>
+                  <div class="card-info" inset>
+                    <div *ngIf="cardItem.balance" class="balance montserrat-regular m-t-5">Balance: {{ cardItem.balance | currency:'GBP':'symbol':'1.2-2'}}</div>
+                    <div *ngIf="!cardItem.balance" class="balance montserrat-regular m-t-5">Balance: {{0 | currency:'GBP':'symbol':'1.2-2'}}</div>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </ion-col>
+  </ion-row>
+  <ion-row text-center class=" background-white">
+    <ion-col class="padding-8">
+      <div class="bullets">
+        <span *ngFor="let cardItem of listCards; let cardIndex = index;" [ngClass]="{'active' : currentCard === cardIndex}" class="bullet"
+          (click)="slideTo(cardIndex)"></span>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-segment color="primary" class="tab-title">
+      <ion-segment-button class="btn-title  background-white" [disabled]="disableExchangeTab" (click)="gotoExchangePage()">
+        <p class="btn-offer montserrat-bold text-16 title">EXCHANGE</p>
+        <p class="subtitle montserrat-regular text-10">USING LOVE2SHOP CARD</p>
+      </ion-segment-button>
+      <ion-segment-button class="btn-title btn-buy">
+        <p class="btn-offer montserrat-bold text-16 title">BUY</p>
+        <p class="subtitle montserrat-regular text-10">USING CREDIT/DEBIT CARD</p>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-row>
+  <ion-row *ngIf="showLoading" class="list-spinner">
+    <ion-spinner name="crescent"></ion-spinner>
+  </ion-row>
+  <ion-row class="card-offers">
+    <ion-list>
+      <ion-card *ngFor="let buydCardItem of listOffers">
+
+        <ion-grid>
+          <ion-row class="card-item" (click)="onBenefitClick(buydCardItem)">
+            <div class="card-icon">
+              <img [src]="baseImgUrl + buydCardItem.image" />
+            </div>
+            <div class="list-item" align-self-center>
+              <h3 class="title text-14">{{ buydCardItem.name }}</h3>
+              <p class="desc text-12">{{ buydCardItem.shortDescription }}</p>
+            </div>
+            <ion-icon class="icon-md" name="ios-arrow-forward"></ion-icon>
+          </ion-row>
+        </ion-grid>
+
+      </ion-card>
+    </ion-list>
+  </ion-row>
+</ion-content>

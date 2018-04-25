@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Add A Card</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="content-wrapper" >
+    <ion-row>
+      <ion-col class="p-t-20">
+        <p class="text-14">{{enter_all_digits}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <form name="addCardForm" [formGroup]="addCardForm">
+          <ion-row class="m-b-20">
+            <ion-col>
+              <ion-item no-padding class="item-has-addon">
+                <ion-input name="cardID" type="text" formControlName='cardID' placeholder="Card or e-code number"></ion-input>
+                <ion-icon name="camera" item-right (click)="getHelpContent('camera')"></ion-icon>
+              </ion-item>
+              <ion-item-divider ion-item light no-lines class="error"
+                                *ngIf="addCardForm.get('cardID').dirty && !addCardForm.get('cardID').valid">
+                <p>{{errorMessage('cardID')}}</p>
+              </ion-item-divider>
+            </ion-col>
+          </ion-row>
+          <ion-row class="m-b-20">
+            <ion-col>
+              <ion-item no-padding class="item-has-addon">
+                <ion-input name="csc" type="tel" formControlName='csc' placeholder="Card Security Code"
+                           class="only-password"
+                ></ion-input>
+                <ion-icon name="help-circle" item-right (click)="getHelpContent('flexewallet.add-card.form.alert.csc')"></ion-icon>
+              </ion-item>
+              <ion-item-divider ion-item light no-lines class="error"
+                                *ngIf="addCardForm.get('csc').dirty && !addCardForm.get('csc').valid">
+                <p>{{errorMessage('csc')}}</p>
+              </ion-item-divider>
+            </ion-col>
+          </ion-row>
+          <ion-row class="m-b-20">
+            <ion-col>
+              <ion-item no-padding class="item-has-addon">
+                <ion-input name="nickname" type="text" formControlName='nickname' placeholder="Card name"></ion-input>
+                <ion-icon name="help-circle" item-right (click)="getHelpContent('flexewallet.add-card.form.alert.nickname.FLEXECASH')"></ion-icon>
+              </ion-item>
+              <ion-item-divider ion-item light no-lines class="error"
+                                *ngIf="addCardForm.get('nickname').dirty && !addCardForm.get('nickname').valid">
+                <p>{{errorMessage('nickname')}}</p>
+              </ion-item-divider>
+            </ion-col>
+          </ion-row>
+        </form>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+  <ion-row class="footer-wrapper" >
+    <ion-col>
+      <button ion-button large block [disabled]="!addCardForm.valid " (click)="submitToAddCardFlexCash()">Add card</button>
+    </ion-col>
+  </ion-row>
+</ion-content>
+
+
+
+          
+<ion-row style="display: none;" 
+(click)="navCtrl.pop()"
+id="AddFlexCashPage-back-button">
+</ion-row>

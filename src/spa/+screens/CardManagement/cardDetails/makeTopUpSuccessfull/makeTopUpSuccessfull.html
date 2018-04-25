@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      order complete
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="p-l-5 p-r-5 content-wrapper">
+    <ion-row class="p-b-15">
+      <ion-col>
+        <p><b>{{order_confirmation_default_p_title}}</b></p>
+        <p>{{order_confirmation_default_p_strapline}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-card class="card-item--wrapper m-b-15 order-num" padding>
+      <p text-center>
+        Order #{{dataAfterGenerateOrder?.orderNumber}}
+      </p>
+    </ion-card>
+
+    <ion-row class="padding-12">
+      <ion-col col-9>
+        Product
+      </ion-col>
+      <ion-col col-3>
+        Price
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="padding-12 card-item--wrapper">
+      <ion-col col-9 class="p-r-20">
+        <p>{{dataAfterGenerateOrder?.orderlines[0].productDescription}}</p>
+        <p>Quantity: {{dataAfterGenerateOrder?.orderlines[0].quantity}}</p>
+      </ion-col>
+      <ion-col col-3>
+        {{dataAfterGenerateOrder?.orderValue | currency:'GBP':'symbol':'1.2-2'}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="padding-12">
+      <ion-col col-9 text-right class="p-r-20">
+        <p>Subtotal</p>
+        <p *ngIf="dataAfterGenerateOrder?.totalDiscount > 0">Discount</p>
+        <p *ngIf="dataAfterGenerateOrder?.feeAmount > 0">Payment method fee</p>
+      </ion-col>
+      <ion-col col-3>
+        <p>{{dataAfterGenerateOrder?.orderValue| currency:'GBP':'symbol':'1.2-2'}}</p>
+        <p *ngIf="dataAfterGenerateOrder?.totalDiscount > 0">{{dataAfterGenerateOrder?.totalDiscount| currency:'GBP':'symbol':'1.2-2'}}</p>
+        <p *ngIf="dataAfterGenerateOrder?.feeAmount > 0">{{dataAfterGenerateOrder?.feeAmount| currency:'GBP':'symbol':'1.2-2'}}</p>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row class="total--background m-b-30" padding>
+      <ion-col col-9 text-right class="p-r-20">
+        <p class="text-uppercase">Total</p>
+      </ion-col>
+      <ion-col col-3>
+        <p class="text-uppercase">{{total| currency:'GBP':'symbol':'1.2-2'}}</p>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row margin-bottom>
+      <ion-col>
+        <p class="label text-bold">Billing Address</p>
+        <p class="value" *ngIf="dataAfterGenerateOrder?.addressLine1">{{dataAfterGenerateOrder?.addressLine1}}</p>
+        <p class="value" *ngIf="dataAfterGenerateOrder?.addressLine2">{{dataAfterGenerateOrder?.addressLine2}}</p>
+        <p class="value" *ngIf="dataAfterGenerateOrder?.town">{{dataAfterGenerateOrder?.town}}</p>
+        <p class="value" *ngIf="dataAfterGenerateOrder?.county">{{dataAfterGenerateOrder?.county}}</p>
+        <p class="value" *ngIf="dataAfterGenerateOrder?.postcode">{{dataAfterGenerateOrder?.postcode}}</p>
+        <p class="value" *ngIf="dataAfterGenerateOrder?.country">{{dataAfterGenerateOrder?.country}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-row class="footer-wrapper">
+    <ion-col>
+      <button *ngIf="!needBackToExchangeObject?.needBackToExchange" ion-button block large color="primary" (click)="returnToyourCard()">
+        Return to your cards
+      </button>
+      <button *ngIf="needBackToExchangeObject?.needBackToExchange" ion-button block large color="primary" (click)="returnToyourCard()">
+        Continue shopping
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-content>

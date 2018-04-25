@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      More Info
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item detail-none *ngFor="let pageItem of pagesInfo" (click)="onItemClick(pageItem)">{{ pageItem.title }}</button>
+  </ion-list>
+  <ion-item-divider ion-item>
+  </ion-item-divider>
+  <ion-list>
+    <button ion-item detail-none *ngFor="let pageItem of pagesInfo2" (click)="onItemClick(pageItem)">{{ pageItem.title }}</button>
+  </ion-list>
+
+
+  <ion-row style="display: none;" 
+  (click)="navCtrl.pop()"
+  id="MoreInfoPage-back-button">
+  </ion-row>
+</ion-content>

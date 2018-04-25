@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Holidays
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="holidays" padding>
+  <ion-row>
+    <div class="holidays__desc" [innerHTML]="benefit?.longDescription"></div>
+  </ion-row>
+  <ion-item-divider></ion-item-divider>
+
+
+  <ion-row style="display: none;" 
+  (click)="navCtrl.pop()"
+  id="HolidaysPage-back-button">
+  </ion-row>
+</ion-content>

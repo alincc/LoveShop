@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Add A Card</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="content-wrapper" >
+    <ion-row>
+      <ion-col class="p-t-20">
+        <p class="text-14">{{enter_all_digits}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+
+        <form name="addCardForm" [formGroup]="addCardForm">
+          <ion-row class="m-b-20">
+            <ion-col>
+              <ion-item no-padding class="item-has-addon">
+                <ion-input name="cardID" type="text"  formControlName='cardID' placeholder="Card or e-code number"></ion-input>
+                <ion-icon name="camera" item-right (click)="scanButton()"></ion-icon>
+              </ion-item>
+              <ion-item-divider ion-item light no-lines class="error"
+                                *ngIf="addCardForm.get('cardID').dirty && !addCardForm.get('cardID').valid">
+                <p>{{errorMessage('cardID')}}</p>
+              </ion-item-divider>
+            </ion-col>
+          </ion-row>
+          <ion-row class="m-b-20">
+            <ion-col>
+              <ion-item no-padding class="item-has-addon">
+                <ion-input name="serialNumber" type="text"  formControlName='serialNumber' placeholder="Serial number"></ion-input>
+                <ion-icon name="help-circle" item-right (click)="getHelpContent('flexewallet.add-card.form.alert.serial-number')"></ion-icon>
+              </ion-item>
+              <ion-item-divider ion-item light no-lines class="error"
+                                *ngIf="addCardForm.get('serialNumber').dirty && !addCardForm.get('serialNumber').valid">
+                <p>{{errorMessage('serialNumber')}}</p>
+              </ion-item-divider>
+            </ion-col>
+          </ion-row>
+          <ion-row class="m-b-20">
+            <ion-col>
+              <ion-item no-padding class="item-has-not-icon input--short">
+                <ion-input name="confirmSerialNumber"  type="text" formControlName='confirmSerialNumber' placeholder="Confirm serial number"></ion-input>
+              </ion-item>
+              <ion-item-divider ion-item light no-lines class="error"
+                                *ngIf="addCardForm.get('confirmSerialNumber').dirty && !addCardForm.get('confirmSerialNumber').valid">
+                <p>{{errorMessage('confirmSerialNumber')}}</p>
+              </ion-item-divider>
+            </ion-col>
+          </ion-row>
+
+        </form>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+  <ion-row class="footer-wrapper">
+    <ion-col>
+      <button ion-button block large [disabled]="!addCardForm.valid " (click)="submitToAddCardSainsBurys()">Add card</button>
+    </ion-col>
+  </ion-row>
+</ion-content>
+
+
+          
+<ion-row style="display: none;" 
+(click)="navCtrl.pop()"
+id="AddCardSainsburysPage-back-button">
+</ion-row>

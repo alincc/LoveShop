@@ -1,0 +1,24 @@
+page-changePIN.ion-page {
+
+  .fixed-content, .scroll-content {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .scroll-content {
+    h1 {
+      font-size: 30px;
+      text-transform: uppercase;
+    }
+
+    .page-link {
+      width: 100%;
+      text-align: center;
+      margin: 20px 0;
+    }
+  }
+
+  .button-uppercase {
+    text-transform: uppercase;
+  }
+}

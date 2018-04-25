@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      FAQ
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div [innerHTML]="textContent"></div>
+</ion-content>
+
+          
+<ion-row style="display: none;" 
+(click)="navCtrl.pop()"
+id="FAQPage-back-button">
+</ion-row>

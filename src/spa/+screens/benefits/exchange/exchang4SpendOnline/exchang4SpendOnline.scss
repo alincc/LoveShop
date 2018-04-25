@@ -1,0 +1,253 @@
+@import "../../../../../theme/colors";
+
+page-exchang4SpendOnline {
+  .scroll-content {
+    height: 100vh;
+    padding: 10px 0 !important;
+  }
+  ion-title {
+    font-size: 1.2em;
+  }
+
+  .additional {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    right: 12%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: map-get($colors, pink-basket);
+    display: table;
+    text-align: center;
+    vertical-align: middle;
+    .circle {
+      text-align: center;
+      vertical-align: middle;
+      display: table-cell;
+      color: #fff;
+      font-size: 14px !important;
+      line-height: 21px !important;
+    }
+    span {
+      font-family: 'OpenSans-Bold';
+    }
+  }
+  .button.button-default {
+    &.select-mastercard {
+      margin-top: 10px !important;
+    }
+  }
+  .list {
+    > .item-block:first-child {
+      margin-bottom: 10px;
+      border-top: none;
+      .item-inner {
+        position: relative;
+        &:after {
+          content: " ";
+          position: absolute;
+          height: 1px;
+          width: 95%;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: map-get($colors, primary);
+          display: block;
+        }
+      }
+    }
+    > .item-block:last-child {
+      border-bottom: none !important;
+    }
+
+    .item-block {
+      .item-inner {
+        padding-right: 0;
+      }
+    }
+  }
+
+  .label {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 11px;
+    height: 100%;
+  }
+  ion-card-content {
+    background: #f2f2f2;
+    h3 {
+      color: #6d6d6d;
+      font-size: 16px;
+    }
+    ion-icon {
+      padding: 10px;
+    }
+    img {
+      width: 70%;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+  .card-info {
+    background: #f2f2f2;
+    border: solid 1px #a5a5a5;
+    padding: 10px 0;
+    margin-top: 15px;
+    > p {
+      width: 100%;
+      text-align: center;
+      color: #6d6d6d;
+    }
+  }
+  button {
+    .select-mastercard {
+      margin-top: 10px;
+    }
+  }
+  .card-btn {
+    height: 3em;
+    margin-top: 15px;
+    ion-icon {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+    }
+    .ios-information {
+      border: 1px solid #009489;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      font-weight: bold;
+      font-size: 30px;
+      line-height: 23px;
+
+      &:before {
+        //position: absolute;
+        //top: 50%;
+        //right: 9px;
+        //transform: translateY(-50%);
+        @include center(both);
+
+      }
+    }
+  }
+  .mastercard-exchange__list {
+    .mastercard-exchange__item {
+      padding: 0 16px;
+      height: 38vh;
+      img {
+        height: 16vh;
+        width: auto;
+        margin: 0 auto;
+      }
+      .mastercard-exchange__entry {
+        margin-bottom: 15px;
+        border: solid 1px #a5a5a5;
+        ion-row {
+          ion-col {
+            padding: 10px 0;
+            h3 {
+              font-size: 18px;
+              margin-bottom: 5px;
+            }
+          }
+        }
+        .details {
+          display: flex;
+          flex-flow: column;
+          align-items: center;
+          justify-content: center;
+        }
+        .arrow-icon {
+          font-size: 18px;
+        }
+      }
+      .card {
+        position: relative;
+        margin-top: 10px !important;
+      }
+      .card-ios {
+        margin-top: 0;
+      }
+    }
+  }
+  .circle-icon {
+    font-size: 20px;
+  }
+
+  .card-btn,
+  .button.button-default,
+  .button-md.button-default,
+  .button-ios.button-default,
+  .button-outline-ios {
+    margin: 0 auto !important;
+    width: 95%;
+  }
+  .button-inner {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .button.button-default {
+    &.select-mastercard {
+      margin-bottom: 10px !important;
+    }
+  }
+
+  @media only screen and (min-width: 767px) {
+    .button.button-default,
+    .button-md.button-default,
+    .button-ios.button-default,
+    .button-outline-ios {
+      width: 95%;
+    }
+
+    .button.button-default {
+      &.select-mastercard {
+        margin-bottom: 30px !important;
+        margin-top: 40px !important;
+      }
+    }
+
+    .mastercard-exchange__list {
+      .mastercard-exchange__item {
+        height: 40vh;
+      }
+    }
+    .list {
+      > .item-block:first-child {
+        margin-bottom: 60px;
+        .item-inner {
+          &:after {
+            width: 95%;
+          }
+        }
+      }
+    }
+
+    .additional {
+      right: 18%;
+      height: 110px;
+      width: 110px;
+
+      .circle {
+        font-size: 18px !important;
+        line-height: 27px !important;
+      }
+    }
+  }
+}
+
+.platform-ios {
+  page-exchang4SpendOnline {
+    .card-btn {
+      .ios-information {
+        &:before {
+          margin-left: 1px;
+        }
+      }
+    }
+  }
+}

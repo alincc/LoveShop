@@ -1,0 +1,122 @@
+@import "../../../../../theme/colors";
+
+page-orderDiscountGiftCardExtraGiftWallets {
+  .content-wrapper {
+    min-height: calc(100% - 110px);
+    @media screen and (min-width: 767px) {
+      min-height: calc(100% - 150px) !important;
+    }
+  }
+  h3.title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: 'OpenSans-Bold';
+    font-size: 16px !important;
+    line-height: 24px !important;
+  }
+  input {
+    &.invalidValue {
+      border-color: red !important;;
+    }
+  }
+  ion-input {
+    //margin-bottom: 10px;
+    &.ng-invalid.ng-dirty {
+
+      .text-input {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-color: color($colors, red-ca);
+      }
+    }
+  }
+  .card-list-item {
+    border: 1px solid map-get($colors, primary);
+    .card-item--wrapper {
+      margin-bottom: 0;
+    }
+  }
+  p {
+    margin: 0;
+    padding-bottom: 5px;
+    font-size: 1.4rem;
+    &.label {
+      font-size: 1.2rem;
+      color: map-get($colors, primary)
+    }
+  }
+  .img-ratio-16-9 {
+    box-shadow: 3px 4px 12px #666;
+    img {
+      left: 0 !important;
+    }
+  }
+  .card-greeting--wrapper {
+    .decs {
+      padding: 0 10px 20px 10px;
+    }
+
+    .img-ratio-16-9 {
+      a {
+        color: color($colors, primary);
+        text-decoration: none;
+      }
+
+      ion-icon {
+        display: none;
+      }
+      &.active {
+        color: map-get($colors,  primary);
+
+        ion-icon {
+         
+        }
+      }
+    }
+  }
+
+    .text-input {
+      border: 1px solid map-get($colors, primary);
+      margin: 0;
+      padding: 0 12px;
+      height: 45px;
+      width: 100%;
+      text-align: left;
+      background: #FFF;
+      border-radius: 5px;
+      font-size: 12px !important;
+      line-height: 18px !important;
+      color: map-get($colors,secondary);
+      font-family: 'OpenSans-Bold';
+    }
+
+    .text-input::-webkit-input-placeholder {
+      font-family: 'OpenSans-Regular';
+    }
+    .text-input::-moz-placeholder { /* Firefox 19+ */
+      font-family: 'OpenSans-Regular';
+    }
+    .text-input:-ms-input-placeholder { /* IE 10+ */
+      font-family: 'OpenSans-Regular';
+    }
+    .text-input:-moz-placeholder { /* Firefox 18- */
+      font-family: 'OpenSans-Regular';
+    }
+  
+  .price {
+    margin: 20px 0;
+    font-family: 'OpenSans-Bold';
+  }
+  .footer-wrapper {
+    padding-top: 10px;
+    height: 110px;
+    @media screen and (min-width: 767px) { 
+      height: 150px;
+    }
+    div {
+      width: 100%;
+    } 
+  }
+
+
+}

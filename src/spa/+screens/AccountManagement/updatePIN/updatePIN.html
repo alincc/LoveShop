@@ -1,0 +1,66 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Change PIN</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid class="content-wrapper">
+        <form [formGroup]="updatePINForm" class="padding-20" autocomplete="off">
+            <ion-row class="p-t-40 p-b-30">
+                <p class="text-16" text-center>{{PIN_enter_5_digit}}</p>
+            </ion-row>
+            <ion-row class="p-b-40">
+                <ptt-pin (pinChange)="onPinChange($event)"></ptt-pin>
+            </ion-row>
+            <p text-left class="m-b-5 text-16">{{confirm_pin}}</p>
+            <ion-row class="m-b-15">
+                <ptt-pin (pinChange)="onConfirmPinChange($event)"></ptt-pin>
+            </ion-row>
+    
+            <ion-item-divider ion-item light no-lines class="error"
+                              *ngIf="(updatePINForm.get('pin1').dirty && !updatePINForm.get('pin1').valid) ||
+                               (updatePINForm.get('pin2').dirty && !updatePINForm.get('pin2').valid) ||
+                               (updatePINForm.get('pin3').dirty && !updatePINForm.get('pin3').valid) ||
+                               (updatePINForm.get('pin4').dirty && !updatePINForm.get('pin4').valid) ||
+                               (updatePINForm.get('pin5').dirty && !updatePINForm.get('pin5').valid)
+                        ">
+               <p>{{PIN_5_digit}}</p>
+            </ion-item-divider>
+            <ion-item-divider ion-item light no-lines class="error"
+                              *ngIf="(updatePINForm.get('pin1').dirty &&
+                                updatePINForm.get('pin2').dirty &&
+                                updatePINForm.get('pin3').dirty &&
+                                updatePINForm.get('pin4').dirty &&
+                                updatePINForm.get('pin5').dirty &&
+                                updatePINForm.get('pinConfirm1').dirty &&
+                                updatePINForm.get('pinConfirm2').dirty &&
+                                updatePINForm.get('pinConfirm3').dirty &&
+                                updatePINForm.get('pinConfirm4').dirty &&
+                                updatePINForm.get('pinConfirm5').dirty) &&
+
+                               (!updatePINForm.get('pinConfirm1').valid ||
+                               !updatePINForm.get('pinConfirm2').valid ||
+                               !updatePINForm.get('pinConfirm3').valid ||
+                               !updatePINForm.get('pinConfirm4').valid ||
+                               !updatePINForm.get('pinConfirm5').valid)
+                        ">
+                <p>{{PIN_and_confirm_do_not_match}}</p>
+            </ion-item-divider>
+            
+        </form>
+    </ion-grid>
+    <ion-row class="footer-wrapper">
+        <ion-col>
+            <button ion-button large block [disabled]="!updatePINForm.valid" (click)="updatePINCode()">UPDATE</button>
+        </ion-col>
+    </ion-row>
+</ion-content>
+
+
+
+          
+<ion-row style="display: none;" 
+(click)="navCtrl.pop()"
+id="UpdatePINPage-back-button">
+</ion-row>

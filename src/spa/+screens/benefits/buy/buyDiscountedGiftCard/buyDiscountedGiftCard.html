@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title center>
+      Discounted Gift Cards
+    </ion-title>
+    <ion-buttons right>
+        <button ion-button icon-only (click)="navCtrl.push('MyShoppingBasketPage')">
+          <ion-icon name="ios-basket-outline">
+            <ion-badge *ngIf="this.productsOnBasket > 0" class="cart-badge" color="danger">{{this.productsOnBasket}}</ion-badge>
+          </ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row paddingtext-center padding>
+    <p class="sub-desc">To purchase gift cards, you will need your Debit or Credit card.</p>
+  </ion-row>  
+  <ion-row class="card-offers">
+    <ion-list>
+      <ion-card *ngFor="let product of products">
+        <ion-grid>
+          <ion-row class="list-item" (click)="gotoBuyADiscountedGiftCard(product)">
+            <ion-col class="list-item-content" col-4>
+                <div class="card-icon">
+                  <ion-icon *ngIf="!product.image" name="ios-basket-outline"></ion-icon>
+                  <img *ngIf="product?.image" [src]="baseResourceUrl + product?.image" />
+                </div>
+            </ion-col>
+            <ion-col col-8 class="title-center">
+                <h3 class="title montserrat-regular text-uppercase">{{ product?.name }}</h3>
+                <!--<div class="desc" [innerHTML]="product?.shortDescription"></div>-->
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </ion-list>
+  </ion-row>
+  <ion-grid *ngIf="noContent">
+    <ion-row>
+      <ion-col center-text>
+        <p>{{basket_form_no_card_available}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+          
+<ion-row style="display: none;" 
+(click)="navCtrl.pop()"
+id="BuyDiscountedGiftCardPage-back-button">
+</ion-row>

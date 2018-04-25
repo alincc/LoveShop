@@ -1,0 +1,219 @@
+@import "../../../../../theme/colors";
+
+page-orderDiscountGiftCardReviewYourOrder {
+
+  .text-bold {
+    color: map-get($colors, secondary);
+  }
+
+  .card-list-item {
+    border: 1px solid map-get($colors, secondary);
+
+    .card-item--wrapper {
+      margin-bottom: 0;
+      padding: 0;
+      background: transparent;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 21px;
+      color: map-get($colors, primary);
+    }
+
+    p.text-bold {
+      color: #000;
+    }
+  }
+    p {
+    margin: 0;
+    padding-bottom: 5px;
+    position: relative;
+    &.label {
+        color: map-get($colors, primary-green);
+        font-size: 16px !important;
+        line-height: 24px !important;
+        font-family: 'Montserrat-Bold';
+        padding-left: 10px;
+    }
+
+    &.text-label {
+      font-family: 'OpenSans-Bold', sans-serif;
+      border-top: 1px solid map-get($colors, secondary);
+      color: map-get($colors, secondary);
+      padding: 10px 0 0 10px;
+      width: 100%;
+    }
+  }
+
+  table {
+    width: 100%;
+    margin-bottom: 20px;
+    th {
+      border-top: 1px solid;
+      border-bottom: 1px solid;
+      border-color: map-get($colors, secondary);
+      color: map-get($colors, secondary);
+      font-weight: normal;
+      &:nth-child(2) {
+        text-align: left;
+      }
+    }
+
+    td {
+      color: map-get($colors, secondary) !important;
+      p {
+        padding-bottom: 0;
+        color: map-get($colors, secondary) !important;
+      }
+      &:last-child {
+        font-family: 'OpenSans-Bold', sans-serif;
+        p {
+          font-family: 'OpenSans-Bold', sans-serif;
+        }
+      }
+    }
+    th, td {
+      text-align: center;
+      padding: 5px;
+
+      &:first-child {
+        text-align: left;
+        padding-left: 10px;
+      }
+      &:last-child {
+        text-align: right;
+        padding-right: 10px;
+      }
+    }
+
+    tbody {
+      tr {
+        &:last-child {
+          td {
+            vertical-align: top;
+          }
+        }
+      }
+    }
+
+    tfoot {
+      td {
+        border-top: 1px solid map-get($colors, secondary);
+        color: map-get($colors, secondary);
+        font-family: 'OpenSans-Bold', sans-serif !important;
+        p {
+          color: map-get($colors, secondary);
+          font-family: 'OpenSans-Bold', sans-serif !important
+        }
+      }
+    }
+  }
+
+  .tr-btn {
+    border-radius: 5px !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: #009489;
+    color: #009489 !important;
+    background-color: #FFFFFF;
+    height: 40px;
+    text-decoration: none;
+    padding: 8px;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px !important;
+    line-height: 21px !important;
+    margin-bottom: 10px;
+  }
+
+  .card-greeting--wrapper {
+    img {
+      width: 100%;
+    }
+    max-width: 400px;
+    .blank-card {
+      border: 1px solid map-get($colors, primary);
+      width: 100%;
+      overflow: hidden;
+      height: 220px;
+      position: relative;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+
+      @media screen and (min-width: 768px ) {
+        height: 255px;
+      }
+      .message-personal {
+        left: 5px;
+        width: calc(100% - 10px);
+        @include center(vertical);
+      }
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+      }
+      p {
+        &.content {
+          padding-bottom: 0;
+        }
+        font-size: 1.1rem;
+        text-align: center;
+        width: 100%;
+        padding-left: 5px;
+        padding-bottom: 0;
+        padding-right: 5px;
+        &.to-msg {
+        }
+        &.content-msg {
+          //@include center(vertical);
+        }
+        &.from-msg {
+        }
+      }
+    }
+  }
+
+  .extra-selected {
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  .img-ratio-16-9 {
+    border: 1px solid map-get($colors, primary);
+  }
+
+  .ion-ios-close {
+    position: absolute;
+    right: 0;
+    font-size: 2.5rem;
+    padding-left: 5px;
+    padding-right: 5px;
+    @include center(vertical)
+  }
+
+  .edit {
+    color: #00AAFF;
+  }
+  .link--bottom {
+    bottom: 0;
+    font-size: 12px;
+    line-height: 18px;
+    color: #00AAFF ;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    i {
+      margin-right: 2px;
+    }
+  }
+}

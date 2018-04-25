@@ -1,0 +1,162 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Your Cards</ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only (click)="gotoAddCardNumber()">
+                <ion-icon name="ios-add-circle-outline"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="has-header">
+    <ion-grid *ngIf="cardList && cardList.length > 0">
+        <ion-row class="slide-row slide-card--wrapper">
+            <ion-col>
+                <ion-row>
+                    <ion-col>
+
+
+                        <ion-slides (ionSlideDidChange)="slideChanged()"
+                                    [attr.data-active-index]="currentSlide"
+                                    [attr.data-last-active]="currentSlide >= lastIndex"
+                                    effect="slide"
+                                    class="card-slides"
+                                    [initialSlide]="initialSlide">
+                            <ion-slide *ngFor="let cardItem of cardList; let cardIndex = index;">
+                                <ion-card class="card-background-page">
+                                    <ion-card-header no-padding>
+                                        <div class="card-title">
+                                            <span *ngIf="!(isEditCardTitle && canEditCardTitle(cardItem))">{{ cardItem?.nickname }}</span>
+                                            <span *ngIf="!isEditCardTitle && !canEditCardTitle(cardItem)">&nbsp;</span>
+
+                                            <input type="text" *ngIf="isEditCardTitle && canEditCardTitle(cardItem) && cardIndex === currentSlide"
+                                                   [value]="cardItem?.nickname || ''"
+                                                   (input)="tempNickname = $event.target.value"
+                                                   class="name-input"/>
+
+                                            <button icon-only *ngIf="!isEditCardTitle && canEditCardTitle(cardItem)  && cardIndex === currentSlide"
+                                                    (click)="openEditCardName()" class="edit-btn">
+                                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                                            </button>
+                                            <button ion-button small
+                                                    *ngIf="isEditCardTitle && canEditCardTitle(cardItem)"
+                                                    (click)="updateCardNickName(cardIndex)"
+                                                    class="done-btn button-xsmall"> Done
+                                            </button>
+                                        </div>
+                                        <div class="card-subtitle"
+                                             *ngIf='cardItem.cardType === "FLEXECASH" || cardItem.cardType === "FLEXECODE_2.0"'>
+                                            {{ cardItem.propositionName }}
+                                            <span>
+                        | Savings <span *ngIf="cardItem.totalSavings">{{ cardItem.totalSavings | currency:'GBP':'symbol':'1.2-2' }}</span>
+                       <span *ngIf="!cardItem.totalSavings">&#163;0.00</span>
+                    </span>
+                                        </div>
+                                        <div class="card-subtitle"
+                                             *ngIf='(cardItem.cardType === "MASTERCARD" || cardItem.cardType === "PMASTERCARD")&& cardItem.productName'>
+                                            {{ cardItem.productName }}
+                                        </div>
+                                        <div class="card-subtitle"
+                                             *ngIf='(cardItem.cardType === "MASTERCARD" || cardItem.cardType === "PMASTERCARD") && !cardItem.productName'>
+                                            &nbsp;
+                                        </div>
+
+                                    </ion-card-header>
+                                    <div class="card-img--wraper">
+                                        <img class="card-img" src="{{baseResourceUrl}}{{cardItem.cardLogoPath}}" alt="card logo">
+                                    </div>
+                                    <ion-card-content no-padding>
+                                        <ion-row>
+                                            <ion-col>
+                                                <div class="card-info" inset text-center>
+                                                    <div *ngIf='cardItem.cardType === "FLEXECASH" || cardItem.cardType === "FLEXECODE_2.0"'
+                                                         class="balance  m-t-5">Balance: <span>{{ cardItem.balance | currency:'GBP':'symbol':'1.2-2' }}</span>
+                                                    </div>
+                                                    <div class="card-infor-detail m-t-5 m-b-5">
+                            <span *ngIf="cardItem.status" [class.text-red]="cardItem && cardItem.status === 'SUSPENDED'"
+                                  class="text-transform-lowercase">{{ cardItem.status }}</span><span
+                                                            *ngIf="cardItem.status">&nbsp;|</span>
+                                                        <span *ngIf="cardItem.expiryDate">Expires {{ cardItem.expiryDate }} | </span>
+                                                        <div *ngIf="!cardItem.expiryDate">&nbsp;</div>
+                                                        <span *ngIf="true">Ends in {{ get4LastDigitsCardNumber(cardItem) }}</span>
+                                                    </div>
+                                                    <div class="card-infor-detail"
+                                                         *ngIf="cardItem.discountPercentageMessage">
+                                                        Save {{cardItem.discountPercentageMessage}}
+                                                    </div>
+                                                    <div class="card-infor-detail"
+                                                         *ngIf="!cardItem.discountPercentageMessage" class="row-1tem">
+                                                        &nbsp;
+                                                    </div>
+                                                </div>
+                                            </ion-col>
+                                        </ion-row>
+                                    </ion-card-content>
+                                </ion-card>
+                            </ion-slide>
+                        </ion-slides>
+                    </ion-col>
+                </ion-row>
+                <ion-row text-center>
+                    <ion-col class="padding-8">
+                        <div class="bullets">
+                         <span *ngFor="let cardItem of cardList; let cardIndex = index;" [ngClass]="{'active' : currentSlide === cardIndex}"
+                               class="bullet"
+                               (click)="slideTo(cardIndex)"></span>
+                        </div>
+                    </ion-col>
+
+                </ion-row>
+            </ion-col>
+
+        </ion-row>
+        <ion-row padding class="card-options p-t-10">
+            <ion-col>
+                <ion-list class="m-b-0">
+                    <ng-container *ngFor="let cardBtnItem of cardButtons">
+                        <ng-container *ngIf="canPrintCardDetail(cardBtnItem); else elseTpl">
+                            <ion-item block outline (click)="hidePrintCardDetail()" detail-none
+                                      class="retrieve-card--wrapper m-b-10">
+                                <div class="mc-card-detail">
+                                    <h3 class="mc-item-title">Card Details</h3>
+                                    <div class="full-width-center">
+                                        Card Number: <strong class="openSans-bold">{{ currentMasterCard.cardNumber }}</strong>
+                                    </div>
+                                    <div class="full-width-center">
+                                        CVV: <strong class="openSans-bold">{{ currentMasterCard.cvv }}</strong>
+                                    </div>
+                                    <div class="full-width-center">
+                                        Expires: <strong class="openSans-bold">{{ currentMasterCard.expiryDate }}</strong>
+                                    </div>
+                                </div>
+                            </ion-item>
+                        </ng-container>
+                        <ng-template #elseTpl>
+                            <button block ion-button *ngIf="showButtonCardItem(cardBtnItem)"
+                                    [ngClass]="getCardButtonClass(cardBtnItem)" (click)="handleCardButton(cardBtnItem)">
+                                <span>{{ cardBtnItem.cardBtnName }}</span>
+                                <ion-icon name="ios-arrow-forward"></ion-icon>
+                            </button>
+                        </ng-template>
+                    </ng-container>
+                    <button ion-button outline block *ngIf="canShowMoreButton"
+                            ngClass="l2s-btn l2s-btn--outline btn-uppercase card-btn"
+                            (click)="showMoreCardOptions = !showMoreCardOptions">
+                        <span>More</span>
+                        <ion-icon [name]="showMoreCardOptions ? 'ios-arrow-down' : 'ios-arrow-forward' "></ion-icon>
+                    </button>
+                </ion-list>
+                <ion-list *ngIf="showMoreCardOptions || !canShowMoreButton">
+                    <ng-container *ngFor="let cardItemOption of cardOptions;">
+                        <button ion-button outline block class="m-b-10" [ngClass]="getCardOptionClass(cardItemOption)"
+                                (click)="handleCardOption(cardItemOption)">
+                            <span>{{ cardItemOption.cardOptName }}</span>
+                            <ion-icon name="ios-arrow-forward"></ion-icon>
+                        </button>
+                    </ng-container>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

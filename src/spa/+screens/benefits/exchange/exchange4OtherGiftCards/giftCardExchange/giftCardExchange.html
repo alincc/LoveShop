@@ -1,0 +1,139 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title center>
+            {{ offer?.name }}
+        </ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only (click)="gotoBasket()">
+              <ion-icon name="ios-basket-outline">
+                <ion-badge *ngIf="this.productsOnBasket > 0" class="cart-badge" color="danger">{{this.productsOnBasket}}</ion-badge>
+              </ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content #content>
+    <ion-grid class="content-wrapper">
+
+        <ion-row class="card-details card-can-topup" *ngIf="primaryCard?.canTopUp" >
+            <ion-col col-3 text-center>
+                <div class="card-icon-wrapper">
+                    <ion-icon *ngIf="!primaryCard?.cardLogoPath" ios="ios-card" md="md-card"></ion-icon>
+                    <img *ngIf="primaryCard?.cardLogoPath" [src]="baseResourceUrl + primaryCard?.cardLogoPath"/>
+                </div>
+            </ion-col>
+            <ion-col col-6 class="card-details--info">
+                <h3 *ngIf="primaryCard?.nickname">{{ primaryCard?.nickname }}</h3>
+                <h3 *ngIf="primaryCard">Ends in {{ get4LastDigitsCardNumber(primaryCard) }}</h3>
+                <p class="openSans-bold">Balance: {{ primaryCard?.balance | currency:'GBP':'symbol':'1.2-2'}}</p>
+            </ion-col>
+            <ion-col col-3>
+                <button align-self-center class="button button-ios button-default button-default-ios button-block button-block-ios button-small button-small-ios l2s-btn--primary"
+                        (click)="gotoTopUp()">Top Up
+                </button>
+            </ion-col>
+        </ion-row>
+
+        <ion-row [ngClass]="{'m-t-61': primaryCard?.canTopUp}">
+            <div class="icon-wrapper">
+                <div class="img-ratio-1-1">
+                    <ion-icon *ngIf="!offer?.image" name="ios-basket-outline"></ion-icon>
+                    <img *ngIf="offer?.image" [src]="baseResourceUrl + offer?.image" />
+                </div>
+            </div>
+        </ion-row>
+
+
+
+        <ion-row padding-vertical *ngIf="!anyType" class="card-select">
+            <h3 class="no-wrap">Choose value</h3>
+            <label class="wrap">
+                <select 
+                    class="select-choose-value"
+                    [ngModel]="selectedProductId" 
+                    (ngModelChange)="selectCardValue($event)"
+                    >
+                    <option [value]="-1">Choose Value</option>
+                    <option *ngFor="let cardItem of offer?.products; index as i" [value]="cardItem.productId">{{ cardItem.name }}</option>
+                </select>
+            </label>
+        </ion-row>
+
+        <ion-row #valueRef *ngIf="selectedProduct && selectedProduct.type == 'any-value'" class="card-values border-top" padding-vertical>
+            <h3 class="no-wrap">Choose value <span>(&#163;{{ selectedProduct?.customAttributes?.LOWER_VALUE }} - &#163;{{ selectedProduct?.customAttributes?.UPPER_VALUE }})</span></h3>
+            <ion-list class="full-w">
+                <ion-grid>
+                    <ion-row class="m-b-18">
+                        <ion-col>
+                            <ion-buttons class="tb-cell">
+                                <button ion-button outline *ngFor="let valueItem of anyValues" (click)="pickCardValue(valueItem.value);" [class.highlight]="!otherValue && valueItem.value == clickedValue"> {{  valueItem.text }}</button>
+                                <button ion-button outline class="other-button m-l-n3" [class.highlight]="otherValue && otherValue == value" [class.has-error]="dirtyCardValueButton && (!value || otherValueError)">
+                                    <input type="number" inputmode="numeric" min="0" class="other-input" placeholder="Other" #inputValue (blur)="otherValueChange(inputValue.value)"  [ngModel]="otherValue" >
+                                </button>
+                          </ion-buttons>
+                            <div *ngIf="selectedProduct && !maxValueErr && !minValueErr" class="abs-label">Max &#163;{{ selectedProduct?.customAttributes?.UPPER_VALUE }}</div>
+                            <div *ngIf="selectedProduct && value && dirtyCardValueButton && maxValueErr" class="abs-label has-error">Max &#163;{{ selectedProduct?.customAttributes?.UPPER_VALUE }}</div>
+                            <div *ngIf="selectedProduct && value && dirtyCardValueButton && minValueErr"  class="abs-label has-error">Min &#163;{{ selectedProduct?.customAttributes?.LOWER_VALUE }}</div>
+
+                        </ion-col>
+                    </ion-row>
+                    <div class="error other-error" *ngIf="(selectedProduct && dirtyCardValueButton && value && invalidValue) || (selectedProduct && dirtyCardValueButton && !value)">
+                        <p *ngIf="value && invalidValue">Invalid value</p>
+                        <p *ngIf="!value">{{required}}</p>
+                    </div>
+                </ion-grid>
+            </ion-list>
+        </ion-row>
+
+        <ion-row #quantityRef class="card-quantities" padding-vertical>
+            <h3>Choose quantity</h3>
+            <ion-list class="full-w">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <ion-buttons>
+                                <button outline ion-button *ngFor="let quantityItem of cardQuantities" (click)="pickCardQuantity(quantityItem.value);" [class.highlight]="!otherQuantity && quantityItem.value === clickedQuantity"> {{  quantityItem.value }}</button>
+                                <button outline ion-button class="other-button" [class.highlight]="otherQuantity && otherQuantity  == quantity" [class.has-error]="dirtyCardQuantityButton && (!quantity || otherQuantityError)"> 
+                                    <input maxlength="5" max="99999" min="1" type="tel" inputmode="numeric" class="other-input" placeholder="Other" [ngModel]="otherQuantity" #inputOtherQuantity (blur)="otherQuantityChange(inputOtherQuantity.value)"  (focusout)="recheckValue()" />
+                                </button>
+                            </ion-buttons>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <div class="other-error error" *ngIf="(dirtyCardQuantityButton && !quantity) || (dirtyCardQuantityButton && quantity  && otherQuantityError)">
+                            <p *ngIf="!quantity">{{required}}</p>
+                            <p *ngIf="quantity  && otherQuantityError">{{quantity_invalid}}</p>
+                        </div>
+                    </ion-row>
+                </ion-grid>
+            </ion-list>
+        </ion-row>
+
+        <ion-row>
+            <ng-container *ngIf="!allOutOfStock && (!selectedProduct || (selectedProduct && selectedProduct?.stockAvailable)); else elseTemplate">
+                <button ion-button block large [disabled]="!isValidated" (click)="addToBasket()">Add to basket</button>
+            </ng-container>
+            <ng-template #elseTemplate>
+                <button ion-button block large [disabled]="true">{{park_catalogue_product_out_of_stock}}</button>
+            </ng-template>
+        </ion-row>
+
+
+        <ion-row padding-vertical>
+            <div class="desc" [innerHTML]="offer?.shortDescription"></div>
+            <div class="desc" [innerHTML]="offer?.longDescription"></div>
+        </ion-row>
+    
+    </ion-grid>
+
+    <ion-grid class="footer-wrapper">
+        
+    </ion-grid>
+</ion-content>
+
+          
+<ion-row style="display: none;" 
+(click)="navCtrl.pop()"
+id="GiftCardExchangePage-back-button">
+</ion-row>

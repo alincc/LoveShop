@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title center>
+      SuperMarket Discount Cards
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <div class="sub-desc" [innerHTML]="category?.longDescription"></div>
+    </ion-row>
+  </ion-grid>
+  <ion-row class="mastercard-exchange-main" [class.centered]="products && products.length && products.length < 3">
+    <ion-list class="mastercard-exchange__list">
+      <ion-card class="mastercard-exchange__item m-b-15" *ngFor="let product of products" (click)="gotoOrder(product)">
+        <ion-grid class="list-item">
+          <ion-row>
+            <ion-col class="list-item-content" col-4>
+              <div class="card-icon">
+                <img [src]="baseResourceUrl + product?.smallImages[0]" />
+              </div>
+            </ion-col>
+            <ion-col col-8 class="title-center">
+              <h3>{{product?.name}}</h3>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </ion-list>
+  </ion-row>
+  <ion-grid *ngIf="noContent">
+    <ion-row>
+      <ion-col center-text>
+        <p>{{basket_form_no_card_available}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-row style="display: none;" 
+  (click)="navCtrl.pop()"
+  id="BuyDiscountedSupperGiftCardPage-back-button">
+  </ion-row>
+</ion-content>

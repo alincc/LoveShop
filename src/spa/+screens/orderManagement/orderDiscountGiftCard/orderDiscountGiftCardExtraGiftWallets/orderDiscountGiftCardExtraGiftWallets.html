@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      extra gift wallets
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="content-wrapper">
+    <ion-row class="card-greeting--wrapper">
+      <ion-col class="text-center">
+        <h3 class="title">Add extra gift wallets to your order</h3>
+        <p class="decs" text-center>
+          Please note these cards are supplied non-personalised, but can be hand-written. A charge will apply for each additional card.
+          <!--{{order_gwp_default_section3_action_p}}-->
+        </p>
+        <div  *ngFor="let product of productToChooseDesign; let idx = index" class="m-b-5">
+          <div class="img-ratio-16-9" (click)="selectDeliveryMethod(idx)"   [ngClass]="{'active': selectedIndex === idx}">
+            <img [src]="baseImageUrl + product.smallImages[0]" alt="product image">
+            <ion-icon *ngIf="selectedIndex === idx" name="checkmark"></ion-icon>
+          </div>
+        </div>
+
+        <p class="price" text-center>
+          Price: 20p per gift wallet
+        </p>
+        <form [formGroup]="addExtraGCForm">
+          <ion-input  placeholder="Enter Quantity" type="tel"  formControlName="quantity"></ion-input>
+          <ion-item-divider ion-item light no-lines
+                            class="error"
+                            *ngIf="addExtraGCForm.get('quantity').dirty
+                                && !addExtraGCForm.get('quantity').valid">
+            <p>{{errorMessage('quantity')}}</p>
+          </ion-item-divider>
+        </form>
+      </ion-col>
+    </ion-row>
+
+
+
+  </ion-grid>
+  <ion-row class="footer-wrapper">
+    <div>
+      <button ion-button block large [disabled]="!addExtraGCForm.valid || !productValid"
+        (click)="backToReviewOrder()">Save and Continue
+      </button>
+    </div>
+    
+    <div>
+        <button ion-button block [outline]="true" (click)="navCtrl.pop()">Cancel</button>
+    </div>
+  </ion-row>
+</ion-content>
+
+
+          
+<ion-row style="display: none;" 
+(click)="navCtrl.pop()"
+id="OrderDiscountGiftCardExtraGiftWallets-back-button">
+</ion-row>

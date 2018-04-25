@@ -1,0 +1,72 @@
+@import "../../../../theme/colors";
+page-editAccount {
+  ion-header {
+    .btn-update {
+      background: transparent;
+      color: white
+    }
+  }
+
+  .divider--full {
+    height: 1px;
+    background: map-get($colors, primary-green);
+    margin: 12px -12px 12px -12px;
+    padding :0;
+  }
+
+  .readonly--wrapper {
+    padding: 0;
+    .item.item-block {
+      border: none !important;
+      input, ion-label {
+        padding-left: 0 !important;
+      }
+
+      ion-label {
+        padding-bottom: 10px;
+      }
+    }
+    p {
+      width: 100%;
+      margin: 0;
+    }
+
+  }
+
+  .content {
+    .address-label--wrapper {
+      p {
+        margin:0 0 5px 0;
+      }
+    }
+
+    .title {
+      color: map-get($colors, primary-green);
+    }
+
+
+  }
+  ion-row {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .select-disabled {
+    opacity: 1;
+    .select-text {
+      color: map-get($colors, primary) !important;
+    }
+  }
+
+  .suggestion-address {
+    margin-top: 0;
+    .item {
+      background: #ffffff;
+      &:first-child {
+        border-top: 0;
+      }
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+}

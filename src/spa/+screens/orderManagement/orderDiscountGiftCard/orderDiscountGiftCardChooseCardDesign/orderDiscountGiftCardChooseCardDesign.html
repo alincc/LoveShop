@@ -1,0 +1,72 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            choose a free greetings card
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-row class="top-alert">
+        <p>
+            To make your gift extra special add one of our FREE personalised greetings cards.
+        </p>
+    </ion-row>
+    <ion-grid class="content-wrapper">
+        <!-- <ion-row padding-vertical>
+            <ion-col col-10 offset-1 text-center>
+                <p>{{order_gwp_default_section1_action_h2}}</p> 
+                <p>(This keeps your card or voucher safe)</p>
+            </ion-col>
+        </ion-row>
+        <ion-row padding-vertical margin-bottom>
+            <ion-col col-10 offset-1 text-center>
+                <p>{{order_gwp_default_section1_choice_p}}</p>
+            </ion-col>
+        </ion-row> -->
+
+        <!--<ion-row class="select-row">-->
+            <!--<label>-->
+                <!--Category-->
+            <!--</label>-->
+            <!--<select>-->
+                <!--<option>- Most Popular</option>-->
+                <!--<option>Birthday</option>-->
+                <!--<option>Wedding</option>-->
+            <!--</select>-->
+        <!--</ion-row>-->
+
+        <ion-row class="card-greeting--wrapper m-b-130">
+            <ion-col>
+                <ion-row>
+                    <ion-col col-6 (click)="selectDeliveryMethod(idx)"
+                             *ngFor="let product of productToChooseDesign; let idx = index"
+                             class="greeting-card--wrapper">
+                        <div class="img--wrapper"
+                             [ngClass]="{'active': selectedIndex === idx}">
+                            <img class="greeting-card--wrapper" src="{{baseImageUrl}}{{product.smallImages[0]}}" alt="product image">
+                            <ion-icon *ngIf="selectedIndex === idx" name="checkmark"></ion-icon>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-row class="save-banner">
+        <div class="decs">
+            <span>
+                <img src="data:image/png;base64,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" />    
+            </span>Your chosen greeting card will be sent with a FREE envelope
+        </div>
+        <div class="button-form">
+            <button class="button button-md button-default" (click)="addSaveGreetingCard()">Save &amp; Continue</button>
+            <button class="button cancel" (click)="navCtrl.pop()">Cancel</button>
+        </div>
+    </ion-row>
+</ion-content>
+
+          
+<ion-row style="display: none;" 
+(click)="navCtrl.pop()"
+id="OrderDiscountGiftCardChooseCardDesign-back-button">
+</ion-row>

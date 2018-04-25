@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Privacy Policy
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div padding class="text-14" [innerHTML]="privacyContent">
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+          
+<ion-row style="display: none;" 
+(click)="navCtrl.pop()"
+id="PrivacyPolicyPage-back-button">
+</ion-row>

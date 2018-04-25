@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Returns & Refunds
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="text-14">
+        <div [innerHTML]="returnContent">
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+            
+  <ion-row style="display: none;" 
+  (click)="navCtrl.pop()"
+  id="ReturnRefundPage-back-button">
+  </ion-row>
+</ion-content>

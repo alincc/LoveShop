@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      order complete
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+
+    <ion-card class="card-item--wrapper" padding margin-bottom>
+      <p text-center>
+        Order #{{orderGenerateEcode?.orderNumber}}
+      </p>
+    </ion-card>
+
+    <ion-card class="card-item--wrapper">
+      <ion-row padding class="card-item--wrapper product-item item-border" *ngFor="let product of allProductsOnBasket">
+        <ion-col col-9  padding-right align-self-center class="card-left-panel">
+          <img *ngIf="product?.subCategory?.image"
+               [src]=" baseResourceUrl + product?.subCategory?.image"/>
+          <div class="product-info"  padding-left>
+            <p class="text-font-13">{{product?.name}}</p>
+            <p class="text-font-13">Quantity:<span>&nbsp;{{product?.quantity}}</span></p>
+          </div>
+        </ion-col>
+        <ion-col col-3 align-self-top >
+          <div>
+            <p class="text-font-13">{{(product?.price)*(product?.quantity) | currency:'GBP':'symbol':'1.2-2'}}</p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-row class="p-t-25">
+      <ion-col>
+        <h6 class="text-font-14" padding-left>Delivery Type</h6>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let product of orderAfterGenerate?.availableDeliveryMethods; let index= index">
+      <ion-col>
+        <ion-card class="card-item--wrapper  delivery-type--wrapper padding-20">
+          <p no-margin>{{product.title}} {{product.cost}} </p>
+          <p no-margin>{{product.description}} </p>
+          <ion-icon name="checkmark" class="checkmark"></ion-icon>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>
+
+
+<ion-footer no-shadow  padding>
+  <ion-toolbar position="bottom" padding-horizontal>
+    <button ion-button block color="primary" (click)="gotoBenefit()">Back to Benefits Menu</button>
+  </ion-toolbar>
+</ion-footer>

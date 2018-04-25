@@ -1,0 +1,18 @@
+page-touchIDSettingFirstTime {
+  .scroll-content {
+    >p {
+      width: 100%;
+      text-align: center;
+    }
+    ion-item-divider {
+      padding-left: 5px;
+      background: transparent;
+    }
+    ion-img {
+      background: transparent;
+    }
+    .content--wrapper {
+      min-height: calc(100% - 60px);
+    }
+  }
+}

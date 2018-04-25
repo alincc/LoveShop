@@ -1,0 +1,138 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title start>
+      {{card?.name}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="card-img">
+    <img  class="card-select m-b-15" src="{{baseResourceUrl}}{{card?.mediumImages[0]}}"/>
+    <div class="additional">
+      <p class="circle" *ngIf="card?.urlKey === this.urlKeyMastercard">
+        <span>No</span> additional charge
+      </p>
+      <p class="circle" *ngIf="card?.urlKey === this.urlKeyAnywhereMastercard">
+        <span>10%</span> charge applies
+      </p>
+    </div>
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="desc" [innerHTML]="content">
+          masterCardInfo
+        </div>
+        <div class="align-center">
+            <button class="button button-default button-md">
+              <span class="button-inner">
+                <span *ngIf="card?.urlKey === this.urlKeyMastercard" (click)="showCardExchange()">Choose The Select Mastercard</span>
+                <span *ngIf="card?.urlKey === this.urlKeyAnywhereMastercard" (click)="showCardExchange()">Choose The Anywhere Mastercard</span>
+              </span>
+            </button>
+          </div>
+          <p class="decs-title" *ngIf="card?.urlKey === this.urlKeyMastercard">The Select Mastercard</p>
+          <p class="decs-title" *ngIf="card?.urlKey === this.urlKeyAnywhereMastercard">The anywhere Mastercard</p>
+          <p class="align-center p-b-10" *ngIf="card?.urlKey === this.urlKeyMastercard">
+            Spend online at selected retailer websites. Exchange some or all of your Love2shop flexecash Card value (a virtual Mastercard will be added to your account automatically)
+          </p>
+        <p class="align-center p-b-10"  *ngIf="card?.urlKey === this.urlKeyAnywhereMastercard">
+          Use this option anywhere online that accepts Mastercard as a payment option.* Exchange some or all of your Love2shop flexecash Card value (a virtual Mastercard will be added to your account automatically).
+
+        </p>
+        <p class="text-center decs-note">
+          <span>Please note:</span>A 10% fee will be applied at payment</p>
+          <div>
+            <p class="benefit__heading uppercase">How it Works</p>
+          </div>
+          <ul class="function-list">
+            <li>
+              <div class="img">
+                <div class="wrapper">
+                  <img src="https://www.love2shop.co.uk/COMMON/l2s/virtual-mastercard/icon-transfer.svg">
+                </div>
+              </div>
+              <div class="list-decs">
+                <p class="list-title">
+                  Tranfer Funds
+                </p>
+                <p>
+                  Existing Love2shop -flexecash funds can be easily transfered to a Select Mastercard. Be sure to add any delivery charge etc to your transfer amount.
+                </p>
+              </div>
+            </li>
+            <li>
+                <div class="img">
+                  <div class="wrapper">
+                    <img src="https://www.love2shop.co.uk/COMMON/l2s/virtual-mastercard/icon-desktop.svg">
+                </div>
+                </div>
+                <div class="list-decs">
+                  <p class="list-title">
+                    Receive payment credentials
+                  </p>
+                  <p>
+                    Once purchased your Select Mastercard details will be shown in your account including 16 digit card number, three digit sercurity number and expiry date.
+                  </p>
+                </div>
+              </li>
+              <li>
+                  <div class="img">
+                    <div class="wrapper">
+                      <img src="https://www.love2shop.co.uk/COMMON/l2s/virtual-mastercard/icon-master-card.svg">
+                  </div>
+                  </div>
+                  <div class="list-decs">
+                    <p class="list-title">
+                      Shop Online
+                    </p>
+                    <p>
+                      The logos of some of participating websites are shown above. For the full list please click here.
+                    </p>
+                  </div>
+                </li>
+          </ul>
+          <div class="decs-label">
+            More info
+          </div>
+          <p>
+            If you can't remember the card details, simply log back into your account...
+          </p>
+          <div class="decs-label">
+            Key points
+          </div>
+          <ul class="point-list">
+            <li>Instantly available for use online</li>
+            <li>Minimum load is 29 and maximum is 400</li>
+            <li>This virtual card cannot topped up</li>
+          </ul>
+          <div class="decs-label">
+            Virtual Masstercard Contact Details
+          </div>
+          <p>Card Services: <a href="tel:0330 123 2112">0330 123 2112</a></p>
+          <p>Email: cardservices@love2shop.co.uk</p>
+          <div class="decs-label">
+              Frequently asked questions
+          </div>
+          <p>Still got a question? <a href="#" (click)="gotoFAQ()">Click here</a> for your FAQ</p>
+          <div class="align-center footer-button">
+            <button class="button button-default button-md">
+              <span class="button-inner">
+                         <span *ngIf="card?.urlKey === this.urlKeyMastercard" (click)="showCardExchange()">Choose The Select Mastercard</span>
+                <span *ngIf="card?.urlKey === this.urlKeyAnywhereMastercard" (click)="showCardExchange()">Choose The Anywhere Mastercard</span>
+              </span>
+            </button>
+          </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+          
+<ion-row style="display: none;" 
+(click)="navCtrl.pop()"
+id="MasterCardInfoPage-back-button">
+</ion-row>

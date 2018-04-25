@@ -1,0 +1,154 @@
+page-orderExchangeGiftCardStep1 {
+  .scroll-content {
+    margin-top: 50px !important;
+  }
+
+  .order-form-title {
+    font-size: 14px;
+    line-height: 21px;
+    font-family: 'Montserrat-Regular';
+    color: map-get($colors, primary-green);
+  }
+  .card-panel {
+    min-height: 60px;
+    padding-left: 90px;
+    position: relative;
+    img {
+      position: absolute;
+      left: 0;
+      max-width: 90px;
+    }
+    &--right {
+      width: 100%;
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .item-border {
+    border-bottom: 10px solid white;
+  }
+
+  .card-left-panel {
+    img, div {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    img {
+      max-width: 50px;
+
+    }
+  }
+  .address__detail {
+    background: #FFF;
+    p {
+      font-size: 1.2rem;
+    }
+  }
+
+  .card-item--wrapper {
+    background: none;
+    .title {
+      font-family: 'OpenSans-Bold';
+      font-size: 14px !important;
+      line-height: 21px !important;
+    }
+    p {
+      font-size: 12px !important;
+      line-height: 18px !important;
+    }
+
+    &.select-delivery {
+      border: 1px solid map-get($colors, primary-green);
+      background: #fff;
+      color: map-get($colors, primary);
+      font-size: 12px !important;
+      line-height: 18px !important;
+      .checkmark {
+        top: 15px !important;
+      }
+    }
+
+    &.delivery-type--wrapper {
+      border: 1px solid map-get($colors, primary-green);
+      background: map-get($colors, secondary-aero-blue-ligth);
+      position: relative;
+      .title {
+        color: map-get($colors, primary-green);
+      }
+      .checkmark {
+        color: map-get($colors, primary-green);
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        font-size: 3rem;
+        font-weight: bold;
+      }
+    }
+    .product-item {
+      margin-bottom: 10px;
+      background: map-get($colors, secondary-aero-blue-ligth); ;
+
+      .card-left-panel, .card-right-panel {
+        padding-top:  10px;
+        padding-bottom: 10px;
+      }
+
+      .card-right-panel {
+        font-size: 14px !important;
+        line-height: 21px !important;
+      }
+      .product-info {
+        padding-left: 8px;
+        max-width: calc(100% - 60px);
+        p {
+          white-space: normal;
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+
+  .order-title {
+    font-size: 16px !important;
+    line-height: 24px !important;
+  }
+
+  .step {
+    font-family: 'Montserrat-Regular';
+    color: map-get($colors, primary-green);
+    font-size: 14px !important;
+    line-height: 21px !important;
+
+    b {
+      font-family: 'Montserrat-Bold';
+    }
+  }
+
+  .list-item-card--wrapper {
+    p {
+      padding-bottom: 5px;
+      position: relative;
+
+      ion-icon {
+        font-size: 3rem;
+        position: absolute;
+        top: -5px;
+        right: 0;
+      }
+
+      &.text-font-16 {
+        font-family: 'Montserrat-Regular';
+        color: map-get($colors, primary-green);
+      }
+    }
+
+  }
+  .card-md {
+    p {
+      color: map-get($colors, primary);
+    }
+  }
+}

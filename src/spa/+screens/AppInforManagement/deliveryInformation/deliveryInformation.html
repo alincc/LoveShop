@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Delivery Information
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="text-14" [innerHTML]="deliveryInformationContent">
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+          
+  <ion-row style="display: none;" 
+  (click)="navCtrl.pop()"
+  id="DeliveryInformationPage-back-button">
+  </ion-row>
+</ion-content>

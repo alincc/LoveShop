@@ -1,0 +1,144 @@
+@import '../../../../../theme/colors';
+page-exchange4DiningECode {
+  .scroll-content {
+    padding-top: 0;
+    background: map-get($colors, secondary-aero-blue-ligth);
+  }
+  .card-offers{
+    width: 100%;
+    ion-list {
+      font-family: 'Open Sans', 'Arial', sans-serif;
+      background: map-get($colors, secondary-aero-blue-ligth);
+      width: 100%;
+      padding-left: 15px;
+      padding-right: 15px; 
+      .card {
+        margin-bottom: 10px;
+        position: relative;
+        border-radius: 0;
+        border: 1px solid map-get($colors, primary-green);
+
+        &:after {
+          font: normal normal normal 20px/1 FontAwesome;
+          content: "\f105";
+          display: inline-block;
+          position: absolute;
+          top: 50%;
+          right: 10px;
+          transform: translate(0, -50%);
+          color: map-get($colors , primary);
+        }
+      }
+      .desc {
+        color: #818181;
+        h3 {
+          margin: 0 0 2px;
+          font-size: 1.4rem;
+          font-weight: normal;
+          line-height: 1.5;
+          color: #222;
+        }
+      }
+      h3 {
+        color: map-get($colors, primary-green);
+        font-family: 'OpenSans-Bold', sans-serif;
+        width: 85%;
+      }
+      img {
+        min-width: 80px;
+        min-height: 80px;
+        width: 100%;
+        border: 1px solid #ddd;
+      }
+      .title-center {
+        display: flex;
+        align-items: center;
+      }
+      .card-icon {
+        min-height: 80px;
+      }
+      ion-icon {
+        font-size: 44px;
+        line-height: 80px;
+      }
+      .list-item {
+        padding: 0px;
+
+        &:after {
+          content: " ";
+        }
+      }
+
+      .list-item-content {
+        padding: 5px;
+        padding-right: 10px;
+      }
+    }
+  }
+  .card-details {
+    background: map-get($colors, secondary-aero-blue);
+    color: map-get($colors, secondary) !important;
+    &.row, .row {
+      min-height: 61px;
+      display: flex;
+      padding: 12px 15px;
+
+      .col{
+        &:last-child {
+          display: flex;
+          align-items: center;
+          .button {
+            margin-top: -4px;
+          }
+        }
+      }
+    }
+    &--info {
+      padding-right: 5px;
+      .text-bold {
+        font-family: 'OpenSans-Bold', sans-serif;
+      }
+    }
+    h3,p {
+      font-size: 12px !important;
+      line-height: 18px !important;
+    }
+    h3 {
+      margin: 0;
+      font-size: 16px;
+    }
+    p {
+      margin: 0;
+      margin-top: 0;
+    }
+    button[ion-button] {
+    }
+    img {
+      max-height: 48px;
+      @media screen and (max-height: 568px) {
+        max-height: 40px;
+      }
+    }
+    .button {
+      font-family: 'OpenSans-regular', sans-serif;
+    }
+  }
+  .icon-wrapper {
+    display: block;
+    margin: auto;
+    text-align: center;
+    img {
+      width: 60px;
+      margin: 20px auto;      
+      vertical-align: middle;
+    }
+    ion-icon {
+      font-size: 45px;
+      line-height: 74px;
+      vertical-align: middle;
+    }
+  }
+  .tabbar {
+    z-index: 999;
+  }
+}

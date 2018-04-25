@@ -1,0 +1,23 @@
+<div class="ptt-pin-input">
+  <label class="ptt-pin-input-wrapper" [for]="compId">
+    <ion-row>
+      <ion-col col-20>
+        <span class="ptt-pin-input-value password only-password">{{ pin1 }}</span>
+      </ion-col>
+      <ion-col col-20>
+        <span class="ptt-pin-input-value password only-password">{{ pin2 }}</span>
+      </ion-col>
+      <ion-col col-20>
+        <span class="ptt-pin-input-value password only-password">{{ pin3 }}</span>
+      </ion-col>
+      <ion-col col-20>
+        <span class="ptt-pin-input-value password only-password">{{ pin4 }}</span>
+      </ion-col>
+      <ion-col col-20>
+        <span class="ptt-pin-input-value password only-password">{{ pin5 }}</span>
+      </ion-col>
+    </ion-row>
+  </label>
+  <input type="tel" class="ptt-pin" maxlength="5" [id]="compId" (input)="updatePIN($event)" (focusin)="focusInput($event)"  (focusout)="focusoutInput($event)"
+         #inp>
+</div>

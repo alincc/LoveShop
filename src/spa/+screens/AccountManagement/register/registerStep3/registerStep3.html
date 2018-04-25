@@ -1,0 +1,151 @@
+
+
+<ion-content>
+  <ion-grid class="content-wrapper">
+    <ion-row>
+      <button (click)="navCtrl.pop()" ion-button="button-bar" class="fake-back-btn">
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <img class="l2s-logo" src="assets/images/l2s-logo.png"/>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="p-b-10 p-t-20">
+      <ion-col>
+        <ion-input type="hidden" [(ngModel)]="isShowAddress"></ion-input>
+        <p class="title montserrat-regular">Address <span float-right text-right class="madatory-note text-14">*mandatory fields</span></p>
+        <p class="title montserrat-bold text-14 p-t-10 text-underline" [hidden]="!isShowAddress" (click)="isShowAddress = !isShowAddress">Lookup postcode</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="lookup-address" [hidden]="isShowAddress">
+      <ion-col>
+        <ion-item>
+          <ion-label floating>{{enter_postcode_or_search_for_an_address}}</ion-label>
+          <ion-input (input)="suggestSearch$.next($event.target.value)" placeholder=""></ion-input>
+        </ion-item>
+        <ion-list *ngIf="showList" class="suggestion-address">
+          <ion-item *ngFor="let item of listAddressItems" (click)="pickupAddress(item)">
+            {{ formatLocationAddress(item) }}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row [hidden]="isShowAddress" class="p-b-13 p-t-10">
+      <ion-col>
+        <p class="title montserrat-bold text-14" (click)="isShowAddress = !isShowAddress">{{enter_address_manually}}</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="registerUserForm">
+      <ion-col>
+          <form [formGroup]="registerUserForm" class="form-register--wrapper">
+            <div *ngIf="isShowAddress">
+              <ion-row class="m-b-20">
+                <ion-item>
+                  <ion-label floating>Address line 1*</ion-label>
+                  <ion-input name="addressLine1" type="text"  formControlName="addressLine1"></ion-input>
+                </ion-item>
+
+                <ion-item-divider ion-item light no-lines class="error"
+                                  *ngIf="registerUserForm.get('addressLine1').dirty && !registerUserForm.get('addressLine1').valid">
+                  <p>{{errorMessage('addressLine1')}}</p>
+                </ion-item-divider>
+              </ion-row>
+
+              <ion-row class="m-b-20">
+                <ion-item>
+                  <ion-label floating>Address line 2</ion-label>
+                  <ion-input name="addressLine2" type="text"  formControlName="addressLine2"></ion-input>
+                </ion-item>
+
+
+                <ion-item-divider ion-item light no-lines class="error"
+                                  *ngIf="registerUserForm.get('addressLine2').dirty && !registerUserForm.get('addressLine2').valid">
+                  <p>{{errorMessage('addressLine2')}}</p>
+                </ion-item-divider>
+              </ion-row>
+
+              <ion-row class="m-b-20">
+                <ion-item>
+                  <ion-label floating>Town*</ion-label>
+                  <ion-input name="town" type="text"  formControlName="town"></ion-input>
+                </ion-item>
+
+                <ion-item-divider ion-item light no-lines class="error"
+                                  *ngIf="registerUserForm.get('town').dirty && !registerUserForm.get('town').valid">
+                  <p>{{errorMessage('town')}}</p>
+                </ion-item-divider>
+              </ion-row>
+
+              <ion-row class="m-b-20">
+                <ion-item>
+                  <ion-label floating>County</ion-label>
+                  <ion-input name="county" type="text"  formControlName="county"></ion-input>
+                </ion-item>
+                <ion-item-divider ion-item light no-lines class="error"
+                                  *ngIf="registerUserForm.get('county').dirty && !registerUserForm.get('county').valid">
+                  <p>{{errorMessage('county')}}</p>
+                </ion-item-divider>
+              </ion-row>
+
+              <ion-row class="m-b-20">
+                <ion-item>
+                  <ion-label floating>Postcode*</ion-label>
+                  <ion-input name="postcode" type="text" formControlName="postcode"></ion-input>
+                </ion-item>
+                <ion-item-divider ion-item light no-lines class="error"
+                                  *ngIf="registerUserForm.get('postcode').dirty && !registerUserForm.get('postcode').valid">
+                  <p>{{errorMessage('postcode')}}</p>
+                </ion-item-divider>
+              </ion-row>
+
+              <ion-row class="m-b-20">
+                <ion-item [ngClass]="dirtySelectValue()">
+                  <ion-label floating>Country*</ion-label>
+                  <ion-select name="country" formControlName="country" disabled="true" (ionChange)="showStyle = true">
+                    <ion-option *ngFor="let countryItem of countryLists" value="{{ countryItem.countryName }}">
+                      {{ countryItem.countryName }}
+                    </ion-option>
+                  </ion-select>
+                </ion-item>
+              </ion-row>
+            </div>
+            <ion-row class="p-b-15">
+              <ion-col>
+                <div class="border-divider border-color"></div>
+              </ion-col>
+            </ion-row>
+            <ion-row class="m-b-20">
+              <ion-item class="telephoneNumber">
+                <div class="border-divider border-color"></div>
+                <ion-label floating>Telephone*</ion-label>
+                <ion-input name="telephoneNumber" type="tel" formControlName="telephoneNumber"
+                  (focus)="showList = false"
+                  placeholder=""></ion-input>
+              </ion-item>
+              <ion-item-divider ion-item light no-lines class="error"
+                                *ngIf="registerUserForm.get('telephoneNumber').dirty && !registerUserForm.get('telephoneNumber').valid">
+                <p>{{errorMessage('telephoneNumber')}}</p>
+              </ion-item-divider>
+            </ion-row>
+          </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-row class="footer-wrapper">
+    <ion-col>
+      <button ion-button large block [disabled]="!registerUserForm.valid" (click)="submitRegisterData()">Next</button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row style="display: none;" 
+  (click)="navCtrl.pop()"
+  id="RegisterStep3Page-back-button">
+  </ion-row>
+</ion-content>
+

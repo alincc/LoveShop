@@ -1,0 +1,31 @@
+<ion-content>
+  <ion-row class="close" (click)="close()">
+    <div text-right>
+      <ion-icon name="close"></ion-icon>
+    </div>
+  </ion-row>
+  <ion-item-divider></ion-item-divider>
+  <ion-item-divider></ion-item-divider>
+  <ion-row class="store-distance">
+    <h1>{{ store?.retailer?.name }}</h1>
+    <p>Distance from your location: {{ store?.prettyDistance }} miles</p>
+  </ion-row>
+  <ion-item-divider></ion-item-divider>
+  <ion-row class="store-address">
+    <p>{{ store?.addressLine1 }}</p>
+    <p>{{ store?.addressLine2}}</p>
+    <p>{{ store?.town }}</p>
+    <p>{{ store?.county }}</p>
+    <p class="m-t-6">{{ store?.postcode }}</p>
+  </ion-row>
+  <ion-item-divider></ion-item-divider>
+  <ion-row *ngIf="store && store.telephoneNumber" class="store-phone">
+    <p>Telephone</p>
+    <p>{{ store?.telephoneNumber }}</p>
+  </ion-row>
+  <ion-item-divider></ion-item-divider>
+  <ion-item-divider></ion-item-divider>
+  <!-- <ion-row *ngIf="store && store.retailer && store.retailer.websiteURL">
+      <button ion-button full (click)="onStoreLinkClick(store)">Get direction from here</button>
+  </ion-row> -->
+</ion-content>

@@ -1,0 +1,440 @@
+@import '../../../../../theme/colors';
+
+page-exchangeecodeallbaroneecode {
+
+
+  label.wrap {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    display: block;
+    font-size: 16px;
+  }
+  .select-choose-value {
+    color: #999;
+    font-family: 'OpenSans-Regular', sans-serif;
+    overflow: hidden;
+    -webkit-box-flex: 1;
+    flex: 1;
+    min-width: 16px;
+    font-size: 14px;
+    white-space: nowrap;
+    border: 1px solid #666666;
+    height: 40px;
+    line-height: 21px;
+    margin: 0;
+    border-radius: 5px;
+    width: 100%;
+    padding: 0 0 0 12px;
+    background: #fffde9 !important;
+    /*for firefox*/
+    -moz-appearance: none;
+    /*for chrome*/
+    -webkit-appearance: none;
+  }
+  label.wrap:after {
+    content: "\f107";
+    font-family: FontAwesome;
+    color: #000;
+    position: absolute;
+    right: 0;
+    top: 12px;
+    z-index: 1;
+    width: 7%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .scroll-content {
+    padding: 0;
+  }
+  .content-wrapper {
+    width: 100% !important;
+  }
+
+  .row {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .header-content {
+    p {
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  .card-details {
+    background: map-get($colors, secondary-aero-blue);
+    color: map-get($colors, secondary) !important;
+    &.row,
+    .row {
+      min-height: 61px;
+      display: flex;
+      padding: 12px 15px;
+      width: 100%;
+      .col{
+        &:last-child {
+          display: flex;
+          align-items: center;
+          .button {
+            margin-top: -4px;
+          }
+        }
+      }
+    }
+    &--info {
+      padding-right: 5px;
+    }
+    h3, p {
+      font-size: 12px !important;
+      line-height: 18px !important;
+    }
+
+    h3 {
+      margin: 0;
+    }
+    p {
+      margin: 0;
+    }
+    button[ion-button] {
+    }
+    img {
+      max-height: 48px;
+      @media screen and (max-height: 568px) {
+        max-height: 40px;
+      }
+    }
+
+    .button {
+      font-family: 'OpenSans-regular', sans-serif;
+    }
+  }
+  .icon-wrapper {
+    text-align: center;
+    padding-top: 20px;
+    width: 90%;
+    margin: auto;
+
+    .img-ratio-1-1 {
+      border-radius: 8px;
+      border: 3px solid #a2a2a2;
+    }
+
+    img {
+      //width: 90%;
+      //vertical-align: middle;
+      //border-radius: 8px;
+      //border: 3px solid #a2a2a2;
+    }
+    ion-icon {
+      font-size: 45px;
+      line-height: 74px;
+      vertical-align: middle;
+    }
+  }
+  .bg-ddd {
+    background: #fff;
+  }
+  .card-offers {
+    padding: 5px;
+    .desc {
+      color: #818181;
+      h3 {
+        margin: 0 0 2px;
+        font-family: 'OpenSans-Bold', sans-serif !important;
+        color: map-get($colors, primary);
+      }
+      p {
+        margin: 0;
+      }
+    }
+    h3 {
+      font-size: 2.2rem;
+      color: #016a8a;
+    }
+    p {
+      text-align: left;
+    }
+    .card-icon {
+      > ion-icon {
+        font-size: 2.2em;
+        padding: 30px;
+      }
+      img {
+        min-width: 80px;
+        min-height: 80px;
+        width: 100%;
+        background-color: #dddddd;
+      }
+    }
+    &.bd {
+      border: solid 1px #016a8a;
+    }
+  }
+  .card-select {
+    ion-select {
+      max-width: 100%;
+      width: 100%;
+      border: solid 1px;
+      border-color: map-get($colors, primary);
+      border-radius: 5px;
+      padding: 10px;
+    }
+    ion-input {
+      border: solid 1px map-get($colors, primary);
+    }
+  }
+  .list-ios {
+    margin-bottom: 15px;
+  }
+  .card-quantities {
+    .row {
+      width: 100%;
+    }
+  }
+  .card-select,
+  .card-values,
+  .card-quantities {
+    h3 {
+      font-size: 14px !important;
+      line-height: 21px !important;
+      color: map-get($colors, primary);
+      font-family: 'OpenSans-Bold', sans-serif !important;
+      margin-top: 0;
+
+      span {
+        font-family: 'OpenSans-Regular', sans-serif !important;
+        font-size: 10px;
+        line-height: 15px;
+        color: map-get($colors, secondary)
+      }
+    }
+
+    .row {
+      width: 100%;
+    }
+  }
+
+  .card-values, .card-quantities {
+    .list {
+      .grid {
+        .row {
+          p {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    ion-buttons {
+      margin-left: -6px;
+      margin-right: -6px;
+    }
+
+    button {
+      background: #fffde9;
+      border: solid 1px;
+      border-color: map-get($colors, primary);
+      border-radius: 5px;
+      padding: 15px 17px;
+      margin-right: 6px;
+      margin-bottom: 6px;
+      min-width: 50px;
+      height: 40px;
+      border-radius: 5px;
+      width: calc(20% - 10px);
+      margin-right: 5px;
+      margin-left: 5px;
+      display: inline-block;
+      float: left;
+
+
+      .button-inner {
+        padding: auto 5px !important;
+        color: map-get($colors, primary);
+      }
+
+      &.button-ios {
+        .other-input {
+          &, &::-webkit-input-placeholder {
+            margin-top: 7px !important;
+          }
+        }
+      }
+
+      &.other-button {
+        &.has-error {
+          background: #FFF !important;
+          .other-input {
+            background: #FFF !important;
+            color: map-get($colors, red-ca );
+            padding: 0;
+            font-family: 'OpenSans-Regular', sans-serif !important;
+          }
+        }
+
+
+      }
+      .other-input {
+        background: #fffde9; padding: 0;
+        color: map-get($colors, primary);
+        width: 95%;
+        &, &::-webkit-input-placeholder {
+          color: map-get($colors, primary);
+        }
+        text-align: center;
+
+
+      }
+      &.highlight {
+        background-color: map-get($colors, primary-green) !important;
+        border-color: map-get($colors, primary-green);
+        opacity: 1;
+        &, .button-inner {
+          color: #fff;
+          font-family: 'OpenSans-Bold', sans-serif;
+        }
+        .other-input {
+          background: #FFF !important;
+          background-color: map-get($colors, primary-green) !important;
+          color: #fff;
+          font-family: 'OpenSans-Bold', sans-serif;
+          &::placeholder {
+            color: #FFF;
+          }
+        }
+      }
+    }
+
+    .abs-label {
+      position: absolute;
+      right: 0;
+      bottom: -1.3em;
+    }
+  }
+
+  .card-values {
+    .abs-label {
+      font-size: 10px;
+      line-height: 15px;
+      color: map-get($colors, secondary)
+    }
+
+    button {
+      padding: 15px 10px;
+    }
+  }
+
+  .alert-basket-info {
+    .alert-wrapper {
+      .alert-message {
+        padding: 20px 10px !important;
+        margin: 10px 0;
+      }
+      .alert-button-group {
+        .alert-button {
+          margin: 10px 0;
+          &.btn-basket {
+            border-top: none;
+            .button-inner {
+              background-color: #7b7b7b !important;
+              color: #fff !important;
+            }
+          }
+          &.btn-shopping {
+            border-top: none;
+            font-weight: normal !important;
+            .button-inner {
+              border: solid 1px #dbdbdf;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .other-error.error {
+    margin-top: 3px !important;
+    border-top: 1px solid map-get($colors, red-ca) !important;
+    padding: 10px !important;
+    width: 100%;
+    display: block;
+    p {
+      margin: 0 !important;
+      color: map-get($colors, red-ca);
+      font-size: 12px !important;
+      line-height: 18px !important;
+    }
+  }
+  .desc {
+    color: #818181;
+    margin-top: 20px;
+    padding: 0 10px;
+    font-size: 12px !important;
+    line-height: 18px !important;
+    h3 {
+      margin: 0 0 2px;
+      font-family: 'OpenSans-Bold', sans-serif !important;
+      color: map-get($colors, primary);
+      font-size: 14px !important;
+      line-height: 21px !important;
+    }
+    p {
+      margin: 0;
+      font-size: 12px !important;
+      line-height: 18px !important;
+    }
+
+    a {
+      border-radius: 5px !important;
+      border-width: 1px !important;
+      border-style: solid !important;
+      border-color: map-get($colors, primary-green);
+      color: map-get($colors, primary-green);
+      background-color: #FFFFFF;
+      height: 40px;
+      text-decoration: none;
+      padding: 8px;
+      width: 100%;
+      display: inline-block;
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px !important;
+      line-height: 21px !important;
+      margin-bottom: 10px;
+    }
+  }
+  .select-ios {
+    .select-placeholder {
+      color: map-get($colors, primary)
+    }
+    .select-icon {
+      .select-icon-inner {
+        border: none;
+        width: 10px;
+        height: 10px;
+        left: -5px;
+        transform: translate(0, -50%);
+        display: inline-block;
+        &:after {
+          content: '\f078';
+          font: normal normal normal 10px/1 FontAwesome;
+          transform: translate(0, -50%);
+          position: absolute;
+          top: 50%;
+        }
+      }
+    }
+  }
+}
+.card-can-topup {
+  z-index: 111;
+  position: fixed;
+}
+
+@media screen and(min-width: 768px) {
+  .card-can-topup {
+    width: calc(70% + 56px) !important;
+  }
+}

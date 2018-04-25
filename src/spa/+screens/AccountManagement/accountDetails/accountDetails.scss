@@ -1,0 +1,38 @@
+page-accountdetails {
+
+    ion-row {
+      border-bottom: solid 1px #d4d4d4;
+      padding: 20px 20px 20px 8px;
+    }
+    ion-item {
+      border: none;
+      .item-inner {
+        border-bottom: 0 !important;
+      }
+      ion-label {
+        color: gray;
+      }
+      .text-input[disabled] {
+        opacity: 1;
+      }
+    }
+  .content {
+    ion-input {
+      background:  none !important;
+      margin-bottom: 4px;
+
+      input {
+        background:  none !important;
+      }
+    }
+
+    .item.item-block {
+      border:  none !important;
+      .input-wrapper {
+        .label {
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+}

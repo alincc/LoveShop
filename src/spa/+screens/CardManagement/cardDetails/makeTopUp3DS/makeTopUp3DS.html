@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="gotoAmount()">
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>3D Secure</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <form ngNoForm action="{{bankPayment?.url}}" style="display: none" target="ACSframe" method="POST">
+            <textarea name="PaReq"
+                      value="{{bankPayment?.paReq}}" style="display: none"></textarea>
+          <input
+            name="TermUrl"
+            value="javascript:window.parent.postMessage(document.getElementsByName('PaRes')[0].value, '*');" style="display: none"/>
+          <input
+            name="MD" style="display: none"
+            value="{{dataAfterGenerateOrder?.orderNumber}}"/>
+          <button type="submit" style="display: none" id="submitIframe3D">Submit</button>
+        </form>
+
+        <iframe #iframe id="paymentIframe"
+                class="iframe__content--full"
+                src="about:blank"
+                name="ACSframe"></iframe>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,45 @@
+
+@import "../../../../theme/colors";
+page-refundValue {
+  @media screen and (min-width: 767px) {
+    .scroll-content .content-wrapper {
+      width: 100% !important;
+      min-height: calc(100% - 120px);
+    }
+  }
+  .content-wrapper {
+    min-height: calc(100% - 120px);
+  }
+
+  .img-mastercard {
+    max-width: 90%;
+  }
+
+  .footer-wrapper {
+    padding: 0;
+    height: 120px;
+  }
+  p {
+    margin: 0;
+  }
+
+  .card-infor-wrapper {
+    display: inline-block;
+    border-radius: 10px;
+    padding-bottom: 30px;
+    padding-top: 10px;
+    background: map_get($colors, secondary-aero-blue-ligth);
+  }
+
+  .expire-information {
+    span {
+        font-size: 14px;
+    }
+  }
+
+  .text-content {
+    p {
+      padding-bottom: 5px;
+    }
+  }
+}

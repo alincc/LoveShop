@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Change Email
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="content-wrapper">
+    <ion-row>
+      <ion-col>
+        <form [formGroup]="changeEmailForm">
+          <ion-row class="p-t-30 p-b-30" text-center>
+            <p class="text-14" text-center>{{current_email}}</p>
+            <p class="text-14 openSans-bold" text-center>{{this.model.currentEmail}}</p>
+          </ion-row>
+
+          <ion-row class="p-b-20">
+            <ion-item class="l2s-input-md">
+              <ion-label floating>New email address</ion-label>
+              <ion-input deny-copy name="newEmail"  formControlName="newEmail"></ion-input>
+            </ion-item>
+            <ion-item-divider ion-item light no-lines class="error"
+                              *ngIf="changeEmailForm.get('newEmail').dirty && !changeEmailForm.get('newEmail').valid">
+              <p>{{errorMessage('newEmail')}}</p>
+            </ion-item-divider>
+          </ion-row>
+
+          <ion-row class="p-b-20">
+            <ion-item class="l2s-input-md">
+              <ion-label floating>Confirm new email address</ion-label>
+              <ion-input deny-copy name="confirmNewEmail" formControlName="confirmNewEmail"></ion-input>
+            </ion-item>
+
+            <ion-item-divider ion-item light no-lines class="error"
+                              *ngIf="changeEmailForm.get('confirmNewEmail').dirty && !changeEmailForm.get('confirmNewEmail').valid">
+              <p>{{errorMessage('confirmNewEmail')}}</p>
+            </ion-item-divider>
+
+          </ion-row>
+
+          <ion-row class="p-b-20">
+            <ion-item class="l2s-input-md">
+              <ion-label floating>Password</ion-label>
+              <ion-input name="password" type="password" formControlName="password"></ion-input>
+            </ion-item>
+            <ion-item-divider ion-item light no-lines class="error"
+                              *ngIf="changeEmailForm.get('password').dirty && !changeEmailForm.get('password').valid">
+              <p>{{errorMessage('password')}}</p>
+            </ion-item-divider>
+          </ion-row>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="footer-wrapper">
+      <button ion-button large block [disabled]="!changeEmailForm.valid" (click)="updateEmailAddress()">Update email address</button>
+  </ion-grid>
+</ion-content>
+
+
+          
+<ion-row style="display: none;" 
+(click)="navCtrl.pop()"
+id="ChangeEmailPage-back-button">
+</ion-row>

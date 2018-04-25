@@ -1,0 +1,70 @@
+<ion-content>
+  <ion-grid class="content-wrapper" [ngClass]="{'inputFocusIn': focusInInput }">
+    <ion-row>
+        <button (click)="navCtrl.setRoot('WelcomePage', null, { animate: true, direction: 'back' })" ion-button="button-bar" class="fake-back-btn">
+          <ion-icon name="ios-arrow-back"></ion-icon>
+        </button>
+      </ion-row>
+    <ion-row text-center class="p-t-20 p-b-20">
+      <ion-col>
+          <img class="l2s-logo" src="assets/images/l2s-logo.png"/>
+      </ion-col>
+    </ion-row>
+    <ion-row class="p-t-40">
+      <ion-col>
+        <div class="decs">Login to your account below</div>
+        <form [formGroup]="manageUserForm">
+          <ion-row class="m-b-20">
+            <ion-item>
+              <ion-label floating>Email Address</ion-label>
+              <ion-input [value]="model.emailAddress" formControlName="emailAddress"  (ionFocus)="focusIntoInput()"  (focusout)="focusOutInput()" type="text"></ion-input>
+            </ion-item>
+            <ion-item-divider ion-item light no-lines
+                              class="error"
+                              *ngIf="manageUserForm.get('emailAddress').dirty
+                                && !manageUserForm.get('emailAddress').valid">
+              <p>{{errorMessage('emailAddress')}}</p>
+            </ion-item-divider>
+          </ion-row>
+
+
+          <ion-row>
+            <ion-item>
+              <ion-label floating>Password</ion-label>
+              <ion-input [value]="model.password" formControlName="password" type="password" clearOnEdit="true"  (ionFocus)="focusIntoInput()" (focusout)="focusOutInput()"></ion-input>
+            </ion-item>
+            <ion-item-divider ion-item light no-lines
+                              class="error"
+                              *ngIf="manageUserForm.get('password').dirty
+                                && !manageUserForm.get('password').valid">
+              <p>{{errorMessage('password')}}</p>
+            </ion-item-divider>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <p class="text-link-item" text-center>
+                <a (click)="navCtrl.push('ForgotPasswordPage')">{{ForgotPassword_en_properties}}</a>
+              </p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <button (click)="login()" [disabled]="!manageUserForm || !manageUserForm.valid" ion-button large block>Login</button>
+          </ion-row>
+        </form>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+  <ion-row class="footer-wrapper">
+    <ion-col>
+      <div class="page-link">Not yet registered?</div>
+      <button ion-button large block outline (click)="navCtrl.push('RegisterStep1Page')" class="l2s-btn l2s-btn--outline">Register</button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row style="display: none;" 
+  (click)="navCtrl.setRoot('WelcomePage', null, { animate: true, direction: 'back' })"
+  id="LoginPage-back-button">
+  </ion-row>
+</ion-content>

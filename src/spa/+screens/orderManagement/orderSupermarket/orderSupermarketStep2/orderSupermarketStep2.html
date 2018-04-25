@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Thank you For Your Order
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="content-wrapper">
+    <ion-card class="card-item--wrapper order-num" padding margin-bottom>
+      <p text-center>
+        Order #{{orderGenerateSuperMarket?.orderNumber}}
+      </p>
+    </ion-card>
+
+    <ion-row margin-bottom>
+      <ion-col>
+        <p class="label">Order description</p>
+        <table>
+            <thead>
+              <th> Product</th>
+              <th>Quanlity</th>
+              <th>Value</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{orderGenerateSuperMarket?.orderlines[0]?.productDescription}}</td>
+                <td>{{orderGenerateSuperMarket?.orderlines[0]?.quantity}}</td>
+                <td>{{orderGenerateSuperMarket?.orderValue  | currency:'GBP':'symbol':'1.2-2'}}</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <td colspan="2">Sub Total</td>
+              <td>{{orderGenerateSuperMarket?.totalPaymentAmount  | currency:'GBP':'symbol':'1.2-2'}}</td>
+            </tfoot>
+          </table>
+      </ion-col>
+    </ion-row>
+
+    <ion-row margin-bottom>
+      <ion-col>
+        <p class="label">Billing & Delivery Address</p>
+        <p class="value" *ngIf="orderGenerateSuperMarket?.addressLine1">{{orderGenerateSuperMarket?.title}} {{orderGenerateSuperMarket?.firstName}} {{orderGenerateSuperMarket?.lastName}} </p>
+        <p class="value" *ngIf="orderGenerateSuperMarket?.addressLine1">{{orderGenerateSuperMarket?.addressLine1}}</p>
+        <p class="value" *ngIf="orderGenerateSuperMarket?.addressLine2">{{orderGenerateSuperMarket?.addressLine2}}</p>
+        <p class="value" *ngIf="orderGenerateSuperMarket?.town">{{orderGenerateSuperMarket?.town}}</p>
+        <p class="value" *ngIf="orderGenerateSuperMarket?.county">{{orderGenerateSuperMarket?.county}}</p>
+        <p class="value" *ngIf="orderGenerateSuperMarket?.postcode">{{orderGenerateSuperMarket?.postcode}}</p>
+        <p class="value" *ngIf="orderGenerateSuperMarket?.country">{{orderGenerateSuperMarket?.country}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-row class="footer-wrapper">
+    <button ion-button block large color="primary" (click)="gotoBenefit()">Back to Benefits Menu</button>
+  </ion-row>
+</ion-content>

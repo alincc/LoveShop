@@ -1,0 +1,88 @@
+@import "../../../../../theme/colors";
+
+page-amountTopUp {
+  .scroll-content {
+    padding-top: 0;
+  }
+  .inputAmount {
+    &.invalidValue {
+      border-color: red !important;;
+      @include border-bottom-left-radius(0);
+      @include border-bottom-right-radius(0);
+
+    }
+  }
+
+  .item-input--wrapper {
+    .item-inner {
+      padding-right: 0 !important;
+    }
+  }
+
+  .back-button {
+    display: none !important;
+  }
+
+  .icon-absolute {
+    position: absolute;
+  }
+  .content-ios {
+    .topUpInputandroid {
+      display: none;
+    }
+  }
+  .content-md {
+    .topUpInputiOS {
+      display: none;
+    }
+  }
+
+  .topUpErrorForm.error {
+    padding: 10px;
+    border: 1px solid #FF0000 !important;
+    color: #FF0000;
+  }
+
+  .inputAmount {
+    overflow: hidden;
+  }
+
+  .scroll-content {
+    ion-list {
+      margin: 0 !important;
+      .item {
+        background: transparent;
+        border-bottom: 0 !important;
+        text-align: center;
+        min-height: initial;
+        .label {
+          margin: 0 !important;
+          line-height: 1.1em;
+        }
+      }
+    }
+    ion-input {
+      border: 1px solid map_get($colors, primary);
+      border-radius: 5px;
+      font-size: 40px;
+      padding: 10px;
+      background: map_get($colors, input-background);
+      text-align: center;
+      input {
+        color: map_get($colors, primary);
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        width: 117px;
+        text-align: left;
+        margin-right: -20px;
+      }
+    }
+    .discount-info {
+      p {
+        margin: 0;
+        text-align: center;
+      }
+    }
+  }
+}

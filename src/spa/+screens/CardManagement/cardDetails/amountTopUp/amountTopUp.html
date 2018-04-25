@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="gotoPreviousPage()">
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>TOP UP</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="container-content">
+  <ion-grid class="content-wrapper" >
+    <ion-row class="m-b-50 m-t-30">
+      <ion-col>
+        <p text-center>{{confirm_top_up_amount}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="m-b-20">
+      <ion-col col-8 push-2>
+        <div class="topUpErrorForm error m-b-10" *ngIf="!topUpErrorForm.valid && topUpErrorForm.message"
+             [innerHTML]="topUpErrorForm.message">
+        </div>
+        <form [formGroup]="topUpForm" text-center>
+          <ion-item class="item-input--wrapper item-big" no-padding (click)="focusToInput()">
+            <ion-input id="inputAmount"
+                       class="inputAmount topUpInputiOS montserrat-bold"
+                       name="topUpInput " type="text" inputmode="numeric"
+                       placeholder="£0.00"
+                       formControlName="topUpInput"
+                       (focusout)='otherValueChange($event.target.value)'
+                       (ionChange)="changeInput($event)" text-wrap>
+
+            </ion-input>
+            <ion-input id="inputAmount2"
+                       (focusout)='otherValueChange($event.target.value)'
+                       class="inputAmount topUpInputandroid montserrat-bold"
+                       name="topUpInput " type="tel"
+                       placeholder="£0.00"
+                       formControlName="topUpInput"
+                       (ionChange)="changeInput($event)" text-wrap></ion-input>
+          </ion-item>
+          <ion-item-divider ion-item light no-lines class="error"  *ngIf="!productValid">
+            <p>Please enter an amount between {{minValue | number:'1.2-2'}} and {{maxValue | number:'1.2-2'}}</p>
+          </ion-item-divider>
+        </form>
+      </ion-col>
+    </ion-row>
+    <ion-row class="m-b-50 discount-info">
+      <ion-col *ngIf="cardPrimary?.discountPercentageMessage">
+        <p class="openSans-bold">{{cardPrimary?.discountPercentageMessage}}</p>
+        <p>{{applied_to_this_amount}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-row class="footer-wrapper">
+    <ion-col>
+      <button ion-button large block [disabled]="!topUpForm.valid || !productValid " (click)="confirmTopUp()">Confirm Amount</button>
+    </ion-col>
+  </ion-row>
+</ion-content>
+
+
+
+
+          
+<ion-row style="display: none;" 
+(click)="gotoPreviousPage()"
+id="AmountTopUpPage-back-button">
+</ion-row>

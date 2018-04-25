@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Exchange to spend online
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="mastercard-exchange" [class.centered]="products && products.length && products.length < 3" padding>
+  <ion-list class="mastercard-exchange__list">
+    <ion-item class="mastercard-exchange__item" *ngFor="let product of products ; let idx = index">
+      <ion-card (click)="showCardExchange(product, idx)">
+        <img [src]="baseResourceUrl+ product?.mediumImages[0]" alt="{{product?.name}}">
+        <div class="additional">
+          <p class="circle" *ngIf="products.length === 1">
+            <span>No</span> additional charge
+          </p>
+          <p class="circle" *ngIf="products.length > 1 && idx === 1">
+            <span>No</span> additional charge
+          </p>
+          <p class="circle" *ngIf=" products.length > 1 && idx === 0">
+            <span>10%</span> charge applies
+          </p>
+        </div>
+      </ion-card>
+      <ion-row>
+        <button class="select-mastercard" block ion-button (click)="showCardExchange(product, idx)">
+          <span>Choose {{product?.name}}</span>
+        </button>
+      </ion-row>
+      <ion-row>
+        <button ion-button outline block class="card-btn" (click)="showCardInformation(product, idx)">
+          <span title="product?.longDescription">{{add_card_important_card_info}}</span>
+          <ion-icon class="ios-information" name="ios-information"></ion-icon>
+        </button>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+
+  <ion-row style="display: none;" 
+  (click)="navCtrl.pop()"
+  id="Exchang4SpendOnlinePage-back-button">
+  </ion-row>
+</ion-content>

@@ -1,0 +1,72 @@
+
+<ion-content>
+    <ion-grid class="padding-15 content-wrapper">
+      <ion-row>
+        <ion-col text-center class="p-t-15">
+          <img class="l2s-logo" src="assets/images/l2s-logo.png"/>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <p class="text-14 margin-0 p-t-20 p-b-10"><b>{{setup_PIN}}</b></p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <p class="text-14">{{PIN_enter_5_digit}}</p>
+        </ion-col>
+      </ion-row>
+      <form [formGroup]="setupPINForm" autocomplete="off">
+        <ion-row class="p-b-10">
+          <ptt-pin (pinChange)="onPinChange($event)"></ptt-pin>
+        </ion-row>
+
+        <p class="text-14">{{confirm_pin}}</p>
+        <ion-row class="m-b-15">
+          <ptt-pin (pinChange)="onConfirmPinChange($event)"></ptt-pin>
+        </ion-row>
+        <ion-item-divider ion-item light no-lines class="error"
+                          *ngIf="(setupPINForm.get('pin1').dirty && !setupPINForm.get('pin1').valid) ||
+                               (setupPINForm.get('pin2').dirty && !setupPINForm.get('pin2').valid) ||
+                               (setupPINForm.get('pin3').dirty && !setupPINForm.get('pin3').valid) ||
+                               (setupPINForm.get('pin4').dirty && !setupPINForm.get('pin4').valid) ||
+                               (setupPINForm.get('pin5').dirty && !setupPINForm.get('pin5').valid)
+                        ">
+
+          <p>{{PIN_5_digit}}</p>
+        </ion-item-divider>
+
+        <ion-item-divider ion-item light no-lines class="error"
+                          *ngIf="(setupPINForm.get('pin1').dirty &&
+                                setupPINForm.get('pin2').dirty &&
+                                setupPINForm.get('pin3').dirty &&
+                                setupPINForm.get('pin4').dirty &&
+                                setupPINForm.get('pin5').dirty &&
+                                setupPINForm.get('pinConfirm1').dirty &&
+                                setupPINForm.get('pinConfirm2').dirty &&
+                                setupPINForm.get('pinConfirm3').dirty &&
+                                setupPINForm.get('pinConfirm4').dirty &&
+                                setupPINForm.get('pinConfirm5').dirty) &&
+
+                               (!setupPINForm.get('pinConfirm1').valid ||
+                               !setupPINForm.get('pinConfirm2').valid ||
+                               !setupPINForm.get('pinConfirm3').valid ||
+                               !setupPINForm.get('pinConfirm4').valid ||
+                               !setupPINForm.get('pinConfirm5').valid)
+                        ">
+           <p>{{PIN_and_confirm_do_not_match}}</p>
+        </ion-item-divider>
+        <ion-row class="p-t-10">
+          <ion-col>
+            <p class="text-14 margin-0" text-wrap text-center no-margin>{{five_digit_pin}}</p>
+          </ion-col>
+        </ion-row>
+      </form>
+    </ion-grid>
+    <ion-row class="footer-wrapper">
+      <ion-col>
+        <button ion-button large block [disabled]="!setupPINForm.valid" (click)="setupPINCode()">Next</button>
+      </ion-col>
+    </ion-row>
+  </ion-content>
+  

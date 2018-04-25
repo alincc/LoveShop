@@ -1,0 +1,323 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            payment
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid class="content-wrapper">
+
+        <ion-row class="payment-detail--wrapper">
+            <ion-col>
+                <p class="tittle--medium tittle--medium-decorate ">Payment details</p>
+                <div>
+                    <p class="text-content-small">Payment methods we accept</p>
+                    <img src="assets/images/accepted-card-types.png"/>
+                </div>
+                <div *ngIf="cardTypeSelected.length > 0">
+                    <p class="text-content-small color">Debit Card 0% fee</p>
+                    <p class="text-content-small color p-b-8">Credit Card 1% fee (&pound;1.00 minimum)</p>
+                </div>
+
+            </ion-col>
+        </ion-row>
+
+        <ion-row class="add-card p-t-10" *ngIf="errorObject?.code === paymentErrorCode">
+            <ion-item-divider ion-item light no-lines class="ptt-error-msg error">
+                <p [innerHTML]="errorObject?.message">
+                </p>
+            </ion-item-divider>
+        </ion-row>
+
+
+        <ion-row class="add-card">
+            <ion-item-group *ngIf="!showAddNewCard ">
+                <ion-item>
+                    <p item-end class="text-link-item add-new openSans-bold"
+                       (click)="showAddNewCard = !showAddNewCard; showListCard=false; changeFeeCard()">{{add_card_add_new_card}}</p>
+                </ion-item>
+            </ion-item-group>
+            <ion-item-group *ngIf="showAddNewCard && (tokenizedCards.length > 0)">
+                <ion-item>
+                    <p item-end
+                       class="text-link-item openSans-bold add-new"
+                       (click)="showAddNewCard = !showAddNewCard;  showListCard=false; updateFeeCardSelected()">{{add_card_use_saved_card}}</p>
+                </ion-item>
+            </ion-item-group>
+        </ion-row>
+
+
+        <ion-row>
+            <ion-col>
+                <div class="add-new-card" *ngIf="showAddNewCard">
+                    <form [formGroup]="topUpForm" class="form-card--wrapper">
+
+                        <ion-row>
+                            <!--<p class="p-b-5"><span item-start class="no-wrap-text">Credit / Debit card number</span></p>-->
+                            <ion-item>
+                                <ion-input name="cardnumber" type="tel"
+                                           placeholder="Credit / Debit card number"
+                                           formControlName="cardnumber"></ion-input>
+                            </ion-item>
+                            <ion-item-divider ion-item light no-lines class="error"
+                                              *ngIf="topUpForm.get('cardnumber').dirty && !topUpForm.get('cardnumber').valid">
+                                <p>{{errorMessage('cardnumber')}}</p>
+                            </ion-item-divider>
+
+                        </ion-row>
+
+                        <ion-row class="expiry-date--wrapper p-t-15">
+                            <!--<p class="p-b-5"><span item-start class="no-wrap-text">Expiry</span></p>-->
+                            <ion-col class="m-r-5">
+                                <ion-datetime (ionChange)="changemonth()" class="datetime-month"
+                                              displayFormat="YY"
+                                              min="2001" max="2012"
+                                              #month
+                                              formControlName="monthCard"
+                                              placeholder="Month"></ion-datetime>
+                                <ion-icon (click)="iconClick(month)" name="arrow-down" item-right primary class="icon-down"></ion-icon>
+                                <ion-item-divider ion-item light no-lines class="error"
+                                                  *ngIf="topUpForm.get('monthCard').dirty && !topUpForm.get('monthCard').valid">
+                                    <p>{{errorMessage('monthCard')}}</p>
+                                </ion-item-divider>
+                            </ion-col>
+                            <ion-col class="m-l-5">
+                                <ion-datetime (ionChange)="changeDate()" class="datetime-year" #year
+                                              displayFormat="YYYY"
+                                              pickerFormat="YYYY" min="{{yearmin}}" max="2030"
+                                              formControlName="yearCard" placeholder="Year"></ion-datetime>
+                                <ion-icon (click)="iconClick(year)" name="arrow-down" item-right primary class="icon-down"></ion-icon>
+                                <ion-item-divider ion-item light no-lines class="error"
+                                                  *ngIf="topUpForm.get('yearCard').dirty && !topUpForm.get('yearCard').valid">
+                                    <p>{{errorMessage('yearCard')}}</p>
+                                </ion-item-divider>
+                            </ion-col>
+                            <ion-item-divider ion-item light no-lines class="error" *ngIf="expireError">
+                                <p class="p-l-15">{{order_gwp_default_section6_action_p}}</p>
+                            </ion-item-divider>
+
+                        </ion-row>
+
+                        <ion-row class="m-b-10 p-t-15 input-csc-wrapper position-relative">
+                                <ion-input class="cvv-input only-password" name="cvv" type="tel"
+                                           placeholder="Security code (3 digit number)"
+                                           formControlName="cvv"></ion-input>
+                            </ion-item>
+                            <img class="csc " src="assets/images/card-csc-icon.png" height="34" width="51"/>
+                            <ion-item-divider ion-item light no-lines class="error"
+                                              *ngIf="topUpForm.get('cvv').dirty && !topUpForm.get('cvv').valid">
+                                <p>{{errorMessage('cvv')}}</p>
+                            </ion-item-divider>
+
+                        </ion-row>
+
+                        <ion-row class="list-radio-checkbox">
+                            <ion-list radio-group formControlName="paymentMethodsWithFees"
+                                      (ionChange)="changeFeeCard()"
+                                      class="m-b-1">
+                                <ion-item-divider ion-item light no-lines class="error error-html"
+                                                  *ngIf="invalidFeeAmount.length > 0">
+                                    <p [innerHTML]=invalidFeeAmount></p>
+                                </ion-item-divider>
+                                <ion-item *ngFor="let item of cardTypeSelected; let i = index">
+                                    <ion-label>
+                                        Pay by {{item?.displayName}} - Total
+                                        {{dataAfterGenerateOrder?.totalPaymentAmount
+                                        + item.feeAmount + deliveryMethod?.cost | currency:'GBP':'symbol':'1.2-2'}}
+                                    </ion-label>
+                                    <ion-radio item-left value="{{item?.feeAmount}}"
+                                               [checked]="i==1"></ion-radio>
+                                </ion-item>
+
+                            </ion-list>
+                        </ion-row>
+
+
+                        <ion-item-group>
+                            <ion-item *ngIf="showAddNewCard">
+                                <ion-label>{{add_card_use_saved_card}}</ion-label>
+                                <ion-checkbox formControlName="saveCard"></ion-checkbox>
+                            </ion-item>
+                        </ion-item-group>
+
+
+                    </form>
+                </div>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col>
+                <div class="list-cards" *ngIf="!showAddNewCard && tokenizedCards.length> 0">
+                    <div class="card-selected" [ngClass]="{'open-list-card': showListCard}">
+                        <ion-item>
+                            <img src="assets/images/{{cardSelected?.cardScheme}}.png" height="31" width="49"/>
+                            <p text-left class="text-uppercase openSans-bold">{{cardSelected?.cardScheme}}</p>
+                            <p text-left class="text-info">
+                                Ends {{cardSelected?.panLast4}}
+                                <span class="min-width-80">
+                 - Exp {{cardSelected?.expiryDate}}
+                </span>
+                                <span class="min-width-80">
+                  - Total: {{dataAfterGenerateOrder?.totalPaymentAmount + cardSelected?.feeAmount | currency:'GBP':'symbol':'1.2-2'}}
+                </span>
+                            </p>
+                            <ion-icon item-right primary (click)="showListCard = !showListCard">
+                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            </ion-icon>
+                        </ion-item>
+                    </div>
+                    <ul class="card-dropdown-list" *ngIf="showListCard">
+                        <li *ngFor="let cardItem of tokenizedCards" (click)="selectCardPayment(cardItem);">
+                            <ion-item *ngIf="cardItem.token !== cardSelected.token">
+                                <img src="assets/images/{{cardItem?.cardScheme}}.png" height="31" width="49"/>
+                                <p class="text-uppercase openSans-bold" text-left>{{cardItem?.cardScheme}}</p>
+                                <p class="text-info" text-left>
+                                    Ends {{ cardItem?.panLast4 }}
+                                    <span class="min-width-80">
+                    - Exp {{cardItem?.expiryDate}}
+                  </span>
+                                    <span class="min-width-80">
+                   - Total: {{dataAfterGenerateOrder?.totalPaymentAmount + cardItem?.feeAmount | currency:'GBP':'symbol':'1.2-2'}}</span>
+
+                                </p>
+                            </ion-item>
+                        </li>
+                    </ul>
+                </div>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col>
+                <form [formGroup]="topUpFormOnlyCVV"
+                      class="form-card--wrapper p-b-20 p-t-15 input-csc-wrapper position-relative"
+                      *ngIf="!showAddNewCard && tokenizedCards.length> 0">
+                    <ion-item>
+                        <ion-input class="cvv-input only-password" name="cvv" placeholder="Security code (3 digit number)"
+                                   type="tel"
+                                   formControlName="cvv"></ion-input>
+                    </ion-item>
+                    <img class="csc " src="assets/images/card-csc-icon.png" height="34" width="51"/>
+
+                    <ion-item-divider ion-item light no-lines class="error"
+                                      *ngIf="topUpFormOnlyCVV.get('cvv').dirty && !topUpFormOnlyCVV.get('cvv').valid">
+                        <p>{{errorMessageCVV('cvv')}}</p>
+                    </ion-item-divider>
+                </form>
+            </ion-col>
+        </ion-row>
+
+
+        <ion-row class="total m-b-20">
+            <p class="p-t-5 p-b-5">
+                <span item-start class="openSans-bold">Total payable</span>
+                <span float-right class="openSans-bold">{{dataAfterGenerateOrder?.totalPaymentAmount + deliveryMethod?.cost | currency:'GBP':'symbol':'1.2-2'}}</span>
+            </p>
+            <p class="p-t-5 p-b-5 text-12" *ngIf="feeAmount > 0">
+                <span item-start class="text-12">Card fee </span>
+                <span float-right class="text-12">{{feeAmount | currency:'GBP':'symbol':'1.2-2'}}</span>
+            </p>
+        </ion-row>
+
+    </ion-grid>
+    <ion-row class=" footer-wrapper" *ngIf="showAddNewCard">
+        <ion-col>
+            <button ion-button large block [disabled]="topUpForm.valid === false  || expireError === true"
+                    (click)="payNow()">Pay Now
+            </button>
+        </ion-col>
+    </ion-row>
+    <ion-row class=" footer-wrapper" *ngIf="!showAddNewCard">
+        <ion-col>
+            <button ion-button large block [disabled]="!topUpFormOnlyCVV.valid && !showAddNewCard" (click)="payNow()">
+                Pay Now
+            </button>
+        </ion-col>
+    </ion-row>
+    <ion-row class="summary--wrapper">
+        <ion-col>
+            <p class="tittle--medium tittle--medium-decorate ">Order Summary</p>
+            <table>
+                <thead>
+                <th>
+                    Product
+                </th>
+                <th>Quantity</th>
+                <th>Total</th>
+                </thead>
+                <tbody>
+                <tr *ngFor="let product of dataAfterGenerateOrder?.orderlines">
+                    <td>
+                        <p>{{product?.productDescription}}</p>
+                        <p class="active" *ngIf="product?.discountPercentage > 0">{{product?.discountPercentage}}%
+                            Discount</p>
+                    </td>
+                    <td>
+                        <p>
+                            {{product?.quantity}}
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            {{(product?.paymentAmount) | currency:'GBP':'symbol':'1.2-2'}}
+                        </p>
+                        <p class="active" *ngIf="product?.discountAmount > 0">-{{product?.discountAmount |
+                            currency:'GBP':'symbol':'1.2-2'}}</p>
+                    </td>
+                </tr>
+
+                <tr *ngIf="dataAfterGenerateOrder?.totalDiscount > 0">
+                    <td colspan="2">
+                        <p>
+                            Total Discount
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            -{{dataAfterGenerateOrder?.totalDiscount | currency:'GBP':'symbol':'1.2-2'}}
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p>
+                            Delivery: {{deliveryMethod?.title}}
+
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            {{deliveryMethod?.cost | currency:'GBP':'symbol':'1.2-2'}}
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="2">
+                        <p class="text-bold">
+                            Sub Total
+                        </p>
+                    </td>
+                    <td>
+                        <p class="text-bold">
+                            {{dataAfterGenerateOrder?.totalPaymentAmount + deliveryMethod?.cost |
+                            currency:'GBP':'symbol':'1.2-2'}}
+                        </p>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+
+        </ion-col>
+    </ion-row>
+</ion-content>
+
+
+<ion-row style="display: none;"
+         (click)="navCtrl.pop()"
+         id="OrderDiscountGiftCardPaymentCardPage-back-button">
+</ion-row>

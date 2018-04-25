@@ -1,0 +1,96 @@
+
+<ion-content>
+  <ion-grid class="content-wrapper">
+   <ion-row>
+      <button (click)="navCtrl.setRoot('WelcomePage', null, { animate: true, direction: 'back' })" ion-button="button-bar" class="fake-back-btn">
+        <ion-icon class="padding-20" name="ios-arrow-back"></ion-icon>
+      </button>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <img class="l2s-logo" src="assets/images/l2s-logo.png"/>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <p text-center class="padding-30 text-14">{{personal_details}}</p>
+
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <form [formGroup]="registerUserForm">
+          <ion-row class="m-b-20" >
+            <div class="select--wrapper" [ngClass]="dirtySelectValue()">
+              <label class="wrap">
+                  <select 
+                      class="select-choose-value"
+                      formControlName="title"
+                      [ngClass]="{'defautValue': registerUserForm.get('title').value === '-1'}"
+                      >
+                      <option [value]="-1">Title</option>
+                      <option *ngFor="let title of userTitle; index as i" [value]="title.text">{{ title.text }}</option>
+                  </select>
+              </label>
+            </div>
+            <ion-item-divider ion-item light no-lines class="error"
+              *ngIf="registerUserForm.get('title').dirty && !registerUserForm.get('title').valid">
+              <p>{{errorMessage('title')}}</p>
+            </ion-item-divider>
+          </ion-row>
+
+          <ion-row class="m-b-20">
+            <ion-item>
+              <ion-label floating>First Name</ion-label>
+              <ion-input name="firstName" type="text"  formControlName="firstName"></ion-input>
+            </ion-item>
+            <ion-item-divider ion-item light no-lines class="error"
+              *ngIf="registerUserForm.get('firstName').dirty && !registerUserForm.get('firstName').valid">
+              <p>{{errorMessage('firstName')}}</p>
+            </ion-item-divider>
+          </ion-row>
+
+          <ion-row class="m-b-20">
+            <ion-item>
+              <ion-label floating>Last Name</ion-label>
+              <ion-input name="lastName" type="text"  formControlName="lastName"></ion-input>
+            </ion-item>
+            <ion-item-divider ion-item light no-lines class="error"
+              *ngIf="registerUserForm.get('lastName').dirty && !registerUserForm.get('lastName').valid">
+              <p>{{errorMessage('lastName')}}</p>
+            </ion-item-divider>
+          </ion-row>
+
+          <ion-row class="m-b-20">
+            <ion-col no-padding class="m-r-12">
+              <ion-item [ngClass]="{'date-time-error' : registerUserForm.get('dob').dirty && !registerUserForm.get('dob').valid}">
+                <ion-label floating>Date of Birth</ion-label>
+                <ion-datetime #datetime displayFormat="DD MMMM YYYY" pickerFormat="MMMM DD YYYY" min="{{datemin}}" max="{{datemax}}" formControlName="dob" required></ion-datetime>
+                <ion-icon item-right primary  (click)="iconClick(datetime)"><i class="fa fa-angle-down" aria-hidden="true"></i></ion-icon>
+              </ion-item>
+            </ion-col>
+            <div class="eighteen-plus m-t-3">18+</div>
+            <ion-item-divider ion-item light no-lines class="error m-r-45"
+              *ngIf="registerUserForm.get('dob').dirty && !registerUserForm.get('dob').valid">
+              <p>{{errorMessage('dob')}}</p>
+            </ion-item-divider>
+          </ion-row>
+
+
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-row class="footer-wrapper">
+    <ion-col>
+      <p class="text-14">By clicking Next you are confirming that you agree to our <span (click)="retriveMessage('app.l2s.tcs')"><b>terms and conditions</b></span></p>
+      <button ion-button large block class="m-t-10" [disabled]="!registerUserForm.valid" (click)="submitRegisterData()" color="primary">Next</button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row style="display: none;" 
+  (click)="navCtrl.setRoot('WelcomePage', null, { animate: true, direction: 'back' })"
+  id="RegisterStep1Page-back-button">
+  </ion-row>
+</ion-content>

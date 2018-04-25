@@ -1,0 +1,64 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Account Details
+        </ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only (click)="navCtrl.push('EditAccountPage')">
+                <ion-icon name="md-create"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid  *ngIf="showContent">
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label floating class="label-float-big">Name</ion-label>
+                    <ion-input class="text-16" name="dob" type="text" disabled="true" value={{model.name}}></ion-input>
+                    <ion-item-divider ion-item light no-lines>
+                        {{model.name}}
+                    </ion-item-divider>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label floating class="label-float-big">Date of Birth</ion-label>
+                    <ion-input class="text-16" name="dob" type="text" disabled="true" value={{model.dob}}></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label floating class="label-float-big">Address</ion-label>
+                    <ion-input class="text-16" type="text" disabled="true" value={{model.addressLine1}}></ion-input>
+                    <ion-input class="text-16" type="text" disabled="true" *ngIf="model.addressLine2 != ''" value={{model.addressLine2}}></ion-input>
+                    <ion-input class="text-16" type="text" disabled="true" value={{model.town}}></ion-input>
+                    <ion-input class="text-16" type="text" disabled="true" value={{model.county}}
+                               *ngIf="model.county != ''"></ion-input>
+                    <ion-input class="text-16" type="text" disabled="true" value={{model.postcode}}></ion-input>
+                    <ion-input class="text-16" type="text" disabled="true" value={{model.country}}></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label floating class="label-float-big">Telephone</ion-label>
+                    <ion-input class="montserrat-regular text-16" name="phone" type="text" disabled="true" value={{model.phone}}></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+
+          
+<ion-row style="display: none;" 
+(click)="navCtrl.pop()"
+id="AccountDetailsPage-back-button">
+</ion-row>

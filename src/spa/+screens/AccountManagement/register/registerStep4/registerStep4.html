@@ -1,0 +1,73 @@
+<ion-content>
+  <ion-grid class="content-wrapper">
+    <ion-row>
+      <ion-col text-center>
+        <img class="l2s-logo" src="assets/images/l2s-logo.png" />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p class="msg-success margin-0 p-t-15" text-center>
+          <span class="montserrat-bold text-16">{{account_created}}</span>
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="p-l-15">
+      <ion-col>
+        <p class="text-14">{{PIN_enter_5_digit}}</p>
+      </ion-col>
+    </ion-row>
+    <form [formGroup]="registerUserForm" autocomplete="off" class="p-l-15 p-r-15">
+      <ion-row class="p-b-0">
+        <ptt-pin (pinChange)="onPinChange($event)"></ptt-pin>
+      </ion-row>
+      <p class="text-14">{{confirm_pin}}</p>
+      <ion-row class="m-b-15">
+        <ptt-pin (pinChange)="onConfirmPinChange($event)"></ptt-pin>
+      </ion-row>
+      <ion-item-divider ion-item light no-lines class="error"
+                        *ngIf="(registerUserForm.get('pin1').dirty && !registerUserForm.get('pin1').valid) ||
+                               (registerUserForm.get('pin2').dirty && !registerUserForm.get('pin2').valid) ||
+                               (registerUserForm.get('pin3').dirty && !registerUserForm.get('pin3').valid) ||
+                               (registerUserForm.get('pin4').dirty && !registerUserForm.get('pin4').valid) ||
+                               (registerUserForm.get('pin5').dirty && !registerUserForm.get('pin5').valid)
+                        ">
+         <p>{{PIN_5_digit}}</p>
+      </ion-item-divider>
+
+      <ion-item-divider ion-item light no-lines class="error"
+                        *ngIf="(registerUserForm.get('pin1').dirty &&
+                                registerUserForm.get('pin2').dirty &&
+                                registerUserForm.get('pin3').dirty &&
+                                registerUserForm.get('pin4').dirty &&
+                                registerUserForm.get('pin5').dirty &&
+                                registerUserForm.get('pinConfirm1').dirty &&
+                                registerUserForm.get('pinConfirm2').dirty &&
+                                registerUserForm.get('pinConfirm3').dirty &&
+                                registerUserForm.get('pinConfirm4').dirty &&
+                                registerUserForm.get('pinConfirm5').dirty) &&
+
+                               (!registerUserForm.get('pinConfirm1').valid ||
+                               !registerUserForm.get('pinConfirm2').valid ||
+                               !registerUserForm.get('pinConfirm3').valid ||
+                               !registerUserForm.get('pinConfirm4').valid ||
+                               !registerUserForm.get('pinConfirm5').valid)
+                        ">
+
+        <p>{{PIN_and_confirm_do_not_match}}</p>
+      </ion-item-divider>
+
+      <ion-row class="p-t-0 p-b-20">
+        <ion-col>
+          <p class="text-14 margin-0" text-wrap text-center no-margin class="text-14">
+            {{five_digit_pin}}</p>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+  <ion-row class="footer-wrapper">
+    <ion-col>
+      <button ion-button large block [disabled]="!registerUserForm.valid" (click)="submitRegisterData()">Next</button>
+    </ion-col>
+  </ion-row>
+</ion-content>

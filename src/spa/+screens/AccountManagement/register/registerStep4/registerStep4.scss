@@ -1,0 +1,53 @@
+page-registerStep4.ion-page {
+
+  .fixed-content, .scroll-content {
+    margin-top: 0px !important;
+  }
+
+
+  .scroll-content {
+
+    p {
+      
+      &.msg-success {
+        font-size: 1.5rem;
+      }
+      &.padding-10 {
+        padding: 0 10px;
+      }
+    }
+    h1 {
+      font-size: 30px !important;
+      text-transform: uppercase;
+      margin: 0 !important;
+      text-align: center;
+    }
+    ion-input {
+      font-size: 30px;
+      background: none !important;
+      .text-input {
+        border: solid 1px map-get($colors, primary);
+        padding: 16px 10px;
+        margin: 13px 5px;
+        width: calc(100% - 5px - 5px) !important;
+      }
+    }
+
+    form {
+      p {
+        width: 100%;
+      }
+    }
+
+    .item {
+      &.error {
+        border-top: 1px solid map-get($colors, red-ca) !important;
+        width: auto;
+
+        &:last-of-type {
+          margin-top: -1px;
+        }
+      }
+    }
+  }
+}

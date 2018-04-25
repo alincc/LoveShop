@@ -1,0 +1,104 @@
+<ion-header *ngIf="checkIsLogin()" class="store-map-logged">
+  <ion-navbar>
+    <ion-buttons left >
+      <button ion-button icon-only (click)="gotoPreviousPage()">
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title >
+      WHERE TO SPEND
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-header *ngIf="!checkIsLogin()">
+  <ion-navbar>
+    <ion-title >
+      STORES
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-row *ngIf="checkIsLogin()" class="card-info">
+    <ion-item>
+      <ion-row>
+        <ion-col col-2>
+          <img [src]="imageBaseUrl + card?.cardLogoPath" alt='card logo' />
+        </ion-col>
+        <ion-col class="card-content" padding col-7>
+          <div>
+            <h2 class="card-title">{{ card?.nickname }}&nbsp;</h2>
+            <h3>{{ card?.propositionName }}</h3>
+          </div>
+        </ion-col>
+        <ion-col class="card-action" col-3>
+          <span class="link" (click)="gotoChangeCard()">
+                  Change card
+            </span>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-row>
+  <ion-row *ngIf="!checkIsLogin()" class="card-stores three-em">
+    <ion-col col-4 no-padding>
+      <button ion-button full no-margin no-padding class="active left">Love2shop<br>In-store</button>
+    </ion-col>
+    <ion-col col-4 no-padding>
+      <button ion-button full no-margin no-padding (click)="gotoOnlinePage()" class="mid">Love2shop<br>Online</button>
+    </ion-col>
+    <ion-col col-4 no-padding>
+        <button ion-button full no-margin no-padding (click)="gotoVirtalMsCard()" class="right">Virtual<br>Mastercard</button>
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="checkIsLogin()" class="card-stores">
+    <ion-col col-6 no-padding>
+      <button ion-button full no-margin no-padding class="active left">IN-STORE</button>
+    </ion-col>
+    <ion-col col-6 no-padding>
+      <button ion-button full no-margin no-padding (click)="gotoOnlinePage()" class="right">ONLINE</button>
+    </ion-col>
+  </ion-row>
+  <ion-row class="stores-category">
+    <ion-item no-padding no-margin>
+      <span item-start (click)="gotoCategoty()">
+        <ion-icon name="md-create"></ion-icon>
+        <p>Category</p>
+      </span>
+      <span item-centered>
+        <ion-buttons>
+          <button no-margin no-padding (click)="gotoMapPage()" class="btn-map">MAP</button>
+          <button no-margin no-padding class="btn-list active">LIST</button>
+        </ion-buttons>
+      </span>
+      <span item-end (click)="gotoLocationStoresPage()">
+        <ion-icon name="ios-navigate-outline"></ion-icon>
+        <p>Location</p>
+      </span>
+    </ion-item>
+  </ion-row>
+  <ion-row class="list-stores">
+    <ion-col padding>
+      <ion-row class="store-item" *ngFor="let storeItem of stores">
+        <ion-col col-3>
+            <img class="store-logo" [src]="imageBaseUrl + storeItem?.retailer?.imagePath">
+        </ion-col>
+        <ion-col col-6 padding class="list-info">
+            <h2 class="store-title">{{ storeItem?.retailer?.name }}</h2>
+            <p *ngIf="storeItem.addressLine" class="store-address">{{ storeItem.addressLine }}</p>
+            <p *ngIf="storeItem.postcode" class="store-address">{{ storeItem?.postcode }}</p>
+        </ion-col>
+        <ion-col col-3 padding class="detail" (click)="gotoStoreDetail(storeItem)">
+            <ion-icon name="ios-information-circle-outline"></ion-icon>
+            <p>Details</p>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+
+
+  <ion-row style="display: none;" 
+  (click)="gotoPreviousPage()"
+  id="Where2SpendInStoreListPage-back-button">
+  </ion-row>
+</ion-content>

@@ -1,0 +1,100 @@
+
+
+<ion-content>
+  <ion-grid class="content-wrapper">
+    <ion-row>
+      <button (click)="navCtrl.pop()" ion-button="button-bar" class="fake-back-btn">
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <img class="l2s-logo" src="assets/images/l2s-logo.png"/>
+      </ion-col>
+    </ion-row>
+    <ion-row class="p-t-20">
+      <ion-col>
+        <p class="title montserrat-regular text-16">{{account_login_details}}</p>
+        <p text-wrap class="text-14">{{please_enter_your_email_and_password_below_which_will_be_used_to_login_to_your_account_in_the_future}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-grid>
+          <form [formGroup]="registerUserForm ">
+            <ion-row>
+              <ion-item>
+                <ion-label floating>E-mail Address</ion-label>
+                <ion-input deny-copy name="emailAddress" type="text"  formControlName="emailAddress"></ion-input>
+              </ion-item>
+
+              <ion-item-divider ion-item light no-lines
+                                class="error"
+                                *ngIf="registerUserForm.get('emailAddress').dirty
+                                && !registerUserForm.get('emailAddress').valid">
+                <p>{{errorMessage('emailAddress')}}</p>
+              </ion-item-divider>
+            </ion-row>
+
+            <ion-row>
+              <ion-item>
+                <ion-label floating>Confirm E-mail Address</ion-label>
+                <ion-input deny-copy name="confirmEmailAddress" type="text"
+                           formControlName="confirmEmailAddress" [class.ng-invalid]="formErrors.confirmEmailAddress"></ion-input>
+              </ion-item>
+              <ion-item-divider ion-item light no-lines
+                                class="error"
+                                *ngIf="registerUserForm.get('confirmEmailAddress').dirty
+                                && !registerUserForm.get('confirmEmailAddress').valid">
+                <p>{{errorMessage('confirmEmailAddress')}}</p>
+              </ion-item-divider>
+            </ion-row>
+
+            <ion-row>
+              <ion-item>
+                <ion-label floating>Password</ion-label>
+                <ion-input name="password"  formControlName="password" type="{{inputType}}"></ion-input>
+                <button ion-button item-right class="btnShow  show-password prevent-default l2s-btn--primary" (click)="showPassword()">
+                  <span *ngIf="inputType == 'password'">SHOW</span>
+                  <span *ngIf="inputType == 'text'">HIDE</span>
+                </button>
+              </ion-item>
+              <ion-item-divider ion-item light no-lines
+                                class="error"
+                                *ngIf="registerUserForm.get('password').dirty
+                                && !registerUserForm.get('password').valid">
+                <p>{{errorMessage('password')}}</p>
+              </ion-item-divider>
+            </ion-row>
+
+            <ion-row class="password-rules ">
+              <ion-icon name="ios-information-circle-outline" (click)="showAlertPasswordInfo()" float-left></ion-icon>
+              <span class="text-14 m-t-8">Password rules</span>
+            </ion-row>
+
+          </form>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-row class="footer-wrapper">
+    <ion-col>
+      <ion-row class="marketing-optout">
+        <ion-col>
+          <ion-item class="none-background">
+            <ion-label text-wrap>{{marketing_opt_out}}</ion-label>
+            <ion-checkbox [(ngModel)]="marketingOptOut"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <button ion-button large block [disabled]="!registerUserForm.valid " (click)="submitRegisterData() ">Next
+      </button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row style="display: none;" 
+  (click)="navCtrl.pop()"
+  id="RegisterStep2Page-back-button">
+  </ion-row>
+</ion-content>

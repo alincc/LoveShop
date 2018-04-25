@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Change PIN
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="content-wrapper">
+    <ion-row class="m-b-20">
+      <ion-col>
+        <form [formGroup]="userLoginForm">
+          <ion-item-divider></ion-item-divider>
+          <ion-item-divider></ion-item-divider>
+          <ion-row>
+            <ion-col class="m-t-50 m-b-50">
+              <p class="text-16" text-center>{{park_api_enter_userid_password_to_change_pin}}</p>
+            </ion-col>
+          </ion-row>
+          <ion-item-divider></ion-item-divider>
+          <ion-item-divider></ion-item-divider>
+          <ion-row class="m-b-20">
+            <ion-col>
+              <ion-item class="l2s-input-md">
+                <ion-label floating>User ID</ion-label>
+                <ion-input name="emailAddress" type="text" formControlName="emailAddress"></ion-input>
+              </ion-item>
+
+              <ion-item-divider ion-item light no-lines class="error"
+                                *ngIf="userLoginForm.get('emailAddress').dirty && !userLoginForm.get('emailAddress').valid">
+                <p>{{errorMessage('emailAddress')}}</p>
+              </ion-item-divider>
+            </ion-col>
+          </ion-row>
+          <ion-row class="m-b-20">
+            <ion-col>
+              <ion-item class="l2s-input-md">
+                <ion-label floating>Password</ion-label>
+                <ion-input name="password" type="password" formControlName="password"></ion-input>
+              </ion-item>
+              <ion-item-divider ion-item light no-lines class="error"
+                                *ngIf="userLoginForm.get('password').dirty && !userLoginForm.get('password').valid">
+                <p>{{errorMessage('password')}}</p>
+              </ion-item-divider>
+            </ion-col>
+          </ion-row>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-row class="footer-wrapper">
+    <ion-col>
+      <button ion-button large block [disabled]="!userLoginForm.valid" class="button-uppercase" (click)="doLogin()" color="primary">Continue to change PIN</button>
+    </ion-col>
+  </ion-row>
+</ion-content>
+
+
+          
+<ion-row style="display: none;" 
+(click)="navCtrl.pop()"
+id="ChangePINPage-back-button">
+</ion-row>

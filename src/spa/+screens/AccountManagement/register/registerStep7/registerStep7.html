@@ -1,0 +1,32 @@
+<!--<ion-header>-->
+  <!--<ion-navbar>-->
+    <!--<ion-title></ion-title>-->
+  <!--</ion-navbar>-->
+<!--</ion-header>-->
+
+<ion-content>
+  <ion-grid class="content-wrapper">
+    <ion-row>
+      <ion-col text-center class="p-t-20">
+        <img class="l2s-logo" src="assets/images/l2s-logo.png" />
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="p-b-30 p-t-30">
+      <ion-col>
+        <p text-center class="text-14">{{registration_successful}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p text-center class="text-14 p-b-15">{{registered_successful}}</p>
+        <p text-center class="text-14">{{next_to_add_card}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-row class="footer-wrapper">
+    <ion-col>
+      <button ion-button large (click)="redirectToAddCard()">Next</button>
+    </ion-col>
+  </ion-row>
+</ion-content>

@@ -1,0 +1,115 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      delivery options
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-row class="p-t-25">
+    <ion-col>
+      <h6 class="text-font-14" padding-left>Order details</h6>
+    </ion-col>
+  </ion-row>
+  <ion-row padding-horizontal class="p-b-5">
+    <ion-col col-9>
+      <span class="text-font-12">
+           Product
+        </span>
+    </ion-col>
+    <ion-col col-3>
+      <span class="text-font-12">
+        Price
+        </span>
+    </ion-col>
+  </ion-row>
+
+  <ion-card class="card-item--wrapper">
+    <ion-row padding class="card-item--wrapper product-item item-border" *ngFor="let product of allProductsOnBasket">
+      <ion-col col-9  padding-right align-self-center class="card-left-panel">
+        <img *ngIf="product?.subCategory?.image"
+             [src]="baseResourceUrl + product?.subCategory?.image"/>
+        <div class="product-info"  padding-left>
+          <p class="text-font-13">{{product?.name}}</p>
+          <p class="text-font-13">Quantity:<span>&nbsp;{{product?.quantity}}</span></p>
+        </div>
+      </ion-col>
+      <ion-col col-3 align-self-top >
+        <div>
+          <p class="text-font-13">{{(product?.price)*(product?.quantity) | currency:'GBP':'symbol':'1.2-2'}}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-row padding-horizontal padding-top>
+    <ion-col col-9>
+      <p no-margin class="text-font-10">Any potential fees</p>
+    </ion-col>
+    <ion-col col-3 class="text-font-10">
+      {{totalFee  | currency:'GBP':'symbol':'1.2-2'}}
+    </ion-col>
+  </ion-row>
+  <ion-row padding>
+    <ion-col col-9>
+      <p no-margin class="text-font-12">Total</p>
+    </ion-col>
+    <ion-col col-3 class="text-font-12">
+      {{totalPrice  | currency:'GBP':'symbol':'1.2-2' }}
+    </ion-col>
+  </ion-row>
+
+  <ion-row padding-vertical>
+    <ion-col>
+      <div class="border-divider">
+      </div>
+    </ion-col>
+  </ion-row>
+
+
+  <ion-grid class="content-wrapper">
+
+    <ion-row class="p-t-25">
+      <ion-col>
+        <p class="text-font-14" padding-left><b>Step 1 </b>Select Delivery Type</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let product of orderAfterGenerate?.availableDeliveryMethods; let index= index">
+      <ion-col>
+        <ion-card [ngClass]="{'delivery-type--wrapper': index === currentIndexDelivery}" class="card-item--wrapper padding-20" (click)="setActiveIndex(index)">
+          <p no-margin>{{product.title}} - {{product.cost  | currency:'GBP':'symbol':'1.2-2'}} </p>
+          <p no-margin>{{product.description}} </p>
+          <ion-icon *ngIf="index === currentIndexDelivery" name="checkmark" class="checkmark"></ion-icon>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row class="p-t-25">
+      <ion-col>
+        <p class="text-font-14" padding-left><b>Step 2 </b>Select Delivery Address</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-card class="card-item--wrapper delivery-type--wrapper">
+      <div class="padding-10">
+        <p no-margin class="text-font-14">Deliver to billing address</p>
+      </div>
+      <div class="address__detail p-l-5" padding-vertical>
+        <p class="value">{{orderAfterGenerate?.title}} {{orderAfterGenerate?.firstName}} {{orderAfterGenerate?.lastName}}</p>
+        <p class="value" *ngIf="orderAfterGenerate?.addressLine1">{{orderAfterGenerate?.addressLine1}}</p>
+        <p class="value" *ngIf="orderAfterGenerate?.addressLine2">{{orderAfterGenerate?.addressLine2}}</p>
+        <p class="value" *ngIf="orderAfterGenerate?.town">{{orderAfterGenerate?.town}}</p>
+        <p class="value" *ngIf="orderAfterGenerate?.county">{{orderAfterGenerate?.county}}</p>
+        <p class="value" *ngIf="orderAfterGenerate?.postcode">{{orderAfterGenerate?.postcode}}</p>
+        <p class="value" *ngIf="orderAfterGenerate?.country">{{orderAfterGenerate?.country}}</p>
+      </div>
+      <ion-icon name="checkmark" class="checkmark"></ion-icon>
+    </ion-card>
+  </ion-grid>
+  <ion-row class="footer-wrapper" >
+    <button ion-button large block color="primary" (click)="updateDelivery()">Continue to Payment</button>
+  </ion-row>
+</ion-content>

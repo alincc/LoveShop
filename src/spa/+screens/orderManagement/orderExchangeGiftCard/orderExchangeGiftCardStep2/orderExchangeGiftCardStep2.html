@@ -1,0 +1,131 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      payment
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row padding>
+      <ion-col>
+    <ion-row>
+      <p class="payment-title" no-margin>Payment method</p>
+    </ion-row>
+    <ion-row>
+      <p class="text-14" no-margin *ngIf="(primaryCard?.cardType) !== 'FLEXECODE_2.0'">Your flexecash card ending {{endingCard}}</p>
+      <p class="text-14" no-margin *ngIf="(primaryCard?.cardType) === 'FLEXECODE_2.0'">Your flexecode card ending {{endingCard}}</p>
+
+    </ion-row>
+    <ion-card>
+      <ion-row class="card-panel">
+        <div class="img-wrapper">
+          <img *ngIf="primaryCard?.cardLogoPath" [src]="baseResourceUrl + primaryCard?.cardLogoPath" />
+        </div>
+        <div padding-left class="card-panel--right">
+          <p no-margin>{{primaryCard?.nickname}}</p>
+          <p no-margin>
+            <span>Ends in</span><span>&nbsp;{{endingCard}} | </span>
+            <span>Expires</span><span>&nbsp;{{primaryCard?.expiryDate}}</span>
+          </p>
+          <p no-margin class="openSans-bold">
+              Value on card:
+              <span class="openSans-bold" float-right>{{this.primaryCard?.balance  | currency:'GBP':'symbol':'1.2-2'}}</span>
+          </p>
+        </div>
+      </ion-row>
+    </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-card class="card-security">
+      <ion-row *ngIf="(primaryCard?.cardType) !== 'FLEXECODE_2.0'">
+        <ion-col>
+          <p no-margin class="p-b-5 title">{{enter_csc}}</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="(primaryCard?.cardType) !== 'FLEXECODE_2.0'" padding-vertical>
+        <ion-col col-8 >
+          <form [formGroup]="confirmOrderForm">
+            <ion-input type="tel"  placeholder="Card Security Code" formControlName="cvv" class="input--border only-password"></ion-input>
+
+            <ion-item-divider ion-item light no-lines class="error"
+                              *ngIf="confirmOrderForm.get('cvv').dirty && !confirmOrderForm.get('cvv').valid">
+              <p>{{errorMessage('cvv')}}</p>
+            </ion-item-divider>
+          </form>
+        </ion-col>
+
+        <ion-col col-4 padding-left>
+          <img src="assets/images/card-csc-icon.png" height="40"/>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <button [disabled]="!confirmOrderForm.valid && (primaryCard?.cardType) !== 'FLEXECODE_2.0'"  ion-button block large color="primary" (click)="confirmOrder()">Pay Now</button>
+      </ion-row>
+    </ion-card>
+
+    <ion-card>
+      <ion-row padding-horizontal class="p-t-25">
+          <h6 class="order-list-title">Order details</h6>
+      </ion-row>
+      <ion-row padding-horizontal class="p-b-5">
+        <ion-col col-9></ion-col>
+        <ion-col col-3>
+          <p class="order-list-price">Price</p>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-card class="card-item--wrapper">
+      <ion-row padding-horizontal class="product-item"  *ngFor="let product of orderAfterGenerate?.orderlines">
+        <ion-col col-9  padding-right align-self-center *ngIf="product?.imgUrl" class="card-left-panel">
+          <img *ngIf="product?.imgUrl"
+               [src]="baseResourceUrl + product?.imgUrl"/>
+          <div class="product-info"  padding-left>
+            <p class="text-14">{{product?.productDescription}}</p>
+            <p class="text-14">Quantity:<span>&nbsp;{{product?.quantity}}</span></p>
+          </div>
+        </ion-col>
+        <ion-col col-3 align-self-top class="text-14 card-right-panel" *ngIf="product?.imgUrl" >
+          <p class="text-14">
+            {{(product?.paymentAmount) | currency:'GBP':'symbol':'1.2-2'}}
+          </p>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-row padding-horizontal *ngFor="let product of orderAfterGenerate?.orderlines">
+      <ion-col col-9 class="text-10" *ngIf="!product?.imgUrl">
+        <p no-margin class="text-10">   {{product?.productDescription}}</p>
+
+      </ion-col>
+      <ion-col col-3 align-self-top class="text-10" *ngIf="!product?.imgUrl">
+        <p no-margin class="text-10">
+          {{(product?.paymentAmount) | currency:'GBP':'symbol':'1.2-2'}}
+        </p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row padding>
+      <ion-col col-9>
+        <p no-margin class="text-14">Total</p>
+      </ion-col>
+      <ion-col col-3 class="text-font-14">
+        <p no-margin class="text-14">
+          {{orderAfterGenerate?.totalPaymentAmount | currency:'GBP':'symbol':'1.2-2'}}
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+          
+<ion-row style="display: none;" 
+(click)="navCtrl.pop()"
+id="OrderExchangeGiftCardStep2-back-button">
+</ion-row>

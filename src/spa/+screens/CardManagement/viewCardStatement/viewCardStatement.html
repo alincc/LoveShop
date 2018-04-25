@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title *ngIf="cardCurrent && cardCurrent.nickname">{{cardCurrent?.nickname}} CARD TRANSACTIONS</ion-title>
+    <ion-title *ngIf="!cardCurrent || !cardCurrent.nickname">YOUR CARD TRANSACTIONS</ion-title>    
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="main-content">
+      <ion-col>
+        <ion-list *ngFor="let item of transaction.transactions" >
+          <h5>{{item[0].dateAfterConvert}}</h5>
+          <ion-item *ngFor="let itemInner of item" padding>
+            <ion-row>
+              <ion-col col col-4>
+                <p class="text-10">{{itemInner.type}}</p>
+                <p class="time text-9">{{itemInner.hourAfterConvert}}</p>
+              </ion-col>
+              <ion-col col col-5 text-left class="middle--wrapper">
+                <p  class="text-10" align-self-center>{{itemInner.description}}</p>
+              </ion-col>
+              <ion-col col col-3 text-right class="middle--wrapper">
+                <span class="text-10" *ngIf="itemInner.statusOfAmount">+ {{itemInner.amount | currency:'GBP':'symbol':'1.2-2'}}</span>
+                <span class="text-10" *ngIf="itemInner.statusOfAmount === false">- {{itemInner.amount*(-1) | currency:'GBP':'symbol':'1.2-2'}}</span>
+              </ion-col>
+            </ion-row>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="!transaction || !transaction.transactions || !transaction.transactions.length" padding class="main-content">
+      <ion-col>
+        {{make_first_transaction_with_card_MSG}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer fixed padding no-shadow class="footer-sticker--wrapper">
+    <ion-row>
+        <ion-col col col-8 class="openSans-bold">
+          current balance
+        </ion-col>
+        <ion-col col col-4 text-right class="openSans-bold">
+          {{transaction.availableBalance | currency:'GBP':'symbol':'1.2-2'}}
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="display: none;" 
+      (click)="navCtrl.pop()"
+      id="ViewCardStatementPage-back-button">
+      </ion-row>
+</ion-footer>

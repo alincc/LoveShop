@@ -1,0 +1,447 @@
+@import "../../../../../theme/colors";
+
+page-yourCardDetails {
+  font-family: 'Open Sans', sans-serif;
+  color: #484848;
+
+  .scroll-content{
+    margin-bottom: 60px;
+  }
+
+
+
+  .toolbar-title {
+    font-size: 16px;
+    line-height: 42px;
+  }
+  .btn-uppercase {
+    margin-bottom: 20px !important;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 42px;
+    
+    .button-inner {
+      font-weight: normal;
+      text-transform: uppercase;
+    }
+  }
+  button.button.btn-uppercase {
+    .button-inner {
+      font-size: 16px !important;
+      line-height: 42px  !important;
+    }
+  }
+
+  .card-img--wraper {
+    overflow: hidden;
+    position: relative;
+    min-height: 21vh;
+    max-height: 21vh;
+    height: 21vh;
+    margin-top: 4px;
+    margin-bottom: 2px;
+    img {
+    }
+  }
+  .card-btn {
+    margin: 7px 0;
+    height: 40px;
+
+    ion-icon {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .l2s-btn--outline-other.button-default {
+    border-radius: 5px !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: #009489 !important;
+    color: #009489 !important;
+    background-color: #FFFFFF !important;
+    box-shadow: none !important;
+    height: 40px !important;
+  }
+
+  .slide-card--wrapper {
+    min-height: calc(55vh - 56px);
+    padding-bottom: 10px;
+
+    ion-card-content {
+      min-height:60px;
+    }
+
+    .swiper-wrapper {
+      height: auto;
+      min-height: calc(55vh - 80px);
+    }
+    ion-slides.card-slides {
+      .slide-zoom {
+        padding: 20px 0;
+        height: 100%;
+        .card {
+          overflow: visible;
+          margin: 0;
+          .card-header {
+            overflow: visible;
+          }
+          .card-content {
+            overflow: visible;
+          }
+        }
+      }
+      ion-slide {
+        padding: 0 20.5%;
+
+        &:not(.swiper-slide-active) {
+          padding: 0 15%;
+          .card-content {
+            /*visibility: hidden;*/
+          }
+        }
+        .card-img {
+          margin-top:5px ;
+          margin-bottom: 5px;
+          width: auto;
+          height: auto;
+          max-width: 100%;
+          max-height: 100%;
+        }
+
+        &.swiper-slide-next {
+          transform: translateX(-16%);
+          .slide-zoom {
+            transform: translateX(-19%);
+            border: solid 2px map_get($colors, secondary-aero-blue);
+            border-radius: 14px;
+            padding: 20px 10px;
+            .card-ios {
+              background: transparent;
+            }
+          }
+        }
+
+        &.swiper-slide-prev {
+          transform: translateX(16%);
+          .slide-zoom {
+            transform: translateX(19%);
+            border: solid 2px map_get($colors, secondary-aero-blue);
+            border-radius: 14px;
+            padding: 20px 10px;
+            .card-ios {
+              background: transparent;
+            }
+          }
+        }
+
+        .card-title {
+          width: 100%;
+          white-space: normal;
+          text-transform: uppercase;
+          font-size: 14px;
+          line-height: 21px;
+          white-space: nowrap;
+          color: #006a8c;
+        }
+
+        .card-img {
+          margin: 0 auto;
+        width: auto;
+        }
+
+        .card-info {
+          .card-infor-detail {
+            display: block;
+            font-size: 10px;
+            line-height: 15px;
+            white-space: nowrap;
+            * {
+              font-size: 10px;
+              line-height: 15px;
+            }
+          }
+
+        }
+
+        .balance {
+          font-size: 14px;
+          line-height: 21px;
+        }
+
+        ion-card-header {
+          margin: 0 -25px;
+        }
+      }
+
+      &[data-last-active=true] {
+       ion-slide {
+         
+       }
+      }
+    }
+
+    .card-title {
+      text-transform: uppercase;
+      font-size: 16px;
+      color: map_get($colors, primary-blue);
+      width: 100%;
+      white-space: normal;
+      .edit-icon {
+        max-width: 1.2em;
+      }
+      span {
+        width: 100%;
+        word-break: break-word;
+        white-space: normal;
+      }
+      .name-input {
+        color: map_get($colors, primary);
+        width: 66%;
+        border: 1px solid map_get($colors, primary);
+        border-radius: 5px;
+        padding: 0 5px;
+        text-align: center;
+        background-color: map_get($colors, input-background);
+        height: 40px;
+        font-size: 14px;
+        line-height: 21px;
+        -webkit-appearance: none !important;
+        -moz-appearance: none;
+        appearance: none;
+      }
+      .alert-input-wrapper {
+        font-size: 14px;
+      }
+
+      .edit-btn {
+        background: transparent;
+        color: map_get($colors, primary-blue);
+        ion-icon {
+          padding: 0 0.1em;
+        }
+      }
+
+      .done-btn {
+        padding: 0 0.6em;
+        margin-top: -15px;
+      }
+    }
+
+    .card-subtitle {
+      font-size: 10px;
+      line-height: 15px;
+      color: map-get($colors, primary);
+    }
+
+    .card-img {
+      width: 70%;
+      margin: 5px auto;
+    }
+
+    .card-info {
+      margin: 0 -25px;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .balance {
+      font-size: 14px;
+      line-height: 21px;
+      color: map-get($colors, primary);
+    }
+  }
+  .mc-card-detail {
+    font-size: 14px;
+    text-transform: none;
+    text-align: center;
+    .mc-item-title {
+      font-size: 17px;
+      text-transform: uppercase;
+    }
+    .openSans-bold {
+      color:  map_get($colors, primary);
+    }
+  }
+}
+
+.bullets {
+  .bullet {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: solid 1px #666666;
+    border-radius: 50%;
+    margin: 0 4px;
+    &.active {
+      background: map_get($colors, primary-blue);
+    }
+  }
+}
+
+
+.fs-16 {
+  font-size: 16px;
+  .button-inner {
+    margin-bottom: -4px;
+  }
+}
+
+ion-card-content {
+  .list {
+    margin: 0 !important;
+    .item {
+      background: transparent;
+      border-bottom: 0 !important;
+      text-align: center;
+      min-height: initial;
+      .label {
+        margin: 0 !important;
+        line-height: 1.1em;
+      }
+    }
+  }
+  .card-options {
+    padding-top: 0;
+    .list {
+      margin: 0 !important;
+      .item-block {
+        border: solid 1px #c8c7cc !important;
+        margin: 5px 0;
+        .label {
+          text-transform: uppercase !important;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.retrieve-card--wrapper {
+  padding-left: 0;
+  .item-inner {
+    padding-right: 0;
+    border: 1px solid map_get($colors, primary-green) !important;
+    background: map_get($colors, secondary-aero-blue-ligth);
+  }
+}
+
+.ios {
+  page-yourCardDetails  {
+    .slide-card--wrapper {
+      min-height: calc(55vh - 64px);
+      padding-bottom: 0 !important;
+      .swiper-wrapper {
+        min-height: calc(55vh - 96px);
+        ion-slide {
+          min-height: calc(55vh - 96px) !important;
+        }
+      }
+    }
+
+    .card-options {
+      padding-top: 0 !important;
+    }
+  }
+}
+
+small {
+  line-height: 18px;
+}
+
+@media screen and(min-width: 768px) {
+  .l2s-alert--ipad {
+    padding-top: 40% !important;
+  }
+
+
+}
+
+
+@media screen and(max-width: 767px) {
+
+  .ios {
+    page-yourCardDetails {
+      .l2s-alert--ipad {
+        padding-top: 50% !important;
+      }
+    }
+  }
+
+}
+
+
+
+.platform-android4 {
+  page-yourCardDetails.ion-page {
+    .slide-card--wrapper {
+      min-height: 45vh;
+      padding-bottom: 0px;
+      padding-top: 15px;
+
+      .swiper-wrapper {
+        min-height: 42vh;
+
+        .swiper-slide {
+          min-height: 42vh;
+
+        }
+      }
+    }
+
+  }
+}
+
+.l2s-alert--flat {
+  .alert-wrapper {
+    .alert-button-group {
+      .main-button {
+        width: 65%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}  
+
+ion-alert {
+  .alert-input {
+    font-size: 14px !important;
+    line-height: 21px !important;
+  }
+}
+
+ion-alert.l2s-alert--default {
+  .alert-wrapper {
+    width: 45% !important;
+    max-width: 45% !important;
+    .alert-message {
+      font-family: 'OpenSans-Regular', sans-serif;
+      font-size: 12px !important;
+      line-height: 18px !important;
+
+      small {
+        font-size: 10px !important;
+        line-height: 15px !important;
+      }
+    }
+  }
+
+  &.l2s-alert--centered {
+    .alert-wrapper { 
+      .alert-head {
+        .alert-title {
+          font-family: 'OpenSans-Bold', sans-serif;
+        }
+      }
+    }
+  }
+}
+
+ion-alert {
+  .alert-title {
+    color: map_get($colors, primary);
+  }
+}

@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Add a Card</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="content-wrapper" >
+    <ion-row>
+      <ion-col class="p-t-20">
+        <p class="text-14">{{enter_all_digits}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <form name="addCardForm" [formGroup]="addCardForm">
+          <ion-row class="m-b-20">
+            <ion-col>
+              <ion-item no-padding class="item-has-addon">
+                <ion-input name="cardID" type="text"  formControlName='cardID' placeholder="Card or e-code number"></ion-input>
+                <ion-icon name="camera" item-right (click)="scanButton()"></ion-icon>
+              </ion-item>
+              <ion-item-divider ion-item light no-lines class="error short-msg"
+                                *ngIf="addCardForm.get('cardID').dirty && !addCardForm.get('cardID').valid">
+                <p>{{errorMessage('cardID')}}</p>
+              </ion-item-divider>
+            </ion-col>
+          </ion-row>
+          <ion-row class="m-b-20">
+            <ion-col>
+              <ion-item no-padding class="item-has-not-icon">
+                <ion-input  name="repeatCardID" type="text"  formControlName='repeatCardID' placeholder="Repeat card number"></ion-input>
+              </ion-item>
+              <ion-item-divider ion-item light no-lines class="error"
+                                *ngIf="addCardForm.get('repeatCardID').dirty && !addCardForm.get('repeatCardID').valid">
+                <p>{{errorMessage('repeatCardID')}}</p>
+              </ion-item-divider>
+            </ion-col>
+          </ion-row>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-row class="footer-wrapper">
+    <ion-col>
+      <button ion-button block large [disabled]="!addCardForm.valid " (click)="submitToAddCardTesco()">Add card</button>
+    </ion-col>
+  </ion-row>
+</ion-content>
+
+
+
+          
+<ion-row style="display: none;" 
+(click)="navCtrl.pop()"
+id="AddCardTescoPage-back-button">
+</ion-row>

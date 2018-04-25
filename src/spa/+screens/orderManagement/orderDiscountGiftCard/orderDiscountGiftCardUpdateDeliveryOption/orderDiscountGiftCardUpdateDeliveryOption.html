@@ -1,0 +1,113 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Delivery Options
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="content-wrapper">
+    <ion-row>
+      <ion-col>
+        <ion-row class="lookup-address m-b-20">
+          <ion-col>
+            <ion-item>
+              <ion-label floating>Enter a postcode or address</ion-label>
+              <ion-input (input)="suggestSearch$.next($event.target.value)" placeholder=""></ion-input>
+            </ion-item>
+            <ion-list *ngIf="showList" class="suggestion-address">
+              <ion-item *ngFor="let item of listAddressItems" (click)="pickupAddress(item)">
+                {{ formatLocationAddress(item) }}
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="registerUserForm">
+          <ion-col>
+            <form [formGroup]="updateDeliveryForm" class="form-register--wrapper">
+                <ion-row class="m-b-20">
+                  <ion-item>
+                    <ion-label floating>Address line 1*</ion-label>
+                    <ion-input name="addressLine1" type="text"  formControlName="addressLine1"></ion-input>
+                  </ion-item>
+                  <ion-item-divider ion-item light no-lines class="error"
+                                    *ngIf="updateDeliveryForm.get('addressLine1').dirty && !updateDeliveryForm.get('addressLine1').valid">
+                    <p>{{errorMessage('addressLine1')}}</p>
+                  </ion-item-divider>
+                </ion-row>
+
+                <ion-row class="m-b-20">
+                  <ion-item>
+                    <ion-label floating>Address line 2</ion-label>
+                    <ion-input name="addressLine2" type="text"  formControlName="addressLine2"></ion-input>
+                  </ion-item>
+                  <ion-item-divider ion-item light no-lines class="error"
+                                    *ngIf="updateDeliveryForm.get('addressLine2').dirty && !updateDeliveryForm.get('addressLine2').valid">
+                    <p>{{errorMessage('addressLine2')}}</p>
+                  </ion-item-divider>
+                </ion-row>
+
+                <ion-row class="m-b-20">
+                  <ion-item>
+                    <ion-label floating>Town*</ion-label>
+                    <ion-input name="town" type="text" formControlName="town"></ion-input>
+                  </ion-item>
+                  <ion-item-divider ion-item light no-lines class="error"
+                                    *ngIf="updateDeliveryForm.get('town').dirty && !updateDeliveryForm.get('town').valid">
+                    <p>{{errorMessage('town')}}</p>
+                  </ion-item-divider>
+                </ion-row>
+
+                <ion-row class="m-b-20">
+                  <ion-item>
+                    <ion-label floating>County</ion-label>
+                    <ion-input name="county" type="text" formControlName="county"></ion-input>
+                  </ion-item>
+                  <ion-item-divider ion-item light no-lines class="error"
+                                    *ngIf="updateDeliveryForm.get('county').dirty && !updateDeliveryForm.get('county').valid">
+                    <p>{{errorMessage('county')}}</p>
+                  </ion-item-divider>
+                </ion-row>
+
+                <ion-row class="m-b-20">
+                  <ion-item>
+                    <ion-label floating>Postcode*</ion-label>
+                    <ion-input name="postcode" type="text"  formControlName="postcode"></ion-input>
+                  </ion-item>
+                  <ion-item-divider ion-item light no-lines class="error"
+                                    *ngIf="updateDeliveryForm.get('postcode').dirty && !updateDeliveryForm.get('postcode').valid">
+                    <p>{{errorMessage('postcode')}}</p>
+                  </ion-item-divider>
+                </ion-row>
+
+                <ion-row class="m-b-20">
+                  <ion-item [ngClass]="dirtySelectValue()">
+                    <ion-label floating>Country*</ion-label>
+                    <ion-select name="country" formControlName="country" disabled="true" (ionChange)="showStyle = true">
+                      <ion-option *ngFor="let countryItem of countryLists" value="{{ countryItem.countryName }}">
+                        {{ countryItem.countryName }}
+                      </ion-option>
+                    </ion-select>
+                  </ion-item>
+                </ion-row>
+            </form>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+    <ion-row class="footer-wrapper">
+      <ion-col>
+          <button ion-button large block [disabled]="!updateDeliveryForm.valid" (click)="updateOrderDeliveryDetail()">Arrange Delivery</button>
+      </ion-col>
+    </ion-row> 
+</ion-content>
+
+
+          
+<ion-row style="display: none;" 
+(click)="navCtrl.pop()"
+id="OrderDiscountGiftCardUpdateDeliveryOptionPage-back-button">
+</ion-row>

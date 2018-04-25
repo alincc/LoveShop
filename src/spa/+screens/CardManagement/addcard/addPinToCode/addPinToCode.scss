@@ -1,0 +1,71 @@
+@import "../../../../../theme/colors";
+page-addPinToCode {
+  .scroll-content {
+    ion-icon {
+      font-size: 2.7rem;
+      width: 3rem;
+      text-align: center;
+    }
+    ion-item {
+      &.item {
+        padding-left: 0;
+        &.item-flex-start {
+          align-items: flex-start;
+        }
+
+        ion-checkbox {
+          &.checkbox {
+            margin: 15px 10px 0 0;
+          }
+        }
+      }
+    }
+    .item.item-block {
+      .item-inner {
+        padding-right: 0;
+        .icon {
+          margin-right: 0;
+        }
+        .input-wrapper {
+          padding-right: 10px;
+        }
+      }
+      .text-input {
+        border: solid 1px #bbbbbb;
+        padding: 10px;
+        margin: 0;
+        @include border-radius(3px);
+        width: 100%;
+      }
+    }
+
+    ion-item-divider {
+      width: calc(100% - 40px);
+    }
+  }
+
+  .link {
+    text-decoration: underline;
+  }
+  .label {
+    margin-top: 0;
+  }
+}
+
+ion-alert {
+  &.l2s-alert--default{
+    .alert-wrapper {
+      .alert-head {
+        .alert-title {
+          font-family: 'OpenSans-Regular', sans-serif;
+        }
+      }
+      .alert-message {
+        p {
+          font-size: 16px !important;
+          line-height: 24px !important;
+        }
+      }
+    }
+  }
+}

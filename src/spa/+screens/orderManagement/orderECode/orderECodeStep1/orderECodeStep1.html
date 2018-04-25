@@ -1,0 +1,145 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            payment
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row padding>
+            <ion-col>
+                <ion-row>
+                    <p class="payment-title" no-margin>Payment method</p>
+                </ion-row>
+                <ion-row>
+                    <p class="text-14" no-margin *ngIf="(primaryCard?.cardType) !== 'FLEXECODE_2.0'">Your flexecash card ending
+                        {{endingCard}}</p>
+                    <p class="text-14" no-margin *ngIf="(primaryCard?.cardType) === 'FLEXECODE_2.0'">Your flexecode card ending
+                        {{endingCard}}</p>
+                </ion-row>
+                <ion-card>
+                    <ion-row class="card-panel">
+                        <div class="img-wrapper">
+                            <img *ngIf="primaryCard?.cardLogoPath" [src]="baseResourceUrl + primaryCard?.cardLogoPath"/>
+                        </div>
+                        <div padding-left class="card-panel--right">
+                            <p no-margin>{{primaryCard?.nickname}}</p>
+                            <p no-margin>
+                                <span>Ends in</span><span>&nbsp;{{endingCard}} | </span>
+                                <span>Expires</span><span>&nbsp;{{primaryCard?.expiryDate}}</span>
+                            </p>
+                            <p no-margin class="openSans-bold">
+                                    Value on card:
+                                    <span float-right class="openSans-bold">{{this.primaryCard?.balance  | currency:'GBP':'symbol':'1.2-2'}}</span>
+                            </p>
+                        </div>
+                    </ion-row>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+
+        <ion-row class="card-security">
+            <ion-col>
+                <ion-row class="p-t-5" *ngIf="(primaryCard?.cardType) !== 'FLEXECODE_2.0'">
+                    <ion-col>
+                        <p no-margin class="p-b-5 title">{{enter_csc}}</p>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row *ngIf="(primaryCard?.cardType) !== 'FLEXECODE_2.0'">
+                    <ion-col col-8>
+                        <form [formGroup]="confirmOrderForm">
+                            <ion-input type="tel" placeholder="Card Security Code" formControlName="cvv"
+                                       class="input--border only-password"></ion-input>
+                            <ion-item-divider ion-item light no-lines class="error"
+                                              *ngIf="confirmOrderForm.get('cvv').dirty && !confirmOrderForm.get('cvv').valid">
+                                <p>{{errorMessage('cvv')}}</p>
+                            </ion-item-divider>
+                        </form>
+                    </ion-col>
+                    <ion-col col-4 padding-left>
+                        <img src="assets/images/card-csc-icon.png" height="40"/>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col padding-vertical>
+                        <p no-margin class="text-14" *ngIf="this.orderGenerateEcode?.deliveryEmailAddress">E-codes
+                            will be emailed to:</p>
+                        <p no-margin class="text-14">{{this.orderGenerateEcode?.deliveryEmailAddress}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <button [disabled]="!confirmOrderForm.valid && (primaryCard?.cardType) !== 'FLEXECODE_2.0'"
+                            ion-button block
+                            large color="primary" (click)="confirmOrder()">Pay Now
+                    </button>
+                </ion-row>
+            </ion-col>
+        </ion-row>
+
+        <ion-card>
+            <ion-row padding-horizontal class="p-t-25">
+                <h6 class="order-list-title">Order details</h6>
+            </ion-row>
+            <ion-row padding-horizontal class="p-b-5">
+                <ion-col col-9></ion-col>
+                <ion-col col-3>
+                <p class="order-list-price">Price</p>
+                </ion-col>
+            </ion-row>
+        </ion-card>
+        <ion-row>
+            <ion-col col-12>
+                <ion-card class="card-item--wrapper">
+                    <ion-row padding-horizontal class="product-item" *ngFor="let product of orderGenerateEcode?.orderlines">
+                        <ion-col col-9 padding-right align-self-center *ngIf="product?.imgUrl" class="card-left-panel">
+                            <img *ngIf="product?.imgUrl"
+                                 [src]="baseResourceUrl + product?.imgUrl"/>
+                            <div class="product-info" padding-left>
+                                <p class="">{{product?.productDescription}}</p>
+                                <p class="">Quantity:<span>&nbsp;{{product?.quantity}}</span></p>
+                            </div>
+                        </ion-col>
+                        <ion-col col-3 align-self-top class="" *ngIf="product?.imgUrl" class="card-right-panel">
+                           <p class="text-14">
+                               {{(product?.paymentAmount) | currency:'GBP':'symbol':'1.2-2'}}
+                           </p>
+
+                        </ion-col>
+                    </ion-row>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+
+
+
+
+        <ion-row padding-horizontal *ngFor="let product of orderGenerateEcode?.orderlines">
+            <ion-col col-9 class="text-10" *ngIf="!product?.imgUrl">
+                {{product?.productDescription}}
+            </ion-col>
+            <ion-col col-3 align-self-top class="text-10" *ngIf="!product?.imgUrl">
+                {{(product?.paymentAmount) | currency:'GBP':'symbol':'1.2-2'}}
+            </ion-col>
+        </ion-row>
+
+
+        <ion-row padding-horizontal class="p-t-5 p-b-15">
+            <ion-col col-9 class="">
+                <p  class="text-14" no-margin>Total</p>
+            </ion-col>
+            <ion-col col-3 class="text-14">
+                {{orderGenerateEcode?.totalPaymentAmount | currency:'GBP':'symbol':'1.2-2'}}
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+  <ion-row style="display: none;" 
+  (click)="navCtrl.pop()"
+  id="OrderEcodeStep1-back-button">
+  </ion-row>
+</ion-content>

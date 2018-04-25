@@ -1,0 +1,209 @@
+@import "../../../theme/colors";
+
+page-myShoppingBasket {
+  .no-wrap {
+    white-space: nowrap;
+  }
+
+  .card-left-panel {
+    display: flex;
+  }
+  // hide bullets
+  .product-infor--wrapper .error {
+    display: none;
+  }
+  .product-infor--wrapper-has-error, .product-infor--wrapper-price-has-error {
+
+    .error {
+      display: inline-block;
+      color: color($colors, red-ca);
+      font-size: 12px !important;
+      line-height: 18px !important;
+      max-width: 50px;
+    }
+  }
+
+  .item-border {
+    border-bottom: 10px solid white;
+  }
+
+  input {
+    &.invalidValue {
+      border-color: red !important;;
+    }
+  }
+
+  .padding-r-30 {
+    padding-right: 30px !important;
+  }
+
+  .product-infor--wrapper {
+    max-width: calc(100% - 70px);
+    min-height: 63px;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    > p {
+      font-size: 12px !important;
+      line-height: 18px !important;
+      margin-bottom: 0;
+      margin-top: -3px;
+    }
+
+    .input--border {
+      max-width: 45px;
+      height: 30px;
+      background: transparent !important;
+    }
+  }
+
+  .content-wrapper {
+    min-height: calc(100% - 90px);
+  }
+
+  .footer-wrapper {
+    height: 90px;
+  }
+
+  .input-row {
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+    p {
+      font-size: 12px !important;
+      line-height: 18px !important;
+    }
+
+    .input-value {
+      margin-left: 17px;
+    }
+
+    input {
+      font-size: 14px !important;
+      line-height: 21px !important;
+      color: map-get($colors, secondary);
+    }
+  }
+
+  .remove__wrapper {
+    position: relative;
+    height: auto;
+
+    > p {
+      margin-bottom: 0;
+      margin-top: -4px;
+    }
+
+    .link--bottom {
+      position: absolute;
+      bottom: 0;
+      font-size: 12px;
+      line-height: 18px;
+      color: map-get($colors, primary-green);
+    }
+  }
+  .card-left-panel {
+    img,
+    div {
+      display: inline-block;
+      vertical-align: top;
+    }
+    img {
+      max-width: 76px;
+      max-height: 63px;
+      min-width: 63px;
+      width: auto;
+    }
+  }
+  input {
+    &.text-input {
+      border: 1px solid map-get($colors, primary);
+      background: #fff !important;
+      border-radius: 5px;
+      margin: 0;
+      height: 30px;
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+  p {
+    width: 100%;
+  }
+  button.back-button {
+    display: none !important;
+  }
+
+  .discount-note {
+    color: #fff;
+    font-size: 14px !important;
+    line-height: 21px !important;
+    p {
+      color: #fff;
+      margin-bottom: 0;
+      font-size: 14px !important;
+      line-height: 21px !important;
+    }
+  }
+
+  ion-card.card-item--wrapper {
+    background-color: map-get($colors, primary-blue);
+
+    > p {
+      color: #fff;
+    }
+
+    &:first-of-type {
+      background-color: transparent;
+      ion-row {
+        min-height: 90px;
+        background-color: map-get($colors, secondary-aero-blue-ligth);
+        border-radius: 0;
+        padding: 6px 10px;
+        margin: 10px 0;
+        border: 1px solid map-get($colors, primary-green);
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .button-outline {
+    height: 35px;
+  }
+
+  @media screen and (min-width: 767px) {
+    .scroll-content .content-wrapper {
+      min-height: calc(100% - 125px);
+    }
+    .footer-wrapper {
+      height: 100px;
+    }
+  }
+}
+
+page-myShoppingBasket {
+  .content-wrapper {
+    min-height: calc(100% - 110px);
+  }
+
+  .footer-wrapper {
+    min-height: 82px;
+    ion-row {
+      margin-bottom: 20px !important;
+      &:last-child {
+        margin-bottom: 10px !important;
+      }
+    }
+  }
+}

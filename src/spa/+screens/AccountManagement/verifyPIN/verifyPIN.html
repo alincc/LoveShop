@@ -1,0 +1,57 @@
+<ion-content padding class="content-container verify--container"  [ngClass]="{'inputFocusIn': focusInInput }">
+  <ng-container *ngIf="(showPinWhenValidToken$ | async); else showDismiss">
+    <ion-grid class="main-content content-wrapper">
+      <ion-row>
+        <ion-col text-center class="p-t-30">
+          <img class="l2s-logo" src="assets/images/l2s-logo.png" />
+        </ion-col>
+      </ion-row>
+      <form [formGroup]="verifyPINForm" autocomplete="off">
+        <ion-row>
+          <p text-center class="text-14">{{PIN_enter_5_digit}}</p>
+        </ion-row>
+        <ion-row class="m-b-15">
+          <ptt-pin (pinChange)="onPinChange($event)" (focusIntoInput)="onFocusInput($event)" (focusOutInput)="focusoutInput($event)"></ptt-pin>
+        </ion-row>
+        <ion-item-divider ion-item light no-lines class="error"
+                          *ngIf="(verifyPINForm.get('pin1').dirty && !verifyPINForm.get('pin1').valid) ||
+                               (verifyPINForm.get('pin2').dirty && !verifyPINForm.get('pin2').valid) ||
+                               (verifyPINForm.get('pin3').dirty && !verifyPINForm.get('pin3').valid) ||
+                               (verifyPINForm.get('pin4').dirty && !verifyPINForm.get('pin4').valid) ||
+                               (verifyPINForm.get('pin5').dirty && !verifyPINForm.get('pin5').valid)
+                        ">
+          <p>{{PIN_5_digit}}</p>
+        </ion-item-divider>
+      </form>
+      <ion-row *ngIf='timeAttemp>=1'>
+        <ion-col text-center>
+          <p text-center class="gray text-14">
+            Can't remember your PIN
+          </p>
+          <p class="text-link-item" text-center>
+            <a class="text-link-item"  (click)="redirectLogin()">Enter username / password</a></p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-row class="footer-content footer-wrapper">
+      <ion-col>
+        <button ion-button large *ngIf='timeAttemp<3' [disabled]="!verifyPINForm.valid" (click)="verifyPINCode()">Next</button>
+      </ion-col>
+    </ion-row>
+  </ng-container>
+  <ng-template #showDismiss>
+    <ion-grid class="tp-flex-container align-between tp-flex-columns tp-full-height">
+      <ion-row class="tp-flex-center-col">
+        <ion-col text-center class="text-14">
+          {{token_expired}}
+        </ion-col>
+      </ion-row>
+      <ion-row class=" ">
+        <ion-col>
+          <button ion-button large (click)="closeModal()">Close</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ng-template>
+</ion-content>

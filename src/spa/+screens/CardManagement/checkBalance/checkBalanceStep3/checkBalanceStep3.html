@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Check my Balance
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class=" content-wrapper">
+
+    <ion-row text-center class="m-b-30 p-t-40">
+      <ion-col col-8 push-2>
+        <div class="current-balance">
+          <h3>Current balance</h3>
+          <h1 class="openSans-bold">{{balanceValue?.balance | currency:'GBP':'symbol':'1.2-2'}}</h1>
+          <p>{{cardnumber}}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row text-center class="more-information">
+      <ion-col>
+        <h3 class="m-t-0 m-b-20">{{register_or_login_MSG}}</h3>
+        <p class="text-12">{{view_transactions_MSG}}</p>
+        <!--<p class="text-12">- View your transactions</p>-->
+        <!--<p class="text-12">- Get exclusive offers and deals for your card</p>-->
+        <!--<p class="text-12">- See where to spend</p>-->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="footer-wrapper">
+    <ion-row padding>
+      <ion-col col-12 margin-bottom>
+        <button ion-button block large (click)="navCtrl.push('RegisterStep1Page')">Register</button>
+      </ion-col>
+      <ion-col col-12>
+        <button ion-button block large (click)="navCtrl.push('LoginPage')">Login</button>
+      </ion-col>
+      <ion-col col-12 text-center class="m-t-20">
+        <p class="text-link-item" (click)="navCtrl.setRoot('WelcomePage', null, { animate: true, direction: 'back' })">Return to home screen</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

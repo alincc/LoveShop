@@ -1,0 +1,214 @@
+@import "../../../../../theme/colors";
+page-orderDiscountGiftCardChooseCardDesign {
+    .scroll-content {
+        margin-top: 40px !important;
+    }
+    p {
+        margin: 0;
+        padding-bottom: 5px;
+        font-size: 1.4rem;
+        &.label {
+            font-size: 1.2rem;
+            color: map-get($colors, primary)
+        }
+    }
+
+    .top-alert {
+        background: map-get($colors, secondary-aero-blue);
+        min-height: 70px;
+        display: table;
+        vertical-align: middle;
+        text-align: center;
+        margin-bottom: 20px;
+        width: 100%;
+        p {
+            font-size: 12px !important;
+            line-height: 18px !important;
+            color: map-get($colors, primary);
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+
+    .select-row {
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        &:after {
+            content: "\f107";
+            font-family: FontAwesome;
+            color: #000;
+            position: absolute;
+            right: 0;
+            top: 12px;
+            z-index: 1;
+            width: 7%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        label {
+            position: absolute;
+            top: 2px;
+            left: 15px;
+            font-size: 10px;
+            line-height: 15px;
+            color: map-get($colors, primary);
+        }
+        
+    }
+
+    select {
+        color: #999;
+        font-family: 'OpenSans-Bold', sans-serif !important;
+        overflow: hidden;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        min-width: 16px;
+        font-size: 14px;
+        white-space: nowrap;
+        border: 1px solid #666666;
+        height: 40px;
+        line-height: 21px;
+        margin: 0;
+        border-radius: 5px;
+        width: 100%;
+        padding: 0 0 0 12px;
+        background: #fffde9 !important;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        padding-top: 10px;
+        color: map-get($colors, secondary);
+        margin-bottom: 20px;
+    }
+
+    .card-greeting--wrapper {
+        .greeting-card--wrapper {
+            &:nth-child(2n) {
+                .img--wrapper {
+                    margin-left: 6px;
+                }
+            }
+
+            &:nth-child(2n + 1) {
+                .img--wrapper {
+                    margin-right: 6px;
+                }
+            }
+        }
+        .img--wrapper {
+            display: inline-block;
+            ion-icon {
+                display: none;
+            }
+            margin-bottom: 10px;
+            padding: 5px;
+            padding-bottom: 130%;
+            width: calc(100% - 6px);
+            position: relative;
+            img {
+                width: 90%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%,-50%);
+                transform: translate(-50%,-50%);
+                border:1px solid  map-get($colors,  primary);
+            }
+            &.active {
+                border:1px solid map-get($colors,  red-ca);
+                color:  map-get($colors,  primary);
+
+                ion-icon {
+                    display: block;
+                    position: absolute;
+                    top: 12px;
+                    right: 10px;
+                    font-size: 40px;
+                    border-radius: 50%;
+                    border:2px solid map-get($colors, pink-basket);
+                    width: 30px;
+                    height: 30px;
+                    color: map-get($colors, pink-basket);
+
+                    &:before {
+                        font-weight: bold;
+                        position: absolute;
+                        top: -6px;
+                        right: 5px;
+                        @media screen and (min-width: 767px) {
+                            right: 4px;
+                        }
+                    }
+                }
+            }
+
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+
+    .save-banner {
+        position: fixed;
+        bottom: 0;
+        color: #fff;
+        background: map-get($colors, primary-blue);
+        height: 125px;
+        text-align: center;
+        padding: 15px 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        .decs {
+            width: 70%;
+            margin: 0 auto;
+
+            span {
+                position: relative;
+                display: inline-block;
+                width: 50px;
+                height: 20px;
+                margin-right: 6px;
+                img {
+                    position: absolute;
+                    top: 2px;
+                    left: 0px;
+                    display: block;
+                    height: auto;
+                    width: 100%;
+                }
+            }
+        }
+
+        .button-form {
+            width: 95%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+
+            .button {
+                width: 45%;
+                height: 35px;
+                font-family: 'OpenSans-Regular', sans-serif;
+
+                &.cancel {
+                    border-radius: 5px;
+                    background: transparent;
+                    color: #fff;
+                    border: 1px solid;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 767px){
+    page-orderDiscountGiftCardChooseCardDesign {
+        .save-banner {
+            width: calc(70% + 56px) !important;
+        }
+    }
+}

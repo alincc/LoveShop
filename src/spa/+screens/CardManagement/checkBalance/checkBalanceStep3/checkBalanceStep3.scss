@@ -1,0 +1,50 @@
+@import "../../../../../theme/colors";
+
+page-checkBalanceStep3 {
+
+  .main {
+    display: flex;
+    justify-content: center;
+  }
+  .current-balance {
+    padding: 20px;
+    border: solid 1px color($colors, primary);
+    border-radius: 10px;
+  }
+
+  .more-information {
+    p {
+      color: #333;
+    }
+  }
+
+  h1 {
+    margin: 15px;
+    color: map-get($colors, secondary);
+  }
+  h5, p {
+    font-weight: normal;
+    margin: 3px;
+    color: color($colors, primary);
+  }
+
+  .content-wrapper {
+    min-height: calc(100% - 160px) !important;
+  }
+
+  .footer-wrapper {
+    padding: 0;
+    height: 160px;
+  }
+
+  @media screen and (min-width: 767px) {
+    .scroll-content .content-wrapper {
+      min-height: calc(100% - 180px) !important;
+    }
+
+    .scroll-content .footer-wrapper {
+      padding: 0;
+      height: 180px !important;
+    }
+  }
+}

@@ -1,0 +1,255 @@
+@import "../../../../../../theme/colors";
+
+page-masterCardExchange {
+  .icon-absolute {
+    position: absolute;
+  }
+
+  .content-wrapper {
+    min-height: calc(100% - 120px);
+  }
+  .content-ios {
+    .topUpInputandroid {
+      display: none;
+    }
+  }
+  .content-md {
+    .topUpInputiOS {
+      display: none;
+    }
+  }
+
+  .inputAmount {
+    overflow: hidden;
+  }
+
+  .item-inner {
+    padding-right: 0 !important;
+  }
+  .content-wrapper {
+    width: 100% !important;
+    .sub-desc {
+      padding: 5px;
+    }
+
+    ion-input {
+         color: map-get($colors, primary);
+         border-radius: 5px;
+         font-size: 40px;
+         padding: 5px;
+         background: #fffde9 !important;
+         text-align: center;
+         input {
+          //  background: white !important;
+           color: map-get($colors, primary);
+           text-align: left;
+           display: inline-block;
+           padding: 0;
+           margin: 0;
+           width: 117px;
+           margin-right: -20px;
+         }
+       }
+
+  }
+
+  .fixed-btm {
+    position: fixed;
+    bottom: 15px;
+    width: 100%;
+    padding-right: 25px;
+  }
+  .exchange-value {
+    background: white !important;
+    padding-bottom: 13px;
+  }
+  p {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .card-info {
+    background: map-get($colors, primary);
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+    > p {
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+  .card-topup {
+    background: #009489;
+    padding: 5px 50px;
+    color: white;
+    text-align: center;
+    font-family: 'OpenSans-Bold', sans-serif;
+    > p {
+      margin: 0 auto;
+      text-align: center;
+      font-family: 'OpenSans-Bold', sans-serif;
+    }
+    .text-input {
+      width: 50%;
+      background: #fff;
+      padding: 15px 10px;
+      font-size: 2.8rem;
+    }
+  }
+  .item-checkbox {
+    padding-left: 0 !important;
+    ion-checkbox.checkbox {
+      top: 50%;
+      left: 22%;
+      transform: translateY(-50%);
+
+      @media (max-width: 321px) { 
+        left: 18%;
+      }
+    }
+    .input-wrapper {
+      align-items: center;
+      display: flex;
+    }
+    .label {
+      font-size: 9px;
+      line-height: 13px;
+      text-align: left;
+      color: map-get($colors, secondary);
+      margin: 0;
+      display: flex;
+      width: auto;
+      justify-content: center;
+    }
+  } 
+
+  ion-checkbox {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .overlay {
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    z-index: 1111;
+    position: absolute;
+
+    &.not-show {
+      display: none;
+    }
+  }
+
+  .fee-msg {
+    font-size: 10px !important;
+    line-height: 15px !important;
+    font-family: 'OpenSans-Bold';
+    color: map-get($colors, secondary);
+    margin-top: 10px;
+  }
+  .button {
+    margin-top: 10px !important;
+  }
+  //@media (max-height: 568px) {
+  //  .content-wrapper {
+  //    height: 50vh;
+  //  }
+  //  .item-checkbox {
+  //    ion-checkbox.checkbox {
+  //      left: 17%;
+  //    }
+  //  }
+  //}
+
+  @media screen and (min-width: 767px) {
+    
+    .scroll-content {
+      .content-wrapper {
+        min-height: calc(100% - 160px);
+      }
+    } 
+
+    .item-checkbox {
+      ion-checkbox.checkbox {
+        left: 30.5%;
+      }
+    }
+  }
+}
+
+.footer-content {
+  p {
+    text-align: center;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: #000;
+    font-weight: bold;
+    opacity: 0.8;
+  }
+}
+
+.input--wrapper {
+  background: #009489;
+}
+
+.exchange-value-group {
+  position: relative;
+  margin: 0 auto;
+  .exchange-value-input {
+    margin: 0 auto;
+    border: none;
+    background: #ffffff;
+    text-align: center;
+  }
+  .symbol {
+    font-size: 3.4rem;
+  }
+  input {
+    width: 5em;
+    padding: 10px 0;
+    margin: 0px auto;
+    border: none;
+    font-size: 3.4rem;
+  }
+  @media (max-width: 321px) {
+    input {
+      width: 4em;
+    }
+  }
+  .exchange-value-label {
+    font-size: 28px;
+    position: absolute;
+    top: 0;
+    transform: translateY(50%);
+    padding-left: 85px;
+    margin-top: 12px;
+  }
+}
+
+
+
+
+.t-and-c {
+  text-align: center;
+  word-wrap: no-wrap;
+  ion-label {
+    text-align: center;
+  }
+  .link {
+    text-decoration: underline;
+    margin-left: 3px;
+  }
+
+  ion-checkbox {
+    margin-bottom: -2px;
+    vertical-align: text-bottom;
+  }
+
+  .inline-checkbox {
+    display: inline-block !important;
+    margin: 0 !important;
+    margin-bottom: -2px;
+    margin-right: 1em;
+  }
+}

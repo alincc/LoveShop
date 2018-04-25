@@ -1,0 +1,160 @@
+@import "../../../../../theme/colors";
+
+page-orderECodeStep1 {
+      .toolbar-background-ios {
+    
+      }
+      .payment-title{
+        font-family: 'Montserrat-Regular';
+        color: map-get($colors, primary-green);
+        margin-bottom: 10px;
+      }
+      .card-security {
+        background: map-get($colors, secondary-aero-blue-ligth);
+        padding: 10px 10px 15px;
+        margin-top: 10px;
+    
+        .title {
+          color: map-get($colors, primary-green);
+        }
+      }
+      .card-panel {
+        min-height: 60px;
+        padding-left: 90px;
+        position: relative;
+        img {
+          width: auto;
+          @include center(vertical);
+        }
+        &--right {
+          width: 100%;
+          p {
+            font-size: 12px;
+          }
+        }
+      }
+      .card-left-panel {
+        img,
+        div {
+          display: inline-block;
+          vertical-align: top;
+        }
+        img {
+          max-width: 50px;
+          min-width: 50px;
+        }
+      }
+
+  .card-panel--right {
+    p, span {
+      color: map_get($colors, primary);
+    }
+    .openSans-bold {
+      color: map_get($colors, secondary);
+    }
+  }
+    
+      .card-security {
+        background: map-get($colors, secondary-aero-blue-ligth);
+    
+        .title {
+          font-family: 'OpenSans-Bold', sans-serif;
+        }
+      }
+    
+      .delivery-type--wrapper {
+        border: 1px solid map-get($colors, primary);
+        position: relative;
+        .checkmark {
+          color: map-get($colors, primary);
+          position: absolute;
+          top: 5px;
+          right: 10px;
+          font-size: 4rem;
+          font-weight: bold;
+    
+        }
+      }
+      .item-border {
+        border-bottom: 10px solid white;
+      }
+    
+      ion-input {
+        &.ng-invalid.ng-dirty {
+          .text-input {
+            border-color: red !important;
+            @include border-bottom-left-radius(0);
+            @include border-bottom-right-radius(0);
+          }
+        }
+      }
+    
+      input {
+        &.text-input {
+          height: 40px;
+          font-size: 14px;
+          line-height: 21px;
+          color: map-get($colors, primary);
+          border: 1px solid map-get($colors, primary);
+          background: #fffde9 !important;
+          border-radius: 5px;
+          text-align: left;
+          padding: 0 10px;
+          margin: 0;
+        }
+      }
+      ion-input {
+        margin: 0;
+        width: 100%;
+        background: #FFF;
+        padding-left: 0;
+        .text-input {
+          width: 100%;
+        }
+      }
+    
+      .img-wrapper {
+        width: 90px;
+        height: 60px;
+        position: absolute;
+        left: 0;
+        overflow: hidden;
+      }
+    
+      .card-item--wrapper {
+        background: none;
+        .product-item {
+          margin-bottom: 10px;
+          background: map-get($colors, secondary-aero-blue-ligth);
+    
+          .card-left-panel, .card-right-panel {
+            padding-top:  10px;
+            padding-bottom: 10px;
+          }
+
+          p {
+            color: map_get($colors, primary);
+          }
+          .product-info {
+            padding-left: 8px;
+            max-width: calc(100% - 60px);
+            p {
+              white-space: normal;
+              word-wrap: break-word;
+            }
+          }
+        }
+      }
+    
+      .order-list-title {
+        color: map-get($colors, primary-green);
+        font-size: 14px !important;
+        line-height: 21px !important;
+        font-family: 'Montserrat-Regular';
+      }
+    
+      .order-list-price {
+        color: map-get($colors, primary);
+      }
+
+}

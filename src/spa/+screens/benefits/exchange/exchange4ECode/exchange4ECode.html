@@ -1,0 +1,72 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title center>
+            Exchange For E-Codes
+        </ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only (click)="navCtrl.push('MyShoppingBasketPage')">
+                <ion-icon name="ios-basket-outline">
+                    <ion-badge *ngIf="this.productsOnBasket > 0" class="cart-badge" color="danger">
+                        {{this.productsOnBasket}}
+                    </ion-badge>
+                </ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <!--<ion-row *ngIf="card?.discountPercentage">-->
+        <!--<p padding>To purchase out e-codes, you will need sufficient funds on your Love2Shop flexecash card which you can load-->
+            <!--at a {{card?.discountPercentage}}% discount</p>-->
+    <!--</ion-row>-->
+
+    <ion-grid class="card-details" *ngIf="card?.canTopUp">
+        <ion-row>
+            <ion-col col-3 text-center>
+                <div class="card-icon-wrapper">
+                    <ion-icon *ngIf="!card?.cardLogoPath" ios="ios-card" md="md-card"></ion-icon>
+                    <img *ngIf="card?.cardLogoPath" [src]="baseResourceUrl + card?.cardLogoPath" />
+                </div>
+            </ion-col>
+            <ion-col col-6 class="card-details--info">
+                <h3 *ngIf="card?.nickname">{{ card?.nickname }}</h3>
+                <h3 *ngIf="card">Ends in {{ get4LastDigitsCardNumber(card) }}</h3>
+                <p class="openSans-bold">Balance: {{ card?.balance | currency:'GBP':'symbol':'1.2-2'}}</p>
+            </ion-col>
+            <ion-col col-3>
+                <button align-self-center class="button button-ios button-default button-default-ios button-block button-block-ios button-small button-small-ios l2s-btn--primary"
+                    (click)="gotoTopUp()">Top Up
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-row class="card-offers">
+        <ion-list>
+            <ion-card *ngFor="let product of products">
+                <ion-grid>
+                    <ion-row class="list-item" (click)="gotoAllBarOneCode(product)">
+                        <ion-col class="list-item-content" col-4>
+                            <div class="card-icon">
+                                <ion-icon *ngIf="!product.image" name="ios-basket-outline"></ion-icon>
+                                <img *ngIf="product?.image" [src]=" baseResourceUrl + product?.image" />
+                            </div>
+                            <!-- <div class="desc" [innerHTML]="product?.shortDescription"></div> -->
+                        </ion-col>
+                        <ion-col col-8 class="title-center">
+                            <h3 class="title montserrat-regular text-uppercase">{{ product?.name }}</h3>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card>
+        </ion-list>
+    </ion-row>
+
+
+    
+  <ion-row style="display: none;" 
+  (click)="navCtrl.pop()"
+  id="Exchange4ECodePage-back-button">
+  </ion-row>
+</ion-content>

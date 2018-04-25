@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Add A Card</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="content-wrapper" >
+    <ion-row>
+      <ion-col class="p-t-20">
+        <p class="text-14">{{enter_all_digits}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row >
+      <ion-col>
+      <form name="addCardForm" [formGroup]="addCardForm">
+        <ion-row class="m-b-12">
+          <ion-col>
+            <ion-item no-padding class="item-has-addon">
+              <ion-input name="cardID" type="text" formControlName='cardID'
+                         placeholder="Card or e-code number"></ion-input>
+              <ion-icon name="camera" item-right (click)="scanButton()"></ion-icon>
+            </ion-item>
+            <ion-item-divider ion-item light no-lines class="error"
+                              *ngIf="addCardForm.get('cardID').dirty && !addCardForm.get('cardID').valid">
+              <p>{{errorMessage('cardID')}}</p>
+            </ion-item-divider>
+          </ion-col>
+        </ion-row>
+        <ion-row class="m-b-12">
+          <ion-col>
+            <ion-item no-padding class="item-has-addon">
+              <ion-input name="csc" type="tel" formControlName='csc' class="only-password"
+                         placeholder="Card Security Code"></ion-input>
+              <ion-icon name="help-circle" (click)="getHelpContent('flexewallet.add-card.form.alert.csc')"
+                        item-right></ion-icon>
+            </ion-item>
+            <ion-item-divider ion-item light no-lines class="error"
+                              *ngIf="addCardForm.get('csc').dirty && !addCardForm.get('csc').valid">
+              <p>{{errorMessage('csc')}}</p>
+            </ion-item-divider>
+          </ion-col>
+        </ion-row>
+        <ion-row class="p-b-20">
+          <ion-col>
+            <ion-item no-padding class="item-has-addon">
+              <ion-input type="text" formControlName='nickname' placeholder="Card name"></ion-input>
+              <ion-icon name="help-circle"
+                        (click)="getHelpContent('flexewallet.add-card.form.alert.nickname.PMASTERCARD')"
+                        item-right></ion-icon>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="p-b-10" *ngIf="bodyCardType?.endUserPromptRequired">
+          <ion-col>
+            <ion-item class="item--no-border item-flex-start">
+              <ion-checkbox formControlName='cardOwner'></ion-checkbox>
+              <ion-label text-wrap>
+                {{account_management_confirm_user}}
+              </ion-label>
+            </ion-item>
+            <ion-item-divider ion-item light no-lines class="error"
+                              *ngIf="addCardForm.get('cardOwner').dirty && !addCardForm.get('cardOwner').valid">
+              <p>{{account_management_confirm_user_of_card}}</p>
+            </ion-item-divider>
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="bodyCardType?.termsRequired">
+          <ion-col>
+            <ion-item class="item--no-border item-flex-start">
+              <ion-checkbox formControlName='termsAgreed'></ion-checkbox>
+              <ion-label text-wrap>
+                I have read and agree to <br>the <span class="text-underline" (click)="gotoTermsPage()"><b>terms &amp; conditions</b></span>
+              </ion-label>
+            </ion-item>
+            <ion-item-divider ion-item light no-lines class="error"
+                              *ngIf="addCardForm.get('termsAgreed').dirty && !addCardForm.get('termsAgreed').valid">
+              <p>{{must_read_ts_cs}}</p>
+            </ion-item-divider>
+          </ion-col>
+        </ion-row>
+      </form>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+  <ion-row class="footer-wrapper">
+    <ion-col>
+      <button ion-button block large [disabled]="!addCardForm.valid " (click)="submitToAddPhysicalMasterCard()">
+        Add card
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-content>
+
+
+          
+<ion-row style="display: none;" 
+(click)="navCtrl.pop()"
+id="AddCardPhysicalMasterCardPage-back-button">
+</ion-row>

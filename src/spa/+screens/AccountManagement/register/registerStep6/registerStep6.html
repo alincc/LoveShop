@@ -1,0 +1,50 @@
+<!--<ion-header>-->
+  <!--<ion-navbar>-->
+    <!--<ion-title></ion-title>-->
+  <!--</ion-navbar>-->
+<!--</ion-header>-->
+
+<ion-content>
+  <ion-grid class="content-wrapper">
+    <ion-row>
+      <ion-col text-center>
+        <img class="l2s-logo" src="assets/images/l2s-logo.png"/>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <p text-center class="p-b-50 p-t-50 text-14">{{create_print_ID}}</p>
+              <p text-center class="p-b-35 text-14">{{reset_fingerprint}}</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col text-center>
+              <img src="assets/images/finger-thumb.png" width="80" height="110">
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col text-center>
+              <p class="text-14">
+                Scan complete!
+              </p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <p text-center class="text-14">
+              {{use_of_fingerprint}}
+            </p>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>    
+  </ion-grid>
+  <ion-row class="footer-wrapper">
+    <ion-col>
+      <button ion-button large block (click)="submitRegisterData()">Next</button>
+    </ion-col>
+  </ion-row>
+</ion-content>

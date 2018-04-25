@@ -1,0 +1,126 @@
+$font-path: "../assets/fonts";
+@import "ionic.globals";
+@import "ionic.theme.default";
+@import "ionic.ionicons";
+@import "roboto";
+@import "noto-sans";
+
+@import "modify-framework";
+@import "colors";
+@import "common";
+
+@import "scss/font-awesome"; @font-face { font-family: 'FontAwesome'; src: url('../assets/fonts/fontawesome-webfont.eot?v=#{$fa-version}'); src: url('../assets/fonts/fontawesome-webfont.eot?#iefix&v=#{$fa-version}') format('embedded-opentype'), url('../assets/fonts/fontawesome-webfont.woff2?v=#{$fa-version}') format('woff2'), url('../assets/fonts/fontawesome-webfont.woff?v=#{$fa-version}') format('woff'), url('../assets/fonts/fontawesome-webfont.ttf?v=#{$fa-version}') format('truetype'), url('../assets/fonts/fontawesome-webfont.svg?v=#{$fa-version}#fontawesomeregular') format('svg'); font-weight: normal; font-style: normal; }
+
+
+$content-padding: 10px;
+$grid-padding-width: 0;
+
+$card-ios-margin-bottom: 0;
+$card-ios-margin-right: 0;
+$card-ios-margin-left: 0;
+$card-ios-box-shadow: 0;
+$card-md-box-shadow: 0;
+$card-md-margin-bottom: 0;
+$card-md-margin-right: 0;
+$card-md-margin-left: 0;
+
+$button-ios-font-size: 1.4rem;
+$button-ios-height: 3.4rem;
+$button-ios-large-font-size: 1.4rem;
+$button-ios-large-height: 3.5rem;
+$button-ios-opacity-hover: 1;
+$button-ios-opacity-activated: 1;
+$button-ios-border-radius: 5px;
+$button-ios-margin: 0;
+$button-ios-text-color: #FFFFFF;
+$button-ios-background-color:  color($colors, primary-pink);
+$button-ios-background-color-activated:  color($colors, primary-pink);
+$button-md-font-size: 1.4rem;
+$button-md-height: 3.4rem;
+$button-md-large-font-size: 1.4rem;
+$button-md-font-weight: 400;
+$button-md-background-color: color($colors, primary-pink);
+$button-md-background-color-activated: color($colors, primary-pink);
+$button-md-border-radius: 5px;
+$button-md-box-shadow: 0;
+$button-md-box-shadow-activated: 0;
+
+
+$button-ios-outline-border-color: color($colors, primary-green);
+$button-ios-outline-background-color: #FFFFFF;
+$button-ios-outline-text-color: color($colors, primary-green);
+
+$button-md-outline-border-color: color($colors, primary-green);
+$button-md-outline-background-color: #FFFFFF;
+$button-md-outline-background-color-hover: #FFFFFF;
+$button-ios-outline-background-color-activated: #FFFFFF;
+$button-ios-outline-text-color-activated: color($colors, primary-green);
+
+$focus-outline-border-color	: color($colors, primary-green);
+$focus-outline-border-width: 1px;
+$focus-outline-box-shadow: 0;
+$button-ios-outline-text-color: color($colors, primary-green);
+$button-ios-outline-text-color-activated: color($colors, primary-green);
+$button-md-outline-text-color: color($colors, primary-green);
+
+$toolbar-ios-height: 40px;
+$toolbar-md-height: 60px;
+$toolbar-background: color($colors, primary-blue);
+$toolbar-ios-border-color: color($colors, primary-blue);
+
+$toolbar-ios-button-font-size: 1.4rem;
+$toolbar-ios-title-font-size: 1.4rem;
+$toolbar-md-title-font-size: 1.4rem;
+
+$tabs-background: color($colors, primary-blue);
+$tabs-tab-color-active:  color($colors, primary-blue);
+$tabs-tab-color-inactive: color($colors, secondary-aero-blue);
+$tabs-border-color: none;
+
+$tabs-ios-tab-color-inactive:  color($colors, secondary-aero-blue);
+$tabs-ios-tab-color-active:  color($colors,  primary-blue);
+$tabs-ios-tab-icon-color:  color($colors,  primary-blue);
+$tabs-ios-tab-icon-color-active:  color($colors, secondary-aero-blue);
+$tabs-ios-tab-text-color:  #FFF;
+$tabs-ios-tab-text-color-active:  color($colors,  primary-blue);
+$tabs-ios-tab-font-size: 0.9rem;
+$tabs-ios-tab-font-weight: 400;
+$tabs-ios-border-color: none;
+
+$tabs-ios-tab-padding-top: 9px;
+$tabs-ios-tab-icon-size: 27px;
+$tabs-md-tab-color-inactive: #FFF;
+$tabs-md-tab-color-active:  color($colors,  primary-blue);
+$tabs-md-tab-font-size: 0.9rem;
+$tabs-md-tab-font-size-active: 0.9rem;
+$tabs-md-tab-icon-size: 27px;
+$tabs-md-tab-opacity: 1;
+$tabs-md-tab-min-height: 6rem;
+
+//item
+$item-md-font-size: 1.4rem;
+$item-md-body-text-line-height: 2.1rem;
+$item-md-paragraph-text-color: #666;
+$label-md-text-color: color($colors, primary);
+$label-md-text-color-focused:  color($colors, primary);
+$text-input-placeholder-color: color($colors,primary);
+
+$label-ios-text-color: color($colors, primary);
+$label-ios-text-color-focused: color($colors, primary);
+$item-ios-paragraph-text-color: color($colors, primary);
+$item-ios-body-text-font-size: 1.4rem;
+$alert-button-font-size: 16px;
+$alert-button-line-height: 21px;
+$alert-ios-message-font-size: 16px;
+$alert-ios-sub-title-font-size: 16px;
+$alert-ios-max-width: 95%;
+$alert-md-max-width: 95%;
+$alert-ios-button-flex: none;
+
+// toggle
+$toggle-ios-border-color-off: map-get($colors, secondary-aero-blue);
+$toggle-ios-background-color-on: map-get($colors, secondary-aero-blue);
+$toggle-ios-handle-background-color: map-get($colors, primary-green);
+$toggle-md-track-background-color-on: map-get($colors, secondary-aero-blue);
+$toggle-md-active-color: map-get($colors, primary-green);
+$toggle-md-handle-background-color-off: map-get($colors, primary-green);

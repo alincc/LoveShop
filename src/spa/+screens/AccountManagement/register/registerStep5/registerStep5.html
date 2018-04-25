@@ -1,0 +1,46 @@
+<!--<ion-header>-->
+  <!--<ion-navbar>-->
+    <!--<ion-title></ion-title>-->
+  <!--</ion-navbar>-->
+<!--</ion-header>-->
+
+<ion-content>
+  <ion-grid class="content-wrapper">
+    <ion-row>
+      <ion-col text-center>
+        <img class="l2s-logo" src="assets/images/l2s-logo.png"/>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <p text-center class="p-b-50 p-t-40 text-14">{{create_print_ID}}</p>
+        <p text-center class="p-b-35 text-14">{{reset_fingerprint}}</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="p-b-20">
+      <ion-col text-center>
+        <img src="assets/images/finger-thumb.png" width="80" height="110">
+      </ion-col>
+    </ion-row>
+        
+    <ion-row *ngIf='!fingerprintVerified'>
+      <ion-col text-center (click)="skipTouchIDSetup()">
+        <span text-uppercase>{{skip_id_setup}}</span>
+        <ion-icon name="ios-arrow-forward"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf='fingerprintVerified === true'>
+      <ion-col text-center>
+        <h6>Scan completed!</h6>
+        <p text-center class="text-14">{{use_of_fingerprint}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-row class="footer-wrapper">
+    <ion-col>
+      <button ion-button large block [disabled]="!fingerprintVerified" (click)="submitRegisterData()">Next</button>
+    </ion-col>
+  </ion-row>
+</ion-content>

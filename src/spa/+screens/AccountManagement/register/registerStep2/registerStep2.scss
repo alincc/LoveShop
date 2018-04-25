@@ -1,0 +1,119 @@
+@import "../../../../../theme/colors";
+page-registerStep2.ion-page {
+  ion-checkbox {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .fixed-content, .scroll-content {
+    margin-top: 0px !important;
+  }
+
+
+  .fake-back-btn {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    z-index: 11;
+  }
+
+  ion-item {
+    background: map-get($colors, input-background) !important;
+  }
+  p {
+    margin:7px 0 10px 0;
+  }
+  h1 {
+    font-size: 30px !important;
+    text-transform: uppercase;
+    margin: 0 !important;
+    text-align: center;
+  }
+  .title {
+    color: map_get($colors, primary-green);
+    margin: 0;
+  }
+  .scroll-content {
+    .content-wrapper {
+      min-height: calc(100% - 130px);
+    }
+
+    .btnShow {
+      width: 62px;
+      height: 32px !important;
+      background: map_get($colors, primary-green);
+      font-size: 14px;
+      font-weight: bold;
+      padding: 15px 10px;
+      border-bottom: none;
+      box-shadow: none;
+      &:hover, &:active, &:focus, &.active {
+        background: map_get($colors, primary-green) !important;
+        border-bottom: none  !important;
+      }
+    }
+
+    .show-password {
+      right: 5px !important;
+      margin: 0 !important;
+      @include center(vertical);
+    }
+
+    .password-rules {
+      ion-icon {
+        font-size: 2.5em;
+        margin: 0 5px;
+      }
+    }
+    .marketing-optout {
+      .item-block {
+        background: transparent;
+        border: none;
+        padding-left: 5px;
+        }
+      }
+  }
+
+  form {
+    ion-row {
+      margin-bottom: 15px;
+    }
+  }
+
+  .none-background {
+    background: none !important;
+  }
+
+  .footer-wrapper {
+    height: auto;
+    padding-bottom: 15px;
+  }
+
+}
+
+.l2s-password-alert {
+  .alert-wrapper {
+    .alert-message {
+      color: map-get($colors, primary);
+      font-size: 12px !important;
+      line-height: 18px !important;
+      font-family: 'OpenSans-Regular', sans-serif;
+      ul {
+        list-style: none;
+        text-align: center;
+        margin: 0;
+        margin-top: 5px;
+        padding: 0;
+
+        strong {
+          font-weight: normal;
+        }
+      }
+    }
+    .alert-title {
+      font-size: 16px;
+      line-height: 24px;
+      color: map-get($colors, primary);
+    }
+  }
+}
+

@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button  ion-button icon-only (click)="gotoStep1()">
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Check my Balance
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="form-balance--container">
+  <ion-grid class="content-wrapper">
+    <ion-row>
+      <ion-col>
+        <form [formGroup]="checkBalanceForm">
+
+          <ion-row margin-bottom>
+            <ion-col>
+              <ion-item no-padding>
+                <ion-input name="cardNumber" type="text"  formControlName="cardNumber"  placeholder="Card or e-code number"></ion-input>
+              </ion-item>
+              <ion-item-divider ion-item light no-lines class="error"
+                                *ngIf="checkBalanceForm.get('cardNumber').dirty && !checkBalanceForm.get('cardNumber').valid">
+                <p>{{errorMessage('cardNumber')}}</p>
+              </ion-item-divider>
+            </ion-col>
+          </ion-row>
+
+          <ion-row margin-bottom>
+            <ion-col>
+              <ion-item no-padding class="item-has-addon">
+                <ion-input name="securityCode" type="tel" formControlName="securityCode"
+                           placeholder="Please enter your security code"
+                           class="only-password"
+                ></ion-input>
+                <ion-icon name="help-circle" item-right (click)="getHelpContent('flexewallet.add-card.form.alert.csc')"></ion-icon>
+              </ion-item>
+              <div class="m-r-38">
+                <ion-item-divider ion-item light no-lines class="error"
+                                  *ngIf="checkBalanceForm.get('securityCode').dirty && !checkBalanceForm.get('securityCode').valid">
+                  <p>{{errorMessage('securityCode')}}</p>
+                </ion-item-divider>
+              </div>
+
+            </ion-col>
+          </ion-row>
+
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-row class="footer-wrapper">
+    <ion-col>
+      <button ion-button block large [disabled]="!checkBalanceForm.valid" (click)="submitToCheckCardBalance()">Submit</button>
+    </ion-col>
+  </ion-row>
+</ion-content>

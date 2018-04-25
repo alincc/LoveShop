@@ -1,0 +1,218 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      personalise
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="content-wrapper">
+    <ion-row class="m-t-20">
+      <ion-col>
+          <p class="label">Order Summary</p>
+          <table>
+            <thead>
+              <th>
+                  Product
+              </th>
+              <th>
+                Quantity
+              </th>
+              <th>
+                Total
+              </th>
+            </thead>
+            <tbody>
+              <tr>
+                <td> 
+                  <p class="content" *ngFor="let product of  products">{{product?.name}}</p>
+
+                </td>
+                <td>
+                    <p class="content" *ngFor="let product of  products">{{product?.quantity}}</p>
+                </td>
+                <td>
+                    <p class="content" *ngFor="let product of  products">{{product?.price*product?.quantity | currency:'GBP':'symbol':'1.2-2'}}</p>
+                </td>
+              </tr>
+              <tr *ngIf="freeGreetingCard?.selectedGreetingCard">
+                  <td>
+                    <p class="content" >
+                      {{freeGreetingCard?.greetingCardSelected?.name}}</p>
+                  </td>
+                  <td>
+                      1
+                  </td>
+                  <td class="position-relative">
+                    <ion-icon class='link--bottom' (click)="removeFreeGCReload()">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                        <span>Remove
+                        </span>
+                    </ion-icon>
+                  </td>
+                </tr>
+            
+            <tr  *ngIf="exTraGreetingCard?.selectedExtraGreetingCard">
+              <td>
+                  <p class="content"> {{exTraGreetingCard?.extraGreetingCardSelected?.name}}</p>
+              </td>
+              <td>{{exTraGreetingCard?.quantity}}</td>
+              <td class="position-relative">
+                   <p>{{exTraGreetingCard?.extraGreetingCardSelected?.price*exTraGreetingCard?.quantity | currency:'GBP':'symbol':'1.2-2' }}</p>
+                                               
+                  <ion-icon class='link--bottom' (click)="removeExtraGCReload()">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                    <span>Remove
+                    </span>
+                  </ion-icon>
+
+              </td>
+            </tr>
+
+            
+            </tbody>
+            <tfoot>
+              <td colspan="2">
+                Sub Total:
+              </td>
+              <td>
+                <p class="content">{{ total | currency:'GBP':'symbol':'1.2-2'}}</p>
+              </td>
+            </tfoot>
+          </table>
+        
+        
+        
+       
+      </ion-col>
+    </ion-row>
+
+    <!--<ion-row class="m-t-10 m-b-10" *ngIf="freeGreetingCard?.selectedGreetingCard || exTraGreetingCard?.selectedExtraGreetingCard">-->
+   
+    <ion-row>
+      <ion-col>
+        <button ion-button large block (click)="arrangeDelivery()">
+          Arrange Delivery
+        </button>
+      </ion-col>
+    </ion-row>
+
+   <!--<button class="m-t-20" ion-button block large (click)="arrangeDelivery()"
+            *ngIf="!freeGreetingCard?.selectedGreetingCard && !exTraGreetingCard?.selectedExtraGreetingCard">
+      Arrange Delivery
+    </button>-->
+
+    <ion-row class="p-t-20">
+      <ion-col>
+        <p class="label">Optional extras</p>
+        
+        <ion-card class="card-list-item" padding margin-bottom *ngIf="!freeGreetingCard?.selectedGreetingCard">
+          <p class="text-bold" no-padding no-margin>{{order_gwp_default_section4_need_free_wallet}}</p>
+          <p padding-vertical>{{order_gwp_default_section4_need_free_wallet_info}}</p>
+          <div text-center>
+            <ion-card class="card-item--wrapper" padding margin-bottom (click)="addFreeGreetingCard()">
+              <p text-center no-padding class="tr-btn text-12">
+                {{order_gwp_default_section4_need_free_wallet_button}}
+              </p>
+            </ion-card>
+          </div>
+        </ion-card>
+
+        <ion-row *ngIf="freeGreetingCard?.selectedGreetingCard">
+            <ion-col>
+              <p class="text-label" no-padding no-margin>{{order_gwp_default_section4_choice_h4_1}}</p>
+            </ion-col>
+        </ion-row>
+
+        <ion-row class="card-greeting--wrapper" *ngIf="freeGreetingCard?.selectedGreetingCard">
+          <ion-col>
+           
+            <ion-row class="">
+              <ion-col text-right>
+                <div class="img--wrapper" padding>
+                  <p text-left class="text-font-12">
+                    Design/Front
+                  </p>
+                  <div class="blank-card" (click)="updateDesignCard()">
+                    <img src="{{baseImageUrl}}{{freeGreetingCard?.greetingCardSelected?.smallImages}}" alt="product image">
+                  </div>
+                  <p text-left class="p-t-10">
+                    <span class="edit" (click)="updateDesignCard()">Edit</span>
+                  </p>
+                </div>
+              </ion-col>
+              <ion-col text-left>
+                <div padding>
+                  <p text-left class="text-font-12">
+                    Message/Inside
+                  </p>
+                  <div class="blank-card" (click)="updatePersonalMessage()">
+
+                    <p class="to-msg">{{this.tempGreetingCardMSG?.giftWalletMessageLine1}}
+                    </p>
+                    <p class="content-msg">{{this.tempGreetingCardMSG?.giftWalletMessageLine2}}
+                    </p>
+                    <p class="from-msg">{{this.tempGreetingCardMSG?.giftWalletMessageLine3}}
+                    </p>
+                    <p *ngIf="!this.tempGreetingCardMSG?.giftWalletMessageLine1" class="text-link-item">
+                      Add a personal message
+                    </p>
+
+                  </div>
+                  <p text-left class="p-t-10">
+                    <span class="edit" (click)="updatePersonalMessage()">Edit</span>
+                  </p>
+                </div>
+              </ion-col>
+            </ion-row>
+
+          </ion-col>
+        </ion-row>
+
+
+        <ion-card class="card-list-item" padding margin-bottom *ngIf="!exTraGreetingCard?.selectedExtraGreetingCard">
+          <p class="text-bold">Need extra greetings cards?</p>
+          <p>{{order_gwp_default_section4_buying_multiple_vouchers_info}}</p>
+          <div text-center>
+            <ion-card class="card-item--wrapper" padding margin-bottom (click)="addExtraGreetingCard()">
+              <p text-center no-padding class="tr-btn">
+                {{order_gwp_default_section4_buying_multiple_vouchers_button}}
+              </p>
+            </ion-card>
+          </div>
+        </ion-card>
+
+        <ion-row class="card-extra-greeting--wrapper" *ngIf="exTraGreetingCard?.selectedExtraGreetingCard">
+          <ion-col>
+            <p class="content text-label" >Additional wallets <span>Charges may apply</span><!--{{order_gwp_default_section4_choice_h4_2}}--></p>
+            <div col-8 class="extra-selected">
+              <div class="img-ratio-16-9" (click)="updateExtraDesignCard()">
+                <img src="{{baseImageUrl}}{{exTraGreetingCard?.extraGreetingCardSelected?.smallImages}}" alt="greeting card">
+              </div>
+            </div>
+            <!--<p text-left class="p-t-10">
+              <span  (click)="updateExtraDesignCard()">Edit</span>
+            </p>-->
+          </ion-col>
+        </ion-row>
+
+
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+  <ion-row  class="footer-wrapper">
+    <ion-col>
+      <button ion-button large block (click)="arrangeDelivery()">
+        Arrange Delivery
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-content>
+
+          
+<ion-row style="display: none;" 
+(click)="navCtrl.pop()"
+id="OrderDiscountGiftCardReviewYourOrder-back-button">
+</ion-row>

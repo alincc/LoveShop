@@ -1,0 +1,240 @@
+@import "../../../../../theme/colors";
+page-orderDiscountGiftCardDeliveryOption {
+
+  .suggestion-address {
+    border: 1px solid  color($colors, primary);;
+    border-top: none;
+    margin-top: 0;
+  }
+  .delivery-type--wrapper {
+    border: 1px solid map-get($colors, primary);
+    position: relative;
+    .checkmark {
+      color: map-get($colors, primary);
+      position: absolute;
+      top: 0;
+      right: 10px;
+      font-size: 3rem;
+    }
+  }
+
+  .address__detail {
+    background: #FFF;
+    p {
+      font-size: 1.2rem;
+    }
+  }
+
+  .price--wrapper {
+    p {
+      margin: 0;
+      padding-bottom: 8px;
+      .label {
+        display: inline-block;
+        min-width:60px ;
+        color: color($colors, primary);
+      }
+
+      .value {
+
+      }
+    }
+  }
+
+  .tr-btn {
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: #009489;
+    color: #009489;
+    background-color: #FFFFFF;
+    height: 40px;
+    text-decoration: none;
+    padding: 8px;
+    width: 100%;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px !important;
+    line-height: 21px !important;
+    margin-bottom: 10px;
+
+    &.card-item--wrapper {
+      p {
+        font-size: 14px !important;
+        line-height: 21px !important;
+      }
+    }
+}
+
+  .card-item--wrapper {
+    border-radius: 0;
+    border: 1px solid map-get($colors, primary-green);
+    background: #fff;
+    color: map-get($colors, primary);
+    font-size: 12px !important;
+    line-height: 18px !important;
+    position: relative;
+
+    .title {
+      font-size: 14px !important;
+      line-height: 21px !important;
+    }
+    p {
+      font-size: 12px !important;
+      line-height: 18px !important;
+    }
+
+    &:after {
+      content: " ";
+      border-radius: 50%;
+      border: 2px solid map-get($colors, primary-green);
+      width: 22px;
+      height: 22px;
+      display: block;
+      position: absolute;
+      right: 15px;
+      top: 5px;
+    }
+
+    &.card-item-step1 {
+      padding-right: 50px !important;
+
+      &:after {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+    
+    &.delivery-type--wrapper {
+      border: 1px solid map-get($colors, primary-green);
+      background: map-get($colors, secondary-aero-blue-ligth);
+      .title {
+        color: map-get($colors, primary-green);
+        font-family: 'OpenSans-Bold';
+      }
+      .checkmark {
+        color: map-get($colors, primary-green);
+        position: absolute;
+        top: 3px;
+        right: 22px;
+        font-size: 3rem;
+        font-weight: bold;
+        &.icon-ios {
+          right: 20px;
+        }
+        @media screen and (min-width: 767px) {
+          right: 20px;
+        }
+      }
+
+      &.card-item-step1 {
+        .title {
+          color: map-get($colors, primary);
+        }
+        .checkmark {
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+
+  .step {
+    font-family: 'Montserrat-Regular';
+    color: map-get($colors, secondary);
+    font-size: 16px !important;
+    line-height: 24px !important;
+    b {
+      color: map-get($colors, primary-green);
+      font-family: 'Montserrat-Bold';
+    }
+  }
+  .list-item-summary {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .list-item-card--wrapper {
+    p {
+      padding-bottom: 5px;
+      position: relative;
+
+      ion-icon {
+        font-size: 3rem;
+        position: absolute;
+        top: -5px;
+        right: 0;
+      }
+
+      &.text-font-16 {
+        font-family: 'Montserrat-Bold';
+        color: map-get($colors, primary-green);
+        padding-left: 5px;
+      }
+    }
+
+  }
+
+  ion-icon {
+    font-size: 1.3rem;
+  }
+
+  table {
+    width: 100%;
+    th {
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+        border-color: map-get($colors, secondary);
+        color: map-get($colors, secondary);
+        font-weight: normal;
+        &:nth-child(2) {
+          text-align: left;
+        }
+    }
+
+    td {
+        &:last-child {
+            font-family: 'OpenSans-Bold', sans-serif; 
+            p {
+                font-family: 'OpenSans-Bold', sans-serif; 
+            }
+        }
+    }
+    th, td {
+        color: map-get($colors, secondary);
+        text-align: center;
+        padding: 5px;
+
+        &:first-child {
+            text-align: left;
+        }
+        &:last-child {
+            text-align: right;
+        }
+    }
+
+    tfoot {
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+        td {
+            font-family: 'OpenSans-Bold', sans-serif !important; 
+            line-height: 35px;
+            p {
+                font-family: 'OpenSans-Bold', sans-serif; 
+            }
+        }
+    }
+  }
+
+  .card-md {
+    p {
+      color: map-get($colors, primary);
+    }
+  }
+
+  @media screen and (min-width: 767px){
+    .content-wrapper {
+      min-height: calc(100% - 260px) !important;
+    }
+  }
+}

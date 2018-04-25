@@ -1,0 +1,88 @@
+page-buyDiscountedGiftCard {
+  .scroll-content {
+    padding-top: 0;
+    background: map-get($colors, secondary-aero-blue-ligth);
+  }
+
+  .sub-desc{
+    text-align: center;
+  }
+
+
+  .card-offers{
+    width: 100%;
+    ion-list {
+      font-family: 'Open Sans', 'Arial', sans-serif;
+      background: map-get($colors, secondary-aero-blue-ligth);
+      width: 100%;
+      padding-left: 15px;
+      padding-right: 15px; 
+      .card {
+        border: 1px solid map-get($colors, primary-green);
+        position: relative;
+        border-radius: 0;
+
+        &:after {
+          font: normal normal normal 20px/1 FontAwesome;
+          color: map-get($colors, secondary);
+          content: "\f105";
+          display: inline-block;
+          position: absolute;
+          top: 50%;
+          right: 10px;
+          transform: translate(0, -50%);
+        }
+      }
+      .desc {
+        color: #818181;
+        h3 {
+          margin: 0 0 2px;
+          font-size: 1.4rem;
+          font-weight: normal;
+          line-height: 1.5;
+          color: #222;
+        }
+      }
+      h3 {
+        color: map-get($colors, primary-green);
+        width: 85%;
+      }
+      img {
+        min-width: 80px;
+        max-height: 80px;
+        max-width: 100%;
+        width: auto;
+        /*border: 1px solid #d2d2d2;*/
+      }
+      .title-center {
+        display: flex;
+        align-items: center;
+      }
+      .card-icon {
+        height: 80px;
+      }
+      ion-icon {
+        font-size: 44px;
+        line-height: 80px;
+      }
+      .list-ios > .item-block:first-child {
+        border-top: solid 1px black;
+      }
+      .list-ios > .item-block:last-child {
+        border-bottom: solid 1px black;
+      }
+      .list-item {
+        padding: 0px;
+      }
+
+      .list-item-content {
+        padding: 5px;
+        padding-right: 0;
+      }
+      ion-card {
+        margin-bottom: 10px;
+        border-radius: 3px;
+      }
+    }
+  }
+}

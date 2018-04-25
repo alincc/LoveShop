@@ -1,0 +1,6 @@
+<ion-tabs  #tabs [selectedIndex]="selectedIndex" (ionChange)="tabSelected($event)">
+  <ion-tab [root]="tab1Root" [rootParams]="yourCardData"  tabTitle="YOUR CARDS" tabIcon="l2s-card" tabsHideOnSubPages="true"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="STORES"  tabIcon="l2s-basket"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="YOUR BENEFITS" tabIcon="l2s-aperture"></ion-tab>
+  <ion-tab [root]="tab4Root" tabTitle="MORE" tabIcon="l2s-more"></ion-tab>
+</ion-tabs>

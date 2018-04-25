@@ -1,0 +1,200 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title text-center>
+            Account Details
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid class="content-wrapper p-b-50" *ngIf="showContent">
+        <ion-row>
+            <ion-col>
+                <form [formGroup]="updateAccountForm">
+                    <ion-row>
+                        <ion-item class="input-has-value">
+                            <ion-label floating>Title*</ion-label>
+                            <ion-select name="title" formControlName="title" (ionChange)="showStyle = true">
+                                <ion-option *ngFor="let title of userTitle" value="{{ title.text }}">{{ title.text }}
+                                </ion-option>
+                            </ion-select>
+                            <ion-icon item-right primary>
+                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            </ion-icon>
+                        </ion-item>
+                        <ion-item-divider ion-item light no-lines class="error"
+                                          *ngIf="updateAccountForm.get('title').dirty && !updateAccountForm.get('title').valid">
+                            <p>{{errorMessage('title')}}</p>
+                        </ion-item-divider>
+                    </ion-row>
+
+                    <ion-row>
+                        <ion-item>
+                            <ion-label floating>First name*</ion-label>
+                            <ion-input name="firstName" type="text" formControlName="firstName"></ion-input>
+                        </ion-item>
+                        <ion-item-divider ion-item light no-lines class="error"
+                                          *ngIf="updateAccountForm.get('firstName').dirty && !updateAccountForm.get('firstName').valid">
+                            <p>{{errorMessage('firstName')}}</p>
+                        </ion-item-divider>
+                    </ion-row>
+
+                    <ion-row>
+                        <ion-item>
+                            <ion-label floating>Last name*</ion-label>
+                            <ion-input name="surName" type="text" formControlName="lastName"></ion-input>
+                        </ion-item>
+                        <ion-item-divider ion-item light no-lines class="error"
+                                          *ngIf="updateAccountForm.get('lastName').dirty && !updateAccountForm.get('lastName').valid">
+                            <p>{{errorMessage('lastName')}}</p>
+                        </ion-item-divider>
+                    </ion-row>
+
+
+                    <ion-row>
+                        <ion-col>
+                            <div class="divider--full"></div>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row class="readonly--wrapper">
+                        <p>Date of Birth</p>
+                        <p class="text-16">{{model.dob}}</p>
+                    </ion-row>
+
+                    <ion-row>
+                        <ion-col>
+                            <div class="divider--full"></div>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row class="address-label--wrapper">
+                        <ion-col col-6>
+                            <p text-left class="montserrat-regular text-16 title">Address</p>
+                        </ion-col>
+                        <ion-col col-6>
+                            <p text-right>* is mandatory</p>
+                        </ion-col>
+                        <p class="title montserrat-bold text-underline text-14 p-t-10" [hidden]="!isShowAddress" (click)="isShowAddress = !isShowAddress">Lookup postcode</p>
+                    </ion-row>
+                    <ion-row class="lookup-address" [hidden]="isShowAddress">
+                        <ion-col>
+                            <ion-item>
+                                <ion-label floating>{{enter_postcode_or_search_for_an_address}}</ion-label>
+                                <ion-input (input)="suggestSearch$.next($event.target.value)" placeholder=""></ion-input>
+                            </ion-item>
+                            <ion-list *ngIf="showList" class="suggestion-address">
+                                <ion-item *ngFor="let item of listAddressItems" (click)="pickupAddress(item)">
+                                    {{ formatLocationAddress(item) }}
+                                </ion-item>
+                            </ion-list>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row [hidden]="isShowAddress" class="p-b-13 p-t-10">
+                        <ion-col>
+                            <p class="title montserrat-regular text-16" (click)="isShowAddress = !isShowAddress">{{enter_address_manually}}</p>
+                        </ion-col>
+                    </ion-row>
+                    <ng-container *ngIf="isShowAddress">
+                        <ion-row>
+                            <ion-item>
+                                <ion-label floating>Address Line 1*</ion-label>
+                                <ion-input name="addressLine1" type="text" formControlName="addressLine1"></ion-input>
+                            </ion-item>
+                            <ion-item-divider ion-item light no-lines class="error"
+                                              *ngIf="updateAccountForm.get('addressLine1').dirty && !updateAccountForm.get('addressLine1').valid">
+                                <p>{{errorMessage('addressLine1')}}</p>
+                            </ion-item-divider>
+                        </ion-row>
+
+                        <ion-row>
+                            <ion-item>
+                                <ion-label floating>Address Line 2</ion-label>
+                                <ion-input name="addressLine2" type="text"  formControlName="addressLine2"></ion-input>
+                            </ion-item>
+                            <ion-item-divider ion-item light no-lines class="error"
+                                              *ngIf="updateAccountForm.get('addressLine2').dirty && !updateAccountForm.get('addressLine2').valid">
+                                <p>{{errorMessage('addressLine2')}}</p>
+                            </ion-item-divider>
+                        </ion-row>
+                        <ion-row>
+                            <ion-item>
+                                <ion-label floating>Town*</ion-label>
+                                <ion-input name="town" type="text" formControlName="town"></ion-input>
+                            </ion-item>
+                            <ion-item-divider ion-item light no-lines class="error"
+                                              *ngIf="updateAccountForm.get('town').dirty && !updateAccountForm.get('town').valid">
+                                <p>{{errorMessage('town')}}</p>
+                            </ion-item-divider>
+                        </ion-row>
+
+                        <ion-row>
+                            <ion-item>
+                                <ion-label floating>County</ion-label>
+                                <ion-input name="county" type="text"  formControlName="county"></ion-input>
+                            </ion-item>
+                            <ion-item-divider ion-item light no-lines class="error"
+                                              *ngIf="updateAccountForm.get('county').dirty && !updateAccountForm.get('county').valid">
+                                <p>{{errorMessage('county')}}</p>
+                            </ion-item-divider>
+                        </ion-row>
+                        <ion-row>
+                            <ion-item>
+                                <ion-label floating>Postcode*</ion-label>
+                                <ion-input name="postcode" type="text" formControlName="postcode"></ion-input>
+                            </ion-item>
+                            <ion-item-divider ion-item light no-lines class="error"
+                                              *ngIf="updateAccountForm.get('postcode').dirty && !updateAccountForm.get('postcode').valid">
+                                <p>{{errorMessage('postcode')}}</p>
+                            </ion-item-divider>
+                        </ion-row>
+
+                        <ion-row>
+                            <ion-item class="input-has-value">
+                                <ion-label floating>Country*</ion-label>
+                                <ion-select name="country" formControlName="country" disabled="true">
+                                    <ion-option *ngFor="let countryItem of countryLists"
+                                                value="{{ countryItem.countryName }}">
+                                        {{ countryItem.countryName }}
+                                    </ion-option>
+                                </ion-select>
+                            </ion-item>
+                        </ion-row>
+                    </ng-container>
+                    <ion-row>
+                        <ion-col>
+                            <div class="divider--full"></div>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row>
+                        <ion-item class="telephoneNumber">
+                            <div class="border-divider border-color"></div>
+                            <ion-label floating>Telephone*</ion-label>
+                            <ion-input name="telephoneNumber" type="tel" formControlName="telephoneNumber"
+                                       placeholder=""></ion-input>
+                        </ion-item>
+                        <ion-item-divider ion-item light no-lines class="error"
+                                          *ngIf="updateAccountForm.get('telephoneNumber').dirty && !updateAccountForm.get('telephoneNumber').valid">
+                            <p>{{errorMessage('telephoneNumber')}}</p>
+                        </ion-item-divider>
+                    </ion-row>
+                </form>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-grid class="footer-wrapper" *ngIf="showContent">
+        <button ion-button large block class="btn-update" [disabled]="!updateAccountForm.valid" (click)="updateUserDetails()">
+            UPDATE
+        </button>
+    </ion-grid>
+</ion-content>
+
+
+          
+<ion-row style="display: none;" 
+(click)="navCtrl.pop()"
+id="EditAccountPage-back-button">
+</ion-row>

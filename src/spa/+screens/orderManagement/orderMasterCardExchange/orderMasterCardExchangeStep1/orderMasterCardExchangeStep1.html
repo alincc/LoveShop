@@ -1,0 +1,74 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            payment
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid class="content-wrapper">
+        <ion-row>
+            <p class="label">Basket</p>
+        </ion-row>
+        <ion-row class="card-info--wrapper">
+            <table>
+                <thead>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let orderline of orderInforAfterGenerate?.orderlines">
+                        <td>{{orderline?.productDescription}}</td>
+                        <td>{{orderline?.quantity}}</td>
+                        <td>{{orderline?.paymentAmount  | currency:'GBP':'symbol':'1.2-2'}}</td>
+                    </tr>
+                    <!--<tr *ngIf="haveCardFee">-->
+                        <!--<td colspan="2">Card Fee </td>-->
+                        <!--<td>{{orderInforAfterGenerate?.orderlines[1]?.paymentAmount  | currency:'GBP':'symbol':'1.2-2'}}</td>-->
+                    <!--</tr>-->
+                </tbody>
+                <tfoot>
+                    <td colspan="2">Sub Total</td>
+                    <td>{{orderInforAfterGenerate?.totalPaymentAmount  | currency:'GBP':'symbol':'1.2-2'}}</td>
+                </tfoot>
+            </table>
+        </ion-row>
+
+        <ion-row class="m-b-15">
+            <ion-col>
+                <p class="label">Primary card payment</p>
+                <div class="product-info">
+                    <img src="{{baseResourceUrl}}{{cardPrimary?.cardLogoPath}}"/>
+                    <p class="card-num">{{cardPrimary?.nickname}}</p>
+                    <p>Ends in {{fourLastCardNumber}} | Expires {{cardPrimary?.expiryDate}}</p>
+                    <p class="value-balance">Value: {{orderInforAfterGenerate?.totalPaymentAmount  | currency:'GBP':'symbol':'1.2-2'}} | Balance remaining {{ currentBalanceRemaining  | currency:'GBP':'symbol':'1.2-2'}}</p>
+                </div>
+                <form [formGroup]="confirmOrderForm">
+                    <ion-input type="tel"
+                               placeholder="Card Security Code"
+                               formControlName="cvv"
+                               class="input--border only-password"></ion-input>
+                    <img class="csc" src="assets/images/card-csc-icon.png" height="34" width="51"/>
+                    <ion-item-divider ion-item light no-lines class="error"
+                                      *ngIf="confirmOrderForm.get('cvv').dirty && !confirmOrderForm.get('cvv').valid">
+                        <p>{{errorMessage('cvv')}}</p>
+                    </ion-item-divider>
+                </form>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-row class="footer--wrapper" padding>
+        <ion-col>
+            <button ion-button block large [disabled]="!confirmOrderForm.valid" (click)="confirmOrder()">
+                <i class="fa fa-lock m-r-5 m-t-2"></i> Pay Now
+            </button>
+        </ion-col>
+    </ion-row>
+
+    <ion-row style="display: none;" 
+    (click)="navCtrl.pop()"
+    id="OrderMasterCardExchangeStep1-back-button">
+    </ion-row>
+</ion-content>

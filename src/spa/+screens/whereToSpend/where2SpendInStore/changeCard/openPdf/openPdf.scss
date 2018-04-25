@@ -1,0 +1,20 @@
+page-openPdf {
+    text-align: center;
+    .scroll-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    .link {
+        color: blue;
+    }
+
+    .un-line {
+        text-decoration: underline;
+    }
+}

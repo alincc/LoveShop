@@ -1,0 +1,32 @@
+@import "../../../../theme/colors";
+
+page-changeEmail {
+  p {
+    margin: 0;
+    width: 100%;
+  }
+  .scroll-content {
+    p {
+      margin: 0;
+      >span {
+        font-weight: bold;
+      }
+    }
+  }
+  
+  .item.item-block {
+      &.item-label-floating,
+      &.item-label-stacked {
+          ion-input {
+          background: none !important;
+          .text-input, .input-ios {
+              background: none !important;
+          }
+          }
+      }
+  }
+
+  .content-wrapper {
+    min-height: calc(100% - 55px);
+  }
+}

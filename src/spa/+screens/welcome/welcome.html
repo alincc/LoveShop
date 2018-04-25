@@ -1,0 +1,60 @@
+<ion-content >
+  <ion-grid class="full-h-flex content-wrapper">
+    <ng-container *ngIf="!authGuardService.isAuthenticated(); else loading;">
+      <ion-row>
+        <ion-col text-center class="p-t-30 clearfix">
+          <img class="l2s-logo" src="assets/images/l2s-logo.png"/>
+
+        </ion-col>
+      </ion-row>
+      <ion-row >
+        <ion-col class="clearfix">
+          <div class="p-b-20">
+            <button (click)="navCtrl.push('LoginPage')" ion-button large block
+                    class="l2s-btn l2s-btn--default">Login
+            </button>
+          </div>
+          <div>
+            <button (click)="navCtrl.push('RegisterStep1Page')" ion-button large block
+                    class="l2s-btn l2s-btn--primary">Register
+            </button>
+          </div>
+        </ion-col>
+      </ion-row>
+      <!--<ion-row>-->
+        <!--<div pinch-zoom>-->
+          <!--<img src="https://static.pexels.com/photos/160699/girl-dandelion-yellow-flowers-160699.jpeg" style="max-width: 100%" />-->
+        <!--</div>-->
+      <!--</ion-row>-->
+
+      <ion-row>
+        <ion-col>
+          <ion-row padding-bottom>
+            <button (click)="navCtrl.push('AddMyCardPage')" ion-button large block outline
+                    class="l2s-btn l2s-btn--outline">Add my card
+            </button>
+          </ion-row>
+
+          <ion-row>
+            <ion-col class="p-r-6">
+              <button (click)="navCtrl.setRoot('CheckBalanceStep1Page')" ion-button large block outline
+                      class="l2s-btn l2s-btn--outline">Check my balance
+              </button>
+            </ion-col>
+            <ion-col class="p-l-6">
+              <button (click)="goToW2S()" ion-button large block outline
+                      class="l2s-btn l2s-btn--outline">Where to spend
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+
+
+      <ng-template #loading>
+        <h3>Loading...</h3>
+      </ng-template>
+    </ng-container>
+  </ion-grid>
+</ion-content>
+

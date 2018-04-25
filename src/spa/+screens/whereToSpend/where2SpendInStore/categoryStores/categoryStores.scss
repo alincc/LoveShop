@@ -1,0 +1,84 @@
+page-categoryStores {
+  background: #f6f6f6;
+  .scroll-content {
+    background: #ffffff;
+    margin-top: 50px !important;
+  }
+  .content-wrapper {
+    width: 100% !important;
+  }
+  .item.item-block.item-ios.item-checkbox {
+    border: none;
+  }
+  ion-item.item-block {
+    border-bottom: 1px solid map-get($colors, primary) !important;
+
+    &.active {
+      .label {
+        color: map-get($colors, secondary);
+      }
+    }
+  }
+  .item .icon  {
+    margin: 0;
+  }
+  .main-content {
+    .list {
+      width: 100%;
+      margin: 0;
+      margin-bottom: 20px;
+      overflow: hidden;
+      [item-end] {
+        .checkbox-icon {
+          border: none;
+          &.checkbox-checked {
+            background: transparent;
+            border: 0;
+            .checkbox-inner {
+              height: 10px;
+              border-style: outset;
+              border-color: #4a4a4a;
+            }
+          }
+        }
+      }
+    }
+
+    .label {
+      color: map-get($colors, primary);
+      line-height: 21px;
+    }
+  }
+  .ion-ios-checkmark ~ .input-wrapper {
+    .label {
+      color: red;
+    }
+  }
+  .footer-content {
+    height: 10%;
+    position: fixed;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .main-content--wrapper {
+    min-height: calc(100% - 60px)
+  }
+  .footer-content--wrapper {
+    height: 60px
+  }
+  .footer-wrapper {
+    .button {
+      box-shadow: 0px 4px 0px 0px #B72661;
+      border-radius: 5px;
+    }
+  }
+  .list {
+    overflow: hidden;
+    .item {
+      &:first-child {
+        border-top: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button  ion-button icon-only (click)="gotoWelcome()">
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Check my Balance
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="form-balance--container">
+  <ion-grid class="content-wrapper">
+    <ion-row>
+      <ion-col>
+        <form [formGroup]="checkBalanceForm">
+          <ion-item no-padding class="item-has-addon">
+            <ion-input name="cardNumber" type="text"  formControlName="cardNumber" placeholder="Card or e-code number"></ion-input>
+            <ion-icon name="camera" item-right (click)="scanButton()"></ion-icon>
+          </ion-item>
+          <ion-item-divider ion-item light no-lines class="error"
+                            *ngIf="checkBalanceForm.get('cardNumber').dirty && !checkBalanceForm.get('cardNumber').valid">
+            <p>{{errorMessage('cardNumber')}}</p>
+          </ion-item-divider>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-row class="footer-wrapper">
+    <ion-col>
+      <button [disabled]="!checkBalanceForm.valid" (click)="submitToCheckCardBalance()" ion-button large block>Submit</button>
+    </ion-col>
+  </ion-row>
+
+  
+  <ion-row style="display: none;" 
+  (click)="gotoWelcome()"
+  id="CheckBalanceStep1Page-back-button">
+  </ion-row>
+</ion-content>
