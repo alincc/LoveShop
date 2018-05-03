@@ -1,6 +1,6 @@
 webpackJsonp([44],{
 
-/***/ 1008:
+/***/ 1009:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10,7 +10,7 @@ webpackJsonp([44],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__framework_services_routeManager_routeManager_service__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__orderManagementSharingData_services__ = __webpack_require__(827);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__framework_services_loadingIndicatorService_loadingIndicator_service__ = __webpack_require__(365);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__orderSupermarketStep1_service__ = __webpack_require__(1009);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__orderSupermarketStep1_service__ = __webpack_require__(1010);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__framework_appConfig__ = __webpack_require__(43);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -71,7 +71,7 @@ var OrderSupermarketStep1 = (function () {
     };
     OrderSupermarketStep1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-orderSupermarketStep1',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\orderManagement\orderSupermarket\orderSupermarketStep1\orderSupermarketStep1.html"*/'\n\n<ion-header>\n  <ion-navbar>\n    <ion-title>\n      confirm order\n\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid class="content-wrapper">\n\n    <ion-row margin-bottom>\n      <ion-col>\n        <h3 class="label">Your Supermarket card</h3>\n        <p>\n          {{empty_top_up_card_later}}\n        </p>\n      </ion-col>\n    </ion-row>\n\n    <ion-row margin-bottom>\n      <ion-col>\n        <p class="label">Order description</p>\n        <table>\n          <thead>\n            <th>Product</th>\n            <th>Quanlity</th>\n            <th>Value</th>\n          </thead>\n          <tbody>\n            <tr>\n              <td>{{orderGenerateSuperMarket?.orderlines[0]?.productDescription}}</td>\n              <td>{{orderGenerateSuperMarket?.orderlines[0]?.quantity}}</td>\n              <td>{{orderGenerateSuperMarket?.orderValue  | currency:\'GBP\':\'symbol\':\'1.2-2\'}}</td>\n            </tr>\n          </tbody>\n          <tfoot>\n            <td colspan="2">Sub Total</td>\n            <td>{{orderGenerateSuperMarket?.totalPaymentAmount  | currency:\'GBP\':\'symbol\':\'1.2-2\'}}</td>\n          </tfoot>\n        </table>\n      </ion-col>\n    </ion-row>\n\n    <ion-row margin-bottom>\n      <ion-col>\n        <p class="label">Billing & Delivery Address</p>\n        <p class="value" *ngIf="orderGenerateSuperMarket?.title">{{orderGenerateSuperMarket?.title}} {{orderGenerateSuperMarket?.firstName}} {{orderGenerateSuperMarket?.lastName}} </p>\n        <p class="value" *ngIf="orderGenerateSuperMarket?.addressLine1">{{orderGenerateSuperMarket?.addressLine1}}</p>\n        <p class="value" *ngIf="orderGenerateSuperMarket?.addressLine2">{{orderGenerateSuperMarket?.addressLine2}}</p>\n        <p class="value" *ngIf="orderGenerateSuperMarket?.town">{{orderGenerateSuperMarket?.town}}</p>\n        <p class="value" *ngIf="orderGenerateSuperMarket?.county">{{orderGenerateSuperMarket?.county}}</p>\n        <p class="value" *ngIf="orderGenerateSuperMarket?.postcode">{{orderGenerateSuperMarket?.postcode}}</p>\n        <p class="value" *ngIf="orderGenerateSuperMarket?.country">{{orderGenerateSuperMarket?.country}}</p>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <ion-row  class="footer-wrapper">\n    <button ion-button block large color="primary" (click)="confirmOrder()">Confirm Order</button>\n  </ion-row>\n\n</ion-content>\n\n          \n<ion-row style="display: none;" \n(click)="navCtrl.pop()"\nid="OrderSupermarketStep1-back-button">\n</ion-row>'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\orderManagement\orderSupermarket\orderSupermarketStep1\orderSupermarketStep1.html"*/,
+            selector: 'page-orderSupermarketStep1',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\orderManagement\orderSupermarket\orderSupermarketStep1\orderSupermarketStep1.html"*/'\n\n<ion-header>\n  <ion-navbar>\n    <ion-title>\n      confirm order\n\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid class="content-wrapper">\n\n    <ion-row margin-bottom>\n      <ion-col>\n        <h3 class="label">Your Supermarket card</h3>\n        <p>\n          {{empty_top_up_card_later}}\n        </p>\n      </ion-col>\n    </ion-row>\n\n    <ion-row margin-bottom>\n      <ion-col>\n        <p class="label">Order description</p>\n        <table>\n          <thead>\n            <th>Product</th>\n            <th>Quanlity</th>\n            <th>Value</th>\n          </thead>\n          <tbody>\n            <tr>\n              <td>{{orderGenerateSuperMarket?.orderlines[0]?.productDescription}}</td>\n              <td>{{orderGenerateSuperMarket?.orderlines[0]?.quantity}}</td>\n              <td>{{orderGenerateSuperMarket?.orderValue  | currency:\'GBP\':\'symbol\':\'1.2-2\'}}</td>\n            </tr>\n          </tbody>\n          <tfoot>\n            <td colspan="2">Sub Total</td>\n            <td>{{orderGenerateSuperMarket?.totalPaymentAmount  | currency:\'GBP\':\'symbol\':\'1.2-2\'}}</td>\n          </tfoot>\n        </table>\n      </ion-col>\n    </ion-row>\n\n    <ion-row margin-bottom>\n      <ion-col>\n        <p class="label">Billing & Delivery Address</p>\n        <p class="value" *ngIf="orderGenerateSuperMarket?.title">{{orderGenerateSuperMarket?.title}} {{orderGenerateSuperMarket?.firstName}} {{orderGenerateSuperMarket?.lastName}} </p>\n        <p class="value" *ngIf="orderGenerateSuperMarket?.addressLine1">{{orderGenerateSuperMarket?.addressLine1}}</p>\n        <p class="value" *ngIf="orderGenerateSuperMarket?.addressLine2">{{orderGenerateSuperMarket?.addressLine2}}</p>\n        <p class="value" *ngIf="orderGenerateSuperMarket?.town">{{orderGenerateSuperMarket?.town}}</p>\n        <p class="value" *ngIf="orderGenerateSuperMarket?.county">{{orderGenerateSuperMarket?.county}}</p>\n        <p class="value" *ngIf="orderGenerateSuperMarket?.postcode">{{orderGenerateSuperMarket?.postcode}}</p>\n        <p class="value" *ngIf="orderGenerateSuperMarket?.country">{{orderGenerateSuperMarket?.country}}</p>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <ion-row  class="footer-wrapper">\n    <button ion-button block large color="primary" (click)="confirmOrder()">Confirm Order</button>\n  </ion-row>\n\n</ion-content>\n\n          \n<ion-row style="display: none;" \n(click)="navCtrl.pop()"\nid="OrderSupermarketStep1-back-button">\n</ion-row>'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\orderManagement\orderSupermarket\orderSupermarketStep1\orderSupermarketStep1.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_5__orderSupermarketStep1_service__["a" /* OrderSupermarketStep1Service */]
             ]
@@ -87,7 +87,7 @@ var OrderSupermarketStep1 = (function () {
 
 /***/ }),
 
-/***/ 1009:
+/***/ 1010:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -131,7 +131,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrderSupermarketStep1Module", function() { return OrderSupermarketStep1Module; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__orderSupermarketStep1__ = __webpack_require__(1008);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__orderSupermarketStep1__ = __webpack_require__(1009);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);

@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CheckBalanceStep3PageModule", function() { return CheckBalanceStep3PageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__checkBalanceStep3__ = __webpack_require__(955);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__checkBalanceStep3__ = __webpack_require__(956);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -145,7 +145,7 @@ var CardBalanceDataService = (function () {
 
 /***/ }),
 
-/***/ 955:
+/***/ 956:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -154,7 +154,7 @@ var CardBalanceDataService = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cardBalanceSharingData_service__ = __webpack_require__(830);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cardBalanceData_service__ = __webpack_require__(839);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__checkBalanceStep3_service__ = __webpack_require__(956);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__checkBalanceStep3_service__ = __webpack_require__(957);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__framework_services_routeManager_routeManager_service__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_Observable__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_Observable__);
@@ -218,7 +218,7 @@ var CheckBalanceStep3Page = (function () {
     };
     CheckBalanceStep3Page = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-checkBalanceStep3',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\CardManagement\checkBalance\checkBalanceStep3\checkBalanceStep3.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Check my Balance\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid class=" content-wrapper">\n\n    <ion-row text-center class="m-b-30 p-t-40">\n      <ion-col col-8 push-2>\n        <div class="current-balance">\n          <h3>Current balance</h3>\n          <h1 class="openSans-bold">{{balanceValue?.balance | currency:\'GBP\':\'symbol\':\'1.2-2\'}}</h1>\n          <p>{{cardnumber}}</p>\n        </div>\n      </ion-col>\n    </ion-row>\n\n    <ion-row text-center class="more-information">\n      <ion-col>\n        <h3 class="m-t-0 m-b-20">{{register_or_login_MSG}}</h3>\n        <p class="text-12">{{view_transactions_MSG}}</p>\n        <!--<p class="text-12">- View your transactions</p>-->\n        <!--<p class="text-12">- Get exclusive offers and deals for your card</p>-->\n        <!--<p class="text-12">- See where to spend</p>-->\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-grid class="footer-wrapper">\n    <ion-row padding>\n      <ion-col col-12 margin-bottom>\n        <button ion-button block large (click)="navCtrl.push(\'RegisterStep1Page\')">Register</button>\n      </ion-col>\n      <ion-col col-12>\n        <button ion-button block large (click)="navCtrl.push(\'LoginPage\')">Login</button>\n      </ion-col>\n      <ion-col col-12 text-center class="m-t-20">\n        <p class="text-link-item" (click)="navCtrl.setRoot(\'WelcomePage\', null, { animate: true, direction: \'back\' })">Return to home screen</p>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\CardManagement\checkBalance\checkBalanceStep3\checkBalanceStep3.html"*/,
+            selector: 'page-checkBalanceStep3',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\CardManagement\checkBalance\checkBalanceStep3\checkBalanceStep3.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Check my Balance\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid class=" content-wrapper">\n\n    <ion-row text-center class="m-b-30 p-t-40">\n      <ion-col col-8 push-2>\n        <div class="current-balance">\n          <h3>Current balance</h3>\n          <h1 class="openSans-bold">{{balanceValue?.balance | currency:\'GBP\':\'symbol\':\'1.2-2\'}}</h1>\n          <p>{{cardnumber}}</p>\n        </div>\n      </ion-col>\n    </ion-row>\n\n    <ion-row text-center class="more-information">\n      <ion-col>\n        <h3 class="m-t-0 m-b-20">{{register_or_login_MSG}}</h3>\n        <p class="text-12">{{view_transactions_MSG}}</p>\n        <!--<p class="text-12">- View your transactions</p>-->\n        <!--<p class="text-12">- Get exclusive offers and deals for your card</p>-->\n        <!--<p class="text-12">- See where to spend</p>-->\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-grid class="footer-wrapper">\n    <ion-row padding>\n      <ion-col col-12 margin-bottom>\n        <button ion-button block large (click)="navCtrl.push(\'RegisterStep1Page\')">Register</button>\n      </ion-col>\n      <ion-col col-12>\n        <button ion-button block large (click)="navCtrl.push(\'LoginPage\')">Login</button>\n      </ion-col>\n      <ion-col col-12 text-center class="m-t-20">\n        <p class="text-link-item" (click)="navCtrl.setRoot(\'WelcomePage\', null, { animate: true, direction: \'back\' })">Return to home screen</p>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\CardManagement\checkBalance\checkBalanceStep3\checkBalanceStep3.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_3__cardBalanceData_service__["a" /* CardBalanceDataService */],
                 __WEBPACK_IMPORTED_MODULE_2__cardBalanceSharingData_service__["a" /* CardBalanceSharingDataService */],
@@ -237,7 +237,7 @@ var CheckBalanceStep3Page = (function () {
 
 /***/ }),
 
-/***/ 956:
+/***/ 957:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

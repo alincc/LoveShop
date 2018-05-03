@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ViewCardStatementPageModule", function() { return ViewCardStatementPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__viewCardStatement__ = __webpack_require__(960);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__viewCardStatement__ = __webpack_require__(961);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -410,7 +410,7 @@ var ViewCardStatementService = (function () {
 /***/ 840:
 /***/ (function(module, exports, __webpack_require__) {
 
-var startOfWeek = __webpack_require__(967)
+var startOfWeek = __webpack_require__(968)
 
 /**
  * @category ISO Week Helpers
@@ -518,7 +518,7 @@ module.exports = getISOYear
 
 /***/ }),
 
-/***/ 960:
+/***/ 961:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -528,9 +528,9 @@ module.exports = getISOYear
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__viewCardStatement_service__ = __webpack_require__(837);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__framework_services_loadingIndicatorService_loadingIndicator_service__ = __webpack_require__(365);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__framework_services_toastMessageService_toastMessage_service__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_date_fns_format__ = __webpack_require__(961);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_date_fns_format__ = __webpack_require__(962);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_date_fns_format___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_date_fns_format__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_lodash_groupby__ = __webpack_require__(974);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_lodash_groupby__ = __webpack_require__(975);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_lodash_groupby___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_lodash_groupby__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__framework_services_routeManager_routeManager_service__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__framework_appConfig__ = __webpack_require__(43);
@@ -720,7 +720,7 @@ var ViewCardStatementPage = (function () {
     };
     ViewCardStatementPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-viewCardStatement',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\CardManagement\viewCardStatement\viewCardStatement.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title *ngIf="cardCurrent && cardCurrent.nickname">{{cardCurrent?.nickname}} CARD TRANSACTIONS</ion-title>\n    <ion-title *ngIf="!cardCurrent || !cardCurrent.nickname">YOUR CARD TRANSACTIONS</ion-title>    \n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid>\n    <ion-row class="main-content">\n      <ion-col>\n        <ion-list *ngFor="let item of transaction.transactions" >\n          <h5>{{item[0].dateAfterConvert}}</h5>\n          <ion-item *ngFor="let itemInner of item" padding>\n            <ion-row>\n              <ion-col col col-4>\n                <p class="text-10">{{itemInner.type}}</p>\n                <p class="time text-9">{{itemInner.hourAfterConvert}}</p>\n              </ion-col>\n              <ion-col col col-5 text-left class="middle--wrapper">\n                <p  class="text-10" align-self-center>{{itemInner.description}}</p>\n              </ion-col>\n              <ion-col col col-3 text-right class="middle--wrapper">\n                <span class="text-10" *ngIf="itemInner.statusOfAmount">+ {{itemInner.amount | currency:\'GBP\':\'symbol\':\'1.2-2\'}}</span>\n                <span class="text-10" *ngIf="itemInner.statusOfAmount === false">- {{itemInner.amount*(-1) | currency:\'GBP\':\'symbol\':\'1.2-2\'}}</span>\n              </ion-col>\n            </ion-row>\n          </ion-item>\n        </ion-list>\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="!transaction || !transaction.transactions || !transaction.transactions.length" padding class="main-content">\n      <ion-col>\n        {{make_first_transaction_with_card_MSG}}\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n<ion-footer fixed padding no-shadow class="footer-sticker--wrapper">\n    <ion-row>\n        <ion-col col col-8 class="openSans-bold">\n          current balance\n        </ion-col>\n        <ion-col col col-4 text-right class="openSans-bold">\n          {{transaction.availableBalance | currency:\'GBP\':\'symbol\':\'1.2-2\'}}\n        </ion-col>\n      </ion-row>\n\n      <ion-row style="display: none;" \n      (click)="navCtrl.pop()"\n      id="ViewCardStatementPage-back-button">\n      </ion-row>\n</ion-footer>\n'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\CardManagement\viewCardStatement\viewCardStatement.html"*/,
+            selector: 'page-viewCardStatement',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\CardManagement\viewCardStatement\viewCardStatement.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title *ngIf="cardCurrent && cardCurrent.nickname">{{cardCurrent?.nickname}} CARD TRANSACTIONS</ion-title>\n    <ion-title *ngIf="!cardCurrent || !cardCurrent.nickname">YOUR CARD TRANSACTIONS</ion-title>    \n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid>\n    <ion-row class="main-content">\n      <ion-col>\n        <ion-list *ngFor="let item of transaction.transactions" >\n          <h5>{{item[0].dateAfterConvert}}</h5>\n          <ion-item *ngFor="let itemInner of item" padding>\n            <ion-row>\n              <ion-col col col-4>\n                <p class="text-10">{{itemInner.type}}</p>\n                <p class="time text-9">{{itemInner.hourAfterConvert}}</p>\n              </ion-col>\n              <ion-col col col-5 text-left class="middle--wrapper">\n                <p  class="text-10" align-self-center>{{itemInner.description}}</p>\n              </ion-col>\n              <ion-col col col-3 text-right class="middle--wrapper">\n                <span class="text-10" *ngIf="itemInner.statusOfAmount">+ {{itemInner.amount | currency:\'GBP\':\'symbol\':\'1.2-2\'}}</span>\n                <span class="text-10" *ngIf="itemInner.statusOfAmount === false">- {{itemInner.amount*(-1) | currency:\'GBP\':\'symbol\':\'1.2-2\'}}</span>\n              </ion-col>\n            </ion-row>\n          </ion-item>\n        </ion-list>\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="!transaction || !transaction.transactions || !transaction.transactions.length" padding class="main-content">\n      <ion-col>\n        {{make_first_transaction_with_card_MSG}}\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n<ion-footer fixed padding no-shadow class="footer-sticker--wrapper">\n    <ion-row>\n        <ion-col col col-8 class="openSans-bold">\n          current balance\n        </ion-col>\n        <ion-col col col-4 text-right class="openSans-bold">\n          {{transaction.availableBalance | currency:\'GBP\':\'symbol\':\'1.2-2\'}}\n        </ion-col>\n      </ion-row>\n\n      <ion-row style="display: none;" \n      (click)="navCtrl.pop()"\n      id="ViewCardStatementPage-back-button">\n      </ion-row>\n</ion-footer>\n'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\CardManagement\viewCardStatement\viewCardStatement.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_2__viewCardStatement_service__["a" /* ViewCardStatementService */]
             ]
@@ -737,15 +737,15 @@ var ViewCardStatementPage = (function () {
 
 /***/ }),
 
-/***/ 961:
+/***/ 962:
 /***/ (function(module, exports, __webpack_require__) {
 
-var getDayOfYear = __webpack_require__(962)
-var getISOWeek = __webpack_require__(966)
+var getDayOfYear = __webpack_require__(963)
+var getISOWeek = __webpack_require__(967)
 var getISOYear = __webpack_require__(846)
 var parse = __webpack_require__(824)
-var isValid = __webpack_require__(969)
-var enLocale = __webpack_require__(970)
+var isValid = __webpack_require__(970)
+var enLocale = __webpack_require__(971)
 
 /**
  * @category Common Helpers
@@ -1072,12 +1072,12 @@ module.exports = format
 
 /***/ }),
 
-/***/ 962:
+/***/ 963:
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(824)
-var startOfYear = __webpack_require__(963)
-var differenceInCalendarDays = __webpack_require__(964)
+var startOfYear = __webpack_require__(964)
+var differenceInCalendarDays = __webpack_require__(965)
 
 /**
  * @category Day Helpers
@@ -1106,7 +1106,7 @@ module.exports = getDayOfYear
 
 /***/ }),
 
-/***/ 963:
+/***/ 964:
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(824)
@@ -1140,10 +1140,10 @@ module.exports = startOfYear
 
 /***/ }),
 
-/***/ 964:
+/***/ 965:
 /***/ (function(module, exports, __webpack_require__) {
 
-var startOfDay = __webpack_require__(965)
+var startOfDay = __webpack_require__(966)
 
 var MILLISECONDS_IN_MINUTE = 60000
 var MILLISECONDS_IN_DAY = 86400000
@@ -1188,7 +1188,7 @@ module.exports = differenceInCalendarDays
 
 /***/ }),
 
-/***/ 965:
+/***/ 966:
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(824)
@@ -1220,12 +1220,12 @@ module.exports = startOfDay
 
 /***/ }),
 
-/***/ 966:
+/***/ 967:
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(824)
 var startOfISOWeek = __webpack_require__(840)
-var startOfISOYear = __webpack_require__(968)
+var startOfISOYear = __webpack_require__(969)
 
 var MILLISECONDS_IN_WEEK = 604800000
 
@@ -1261,7 +1261,7 @@ module.exports = getISOWeek
 
 /***/ }),
 
-/***/ 967:
+/***/ 968:
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(824)
@@ -1306,7 +1306,7 @@ module.exports = startOfWeek
 
 /***/ }),
 
-/***/ 968:
+/***/ 969:
 /***/ (function(module, exports, __webpack_require__) {
 
 var getISOYear = __webpack_require__(846)
@@ -1345,7 +1345,7 @@ module.exports = startOfISOYear
 
 /***/ }),
 
-/***/ 969:
+/***/ 970:
 /***/ (function(module, exports, __webpack_require__) {
 
 var isDate = __webpack_require__(845)
@@ -1387,11 +1387,11 @@ module.exports = isValid
 
 /***/ }),
 
-/***/ 970:
+/***/ 971:
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(971)
-var buildFormatLocale = __webpack_require__(972)
+var buildDistanceInWordsLocale = __webpack_require__(972)
+var buildFormatLocale = __webpack_require__(973)
 
 /**
  * @category Locales
@@ -1405,7 +1405,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 971:
+/***/ 972:
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -1511,10 +1511,10 @@ module.exports = buildDistanceInWordsLocale
 
 /***/ }),
 
-/***/ 972:
+/***/ 973:
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildFormattingTokensRegExp = __webpack_require__(973)
+var buildFormattingTokensRegExp = __webpack_require__(974)
 
 function buildFormatLocale () {
   // Note: in English, the names of days of the week and months are capitalized.
@@ -1606,7 +1606,7 @@ module.exports = buildFormatLocale
 
 /***/ }),
 
-/***/ 973:
+/***/ 974:
 /***/ (function(module, exports) {
 
 var commonFormatterKeys = [
@@ -1641,7 +1641,7 @@ module.exports = buildFormattingTokensRegExp
 
 /***/ }),
 
-/***/ 974:
+/***/ 975:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {/**
@@ -4014,11 +4014,11 @@ function property(path) {
 
 module.exports = groupBy;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(67), __webpack_require__(975)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(67), __webpack_require__(976)(module)))
 
 /***/ }),
 
-/***/ 975:
+/***/ 976:
 /***/ (function(module, exports) {
 
 module.exports = function(module) {

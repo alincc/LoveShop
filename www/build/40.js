@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AmountTopUpPageModule", function() { return AmountTopUpPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__amountTopUp__ = __webpack_require__(934);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__amountTopUp__ = __webpack_require__(935);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -247,7 +247,7 @@ var CardDetailsDataService = (function () {
 
 /***/ }),
 
-/***/ 934:
+/***/ 935:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -257,7 +257,7 @@ var CardDetailsDataService = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__framework_validations_validator_required_directive__ = __webpack_require__(367);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__cardDetailsData_service__ = __webpack_require__(828);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__amountTopUp_service__ = __webpack_require__(935);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__amountTopUp_service__ = __webpack_require__(936);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__ = __webpack_require__(365);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__framework_services_routeManager_routeManager_service__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_jquery__ = __webpack_require__(91);
@@ -498,7 +498,7 @@ var AmountTopUpPage = (function () {
     ], AmountTopUpPage.prototype, "textInputs", void 0);
     AmountTopUpPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-amountTopUp',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\CardManagement\cardDetails\amountTopUp\amountTopUp.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-buttons left>\n      <button ion-button icon-only (click)="gotoPreviousPage()">\n        <ion-icon name="ios-arrow-back"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>TOP UP</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="container-content">\n  <ion-grid class="content-wrapper" >\n    <ion-row class="m-b-50 m-t-30">\n      <ion-col>\n        <p text-center>{{confirm_top_up_amount}}</p>\n      </ion-col>\n    </ion-row>\n    <ion-row class="m-b-20">\n      <ion-col col-8 push-2>\n        <div class="topUpErrorForm error m-b-10" *ngIf="!topUpErrorForm.valid && topUpErrorForm.message"\n             [innerHTML]="topUpErrorForm.message">\n        </div>\n        <form [formGroup]="topUpForm" text-center>\n          <ion-item class="item-input--wrapper item-big" no-padding (click)="focusToInput()">\n            <ion-input id="inputAmount"\n                       class="inputAmount topUpInputiOS montserrat-bold"\n                       name="topUpInput " type="text" inputmode="numeric"\n                       placeholder="£0.00"\n                       formControlName="topUpInput"\n                       (focusout)=\'otherValueChange($event.target.value)\'\n                       (ionChange)="changeInput($event)" text-wrap>\n\n            </ion-input>\n            <ion-input id="inputAmount2"\n                       (focusout)=\'otherValueChange($event.target.value)\'\n                       class="inputAmount topUpInputandroid montserrat-bold"\n                       name="topUpInput " type="tel"\n                       placeholder="£0.00"\n                       formControlName="topUpInput"\n                       (ionChange)="changeInput($event)" text-wrap></ion-input>\n          </ion-item>\n          <ion-item-divider ion-item light no-lines class="error"  *ngIf="!productValid">\n            <p>Please enter an amount between {{minValue | number:\'1.2-2\'}} and {{maxValue | number:\'1.2-2\'}}</p>\n          </ion-item-divider>\n        </form>\n      </ion-col>\n    </ion-row>\n    <ion-row class="m-b-50 discount-info">\n      <ion-col *ngIf="cardPrimary?.discountPercentageMessage">\n        <p class="openSans-bold">{{cardPrimary?.discountPercentageMessage}}</p>\n        <p>{{applied_to_this_amount}}</p>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <ion-row class="footer-wrapper">\n    <ion-col>\n      <button ion-button large block [disabled]="!topUpForm.valid || !productValid " (click)="confirmTopUp()">Confirm Amount</button>\n    </ion-col>\n  </ion-row>\n</ion-content>\n\n\n\n\n          \n<ion-row style="display: none;" \n(click)="gotoPreviousPage()"\nid="AmountTopUpPage-back-button">\n</ion-row>'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\CardManagement\cardDetails\amountTopUp\amountTopUp.html"*/,
+            selector: 'page-amountTopUp',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\CardManagement\cardDetails\amountTopUp\amountTopUp.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-buttons left>\n      <button ion-button icon-only (click)="gotoPreviousPage()">\n        <ion-icon name="ios-arrow-back"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>TOP UP</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="container-content">\n  <ion-grid class="content-wrapper" >\n    <ion-row class="m-b-50 m-t-30">\n      <ion-col>\n        <p text-center>{{confirm_top_up_amount}}</p>\n      </ion-col>\n    </ion-row>\n    <ion-row class="m-b-20">\n      <ion-col col-8 push-2>\n        <div class="topUpErrorForm error m-b-10" *ngIf="!topUpErrorForm.valid && topUpErrorForm.message"\n             [innerHTML]="topUpErrorForm.message">\n        </div>\n        <form [formGroup]="topUpForm" text-center>\n          <ion-item class="item-input--wrapper item-big" no-padding (click)="focusToInput()">\n            <ion-input id="inputAmount"\n                       class="inputAmount topUpInputiOS montserrat-bold"\n                       name="topUpInput " type="text" inputmode="numeric"\n                       placeholder="£0.00"\n                       formControlName="topUpInput"\n                       (focusout)=\'otherValueChange($event.target.value)\'\n                       (ionChange)="changeInput($event)" text-wrap>\n\n            </ion-input>\n            <ion-input id="inputAmount2"\n                       (focusout)=\'otherValueChange($event.target.value)\'\n                       class="inputAmount topUpInputandroid montserrat-bold"\n                       name="topUpInput " type="tel"\n                       placeholder="£0.00"\n                       formControlName="topUpInput"\n                       (ionChange)="changeInput($event)" text-wrap></ion-input>\n          </ion-item>\n          <ion-item-divider ion-item light no-lines class="error"  *ngIf="!productValid">\n            <p>Please enter an amount between {{minValue | number:\'1.2-2\'}} and {{maxValue | number:\'1.2-2\'}}</p>\n          </ion-item-divider>\n        </form>\n      </ion-col>\n    </ion-row>\n    <ion-row class="m-b-50 discount-info">\n      <ion-col *ngIf="cardPrimary?.discountPercentageMessage">\n        <p class="openSans-bold">{{cardPrimary?.discountPercentageMessage}}</p>\n        <p>{{applied_to_this_amount}}</p>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <ion-row class="footer-wrapper">\n    <ion-col>\n      <button ion-button large block [disabled]="!topUpForm.valid || !productValid " (click)="confirmTopUp()">Confirm Amount</button>\n    </ion-col>\n  </ion-row>\n</ion-content>\n\n\n\n\n          \n<ion-row style="display: none;" \n(click)="gotoPreviousPage()"\nid="AmountTopUpPage-back-button">\n</ion-row>'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\CardManagement\cardDetails\amountTopUp\amountTopUp.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_4__cardDetailsData_service__["a" /* CardDetailsDataService */],
                 __WEBPACK_IMPORTED_MODULE_5__amountTopUp_service__["a" /* AmountTopUpService */]
@@ -517,7 +517,7 @@ var AmountTopUpPage = (function () {
 
 /***/ }),
 
-/***/ 935:
+/***/ 936:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

@@ -94,7 +94,7 @@ var ContactUsPage = (function () {
     };
     ContactUsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-contactUs',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\AppInforManagement\contactUs\contactUs.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Contact Us\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content >\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <div padding class="text-14" [innerHTML]="contactUsContent">\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n\n          \n<ion-row style="display: none;" \n(click)="navCtrl.pop()"\nid="ContactUsPage-back-button">\n</ion-row>'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\AppInforManagement\contactUs\contactUs.html"*/,
+            selector: 'page-contactUs',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\AppInforManagement\contactUs\contactUs.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Contact Us\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content >\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <div padding class="text-14" [innerHTML]="contactUsContent">\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n\n          \n<ion-row style="display: none;" \n(click)="navCtrl.pop()"\nid="ContactUsPage-back-button">\n</ion-row>'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\AppInforManagement\contactUs\contactUs.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_2__contactUs_service__["a" /* ContactUsService */]
             ]

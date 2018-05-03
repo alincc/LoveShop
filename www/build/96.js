@@ -62,7 +62,7 @@ var ContactPage = (function () {
     };
     ContactPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-contact',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\AppInforManagement\contact\contact.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Contact us\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  Contact us page\n</ion-content>'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\AppInforManagement\contact\contact.html"*/
+            selector: 'page-contact',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\AppInforManagement\contact\contact.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Contact us\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  Contact us page\n</ion-content>'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\AppInforManagement\contact\contact.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */]])
     ], ContactPage);

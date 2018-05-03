@@ -1,15 +1,15 @@
 webpackJsonp([8],{
 
-/***/ 754:
+/***/ 755:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddPinToCardPageModule", function() { return AddPinToCardPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddPinToCodePageModule", function() { return AddPinToCodePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(373);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__addPinToCard__ = __webpack_require__(930);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(372);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__addPinToCode__ = __webpack_require__(932);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__httpAddCard_service__ = __webpack_require__(810);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -22,24 +22,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AddPinToCardPageModule = (function () {
-    function AddPinToCardPageModule() {
+var AddPinToCodePageModule = (function () {
+    function AddPinToCodePageModule() {
     }
-    AddPinToCardPageModule = __decorate([
+    AddPinToCodePageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
-            declarations: [__WEBPACK_IMPORTED_MODULE_3__addPinToCard__["a" /* AddPinToCardPage */]],
-            imports: [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__addPinToCard__["a" /* AddPinToCardPage */])],
-            exports: [__WEBPACK_IMPORTED_MODULE_3__addPinToCard__["a" /* AddPinToCardPage */]],
+            declarations: [__WEBPACK_IMPORTED_MODULE_3__addPinToCode__["a" /* AddPinToCodePage */]],
+            imports: [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__addPinToCode__["a" /* AddPinToCodePage */])],
+            exports: [__WEBPACK_IMPORTED_MODULE_3__addPinToCode__["a" /* AddPinToCodePage */]],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__["a" /* Camera */],
                 __WEBPACK_IMPORTED_MODULE_4__httpAddCard_service__["a" /* HttpAddCardService */]
             ]
         })
-    ], AddPinToCardPageModule);
-    return AddPinToCardPageModule;
+    ], AddPinToCodePageModule);
+    return AddPinToCodePageModule;
 }());
 
-//# sourceMappingURL=addPinToCard.module.js.map
+//# sourceMappingURL=addPinToCode.module.js.map
 
 /***/ }),
 
@@ -289,23 +289,23 @@ var MinLengthValidatorDirective = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HttpAddCardService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(169);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__(164);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_retry__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_retry__ = __webpack_require__(167);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_retry___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_retry__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_timeout__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_timeout__ = __webpack_require__(168);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_timeout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_timeout__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_delay__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_delay__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_delay___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_delay__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__framework_appConfig__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__framework_services_utilities_utilities__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__framework_services_toastMessageService_toastMessage_service__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__framework_services_mobileDeviceService_mobileDeviceService_service__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__framework_services_mobileDeviceService_mobileDeviceService_service__ = __webpack_require__(163);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__framework_login_authenticationGuard_service__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ionic_angular__ = __webpack_require__(22);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -771,24 +771,24 @@ var AddCardSharingDataService = (function () {
 
 /***/ }),
 
-/***/ 930:
+/***/ 932:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddPinToCardPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddPinToCodePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__framework_validations_validator_required_directive__ = __webpack_require__(367);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__addCardSharing_services__ = __webpack_require__(819);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__addCardData_service__ = __webpack_require__(816);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__framework_validations_validator_numeric_directive__ = __webpack_require__(370);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__framework_services_loadingIndicatorService_loadingIndicator_service__ = __webpack_require__(365);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__framework_services_utilities_utilities__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__framework_services_routeManager_routeManager_service__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_in_app_browser__ = __webpack_require__(371);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__framework_validations_validator_minlength_directive__ = __webpack_require__(808);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__framework_validations_validator_maxlengthField_directive__ = __webpack_require__(807);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__addCardData_service__ = __webpack_require__(816);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__framework_validations_validator_numeric_directive__ = __webpack_require__(370);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__ = __webpack_require__(365);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__framework_services_utilities_utilities__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__framework_services_routeManager_routeManager_service__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_in_app_browser__ = __webpack_require__(371);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__framework_validations_validator_minlength_directive__ = __webpack_require__(808);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__framework_validations_validator_maxlengthField_directive__ = __webpack_require__(807);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__addCardSharing_services__ = __webpack_require__(819);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__framework_appConfig__ = __webpack_require__(43);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -813,8 +813,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var AddPinToCardPage = (function () {
-    function AddPinToCardPage(alertCtrl, routeManager, formBuilder, iab, navParams, navCtrl, addCardDataService) {
+var AddPinToCodePage = (function () {
+    function AddPinToCodePage(alertCtrl, routeManager, formBuilder, iab, navParams, navCtrl, addCardDataService) {
         this.alertCtrl = alertCtrl;
         this.routeManager = routeManager;
         this.formBuilder = formBuilder;
@@ -823,21 +823,22 @@ var AddPinToCardPage = (function () {
         this.navCtrl = navCtrl;
         this.addCardDataService = addCardDataService;
         this.model = {};
-        this.must_read_ts_cs = __WEBPACK_IMPORTED_MODULE_13__framework_appConfig__["a" /* AppConfig */].Configuration.ContentMessage.must_read_ts_cs;
         this.formErrors = {
             'pin': '',
-            'termCondition': false
+            'termCondition': false,
         };
+        this.must_read_ts_cs = __WEBPACK_IMPORTED_MODULE_13__framework_appConfig__["a" /* AppConfig */].Configuration.ContentMessage.must_read_ts_cs;
+        this.account_management_new_ecode = __WEBPACK_IMPORTED_MODULE_13__framework_appConfig__["a" /* AppConfig */].Configuration.ContentMessage.account_management_new_ecode;
         this.buildForm();
     }
-    AddPinToCardPage.prototype.buildForm = function () {
+    AddPinToCodePage.prototype.buildForm = function () {
         var _this = this;
         this.addCardForm = this.formBuilder.group({
             'pin': ['', [
                     Object(__WEBPACK_IMPORTED_MODULE_3__framework_validations_validator_required_directive__["a" /* requireValidator */])('pin'),
-                    Object(__WEBPACK_IMPORTED_MODULE_11__framework_validations_validator_minlength_directive__["c" /* minlengthValidatorPIN */])(4, "PIN"),
-                    Object(__WEBPACK_IMPORTED_MODULE_12__framework_validations_validator_maxlengthField_directive__["d" /* maxlengthFieldValidatorPIN */])(4, 'PIN'),
-                    Object(__WEBPACK_IMPORTED_MODULE_6__framework_validations_validator_numeric_directive__["c" /* numericValidatorPIN */])(),
+                    Object(__WEBPACK_IMPORTED_MODULE_10__framework_validations_validator_minlength_directive__["c" /* minlengthValidatorPIN */])(4, "PIN"),
+                    Object(__WEBPACK_IMPORTED_MODULE_11__framework_validations_validator_maxlengthField_directive__["d" /* maxlengthFieldValidatorPIN */])(4, 'PIN'),
+                    Object(__WEBPACK_IMPORTED_MODULE_5__framework_validations_validator_numeric_directive__["c" /* numericValidatorPIN */])(),
                 ]],
             'termCondition': [false, [
                     __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].requiredTrue
@@ -853,7 +854,13 @@ var AddPinToCardPage = (function () {
             }
         });
     };
-    AddPinToCardPage.prototype.errorMessage = function (path) {
+    AddPinToCodePage.prototype._get5LastDigitsCardNumber = function (ecode) {
+        if (!ecode) {
+            return null;
+        }
+        return ecode.substr(ecode.length - 5);
+    };
+    AddPinToCodePage.prototype.errorMessage = function (path) {
         var control = this.addCardForm.get(path);
         var requiredMsg = __WEBPACK_IMPORTED_MODULE_13__framework_appConfig__["a" /* AppConfig */].Configuration.ContentMessage.required;
         if (control.valid) {
@@ -876,9 +883,9 @@ var AddPinToCardPage = (function () {
             }
         }
     };
-    AddPinToCardPage.prototype.showAlert = function (cardId, nickname) {
+    AddPinToCodePage.prototype.showAlert = function (cardId, nickname) {
         var _this = this;
-        var displayCard = __WEBPACK_IMPORTED_MODULE_4__addCardSharing_services__["a" /* AddCardSharingDataService */].getInstance().getDisplayCard(cardId);
+        var displayCard = __WEBPACK_IMPORTED_MODULE_12__addCardSharing_services__["a" /* AddCardSharingDataService */].getInstance().getDisplayCard(cardId);
         var alert = this.alertCtrl.create({
             title: __WEBPACK_IMPORTED_MODULE_13__framework_appConfig__["a" /* AppConfig */].Configuration.ContentMessage.account_management_card_added_to_wallet,
             cssClass: 'l2s-alert--flat l2s-alert--default',
@@ -888,12 +895,14 @@ var AddPinToCardPage = (function () {
                     text: 'OK',
                     cssClass: 'main-button',
                     handler: function (data) {
-                        _this.addCardDataService.gotoCardDetailAndReload(cardId, '');
+                        _this.addCardDataService.gotoCardDetailAndReload('', cardId);
                     }
-                }, {
+                },
+                {
                     text: '',
                     cssClass: 'close-button icon icon-ios ion-ios-close',
                     handler: function (data) {
+                        _this.addCardDataService.gotoCardDetailAndReload('', cardId);
                     }
                 }
             ],
@@ -901,19 +910,20 @@ var AddPinToCardPage = (function () {
         });
         alert.present();
     };
-    AddPinToCardPage.prototype.ionViewWillEnter = function () {
+    AddPinToCodePage.prototype.ionViewWillEnter = function () {
         if (this.routeManager.ifNotLoggedInThenGoBackToLoginScreen() === false) {
             if (this.navParams.get('cardInfo')) {
                 this.cardInfo = this.navParams.get('cardInfo');
+                this.lastEcode = this._get5LastDigitsCardNumber(this.cardInfo.cardID);
             }
             if (this.navParams.get('responseCard')) {
                 this.responseCard = this.navParams.get('responseCard');
             }
         }
     };
-    AddPinToCardPage.prototype.getHelpContent = function (code) {
+    AddPinToCodePage.prototype.getHelpContent = function (code) {
         var _this = this;
-        __WEBPACK_IMPORTED_MODULE_7__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().showLoadingIndicator();
+        __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().showLoadingIndicator();
         var observer = {
             next: function (res) {
                 if (!res.ok) {
@@ -924,17 +934,17 @@ var AddPinToCardPage = (function () {
                 }
             },
             error: function (error) {
-                __WEBPACK_IMPORTED_MODULE_7__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
+                __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
             },
             complete: function () {
-                __WEBPACK_IMPORTED_MODULE_7__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
+                __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
             }
         };
         this.addCardDataService
             .getHelp(code)
             .subscribe(observer);
     };
-    AddPinToCardPage.prototype.showAlertHelp = function (message) {
+    AddPinToCodePage.prototype.showAlertHelp = function (message) {
         var alert = this.alertCtrl.create({
             title: '',
             cssClass: 'l2s-alert--flat l2s-alert--default',
@@ -955,9 +965,9 @@ var AddPinToCardPage = (function () {
         });
         alert.present();
     };
-    AddPinToCardPage.prototype.gotoTermsPage = function (code) {
+    AddPinToCodePage.prototype.gotoTermsPage = function (code) {
         var _this = this;
-        __WEBPACK_IMPORTED_MODULE_7__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().showLoadingIndicator();
+        __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().showLoadingIndicator();
         var observer = {
             next: function (res) {
                 if (!res.ok) {
@@ -965,55 +975,56 @@ var AddPinToCardPage = (function () {
                 }
                 var body = res.response;
                 if (res && res.response && res.response.message) {
-                    var url = __WEBPACK_IMPORTED_MODULE_8__framework_services_utilities_utilities__["a" /* Utils */].normalizeUrl(res.response.message);
+                    var url = __WEBPACK_IMPORTED_MODULE_7__framework_services_utilities_utilities__["a" /* Utils */].normalizeUrl(res.response.message);
                     var browser = _this.iab.create(url, "_system", "location=true");
                 }
             },
             error: function (error) {
-                __WEBPACK_IMPORTED_MODULE_7__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
+                __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
             },
             complete: function () {
-                __WEBPACK_IMPORTED_MODULE_7__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
+                __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
             }
         };
         this.addCardDataService
             .getHelp(code)
             .subscribe(observer);
     };
-    AddPinToCardPage.prototype.submitToAddCard = function (cardInfo) {
+    AddPinToCodePage.prototype.submitToAddCard = function () {
         var _this = this;
         var body = {
             "cardID": this.cardInfo.cardID,
-            "csc": this.cardInfo.csc,
+            "csc": '',
             "nickname": this.cardInfo.nickname,
             "pin": this.addCardForm.value.pin,
             "termsAgreed": this.addCardForm.value.termCondition,
         };
-        __WEBPACK_IMPORTED_MODULE_7__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().showLoadingIndicator();
+        __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().showLoadingIndicator();
+        this.model.pin = this.addCardForm.value.pin;
         var observer = {
             next: function (res) {
                 if (!res.ok) {
                     return;
                 }
                 var body = res.response;
-                if (__WEBPACK_IMPORTED_MODULE_8__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(body) && __WEBPACK_IMPORTED_MODULE_8__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(body.cardAdded)) {
+                if (__WEBPACK_IMPORTED_MODULE_7__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(body) && __WEBPACK_IMPORTED_MODULE_7__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(body.cardAdded)) {
                     if (body.cardAdded) {
                         _this.showAlert(_this.cardInfo.cardID, _this.cardInfo.nickname);
                     }
                 }
             },
             error: function (error) {
-                __WEBPACK_IMPORTED_MODULE_7__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
+                __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
             },
             complete: function () {
-                __WEBPACK_IMPORTED_MODULE_7__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
+                __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
             }
         };
         this.addCardDataService
             .addCard(body)
             .subscribe(observer);
     };
-    AddPinToCardPage.prototype._convertCardId = function (cardId) {
+    AddPinToCodePage.prototype._convertCardId = function (cardId) {
         if (!cardId) {
             return null;
         }
@@ -1024,33 +1035,33 @@ var AddPinToCardPage = (function () {
             (cardId.substr(16, 3));
         return newCard;
     };
-    AddPinToCardPage.prototype.gotoYourCard = function () {
+    AddPinToCodePage.prototype.gotoYourCard = function () {
         this.navCtrl.setRoot('AddCardNumberPage');
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChildren */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* TextInput */]),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* QueryList */])
-    ], AddPinToCardPage.prototype, "textInputs", void 0);
-    AddPinToCardPage = __decorate([
+    ], AddPinToCodePage.prototype, "textInputs", void 0);
+    AddPinToCodePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-addPinToCard',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\CardManagement\addcard\addPinToCard\addPinToCard.html"*/'<ion-header>\n  <ion-navbar>\n    <!--<button class="fs-16" ion-button icon-only (click)="gotoYourCard()">-->\n      <!--<ion-icon name="ios-arrow-back"></ion-icon>-->\n    <!--</button>-->\n    <ion-title>Add a Card</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid class="content-wrapper" >\n    <ion-row>\n      <ion-col>\n        <p class="text-14">Your new card:</p>\n        <h2>{{cardInfo?.cardID}}</h2>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col class="m-t-10">\n        <form name="addCardForm" [formGroup]="addCardForm">\n          <ion-row class="m-b-10" *ngIf="responseCard?.pinRequired === true">\n            <ion-col>\n              <ion-item no-padding class="item-has-addon">\n                <ion-input name="pin" type="tel" formControlName=\'pin\' placeholder="PIN"\n                           class="only-password"\n                ></ion-input>\n                <ion-icon name="help-circle" (click)="getHelpContent(\'flexewallet.add-card.form.alert.pin\')" item-right></ion-icon>\n              </ion-item>\n              <ion-item-divider ion-item light no-lines class="error"\n                                *ngIf="addCardForm.get(\'pin\').dirty && !addCardForm.get(\'pin\').valid">\n                <p>{{errorMessage(\'pin\')}}</p>\n              </ion-item-divider>\n            </ion-col>\n          </ion-row>\n          <ion-row class="m-b-20" *ngIf="responseCard?.termsRequired === true">\n            <ion-col>\n              <ion-item no-padding class="item-flex-start" >\n                <ion-label class="margin-0" text-wrap *ngFor="let tc of responseCard?.termsContent" [innerHTML]="tc" >\n                </ion-label>\n                <ion-checkbox formControlName=\'termCondition\' checked="isChecked"></ion-checkbox>\n              </ion-item>\n              <ion-item-divider ion-item light no-lines class="error"\n                                *ngIf="addCardForm.get(\'termCondition\').dirty && !addCardForm.get(\'termCondition\').valid">\n                <p>{{must_read_ts_cs}}</p>\n              </ion-item-divider>\n            </ion-col>\n          </ion-row>\n        </form>\n      </ion-col>\n    </ion-row>\n\n  </ion-grid>\n  <ion-row class="footer-wrapper" *ngIf="responseCard?.pinRequired === true && responseCard?.termsRequired !== true">\n    <ion-col>\n      <button ion-button block large [disabled]="addCardForm.get(\'pin\').valid" (click)="submitToAddCard()">Add card</button>\n    </ion-col>\n  </ion-row>\n  <ion-row class="footer-wrapper" *ngIf="responseCard?.pinRequired === true && responseCard?.termsRequired === true">\n    <ion-col>\n      <button ion-button block large [disabled]="!addCardForm.valid" (click)="submitToAddCard()">Add card</button>\n    </ion-col>\n  </ion-row>\n  <ion-row class="footer-wrapper" *ngIf="responseCard?.pinRequired !== true && responseCard?.termsRequired === true">\n    <ion-col>\n      <button ion-button block large [disabled]="!addCardForm.get(\'termCondition\').valid" (click)="submitToAddCard()">Add card</button>\n    </ion-col>\n  </ion-row>\n</ion-content>\n\n\n          \n<ion-row style="display: none;" \n(click)="navCtrl.pop()"\nid="AddPinToCardPage-back-button">\n</ion-row>'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\CardManagement\addcard\addPinToCard\addPinToCard.html"*/,
+            selector: 'page-addPinToCode',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\CardManagement\addcard\addPinToCode\addPinToCode.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Add a Code</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid class="content-wrapper" >\n    <ion-row>\n      <ion-col>\n        <p>{{account_management_new_ecode}}</p>\n        <h5>Ends in {{lastEcode}}</h5>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <form name="addCardForm" [formGroup]="addCardForm">\n          <ion-row class="m-b-20" *ngIf="responseCard?.pinRequired === true">\n            <ion-col>\n              <ion-item no-padding class="item-has-addon">\n                <ion-input name="pin" type="tel" formControlName=\'pin\' placeholder="PIN"\n                           class="only-password"\n                ></ion-input>\n                <ion-icon name="help-circle" (click)="getHelpContent(\'flexewallet.add-card.form.alert.pin\')" item-right></ion-icon>\n              </ion-item>\n\n              <ion-item-divider ion-item light no-lines class="error"\n                                *ngIf="addCardForm.get(\'pin\').dirty && !addCardForm.get(\'pin\').valid">\n                <p>{{errorMessage(\'pin\')}}</p>\n              </ion-item-divider>\n            </ion-col>\n          </ion-row>\n          <ion-row class="m-b-20"  *ngIf="responseCard?.termsRequired === true">\n            <ion-col>\n\n\n\n              <ion-item no-padding class="item-flex-start">\n                <ion-label text-wrap *ngFor="let tc of responseCard?.termsContent" [innerHTML]="tc" >\n                </ion-label>\n                <ion-checkbox formControlName=\'termCondition\' checked="isChecked"></ion-checkbox>\n              </ion-item>\n              <ion-item-divider ion-item light no-lines class="error"\n                                *ngIf="addCardForm.get(\'termCondition\').dirty && !addCardForm.get(\'termCondition\').valid">\n                <p>{{must_read_ts_cs}}</p>\n              </ion-item-divider>\n            </ion-col>\n          </ion-row>\n        </form>\n      </ion-col>\n    </ion-row>\n\n  </ion-grid>\n  <ion-row class="footer-wrapper" *ngIf="responseCard?.pinRequired === true && responseCard?.termsRequired !== true">\n    <ion-col>\n      <button ion-button block large [disabled]="addCardForm.get(\'pin\').valid" (click)="submitToAddCard()">Add card</button>\n    </ion-col>\n  </ion-row>\n  <ion-row class="footer-wrapper" *ngIf="responseCard?.pinRequired === true && responseCard?.termsRequired === true">\n    <ion-col>\n      <button ion-button block large [disabled]="!addCardForm.valid" (click)="submitToAddCard()">Add card</button>\n    </ion-col>\n  </ion-row>\n  <ion-row class="footer-wrapper" *ngIf="responseCard?.pinRequired !== true && responseCard?.termsRequired === true">\n    <ion-col>\n      <button ion-button block large [disabled]="!addCardForm.get(\'termCondition\').valid" (click)="submitToAddCard()">Add card</button>\n    </ion-col>\n  </ion-row>\n</ion-content>\n\n\n          \n<ion-row style="display: none;" \n(click)="navCtrl.pop()"\nid="AddPinToCodePage-back-button">\n</ion-row>'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\CardManagement\addcard\addPinToCode\addPinToCode.html"*/,
             providers: [
-                __WEBPACK_IMPORTED_MODULE_5__addCardData_service__["a" /* AddCardDataService */],
-                __WEBPACK_IMPORTED_MODULE_10__ionic_native_in_app_browser__["a" /* InAppBrowser */],
+                __WEBPACK_IMPORTED_MODULE_4__addCardData_service__["a" /* AddCardDataService */],
+                __WEBPACK_IMPORTED_MODULE_9__ionic_native_in_app_browser__["a" /* InAppBrowser */],
             ]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_9__framework_services_routeManager_routeManager_service__["a" /* RouteManagerService */],
+            __WEBPACK_IMPORTED_MODULE_8__framework_services_routeManager_routeManager_service__["a" /* RouteManagerService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_10__ionic_native_in_app_browser__["a" /* InAppBrowser */],
+            __WEBPACK_IMPORTED_MODULE_9__ionic_native_in_app_browser__["a" /* InAppBrowser */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_5__addCardData_service__["a" /* AddCardDataService */]])
-    ], AddPinToCardPage);
-    return AddPinToCardPage;
+            __WEBPACK_IMPORTED_MODULE_4__addCardData_service__["a" /* AddCardDataService */]])
+    ], AddPinToCodePage);
+    return AddPinToCodePage;
 }());
 
-//# sourceMappingURL=addPinToCard.js.map
+//# sourceMappingURL=addPinToCode.js.map
 
 /***/ })
 

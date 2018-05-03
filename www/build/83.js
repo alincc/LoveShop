@@ -94,7 +94,7 @@ var CookiePage = (function () {
     };
     CookiePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-cookie',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\AppInforManagement\cookie\cookie.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Cookies\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <div [innerHTML]="cookieContent">\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n\n\n\n          \n<ion-row style="display: none;" \n(click)="navCtrl.pop()"\nid="CookiePage-back-button">\n</ion-row>'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\AppInforManagement\cookie\cookie.html"*/,
+            selector: 'page-cookie',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\AppInforManagement\cookie\cookie.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Cookies\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <div [innerHTML]="cookieContent">\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n\n\n\n          \n<ion-row style="display: none;" \n(click)="navCtrl.pop()"\nid="CookiePage-back-button">\n</ion-row>'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\AppInforManagement\cookie\cookie.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_2__cookieService_service__["a" /* CookieService */]
             ]

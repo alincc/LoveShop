@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReturnRefundPageModule", function() { return ReturnRefundPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__returnRefund__ = __webpack_require__(958);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__returnRefund__ = __webpack_require__(959);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -35,14 +35,14 @@ var ReturnRefundPageModule = (function () {
 
 /***/ }),
 
-/***/ 958:
+/***/ 959:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReturnRefundPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__return_service__ = __webpack_require__(959);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__return_service__ = __webpack_require__(960);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__framework_services_loadingIndicatorService_loadingIndicator_service__ = __webpack_require__(365);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__framework_services_routeManager_routeManager_service__ = __webpack_require__(90);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -94,7 +94,7 @@ var ReturnRefundPage = (function () {
     };
     ReturnRefundPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-returnRefund',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\CardManagement\returnRefund\returnRefund.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Returns & Refunds\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col class="text-14">\n        <div [innerHTML]="returnContent">\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n\n            \n  <ion-row style="display: none;" \n  (click)="navCtrl.pop()"\n  id="ReturnRefundPage-back-button">\n  </ion-row>\n</ion-content>\n'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\CardManagement\returnRefund\returnRefund.html"*/,
+            selector: 'page-returnRefund',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\CardManagement\returnRefund\returnRefund.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Returns & Refunds\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col class="text-14">\n        <div [innerHTML]="returnContent">\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n\n            \n  <ion-row style="display: none;" \n  (click)="navCtrl.pop()"\n  id="ReturnRefundPage-back-button">\n  </ion-row>\n</ion-content>\n'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\CardManagement\returnRefund\returnRefund.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_2__return_service__["a" /* ReturnService */]
             ]
@@ -110,7 +110,7 @@ var ReturnRefundPage = (function () {
 
 /***/ }),
 
-/***/ 959:
+/***/ 960:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

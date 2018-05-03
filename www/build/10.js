@@ -1,15 +1,15 @@
 webpackJsonp([10],{
 
-/***/ 749:
+/***/ 752:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddCardPhysicalMasterCardPageModule", function() { return AddCardPhysicalMasterCardPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddFlexCashPageModule", function() { return AddFlexCashPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(373);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__addCardPhysicalMasterCard__ = __webpack_require__(923);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(372);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__addFlexCash__ = __webpack_require__(929);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__httpAddCard_service__ = __webpack_require__(810);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -22,24 +22,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AddCardPhysicalMasterCardPageModule = (function () {
-    function AddCardPhysicalMasterCardPageModule() {
+var AddFlexCashPageModule = (function () {
+    function AddFlexCashPageModule() {
     }
-    AddCardPhysicalMasterCardPageModule = __decorate([
+    AddFlexCashPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
-            declarations: [__WEBPACK_IMPORTED_MODULE_3__addCardPhysicalMasterCard__["a" /* AddCardPhysicalMasterCardPage */]],
-            imports: [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__addCardPhysicalMasterCard__["a" /* AddCardPhysicalMasterCardPage */])],
-            exports: [__WEBPACK_IMPORTED_MODULE_3__addCardPhysicalMasterCard__["a" /* AddCardPhysicalMasterCardPage */]],
+            declarations: [__WEBPACK_IMPORTED_MODULE_3__addFlexCash__["a" /* AddFlexCashPage */]],
+            imports: [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__addFlexCash__["a" /* AddFlexCashPage */])],
+            exports: [__WEBPACK_IMPORTED_MODULE_3__addFlexCash__["a" /* AddFlexCashPage */]],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__["a" /* Camera */],
                 __WEBPACK_IMPORTED_MODULE_4__httpAddCard_service__["a" /* HttpAddCardService */]
             ]
         })
-    ], AddCardPhysicalMasterCardPageModule);
-    return AddCardPhysicalMasterCardPageModule;
+    ], AddFlexCashPageModule);
+    return AddFlexCashPageModule;
 }());
 
-//# sourceMappingURL=addCardPhysicalMasterCard.module.js.map
+//# sourceMappingURL=addFlexCash.module.js.map
 
 /***/ }),
 
@@ -289,23 +289,23 @@ var MinLengthValidatorDirective = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HttpAddCardService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(169);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__(164);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_retry__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_retry__ = __webpack_require__(167);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_retry___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_retry__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_timeout__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_timeout__ = __webpack_require__(168);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_timeout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_timeout__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_delay__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_delay__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_delay___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_delay__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__framework_appConfig__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__framework_services_utilities_utilities__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__framework_services_toastMessageService_toastMessage_service__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__framework_services_mobileDeviceService_mobileDeviceService_service__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__framework_services_mobileDeviceService_mobileDeviceService_service__ = __webpack_require__(163);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__framework_login_authenticationGuard_service__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ionic_angular__ = __webpack_require__(22);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -771,27 +771,25 @@ var AddCardSharingDataService = (function () {
 
 /***/ }),
 
-/***/ 923:
+/***/ 929:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddCardPhysicalMasterCardPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddFlexCashPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__framework_validations_validator_required_directive__ = __webpack_require__(367);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__addCardData_service__ = __webpack_require__(816);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__httpAddCard_service__ = __webpack_require__(810);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__ = __webpack_require__(365);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__framework_services_routeManager_routeManager_service__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__framework_validations_validator_minlength_directive__ = __webpack_require__(808);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__framework_services_utilities_utilities__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__framework_services_toastMessageService_toastMessage_service__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_in_app_browser__ = __webpack_require__(371);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__framework_validations_validator_numeric_directive__ = __webpack_require__(370);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__framework_validations_validator_maxlengthField_directive__ = __webpack_require__(807);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__addCardSharing_services__ = __webpack_require__(819);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__framework_appConfig__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__framework_services_loadingIndicatorService_loadingIndicator_service__ = __webpack_require__(365);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__framework_services_utilities_utilities__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__framework_services_toastMessageService_toastMessage_service__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__framework_services_routeManager_routeManager_service__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__framework_validations_validator_minlength_directive__ = __webpack_require__(808);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__framework_validations_validator_numeric_directive__ = __webpack_require__(370);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__framework_validations_validator_maxlengthField_directive__ = __webpack_require__(807);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__addCardSharing_services__ = __webpack_require__(819);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__framework_appConfig__ = __webpack_require__(43);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -815,56 +813,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
-var AddCardPhysicalMasterCardPage = (function () {
-    function AddCardPhysicalMasterCardPage(routeManager, formBuilder, addCardDataService, alertCtrl, navCtrl, iab, navParams) {
+var AddFlexCashPage = (function () {
+    function AddFlexCashPage(alertCtrl, routeManager, formBuilder, navParams, navCtrl, addCardDataService) {
+        this.alertCtrl = alertCtrl;
         this.routeManager = routeManager;
         this.formBuilder = formBuilder;
-        this.addCardDataService = addCardDataService;
-        this.alertCtrl = alertCtrl;
-        this.navCtrl = navCtrl;
-        this.iab = iab;
         this.navParams = navParams;
-        this.model = {
-            cardID: '',
-            csc: '',
-            nickname: '',
-            termsAgreed: ''
-        };
+        this.navCtrl = navCtrl;
+        this.addCardDataService = addCardDataService;
         this.formErrors = {
-            cardID: '',
-            csc: '',
-            nickname: '',
-            termsAgreed: false,
-            cardOwner: false,
+            'cardID': '',
+            'csc': '',
+            'nickname': ''
         };
-        this.enter_all_digits = __WEBPACK_IMPORTED_MODULE_15__framework_appConfig__["a" /* AppConfig */].Configuration.ContentMessage.enter_all_digits;
-        this.must_read_ts_cs = __WEBPACK_IMPORTED_MODULE_15__framework_appConfig__["a" /* AppConfig */].Configuration.ContentMessage.must_read_ts_cs;
-        this.account_management_confirm_user_of_card = __WEBPACK_IMPORTED_MODULE_15__framework_appConfig__["a" /* AppConfig */].Configuration.ContentMessage.account_management_confirm_user_of_card;
-        this.account_management_confirm_user = __WEBPACK_IMPORTED_MODULE_15__framework_appConfig__["a" /* AppConfig */].Configuration.ContentMessage.account_management_confirm_user;
+        this.enter_all_digits = __WEBPACK_IMPORTED_MODULE_13__framework_appConfig__["a" /* AppConfig */].Configuration.ContentMessage.enter_all_digits;
         this.buildForm();
     }
-    AddCardPhysicalMasterCardPage.prototype.buildForm = function () {
+    AddFlexCashPage.prototype.buildForm = function () {
         var _this = this;
         this.addCardForm = this.formBuilder.group({
-            cardID: ['', [
-                    Object(__WEBPACK_IMPORTED_MODULE_3__framework_validations_validator_required_directive__["a" /* requireValidator */])('cardID'),
-                    Object(__WEBPACK_IMPORTED_MODULE_13__framework_validations_validator_maxlengthField_directive__["a" /* maxlengthFieldValidator */])(19, 'Card or e-code number')
+            'cardID': ['', [
+                    Object(__WEBPACK_IMPORTED_MODULE_3__framework_validations_validator_required_directive__["a" /* requireValidator */])('card ID'),
+                    Object(__WEBPACK_IMPORTED_MODULE_11__framework_validations_validator_maxlengthField_directive__["a" /* maxlengthFieldValidator */])(19, 'Card or e-code number')
                 ]],
-            csc: ['', [
+            'csc': ['', [
                     Object(__WEBPACK_IMPORTED_MODULE_3__framework_validations_validator_required_directive__["a" /* requireValidator */])('csc'),
-                    Object(__WEBPACK_IMPORTED_MODULE_8__framework_validations_validator_minlength_directive__["b" /* minlengthValidatorCSC */])(3, 'CSC'),
-                    Object(__WEBPACK_IMPORTED_MODULE_13__framework_validations_validator_maxlengthField_directive__["b" /* maxlengthFieldValidatorCSC */])(3, 'CSC'),
-                    Object(__WEBPACK_IMPORTED_MODULE_12__framework_validations_validator_numeric_directive__["b" /* numericValidatorCSC */])(),
+                    Object(__WEBPACK_IMPORTED_MODULE_9__framework_validations_validator_minlength_directive__["b" /* minlengthValidatorCSC */])(3, 'CSC'),
+                    Object(__WEBPACK_IMPORTED_MODULE_11__framework_validations_validator_maxlengthField_directive__["b" /* maxlengthFieldValidatorCSC */])(3, 'CSC'),
+                    Object(__WEBPACK_IMPORTED_MODULE_10__framework_validations_validator_numeric_directive__["b" /* numericValidatorCSC */])(),
                 ]],
-            nickname: ['',],
-            termsAgreed: [false, [
-                    __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].requiredTrue
-                ]],
-            cardOwner: [false, [
-                    __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].requiredTrue
-                ]]
+            'nickname': ['']
         }, {
             validator: {
                 updateOn: 'blur'
@@ -876,13 +854,13 @@ var AddCardPhysicalMasterCardPage = (function () {
             }
         });
     };
-    AddCardPhysicalMasterCardPage.prototype.errorMessage = function (path) {
+    AddFlexCashPage.prototype.errorMessage = function (path) {
         var control = this.addCardForm.get(path);
-        var requiredMsg = __WEBPACK_IMPORTED_MODULE_15__framework_appConfig__["a" /* AppConfig */].Configuration.ContentMessage.required;
+        var requiredMsg = __WEBPACK_IMPORTED_MODULE_13__framework_appConfig__["a" /* AppConfig */].Configuration.ContentMessage.required;
         if (control.valid) {
             return '';
         }
-        if (path === 'cardID' || path === 'csc' || path === 'termsAgreed' || path === 'cardOwner') {
+        if (path === 'cardID' || path === 'csc') {
             if (control.hasError('required')) {
                 return control.getError('required');
             }
@@ -899,9 +877,9 @@ var AddCardPhysicalMasterCardPage = (function () {
             }
         }
     };
-    AddCardPhysicalMasterCardPage.prototype.getHelpContent = function (code) {
+    AddFlexCashPage.prototype.getHelpContent = function (code) {
         var _this = this;
-        __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().showLoadingIndicator();
+        __WEBPACK_IMPORTED_MODULE_5__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().showLoadingIndicator();
         var observer = {
             next: function (res) {
                 if (!res.ok) {
@@ -912,17 +890,17 @@ var AddCardPhysicalMasterCardPage = (function () {
                 }
             },
             error: function (error) {
-                __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
+                __WEBPACK_IMPORTED_MODULE_5__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
             },
             complete: function () {
-                __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
+                __WEBPACK_IMPORTED_MODULE_5__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
             }
         };
         this.addCardDataService
             .getHelp(code)
             .subscribe(observer);
     };
-    AddCardPhysicalMasterCardPage.prototype.showAlertHelp = function (message) {
+    AddFlexCashPage.prototype.showAlertHelp = function (message) {
         var alert = this.alertCtrl.create({
             title: '',
             cssClass: 'l2s-alert--flat l2s-alert--default',
@@ -943,80 +921,36 @@ var AddCardPhysicalMasterCardPage = (function () {
         });
         alert.present();
     };
-    AddCardPhysicalMasterCardPage.prototype.gotoYourCard = function () {
-        this.navCtrl.setRoot('AddCardNumberPage');
-    };
-    AddCardPhysicalMasterCardPage.prototype._normalizeUrl = function (url) {
-        if (!url.startsWith('http://') && !url.startsWith('https://')) {
-            if (url.startsWith('/')) {
-                return 'https://www.love2shop.co.uk' + url;
-            }
-            return 'http://' + url;
-        }
-        return url;
-    };
-    AddCardPhysicalMasterCardPage.prototype.ionViewWillEnter = function () {
+    AddFlexCashPage.prototype.ionViewWillEnter = function () {
         if (this.routeManager.ifNotLoggedInThenGoBackToLoginScreen() === false) {
             if (this.navParams.get('cardNumber')) {
                 this.cardNumberOld = this.navParams.get('cardNumber');
                 this.addCardForm.patchValue({ 'cardID': this.cardNumberOld + '' });
             }
-            if (this.navParams.get('termsPath')) {
-                this.termsPath = this.navParams.get('termsPath');
-            }
-            if (this.navParams.get('bodyCardType')) {
-                this.bodyCardType = this.navParams.get('bodyCardType');
-            }
-            if (__WEBPACK_IMPORTED_MODULE_9__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(this.bodyCardType) && __WEBPACK_IMPORTED_MODULE_9__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(this.bodyCardType.endUserPromptRequired)) {
-                if (this.bodyCardType.endUserPromptRequired !== true) {
-                    this.addCardForm.removeControl('cardOwner');
-                }
-            }
-            if (__WEBPACK_IMPORTED_MODULE_9__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(this.bodyCardType) && __WEBPACK_IMPORTED_MODULE_9__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(this.bodyCardType.termsRequired)) {
-                if (this.bodyCardType.termsRequired !== true) {
-                    this.addCardForm.removeControl('termsAgreed');
-                }
-            }
         }
     };
-    AddCardPhysicalMasterCardPage.prototype.onValueChanges = function (data) {
-        if (!this.addCardForm) {
-            return;
-        }
-        var form = this.addCardForm;
-        for (var fieldError in this.formErrors) {
-            this.formErrors[fieldError] = '';
-            var control = form.get(fieldError);
-            if (control && control.dirty && !control.valid) {
-                this.formErrors[fieldError] = control.errors[Object.keys(control.errors)[0]];
-            }
-        }
-        if (this.textInputs) {
-            this.textInputs.forEach(function (input) { return input && input._inputUpdated && input._inputUpdated(); });
-        }
-    };
-    AddCardPhysicalMasterCardPage.prototype.detectChangeCard = function () {
+    AddFlexCashPage.prototype.detectChangeCard = function () {
         var _this = this;
         if (this.addCardForm.valid) {
             var bodyPost = {
                 "cardID": this.addCardForm.value.cardID
             };
-            __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().showLoadingIndicator();
+            __WEBPACK_IMPORTED_MODULE_5__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().showLoadingIndicator();
             var observer = {
                 next: function (res) {
                     if (!res.ok) {
                         return;
                     }
                     var body = res.response;
-                    if (__WEBPACK_IMPORTED_MODULE_9__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(body) && __WEBPACK_IMPORTED_MODULE_9__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(body.cardType)) {
+                    if (__WEBPACK_IMPORTED_MODULE_6__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(body) && __WEBPACK_IMPORTED_MODULE_6__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(body.cardType)) {
                         _this.addCardDataService.navigationPage(body, _this.addCardForm.value.cardID);
                     }
                 },
                 error: function (error) {
-                    __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
+                    __WEBPACK_IMPORTED_MODULE_5__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
                 },
                 complete: function () {
-                    __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
+                    __WEBPACK_IMPORTED_MODULE_5__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
                 }
             };
             this.addCardDataService
@@ -1024,11 +958,11 @@ var AddCardPhysicalMasterCardPage = (function () {
                 .subscribe(observer);
         }
     };
-    AddCardPhysicalMasterCardPage.prototype.showAlert = function (cardId, nickname) {
+    AddFlexCashPage.prototype.showAlert = function (cardId, nickname) {
         var _this = this;
-        var displayCard = __WEBPACK_IMPORTED_MODULE_14__addCardSharing_services__["a" /* AddCardSharingDataService */].getInstance().getDisplayCard(cardId);
+        var displayCard = __WEBPACK_IMPORTED_MODULE_12__addCardSharing_services__["a" /* AddCardSharingDataService */].getInstance().getDisplayCard(cardId);
         var alert = this.alertCtrl.create({
-            title: __WEBPACK_IMPORTED_MODULE_15__framework_appConfig__["a" /* AppConfig */].Configuration.ContentMessage.account_management_card_added_to_wallet,
+            title: __WEBPACK_IMPORTED_MODULE_13__framework_appConfig__["a" /* AppConfig */].Configuration.ContentMessage.account_management_card_added_to_wallet,
             cssClass: 'l2s-alert--flat l2s-alert--default',
             message: "<p>You added: </p><p class='m-b-0'>" + nickname + "</p><p class='m-t-0'>" + displayCard + "</p><p class='m-t-10'>To your Card Wallet</p>",
             buttons: [
@@ -1036,7 +970,7 @@ var AddCardPhysicalMasterCardPage = (function () {
                     text: 'OK',
                     cssClass: 'main-button',
                     handler: function (data) {
-                        _this.addCardDataService.gotoCardDetailAndReload('', cardId);
+                        _this.addCardDataService.gotoCardDetailAndReload(_this.addCardForm.value.cardID, '');
                     }
                 }, {
                     text: '',
@@ -1049,51 +983,45 @@ var AddCardPhysicalMasterCardPage = (function () {
         });
         alert.present();
     };
-    AddCardPhysicalMasterCardPage.prototype._convertCardId = function (cardId) {
-        if (!cardId) {
-            return null;
-        }
-        var newCard = (cardId.substr(0, 4) + '-') +
-            (cardId.substr(4, 4) + '-') +
-            (cardId.substr(8, 4) + '-') +
-            (cardId.substr(12, 4));
-        return newCard;
-    };
-    AddCardPhysicalMasterCardPage.prototype.submitToAddPhysicalMasterCard = function () {
+    AddFlexCashPage.prototype.submitToAddCardFlexCash = function () {
         var _this = this;
         var bodyPost = {
             "cardID": this.addCardForm.value.cardID,
             "csc": this.addCardForm.value.csc,
-            "nickname": this.addCardForm.value.nickname,
-            "endUserConfirmed": this.addCardForm.value.cardOwner,
-            "termsAgreed": this.addCardForm.value.termsAgreed,
+            "nickname": this.addCardForm.value.nickname
         };
         if (this.cardNumberOld !== this.addCardForm.value.cardID) {
             this.detectChangeCard();
             return;
         }
         if (this.addCardForm.valid) {
-            __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().showLoadingIndicator();
+            __WEBPACK_IMPORTED_MODULE_5__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().showLoadingIndicator();
             var observer = {
                 next: function (res) {
                     if (!res.ok) {
                         return;
                     }
                     var body = res.response;
-                    if (__WEBPACK_IMPORTED_MODULE_9__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(body) && __WEBPACK_IMPORTED_MODULE_9__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(body.cardAdded)) {
-                        if (body.cardAdded) {
-                            _this.showAlert(body.cardID, _this.addCardForm.value.nickname);
-                        }
-                        else {
-                            __WEBPACK_IMPORTED_MODULE_10__framework_services_toastMessageService_toastMessage_service__["a" /* ToastMessageService */].getInstance().showToastMessage(__WEBPACK_IMPORTED_MODULE_15__framework_appConfig__["a" /* AppConfig */].Configuration.HttpService.DEFAULT_ERROR_MSG);
+                    if (body.activationRequired === true) {
+                        _this.navCtrl.push('AddPinToCardPage', { 'cardInfo': bodyPost, responseCard: body });
+                    }
+                    else {
+                        var body_1 = res.response;
+                        if (__WEBPACK_IMPORTED_MODULE_6__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(body_1) && __WEBPACK_IMPORTED_MODULE_6__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(body_1.cardAdded)) {
+                            if (body_1.cardAdded) {
+                                _this.showAlert(_this.addCardForm.value.cardID, _this.addCardForm.value.nickname);
+                            }
+                            else {
+                                __WEBPACK_IMPORTED_MODULE_7__framework_services_toastMessageService_toastMessage_service__["a" /* ToastMessageService */].getInstance().showToastMessage(__WEBPACK_IMPORTED_MODULE_13__framework_appConfig__["a" /* AppConfig */].Configuration.HttpService.DEFAULT_ERROR_MSG);
+                            }
                         }
                     }
                 },
                 error: function (error) {
-                    __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
+                    __WEBPACK_IMPORTED_MODULE_5__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
                 },
                 complete: function () {
-                    __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
+                    __WEBPACK_IMPORTED_MODULE_5__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
                 }
             };
             this.addCardDataService
@@ -1101,35 +1029,42 @@ var AddCardPhysicalMasterCardPage = (function () {
                 .subscribe(observer);
         }
     };
-    AddCardPhysicalMasterCardPage.prototype.gotoTermsPage = function () {
-        var url = this._normalizeUrl(this.termsPath);
-        var browser = this.iab.create(url, "_system", "location=true");
+    AddFlexCashPage.prototype._convertCardId = function (cardId) {
+        if (!cardId) {
+            return null;
+        }
+        var newCard = (cardId.substr(0, 4) + '-') +
+            (cardId.substr(4, 4) + '-') +
+            (cardId.substr(8, 4) + '-') +
+            (cardId.substr(12, 4) + '-') +
+            (cardId.substr(16, 3));
+        return newCard;
+    };
+    AddFlexCashPage.prototype.gotoYourCard = function () {
+        this.navCtrl.setRoot('AddCardNumberPage');
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChildren */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* TextInput */]),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* QueryList */])
-    ], AddCardPhysicalMasterCardPage.prototype, "textInputs", void 0);
-    AddCardPhysicalMasterCardPage = __decorate([
+    ], AddFlexCashPage.prototype, "textInputs", void 0);
+    AddFlexCashPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-addCardPhysicalMasterCard',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\CardManagement\addcard\addCardPhysicalMasterCard\addCardPhysicalMasterCard.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Add A Card</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid class="content-wrapper" >\n    <ion-row>\n      <ion-col class="p-t-20">\n        <p class="text-14">{{enter_all_digits}}</p>\n      </ion-col>\n    </ion-row>\n    <ion-row >\n      <ion-col>\n      <form name="addCardForm" [formGroup]="addCardForm">\n        <ion-row class="m-b-12">\n          <ion-col>\n            <ion-item no-padding class="item-has-addon">\n              <ion-input name="cardID" type="text" formControlName=\'cardID\'\n                         placeholder="Card or e-code number"></ion-input>\n              <ion-icon name="camera" item-right (click)="scanButton()"></ion-icon>\n            </ion-item>\n            <ion-item-divider ion-item light no-lines class="error"\n                              *ngIf="addCardForm.get(\'cardID\').dirty && !addCardForm.get(\'cardID\').valid">\n              <p>{{errorMessage(\'cardID\')}}</p>\n            </ion-item-divider>\n          </ion-col>\n        </ion-row>\n        <ion-row class="m-b-12">\n          <ion-col>\n            <ion-item no-padding class="item-has-addon">\n              <ion-input name="csc" type="tel" formControlName=\'csc\' class="only-password"\n                         placeholder="Card Security Code"></ion-input>\n              <ion-icon name="help-circle" (click)="getHelpContent(\'flexewallet.add-card.form.alert.csc\')"\n                        item-right></ion-icon>\n            </ion-item>\n            <ion-item-divider ion-item light no-lines class="error"\n                              *ngIf="addCardForm.get(\'csc\').dirty && !addCardForm.get(\'csc\').valid">\n              <p>{{errorMessage(\'csc\')}}</p>\n            </ion-item-divider>\n          </ion-col>\n        </ion-row>\n        <ion-row class="p-b-20">\n          <ion-col>\n            <ion-item no-padding class="item-has-addon">\n              <ion-input type="text" formControlName=\'nickname\' placeholder="Card name"></ion-input>\n              <ion-icon name="help-circle"\n                        (click)="getHelpContent(\'flexewallet.add-card.form.alert.nickname.PMASTERCARD\')"\n                        item-right></ion-icon>\n            </ion-item>\n          </ion-col>\n        </ion-row>\n\n        <ion-row class="p-b-10" *ngIf="bodyCardType?.endUserPromptRequired">\n          <ion-col>\n            <ion-item class="item--no-border item-flex-start">\n              <ion-checkbox formControlName=\'cardOwner\'></ion-checkbox>\n              <ion-label text-wrap>\n                {{account_management_confirm_user}}\n              </ion-label>\n            </ion-item>\n            <ion-item-divider ion-item light no-lines class="error"\n                              *ngIf="addCardForm.get(\'cardOwner\').dirty && !addCardForm.get(\'cardOwner\').valid">\n              <p>{{account_management_confirm_user_of_card}}</p>\n            </ion-item-divider>\n          </ion-col>\n        </ion-row>\n\n        <ion-row *ngIf="bodyCardType?.termsRequired">\n          <ion-col>\n            <ion-item class="item--no-border item-flex-start">\n              <ion-checkbox formControlName=\'termsAgreed\'></ion-checkbox>\n              <ion-label text-wrap>\n                I have read and agree to <br>the <span class="text-underline" (click)="gotoTermsPage()"><b>terms &amp; conditions</b></span>\n              </ion-label>\n            </ion-item>\n            <ion-item-divider ion-item light no-lines class="error"\n                              *ngIf="addCardForm.get(\'termsAgreed\').dirty && !addCardForm.get(\'termsAgreed\').valid">\n              <p>{{must_read_ts_cs}}</p>\n            </ion-item-divider>\n          </ion-col>\n        </ion-row>\n      </form>\n      </ion-col>\n    </ion-row>\n\n  </ion-grid>\n  <ion-row class="footer-wrapper">\n    <ion-col>\n      <button ion-button block large [disabled]="!addCardForm.valid " (click)="submitToAddPhysicalMasterCard()">\n        Add card\n      </button>\n    </ion-col>\n  </ion-row>\n</ion-content>\n\n\n          \n<ion-row style="display: none;" \n(click)="navCtrl.pop()"\nid="AddCardPhysicalMasterCardPage-back-button">\n</ion-row>'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\CardManagement\addcard\addCardPhysicalMasterCard\addCardPhysicalMasterCard.html"*/,
+            selector: 'page-addFlexCash',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\CardManagement\addcard\addFlexCash\addFlexCash.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Add A Card</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid class="content-wrapper" >\n    <ion-row>\n      <ion-col class="p-t-20">\n        <p class="text-14">{{enter_all_digits}}</p>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <form name="addCardForm" [formGroup]="addCardForm">\n          <ion-row class="m-b-20">\n            <ion-col>\n              <ion-item no-padding class="item-has-addon">\n                <ion-input name="cardID" type="text" formControlName=\'cardID\' placeholder="Card or e-code number"></ion-input>\n                <ion-icon name="camera" item-right (click)="getHelpContent(\'camera\')"></ion-icon>\n              </ion-item>\n              <ion-item-divider ion-item light no-lines class="error"\n                                *ngIf="addCardForm.get(\'cardID\').dirty && !addCardForm.get(\'cardID\').valid">\n                <p>{{errorMessage(\'cardID\')}}</p>\n              </ion-item-divider>\n            </ion-col>\n          </ion-row>\n          <ion-row class="m-b-20">\n            <ion-col>\n              <ion-item no-padding class="item-has-addon">\n                <ion-input name="csc" type="tel" formControlName=\'csc\' placeholder="Card Security Code"\n                           class="only-password"\n                ></ion-input>\n                <ion-icon name="help-circle" item-right (click)="getHelpContent(\'flexewallet.add-card.form.alert.csc\')"></ion-icon>\n              </ion-item>\n              <ion-item-divider ion-item light no-lines class="error"\n                                *ngIf="addCardForm.get(\'csc\').dirty && !addCardForm.get(\'csc\').valid">\n                <p>{{errorMessage(\'csc\')}}</p>\n              </ion-item-divider>\n            </ion-col>\n          </ion-row>\n          <ion-row class="m-b-20">\n            <ion-col>\n              <ion-item no-padding class="item-has-addon">\n                <ion-input name="nickname" type="text" formControlName=\'nickname\' placeholder="Card name"></ion-input>\n                <ion-icon name="help-circle" item-right (click)="getHelpContent(\'flexewallet.add-card.form.alert.nickname.FLEXECASH\')"></ion-icon>\n              </ion-item>\n              <ion-item-divider ion-item light no-lines class="error"\n                                *ngIf="addCardForm.get(\'nickname\').dirty && !addCardForm.get(\'nickname\').valid">\n                <p>{{errorMessage(\'nickname\')}}</p>\n              </ion-item-divider>\n            </ion-col>\n          </ion-row>\n        </form>\n      </ion-col>\n    </ion-row>\n\n  </ion-grid>\n  <ion-row class="footer-wrapper" >\n    <ion-col>\n      <button ion-button large block [disabled]="!addCardForm.valid " (click)="submitToAddCardFlexCash()">Add card</button>\n    </ion-col>\n  </ion-row>\n</ion-content>\n\n\n\n          \n<ion-row style="display: none;" \n(click)="navCtrl.pop()"\nid="AddFlexCashPage-back-button">\n</ion-row>'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\CardManagement\addcard\addFlexCash\addFlexCash.html"*/,
             providers: [
-                __WEBPACK_IMPORTED_MODULE_4__addCardData_service__["a" /* AddCardDataService */],
-                __WEBPACK_IMPORTED_MODULE_5__httpAddCard_service__["a" /* HttpAddCardService */],
-                __WEBPACK_IMPORTED_MODULE_11__ionic_native_in_app_browser__["a" /* InAppBrowser */],
+                __WEBPACK_IMPORTED_MODULE_4__addCardData_service__["a" /* AddCardDataService */]
             ]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_7__framework_services_routeManager_routeManager_service__["a" /* RouteManagerService */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_8__framework_services_routeManager_routeManager_service__["a" /* RouteManagerService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_4__addCardData_service__["a" /* AddCardDataService */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_11__ionic_native_in_app_browser__["a" /* InAppBrowser */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]])
-    ], AddCardPhysicalMasterCardPage);
-    return AddCardPhysicalMasterCardPage;
+            __WEBPACK_IMPORTED_MODULE_4__addCardData_service__["a" /* AddCardDataService */]])
+    ], AddFlexCashPage);
+    return AddFlexCashPage;
 }());
 
-//# sourceMappingURL=addCardPhysicalMasterCard.js.map
+//# sourceMappingURL=addFlexCash.js.map
 
 /***/ })
 

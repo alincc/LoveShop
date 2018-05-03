@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 1021:
+/***/ 1022:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -391,7 +391,7 @@ var LocationStoresPage = (function () {
     };
     LocationStoresPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-locationStores',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\whereToSpend\where2SpendInStore\locationStores\locationStores.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title item-centered>\n      Edit Location\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid class="content-wrapper">\n    <ion-row class="top-row" (click)="goToMapPage()">\n      <ion-item>\n        <ion-label>\n          <ion-icon name="md-locate"></ion-icon>\n          <span> {{use_current_location}}</span>\n        </ion-label>\n      </ion-item>\n    </ion-row>\n    <ion-row>\n      <ion-col class="or" padding text-center>\n        <p class="no-margin or">OR</p>\n      </ion-col>\n    </ion-row>\n    <ion-row class="lookup-address">\n      <ion-col class="location-row">\n        <ion-item>\n          <ion-input search [ngModel]="txtPostCode" (input)="search($event)" class="location-input" placeholder="{{enter_postcode_or_search_for_an_address}}"></ion-input>\n        </ion-item>\n        <ion-list padding *ngIf="showList" class="suggestion-address">\n          <ion-item *ngFor="let item of listAddressItems" (click)="pickupAddress(item)">\n            {{ formatLocationAddress(item) }}\n          </ion-item>\n        </ion-list>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <ion-grid class="footer-wrapper">\n    <ion-row padding>\n      <ion-col>\n        <button [disabled]="!canApply" ion-button large full (click)="apply()">Apply</button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n\n  <ion-row style="display: none;" \n  (click)="navCtrl.pop()"\n  id="LocationStoresPage-back-button">\n  </ion-row>\n</ion-content>'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\whereToSpend\where2SpendInStore\locationStores\locationStores.html"*/,
+            selector: 'page-locationStores',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\whereToSpend\where2SpendInStore\locationStores\locationStores.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title item-centered>\n      Edit Location\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid class="content-wrapper">\n    <ion-row class="top-row" (click)="goToMapPage()">\n      <ion-item>\n        <ion-label>\n          <ion-icon name="md-locate"></ion-icon>\n          <span> {{use_current_location}}</span>\n        </ion-label>\n      </ion-item>\n    </ion-row>\n    <ion-row>\n      <ion-col class="or" padding text-center>\n        <p class="no-margin or">OR</p>\n      </ion-col>\n    </ion-row>\n    <ion-row class="lookup-address">\n      <ion-col class="location-row">\n        <ion-item>\n          <ion-input search [ngModel]="txtPostCode" (input)="search($event)" class="location-input" placeholder="{{enter_postcode_or_search_for_an_address}}"></ion-input>\n        </ion-item>\n        <ion-list padding *ngIf="showList" class="suggestion-address">\n          <ion-item *ngFor="let item of listAddressItems" (click)="pickupAddress(item)">\n            {{ formatLocationAddress(item) }}\n          </ion-item>\n        </ion-list>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <ion-grid class="footer-wrapper">\n    <ion-row padding>\n      <ion-col>\n        <button [disabled]="!canApply" ion-button large full (click)="apply()">Apply</button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n\n  <ion-row style="display: none;" \n  (click)="navCtrl.pop()"\n  id="LocationStoresPage-back-button">\n  </ion-row>\n</ion-content>'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\whereToSpend\where2SpendInStore\locationStores\locationStores.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_3__where2Spend_services__["d" /* Where2SpendServices */],
                 __WEBPACK_IMPORTED_MODULE_7__ionic_native_diagnostic__["a" /* Diagnostic */],
@@ -418,28 +418,12 @@ var LocationStoresPage = (function () {
 
 /***/ }),
 
-/***/ 1022:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_index__ = __webpack_require__(1023);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["a"]; });
-/**
- * @module
- * @description
- * Entry point for all public APIs of the async local storage package.
- */
-
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
 /***/ 1023:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_ng2_google_place_module__ = __webpack_require__(1024);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__app_ng2_google_place_module__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_index__ = __webpack_require__(1024);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["a"]; });
 /**
  * @module
  * @description
@@ -454,10 +438,26 @@ var LocationStoresPage = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_ng2_google_place_module__ = __webpack_require__(1025);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__app_ng2_google_place_module__["a"]; });
+/**
+ * @module
+ * @description
+ * Entry point for all public APIs of the async local storage package.
+ */
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 1025:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GooglePlaceModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng2_google_place_directive__ = __webpack_require__(1025);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng2_google_place_directive__ = __webpack_require__(1026);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ng2_google_place_service__ = __webpack_require__(847);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -487,7 +487,7 @@ var GooglePlaceModule = (function () {
 
 /***/ }),
 
-/***/ 1025:
+/***/ 1026:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -709,8 +709,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LocationStoresPageModule", function() { return LocationStoresPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__locationStores__ = __webpack_require__(1021);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__libs_ng2_google_place_autocomplete_index__ = __webpack_require__(1022);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__locationStores__ = __webpack_require__(1022);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__libs_ng2_google_place_autocomplete_index__ = __webpack_require__(1023);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);

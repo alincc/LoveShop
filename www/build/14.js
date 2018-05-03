@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CheckBalanceStep2PageModule", function() { return CheckBalanceStep2PageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__checkBalanceStep2__ = __webpack_require__(953);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__checkBalanceStep2__ = __webpack_require__(954);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -385,7 +385,7 @@ var CardBalanceDataService = (function () {
 
 /***/ }),
 
-/***/ 953:
+/***/ 954:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -398,7 +398,7 @@ var CardBalanceDataService = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__cardBalanceSharingData_service__ = __webpack_require__(830);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__ = __webpack_require__(365);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__framework_services_utilities_utilities__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__checkBalanceStep2_service__ = __webpack_require__(954);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__checkBalanceStep2_service__ = __webpack_require__(955);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__framework_services_routeManager_routeManager_service__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__framework_validations_validator_numeric_directive__ = __webpack_require__(370);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__framework_validations_validator_minlength_directive__ = __webpack_require__(808);
@@ -624,7 +624,7 @@ var CheckBalanceStep2Page = (function () {
     ], CheckBalanceStep2Page.prototype, "textInputs", void 0);
     CheckBalanceStep2Page = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-checkBalanceStep2',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\CardManagement\checkBalance\checkBalanceStep2\checkBalanceStep2.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-buttons left>\n      <button  ion-button icon-only (click)="gotoStep1()">\n        <ion-icon name="ios-arrow-back"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>\n      Check my Balance\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content class="form-balance--container">\n  <ion-grid class="content-wrapper">\n    <ion-row>\n      <ion-col>\n        <form [formGroup]="checkBalanceForm">\n\n          <ion-row margin-bottom>\n            <ion-col>\n              <ion-item no-padding>\n                <ion-input name="cardNumber" type="text"  formControlName="cardNumber"  placeholder="Card or e-code number"></ion-input>\n              </ion-item>\n              <ion-item-divider ion-item light no-lines class="error"\n                                *ngIf="checkBalanceForm.get(\'cardNumber\').dirty && !checkBalanceForm.get(\'cardNumber\').valid">\n                <p>{{errorMessage(\'cardNumber\')}}</p>\n              </ion-item-divider>\n            </ion-col>\n          </ion-row>\n\n          <ion-row margin-bottom>\n            <ion-col>\n              <ion-item no-padding class="item-has-addon">\n                <ion-input name="securityCode" type="tel" formControlName="securityCode"\n                           placeholder="Please enter your security code"\n                           class="only-password"\n                ></ion-input>\n                <ion-icon name="help-circle" item-right (click)="getHelpContent(\'flexewallet.add-card.form.alert.csc\')"></ion-icon>\n              </ion-item>\n              <div class="m-r-38">\n                <ion-item-divider ion-item light no-lines class="error"\n                                  *ngIf="checkBalanceForm.get(\'securityCode\').dirty && !checkBalanceForm.get(\'securityCode\').valid">\n                  <p>{{errorMessage(\'securityCode\')}}</p>\n                </ion-item-divider>\n              </div>\n\n            </ion-col>\n          </ion-row>\n\n        </form>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-row class="footer-wrapper">\n    <ion-col>\n      <button ion-button block large [disabled]="!checkBalanceForm.valid" (click)="submitToCheckCardBalance()">Submit</button>\n    </ion-col>\n  </ion-row>\n</ion-content>\n'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\CardManagement\checkBalance\checkBalanceStep2\checkBalanceStep2.html"*/,
+            selector: 'page-checkBalanceStep2',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\CardManagement\checkBalance\checkBalanceStep2\checkBalanceStep2.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-buttons left>\n      <button  ion-button icon-only (click)="gotoStep1()">\n        <ion-icon name="ios-arrow-back"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>\n      Check my Balance\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content class="form-balance--container">\n  <ion-grid class="content-wrapper">\n    <ion-row>\n      <ion-col>\n        <form [formGroup]="checkBalanceForm">\n\n          <ion-row margin-bottom>\n            <ion-col>\n              <ion-item no-padding>\n                <ion-input name="cardNumber" type="text"  formControlName="cardNumber"  placeholder="Card or e-code number"></ion-input>\n              </ion-item>\n              <ion-item-divider ion-item light no-lines class="error"\n                                *ngIf="checkBalanceForm.get(\'cardNumber\').dirty && !checkBalanceForm.get(\'cardNumber\').valid">\n                <p>{{errorMessage(\'cardNumber\')}}</p>\n              </ion-item-divider>\n            </ion-col>\n          </ion-row>\n\n          <ion-row margin-bottom>\n            <ion-col>\n              <ion-item no-padding class="item-has-addon">\n                <ion-input name="securityCode" type="tel" formControlName="securityCode"\n                           placeholder="Please enter your security code"\n                           class="only-password"\n                ></ion-input>\n                <ion-icon name="help-circle" item-right (click)="getHelpContent(\'flexewallet.add-card.form.alert.csc\')"></ion-icon>\n              </ion-item>\n              <div class="m-r-38">\n                <ion-item-divider ion-item light no-lines class="error"\n                                  *ngIf="checkBalanceForm.get(\'securityCode\').dirty && !checkBalanceForm.get(\'securityCode\').valid">\n                  <p>{{errorMessage(\'securityCode\')}}</p>\n                </ion-item-divider>\n              </div>\n\n            </ion-col>\n          </ion-row>\n\n        </form>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-row class="footer-wrapper">\n    <ion-col>\n      <button ion-button block large [disabled]="!checkBalanceForm.valid" (click)="submitToCheckCardBalance()">Submit</button>\n    </ion-col>\n  </ion-row>\n</ion-content>\n'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\CardManagement\checkBalance\checkBalanceStep2\checkBalanceStep2.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_4__cardBalanceData_service__["a" /* CardBalanceDataService */],
                 __WEBPACK_IMPORTED_MODULE_5__cardBalanceSharingData_service__["a" /* CardBalanceSharingDataService */],
@@ -646,7 +646,7 @@ var CheckBalanceStep2Page = (function () {
 
 /***/ }),
 
-/***/ 954:
+/***/ 955:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

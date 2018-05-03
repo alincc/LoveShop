@@ -98,7 +98,7 @@ var TermsConditionsPage = (function () {
     };
     TermsConditionsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-termsConditions',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\AppInforManagement\termsConditions\termsConditions.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      TermsConditions\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <div [innerHTML]="textContent"></div>\n</ion-content>\n\n          \n<ion-row style="display: none;" \n(click)="navCtrl.pop()"\nid="TermsConditionsPage-back-button">\n</ion-row>'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\AppInforManagement\termsConditions\termsConditions.html"*/,
+            selector: 'page-termsConditions',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\AppInforManagement\termsConditions\termsConditions.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      TermsConditions\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <div [innerHTML]="textContent"></div>\n</ion-content>\n\n          \n<ion-row style="display: none;" \n(click)="navCtrl.pop()"\nid="TermsConditionsPage-back-button">\n</ion-row>'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\AppInforManagement\termsConditions\termsConditions.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_4__termsConditions_service__["a" /* TermsConditionsService */]
             ]

@@ -1,6 +1,6 @@
 webpackJsonp([37],{
 
-/***/ 1019:
+/***/ 1020:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -151,7 +151,7 @@ var ChangeCardPage = (function () {
     ], ChangeCardPage.prototype, "tabs", void 0);
     ChangeCardPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-changeCard',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\whereToSpend\where2SpendInStore\changeCard\changeCard.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title item-center>\n      Where To Spend\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <ion-row class="txt-intro">\n          <p text-center>Please choose a card below</p>\n        </ion-row>\n        <ion-row class="list-cards">\n          <ion-list>\n            <ion-item *ngFor="let cardItem of listCards; let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }"\n              (click)="pickCardItem(cardItem)">\n              <ion-row>\n                <ion-col col-3>\n                  <img class="card-thumb" [src]="imageBaseUrl + cardItem.cardLogoPath">\n                </ion-col>\n                <ion-col col-8 padding>\n                  <h2 *ngIf="!cardItem?.nickname" class="card-title">&nbsp;</h2>\n                  <h2 *ngIf="cardItem?.nickname" class="card-title">{{ cardItem?.nickname }}</h2>\n                  <div class="card-subtitle">{{ cardItem?.propositionName }}</div>\n                </ion-col>\n                <ion-col col-1>\n                  <ion-icon class="icon-md" name="ios-arrow-forward"></ion-icon>\n                </ion-col>\n              </ion-row>\n            </ion-item>\n          </ion-list>\n        </ion-row>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\whereToSpend\where2SpendInStore\changeCard\changeCard.html"*/,
+            selector: 'page-changeCard',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\whereToSpend\where2SpendInStore\changeCard\changeCard.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title item-center>\n      Where To Spend\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <ion-row class="txt-intro">\n          <p text-center>Please choose a card below</p>\n        </ion-row>\n        <ion-row class="list-cards">\n          <ion-list>\n            <ion-item *ngFor="let cardItem of listCards; let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }"\n              (click)="pickCardItem(cardItem)">\n              <ion-row>\n                <ion-col col-3>\n                  <img class="card-thumb" [src]="imageBaseUrl + cardItem.cardLogoPath">\n                </ion-col>\n                <ion-col col-8 padding>\n                  <h2 *ngIf="!cardItem?.nickname" class="card-title">&nbsp;</h2>\n                  <h2 *ngIf="cardItem?.nickname" class="card-title">{{ cardItem?.nickname }}</h2>\n                  <div class="card-subtitle">{{ cardItem?.propositionName }}</div>\n                </ion-col>\n                <ion-col col-1>\n                  <ion-icon class="icon-md" name="ios-arrow-forward"></ion-icon>\n                </ion-col>\n              </ion-row>\n            </ion-item>\n          </ion-list>\n        </ion-row>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\whereToSpend\where2SpendInStore\changeCard\changeCard.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_4__where2Spend_services__["d" /* Where2SpendServices */],
                 __WEBPACK_IMPORTED_MODULE_5__ionic_native_in_app_browser__["a" /* InAppBrowser */]
@@ -179,7 +179,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChangeCardPageModule", function() { return ChangeCardPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__changeCard__ = __webpack_require__(1019);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__changeCard__ = __webpack_require__(1020);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -430,7 +430,7 @@ var TabsPage = (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* Tabs */])
     ], TabsPage.prototype, "tabs", void 0);
     TabsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\Others\tabs\tabs.html"*/'<ion-tabs  #tabs [selectedIndex]="selectedIndex" (ionChange)="tabSelected($event)">\n  <ion-tab [root]="tab1Root" [rootParams]="yourCardData"  tabTitle="YOUR CARDS" tabIcon="l2s-card" tabsHideOnSubPages="true"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="STORES"  tabIcon="l2s-basket"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="YOUR BENEFITS" tabIcon="l2s-aperture"></ion-tab>\n  <ion-tab [root]="tab4Root" tabTitle="MORE" tabIcon="l2s-more"></ion-tab>\n</ion-tabs>'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\Others\tabs\tabs.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\Others\tabs\tabs.html"*/'<ion-tabs  #tabs [selectedIndex]="selectedIndex" (ionChange)="tabSelected($event)">\n  <ion-tab [root]="tab1Root" [rootParams]="yourCardData"  tabTitle="YOUR CARDS" tabIcon="l2s-card" tabsHideOnSubPages="true"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="STORES"  tabIcon="l2s-basket"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="YOUR BENEFITS" tabIcon="l2s-aperture"></ion-tab>\n  <ion-tab [root]="tab4Root" tabTitle="MORE" tabIcon="l2s-more"></ion-tab>\n</ion-tabs>'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\Others\tabs\tabs.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ModalController */],

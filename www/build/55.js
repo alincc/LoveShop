@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MakeTopUptPage3DSModule", function() { return MakeTopUptPage3DSModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__makeTopUp3DS__ = __webpack_require__(938);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__makeTopUp3DS__ = __webpack_require__(939);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -187,7 +187,7 @@ var OrderDiscountGiftCardSharingDataService = (function () {
 
 /***/ }),
 
-/***/ 938:
+/***/ 939:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -197,7 +197,7 @@ var OrderDiscountGiftCardSharingDataService = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__framework_services_routeManager_routeManager_service__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__framework_services_utilities_utilities__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__framework_services_loadingIndicatorService_loadingIndicator_service__ = __webpack_require__(365);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__makeTopUp3DS_service__ = __webpack_require__(939);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__makeTopUp3DS_service__ = __webpack_require__(940);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_jquery__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_jquery__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__orderManagement_orderDiscountGiftCard_orderDiscountGiftCardSharingData_services__ = __webpack_require__(809);
@@ -345,7 +345,7 @@ var MakeTopUp3DSPage = (function () {
     };
     MakeTopUp3DSPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-makeTopUp3DS',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\CardManagement\cardDetails\makeTopUp3DS\makeTopUp3DS.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-buttons left>\n      <button ion-button icon-only (click)="gotoAmount()">\n        <ion-icon name="ios-arrow-back"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>3D Secure</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <form ngNoForm action="{{bankPayment?.url}}" style="display: none" target="ACSframe" method="POST">\n            <textarea name="PaReq"\n                      value="{{bankPayment?.paReq}}" style="display: none"></textarea>\n          <input\n            name="TermUrl"\n            value="javascript:window.parent.postMessage(document.getElementsByName(\'PaRes\')[0].value, \'*\');" style="display: none"/>\n          <input\n            name="MD" style="display: none"\n            value="{{dataAfterGenerateOrder?.orderNumber}}"/>\n          <button type="submit" style="display: none" id="submitIframe3D">Submit</button>\n        </form>\n\n        <iframe #iframe id="paymentIframe"\n                class="iframe__content--full"\n                src="about:blank"\n                name="ACSframe"></iframe>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\CardManagement\cardDetails\makeTopUp3DS\makeTopUp3DS.html"*/,
+            selector: 'page-makeTopUp3DS',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\CardManagement\cardDetails\makeTopUp3DS\makeTopUp3DS.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-buttons left>\n      <button ion-button icon-only (click)="gotoAmount()">\n        <ion-icon name="ios-arrow-back"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>3D Secure</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <form ngNoForm action="{{bankPayment?.url}}" style="display: none" target="ACSframe" method="POST">\n            <textarea name="PaReq"\n                      value="{{bankPayment?.paReq}}" style="display: none"></textarea>\n          <input\n            name="TermUrl"\n            value="javascript:window.parent.postMessage(document.getElementsByName(\'PaRes\')[0].value, \'*\');" style="display: none"/>\n          <input\n            name="MD" style="display: none"\n            value="{{dataAfterGenerateOrder?.orderNumber}}"/>\n          <button type="submit" style="display: none" id="submitIframe3D">Submit</button>\n        </form>\n\n        <iframe #iframe id="paymentIframe"\n                class="iframe__content--full"\n                src="about:blank"\n                name="ACSframe"></iframe>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\CardManagement\cardDetails\makeTopUp3DS\makeTopUp3DS.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_5__makeTopUp3DS_service__["a" /* MakeTopUp3DSService */]
             ]
@@ -363,7 +363,7 @@ var MakeTopUp3DSPage = (function () {
 
 /***/ }),
 
-/***/ 939:
+/***/ 940:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

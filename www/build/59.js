@@ -1,6 +1,6 @@
 webpackJsonp([59],{
 
-/***/ 1020:
+/***/ 1021:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -40,7 +40,7 @@ var OpenPdfPage = (function () {
     };
     OpenPdfPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-openPdf',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\whereToSpend\where2SpendInStore\changeCard\openPdf\openPdf.html"*/'<ion-content>\n\n    <ion-row>\n\n    <ion-col>\n\n        <h4 class="title">PDF OPENS</h4>\n\n        <p> based on URL here:</p>\n\n        <br>\n\n        <div class="link un-line" (click)="followLink()">{{ url }}</div>\n\n        <br>\n\n        <div (click)="back()" class="link title">&lt; BACK TO APP</div>\n\n    </ion-col>\n\n    </ion-row>\n\n</ion-content>'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\whereToSpend\where2SpendInStore\changeCard\openPdf\openPdf.html"*/,
+            selector: 'page-openPdf',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\whereToSpend\where2SpendInStore\changeCard\openPdf\openPdf.html"*/'<ion-content>\n\n    <ion-row>\n\n    <ion-col>\n\n        <h4 class="title">PDF OPENS</h4>\n\n        <p> based on URL here:</p>\n\n        <br>\n\n        <div class="link un-line" (click)="followLink()">{{ url }}</div>\n\n        <br>\n\n        <div (click)="back()" class="link title">&lt; BACK TO APP</div>\n\n    </ion-col>\n\n    </ion-row>\n\n</ion-content>'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\whereToSpend\where2SpendInStore\changeCard\openPdf\openPdf.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser__["a" /* InAppBrowser */]
             ]
@@ -64,7 +64,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OpenPdfPageModule", function() { return OpenPdfPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__openPdf__ = __webpack_require__(1020);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__openPdf__ = __webpack_require__(1021);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);

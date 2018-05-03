@@ -10,20 +10,20 @@ webpackJsonp([103],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_authenticationGuard_service__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__appConfig__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(169);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_Rx__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_Rx__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_map__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_map__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_catch__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_catch__ = __webpack_require__(164);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_retry__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_retry__ = __webpack_require__(167);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_retry___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_retry__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_add_operator_timeout__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_add_operator_timeout__ = __webpack_require__(168);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_add_operator_timeout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_rxjs_add_operator_timeout__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_rxjs_add_operator_delay__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_rxjs_add_operator_delay__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_rxjs_add_operator_delay___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_rxjs_add_operator_delay__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__mobileDeviceService_mobileDeviceService_service__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__mobileDeviceService_mobileDeviceService_service__ = __webpack_require__(163);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -419,7 +419,7 @@ var ToastMessageService = (function () {
 
 /***/ }),
 
-/***/ 169:
+/***/ 163:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -564,7 +564,7 @@ var map = {
 	],
 	"../spa/+screens/AccountManagement/editAccount/editAccount.module": [
 		709,
-		12
+		13
 	],
 	"../spa/+screens/AccountManagement/forgotPassword/forgotPassword.module": [
 		710,
@@ -584,7 +584,7 @@ var map = {
 	],
 	"../spa/+screens/AccountManagement/register/registerStep3/registerStep3.module": [
 		714,
-		11
+		12
 	],
 	"../spa/+screens/AccountManagement/register/registerStep4/registerStep4.module": [
 		715,
@@ -666,11 +666,11 @@ var map = {
 	],
 	"../spa/+screens/CardManagement/addcard/addCardNumber/addCardNumber.module": [
 		748,
-		13
+		5
 	],
 	"../spa/+screens/CardManagement/addcard/addCardPhysicalMasterCard/addCardPhysicalMasterCard.module": [
 		749,
-		10
+		11
 	],
 	"../spa/+screens/CardManagement/addcard/addCardSainsburys/addCardSainsburys.module": [
 		750,
@@ -682,7 +682,7 @@ var map = {
 	],
 	"../spa/+screens/CardManagement/addcard/addFlexCash/addFlexCash.module": [
 		752,
-		9
+		10
 	],
 	"../spa/+screens/CardManagement/addcard/addFlexECode/addFlexECode.module": [
 		753,
@@ -690,11 +690,11 @@ var map = {
 	],
 	"../spa/+screens/CardManagement/addcard/addPinToCard/addPinToCard.module": [
 		754,
-		8
+		9
 	],
 	"../spa/+screens/CardManagement/addcard/addPinToCode/addPinToCode.module": [
 		755,
-		7
+		8
 	],
 	"../spa/+screens/CardManagement/cardDetails/amountTopUp/amountTopUp.module": [
 		757,
@@ -821,11 +821,11 @@ var map = {
 		33
 	],
 	"../spa/+screens/benefits/exchange/exchangeEcodeAllBarOneEcode/exchangeEcodeAllBarOneEcode.module": [
-		745,
+		746,
 		32
 	],
 	"../spa/+screens/benefits/exchange/holidays/holidays.module": [
-		746,
+		745,
 		91
 	],
 	"../spa/+screens/benefits/exchange/masterCardInfo/masterCardInfo.module": [
@@ -870,7 +870,7 @@ var map = {
 	],
 	"../spa/+screens/orderManagement/orderDiscountGiftCard/orderDiscountGiftCardUpdateDeliveryOption/orderDiscountGiftCardUpdateDeliveryOption.module": [
 		781,
-		5
+		6
 	],
 	"../spa/+screens/orderManagement/orderECode/orderECodeStep1/orderECodeStep1.module": [
 		782,
@@ -949,16 +949,16 @@ var map = {
 		26
 	],
 	"../spa/+screens/whereToSpend/where2SpendInStore/where2SpendInStoreMap/where2SpendInStoreMap.module": [
-		804,
+		805,
 		19
 	],
 	"../spa/+screens/whereToSpend/where2SpendOnline/where2SpendOnline.module": [
-		805,
+		804,
 		43
 	],
 	"../spa/framework/login/login.module": [
 		806,
-		6
+		7
 	]
 };
 function webpackAsyncContext(req) {
@@ -1161,7 +1161,7 @@ var VerifyTouchIdPage = (function () {
     };
     VerifyTouchIdPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-verifyTouchId',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\AccountManagement\verifyTouchId\verifyTouchId.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>verify TouchId</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="content-container">\n  <ion-scroll class="main-content" scrollY="true">\n    <ion-grid>\n      This screen for verify TouchId\n    </ion-grid>\n  </ion-scroll>\n\n  <ion-row class="button--bottom">\n    <ion-col>\n      <button ion-button large (click)="showPinCodeModal()">Unlock by PIN Code</button>\n    </ion-col>\n  </ion-row>\n</ion-content>'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\AccountManagement\verifyTouchId\verifyTouchId.html"*/
+            selector: 'page-verifyTouchId',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\AccountManagement\verifyTouchId\verifyTouchId.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>verify TouchId</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="content-container">\n  <ion-scroll class="main-content" scrollY="true">\n    <ion-grid>\n      This screen for verify TouchId\n    </ion-grid>\n  </ion-scroll>\n\n  <ion-row class="button--bottom">\n    <ion-col>\n      <button ion-button large (click)="showPinCodeModal()">Unlock by PIN Code</button>\n    </ion-col>\n  </ion-row>\n</ion-content>'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\AccountManagement\verifyTouchId\verifyTouchId.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
@@ -1896,16 +1896,16 @@ var NumericValidatorDirective = (function () {
 
 /***/ }),
 
-/***/ 372:
+/***/ 373:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__get_key_string_pipe__ = __webpack_require__(376);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__get_key_string_pipe__ = __webpack_require__(377);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__nav_service__ = __webpack_require__(369);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__framework_directives_directive_deny_copy__ = __webpack_require__(678);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__onlyInteger_directive__ = __webpack_require__(679);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__framework_directives_directive_deny_copy__ = __webpack_require__(679);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__onlyInteger_directive__ = __webpack_require__(680);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1999,7 +1999,7 @@ var LogoutDataService = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ptt_pin_component__ = __webpack_require__(684);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ptt_pin_component__ = __webpack_require__(685);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2034,7 +2034,7 @@ var PttPinModule = (function () {
 
 /***/ }),
 
-/***/ 376:
+/***/ 377:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2065,13 +2065,13 @@ var GetKeyStringPipe = (function () {
 
 /***/ }),
 
-/***/ 377:
+/***/ 378:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(378);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(382);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(379);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(383);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -2079,7 +2079,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 382:
+/***/ 383:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2087,21 +2087,21 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__spa_framework_services_httpService_http_service__ = __webpack_require__(161);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__spa_framework_services_routeManager_routeManager_service__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__spa_framework_login_authenticationGuard_service__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(702);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(703);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__(168);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common_http__ = __webpack_require__(703);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common_http__ = __webpack_require__(376);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ionic_angular__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__ = __webpack_require__(364);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_status_bar__ = __webpack_require__(363);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_fingerprint_aio__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__spa_shared_shared_module__ = __webpack_require__(372);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__spa_shared_shared_module__ = __webpack_require__(373);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__spa_screens_AccountManagement_verifyPIN_verifyPIN_module__ = __webpack_require__(321);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__spa_screens_AccountManagement_verifyTouchId_verifyTouchId_module__ = __webpack_require__(322);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__spa_screens_AccountManagement_verifyPIN_verifyPIN__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__spa_screens_AccountManagement_verifyTouchId_verifyTouchId__ = __webpack_require__(323);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_camera__ = __webpack_require__(373);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_camera__ = __webpack_require__(372);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2136,7 +2136,7 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_6__angular_http__["c" /* HttpModule */],
                 __WEBPACK_IMPORTED_MODULE_13__spa_screens_AccountManagement_verifyPIN_verifyPIN_module__["VerifyPINPageModule"],
-                __WEBPACK_IMPORTED_MODULE_7__angular_common_http__["a" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_common_http__["b" /* HttpClientModule */],
                 __WEBPACK_IMPORTED_MODULE_14__spa_screens_AccountManagement_verifyTouchId_verifyTouchId_module__["VerifyTouchIdPageModule"],
                 __WEBPACK_IMPORTED_MODULE_8_ionic_angular__["g" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {
                     backButtonIcon: 'ios-arrow-back',
@@ -2196,8 +2196,8 @@ var AppModule = (function () {
                         { loadChildren: '../spa/+screens/benefits/exchange/exchange4ECode/exchange4ECode.module#Exchange4ECodePageModule', name: 'Exchange4ECodePage', segment: 'exchange4ECode', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../spa/+screens/benefits/exchange/exchange4OtherGiftCards/exchange4OtherGiftCards.module#Exchange4OtherGiftCardsModule', name: 'Exchange4OtherGiftCardsPage', segment: 'exchange4OtherGiftCards', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../spa/+screens/benefits/exchange/exchange4OtherGiftCards/giftCardExchange/giftCardExchange.module#GiftCardExchangePageModule', name: 'GiftCardExchangePage', segment: 'giftCardExchange', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../spa/+screens/benefits/exchange/exchangeEcodeAllBarOneEcode/exchangeEcodeAllBarOneEcode.module#ExchangeEcodeAllBarOneEcodePageModule', name: 'ExchangeEcodeAllBarOneEcodePage', segment: 'exchangeEcodeAllBarOneEcode', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../spa/+screens/benefits/exchange/holidays/holidays.module#HolidaysPageModule', name: 'HolidaysPage', segment: 'holidays', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../spa/+screens/benefits/exchange/exchangeEcodeAllBarOneEcode/exchangeEcodeAllBarOneEcode.module#ExchangeEcodeAllBarOneEcodePageModule', name: 'ExchangeEcodeAllBarOneEcodePage', segment: 'exchangeEcodeAllBarOneEcode', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../spa/+screens/benefits/exchange/masterCardInfo/masterCardInfo.module#MasterCardInfoPageModule', name: 'MasterCardInfoPage', segment: 'masterCardInfo', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../spa/+screens/CardManagement/addcard/addCardNumber/addCardNumber.module#AddCardNumberPageModule', name: 'AddCardNumberPage', segment: 'addCardNumber', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../spa/+screens/CardManagement/addcard/addCardPhysicalMasterCard/addCardPhysicalMasterCard.module#AddCardPhysicalMasterCardPageModule', name: 'AddCardPhysicalMasterCardPage', segment: 'addCardPhysicalMasterCard', priority: 'low', defaultHistory: [] },
@@ -2255,8 +2255,8 @@ var AppModule = (function () {
                         { loadChildren: '../spa/+screens/whereToSpend/where2SpendInStore/changeCard/openPdf/openPdf.module#OpenPdfPageModule', name: 'OpenPdfPage', segment: 'openPdf', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../spa/+screens/whereToSpend/where2SpendInStore/locationStores/locationStores.module#LocationStoresPageModule', name: 'LocationStoresPage', segment: 'locationStores', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../spa/+screens/whereToSpend/where2SpendInStore/where2SpendInStoreList/where2SpendInStoreList.module#Where2SpendInStoreListPageModule', name: 'Where2SpendInStoreListPage', segment: 'where2SpendInStoreList', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../spa/+screens/whereToSpend/where2SpendInStore/where2SpendInStoreMap/where2SpendInStoreMap.module#Where2SpendInStoreMapPageModule', name: 'Where2SpendInStoreMapPage', segment: 'where2SpendInStoreMap', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../spa/+screens/whereToSpend/where2SpendOnline/where2SpendOnline.module#Where2SpendOnlinePageModule', name: 'Where2SpendOnlinePage', segment: 'where2SpendOnline', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../spa/+screens/whereToSpend/where2SpendInStore/where2SpendInStoreMap/where2SpendInStoreMap.module#Where2SpendInStoreMapPageModule', name: 'Where2SpendInStoreMapPage', segment: 'where2SpendInStoreMap', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../spa/framework/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] }
                     ]
                 }),
@@ -3074,7 +3074,7 @@ var VerifyPINPage = (function () {
     ], VerifyPINPage.prototype, "textInputs", void 0);
     VerifyPINPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-verifyPIN',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\AccountManagement\verifyPIN\verifyPIN.html"*/'<ion-content padding class="content-container verify--container"  [ngClass]="{\'inputFocusIn\': focusInInput }">\n  <ng-container *ngIf="(showPinWhenValidToken$ | async); else showDismiss">\n    <ion-grid class="main-content content-wrapper">\n      <ion-row>\n        <ion-col text-center class="p-t-30">\n          <img class="l2s-logo" src="assets/images/l2s-logo.png" />\n        </ion-col>\n      </ion-row>\n      <form [formGroup]="verifyPINForm" autocomplete="off">\n        <ion-row>\n          <p text-center class="text-14">{{PIN_enter_5_digit}}</p>\n        </ion-row>\n        <ion-row class="m-b-15">\n          <ptt-pin (pinChange)="onPinChange($event)" (focusIntoInput)="onFocusInput($event)" (focusOutInput)="focusoutInput($event)"></ptt-pin>\n        </ion-row>\n        <ion-item-divider ion-item light no-lines class="error"\n                          *ngIf="(verifyPINForm.get(\'pin1\').dirty && !verifyPINForm.get(\'pin1\').valid) ||\n                               (verifyPINForm.get(\'pin2\').dirty && !verifyPINForm.get(\'pin2\').valid) ||\n                               (verifyPINForm.get(\'pin3\').dirty && !verifyPINForm.get(\'pin3\').valid) ||\n                               (verifyPINForm.get(\'pin4\').dirty && !verifyPINForm.get(\'pin4\').valid) ||\n                               (verifyPINForm.get(\'pin5\').dirty && !verifyPINForm.get(\'pin5\').valid)\n                        ">\n          <p>{{PIN_5_digit}}</p>\n        </ion-item-divider>\n      </form>\n      <ion-row *ngIf=\'timeAttemp>=1\'>\n        <ion-col text-center>\n          <p text-center class="gray text-14">\n            Can\'t remember your PIN\n          </p>\n          <p class="text-link-item" text-center>\n            <a class="text-link-item"  (click)="redirectLogin()">Enter username / password</a></p>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n\n    <ion-row class="footer-content footer-wrapper">\n      <ion-col>\n        <button ion-button large *ngIf=\'timeAttemp<3\' [disabled]="!verifyPINForm.valid" (click)="verifyPINCode()">Next</button>\n      </ion-col>\n    </ion-row>\n  </ng-container>\n  <ng-template #showDismiss>\n    <ion-grid class="tp-flex-container align-between tp-flex-columns tp-full-height">\n      <ion-row class="tp-flex-center-col">\n        <ion-col text-center class="text-14">\n          {{token_expired}}\n        </ion-col>\n      </ion-row>\n      <ion-row class=" ">\n        <ion-col>\n          <button ion-button large (click)="closeModal()">Close</button>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ng-template>\n</ion-content>'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\AccountManagement\verifyPIN\verifyPIN.html"*/,
+            selector: 'page-verifyPIN',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\AccountManagement\verifyPIN\verifyPIN.html"*/'<ion-content padding class="content-container verify--container"  [ngClass]="{\'inputFocusIn\': focusInInput }">\n  <ng-container *ngIf="(showPinWhenValidToken$ | async); else showDismiss">\n    <ion-grid class="main-content content-wrapper">\n      <ion-row>\n        <ion-col text-center class="p-t-30">\n          <img class="l2s-logo" src="assets/images/l2s-logo.png" />\n        </ion-col>\n      </ion-row>\n      <form [formGroup]="verifyPINForm" autocomplete="off">\n        <ion-row>\n          <p text-center class="text-14">{{PIN_enter_5_digit}}</p>\n        </ion-row>\n        <ion-row class="m-b-15">\n          <ptt-pin (pinChange)="onPinChange($event)" (focusIntoInput)="onFocusInput($event)" (focusOutInput)="focusoutInput($event)"></ptt-pin>\n        </ion-row>\n        <ion-item-divider ion-item light no-lines class="error"\n                          *ngIf="(verifyPINForm.get(\'pin1\').dirty && !verifyPINForm.get(\'pin1\').valid) ||\n                               (verifyPINForm.get(\'pin2\').dirty && !verifyPINForm.get(\'pin2\').valid) ||\n                               (verifyPINForm.get(\'pin3\').dirty && !verifyPINForm.get(\'pin3\').valid) ||\n                               (verifyPINForm.get(\'pin4\').dirty && !verifyPINForm.get(\'pin4\').valid) ||\n                               (verifyPINForm.get(\'pin5\').dirty && !verifyPINForm.get(\'pin5\').valid)\n                        ">\n          <p>{{PIN_5_digit}}</p>\n        </ion-item-divider>\n      </form>\n      <ion-row *ngIf=\'timeAttemp>=1\'>\n        <ion-col text-center>\n          <p text-center class="gray text-14">\n            Can\'t remember your PIN\n          </p>\n          <p class="text-link-item" text-center>\n            <a class="text-link-item"  (click)="redirectLogin()">Enter username / password</a></p>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n\n    <ion-row class="footer-content footer-wrapper">\n      <ion-col>\n        <button ion-button large *ngIf=\'timeAttemp<3\' [disabled]="!verifyPINForm.valid" (click)="verifyPINCode()">Next</button>\n      </ion-col>\n    </ion-row>\n  </ng-container>\n  <ng-template #showDismiss>\n    <ion-grid class="tp-flex-container align-between tp-flex-columns tp-full-height">\n      <ion-row class="tp-flex-center-col">\n        <ion-col text-center class="text-14">\n          {{token_expired}}\n        </ion-col>\n      </ion-row>\n      <ion-row class=" ">\n        <ion-col>\n          <button ion-button large (click)="closeModal()">Close</button>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ng-template>\n</ion-content>'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\AccountManagement\verifyPIN\verifyPIN.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_9__framework_login_logoutData_service__["a" /* LogoutDataService */],
             ]
@@ -3098,7 +3098,7 @@ var VerifyPINPage = (function () {
 
 /***/ }),
 
-/***/ 678:
+/***/ 679:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3134,7 +3134,7 @@ var DenyCopyDirective = (function () {
 
 /***/ }),
 
-/***/ 679:
+/***/ 680:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3211,7 +3211,7 @@ var OnlyInteger = (function () {
 
 /***/ }),
 
-/***/ 680:
+/***/ 681:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3253,7 +3253,7 @@ var LocalStorageService = (function () {
 
 /***/ }),
 
-/***/ 684:
+/***/ 685:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3340,7 +3340,7 @@ var PttPinComponent = (function () {
     ], PttPinComponent.prototype, "input", void 0);
     PttPinComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'ptt-pin',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\libs\ptt-pin\ptt-pin.component.html"*/'<div class="ptt-pin-input">\n\n  <label class="ptt-pin-input-wrapper" [for]="compId">\n\n    <ion-row>\n\n      <ion-col col-20>\n\n        <span class="ptt-pin-input-value password only-password">{{ pin1 }}</span>\n\n      </ion-col>\n\n      <ion-col col-20>\n\n        <span class="ptt-pin-input-value password only-password">{{ pin2 }}</span>\n\n      </ion-col>\n\n      <ion-col col-20>\n\n        <span class="ptt-pin-input-value password only-password">{{ pin3 }}</span>\n\n      </ion-col>\n\n      <ion-col col-20>\n\n        <span class="ptt-pin-input-value password only-password">{{ pin4 }}</span>\n\n      </ion-col>\n\n      <ion-col col-20>\n\n        <span class="ptt-pin-input-value password only-password">{{ pin5 }}</span>\n\n      </ion-col>\n\n    </ion-row>\n\n  </label>\n\n  <input type="tel" class="ptt-pin" maxlength="5" [id]="compId" (input)="updatePIN($event)" (focusin)="focusInput($event)"  (focusout)="focusoutInput($event)"\n\n         #inp>\n\n</div>'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\libs\ptt-pin\ptt-pin.component.html"*/,
+            selector: 'ptt-pin',template:/*ion-inline-start:"D:\L2S-New2310\src\libs\ptt-pin\ptt-pin.component.html"*/'<div class="ptt-pin-input">\n\n  <label class="ptt-pin-input-wrapper" [for]="compId">\n\n    <ion-row>\n\n      <ion-col col-20>\n\n        <span class="ptt-pin-input-value password only-password">{{ pin1 }}</span>\n\n      </ion-col>\n\n      <ion-col col-20>\n\n        <span class="ptt-pin-input-value password only-password">{{ pin2 }}</span>\n\n      </ion-col>\n\n      <ion-col col-20>\n\n        <span class="ptt-pin-input-value password only-password">{{ pin3 }}</span>\n\n      </ion-col>\n\n      <ion-col col-20>\n\n        <span class="ptt-pin-input-value password only-password">{{ pin4 }}</span>\n\n      </ion-col>\n\n      <ion-col col-20>\n\n        <span class="ptt-pin-input-value password only-password">{{ pin5 }}</span>\n\n      </ion-col>\n\n    </ion-row>\n\n  </label>\n\n  <input type="tel" class="ptt-pin" maxlength="5" [id]="compId" (input)="updatePIN($event)" (focusin)="focusInput($event)"  (focusout)="focusoutInput($event)"\n\n         #inp>\n\n</div>'/*ion-inline-end:"D:\L2S-New2310\src\libs\ptt-pin\ptt-pin.component.html"*/,
             encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* ViewEncapsulation */].None,
         })
     ], PttPinComponent);
@@ -3351,7 +3351,7 @@ var PttPinComponent = (function () {
 
 /***/ }),
 
-/***/ 702:
+/***/ 703:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3361,7 +3361,7 @@ var PttPinComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(363);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(364);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__spa_framework_services_loadingIndicatorService_loadingIndicator_service__ = __webpack_require__(365);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__spa_framework_services_mobileDeviceService_mobileDeviceService_service__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__spa_framework_services_mobileDeviceService_mobileDeviceService_service__ = __webpack_require__(163);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__spa_framework_services_toastMessageService_toastMessage_service__ = __webpack_require__(162);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_jquery__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_jquery__);
@@ -3612,7 +3612,7 @@ var MyApp = (function () {
         __metadata("design:returntype", void 0)
     ], MyApp.prototype, "keyEvent", null);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\app\app.html"*/'<ion-nav #nav [root]="rootPage" [swipeBackEnabled]="true"></ion-nav>\n'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\app\app.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"D:\L2S-New2310\src\app\app.html"*/'<ion-nav #nav [root]="rootPage" [swipeBackEnabled]="true"></ion-nav>\n'/*ion-inline-end:"D:\L2S-New2310\src\app\app.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_14__ionic_native_in_app_browser__["a" /* InAppBrowser */]
             ]
@@ -3699,7 +3699,7 @@ var RouteManagerService = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VerifyPINService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__framework_login_authenticationDataSharing_service__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__framework_services_localStorageService_localStorage_service__ = __webpack_require__(680);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__framework_services_localStorageService_localStorage_service__ = __webpack_require__(681);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
 
 
@@ -3779,5 +3779,5 @@ var VerifyPINService = (function () {
 
 /***/ })
 
-},[377]);
+},[378]);
 //# sourceMappingURL=main.js.map

@@ -1,6 +1,6 @@
 webpackJsonp([61],{
 
-/***/ 1017:
+/***/ 1018:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -64,7 +64,7 @@ var AlertStoreDetailsPage = (function () {
     };
     AlertStoreDetailsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-alertStoreDetails',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\whereToSpend\where2SpendInStore\alertStoreDetails\alertStoreDetails.html"*/'<ion-content>\n  <ion-row class="close" (click)="close()">\n    <div text-right>\n      <ion-icon name="close"></ion-icon>\n    </div>\n  </ion-row>\n  <ion-item-divider></ion-item-divider>\n  <ion-item-divider></ion-item-divider>\n  <ion-row class="store-distance">\n    <h1>{{ store?.retailer?.name }}</h1>\n    <p>Distance from your location: {{ store?.prettyDistance }} miles</p>\n  </ion-row>\n  <ion-item-divider></ion-item-divider>\n  <ion-row class="store-address">\n    <p>{{ store?.addressLine1 }}</p>\n    <p>{{ store?.addressLine2}}</p>\n    <p>{{ store?.town }}</p>\n    <p>{{ store?.county }}</p>\n    <p class="m-t-6">{{ store?.postcode }}</p>\n  </ion-row>\n  <ion-item-divider></ion-item-divider>\n  <ion-row *ngIf="store && store.telephoneNumber" class="store-phone">\n    <p>Telephone</p>\n    <p>{{ store?.telephoneNumber }}</p>\n  </ion-row>\n  <ion-item-divider></ion-item-divider>\n  <ion-item-divider></ion-item-divider>\n  <!-- <ion-row *ngIf="store && store.retailer && store.retailer.websiteURL">\n      <button ion-button full (click)="onStoreLinkClick(store)">Get direction from here</button>\n  </ion-row> -->\n</ion-content>'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\whereToSpend\where2SpendInStore\alertStoreDetails\alertStoreDetails.html"*/,
+            selector: 'page-alertStoreDetails',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\whereToSpend\where2SpendInStore\alertStoreDetails\alertStoreDetails.html"*/'<ion-content>\n  <ion-row class="close" (click)="close()">\n    <div text-right>\n      <ion-icon name="close"></ion-icon>\n    </div>\n  </ion-row>\n  <ion-item-divider></ion-item-divider>\n  <ion-item-divider></ion-item-divider>\n  <ion-row class="store-distance">\n    <h1>{{ store?.retailer?.name }}</h1>\n    <p>Distance from your location: {{ store?.prettyDistance }} miles</p>\n  </ion-row>\n  <ion-item-divider></ion-item-divider>\n  <ion-row class="store-address">\n    <p>{{ store?.addressLine1 }}</p>\n    <p>{{ store?.addressLine2}}</p>\n    <p>{{ store?.town }}</p>\n    <p>{{ store?.county }}</p>\n    <p class="m-t-6">{{ store?.postcode }}</p>\n  </ion-row>\n  <ion-item-divider></ion-item-divider>\n  <ion-row *ngIf="store && store.telephoneNumber" class="store-phone">\n    <p>Telephone</p>\n    <p>{{ store?.telephoneNumber }}</p>\n  </ion-row>\n  <ion-item-divider></ion-item-divider>\n  <ion-item-divider></ion-item-divider>\n  <!-- <ion-row *ngIf="store && store.retailer && store.retailer.websiteURL">\n      <button ion-button full (click)="onStoreLinkClick(store)">Get direction from here</button>\n  </ion-row> -->\n</ion-content>'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\whereToSpend\where2SpendInStore\alertStoreDetails\alertStoreDetails.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_3__ionic_native_in_app_browser__["a" /* InAppBrowser */]
             ]
@@ -89,7 +89,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AlertStoreDetailsPageModule", function() { return AlertStoreDetailsPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__alertStoreDetails__ = __webpack_require__(1017);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__alertStoreDetails__ = __webpack_require__(1018);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);

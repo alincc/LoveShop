@@ -94,7 +94,7 @@ var EMoneyTrustPage = (function () {
     };
     EMoneyTrustPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-eMoneyTrust',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\AppInforManagement\eMoneyTrust\eMoneyTrust.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\nE-money Trust\n</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <div [innerHTML]="eMoneyContent">\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n\n          \n<ion-row style="display: none;" \n(click)="navCtrl.pop()"\nid="EMoneyTrustPage-back-button">\n</ion-row>'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\AppInforManagement\eMoneyTrust\eMoneyTrust.html"*/,
+            selector: 'page-eMoneyTrust',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\AppInforManagement\eMoneyTrust\eMoneyTrust.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\nE-money Trust\n</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <div [innerHTML]="eMoneyContent">\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n\n          \n<ion-row style="display: none;" \n(click)="navCtrl.pop()"\nid="EMoneyTrustPage-back-button">\n</ion-row>'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\AppInforManagement\eMoneyTrust\eMoneyTrust.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_2__eMoneyTrust_service__["a" /* EMoneyService */]
             ]

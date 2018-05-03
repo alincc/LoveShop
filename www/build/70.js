@@ -1,6 +1,6 @@
 webpackJsonp([70],{
 
-/***/ 1012:
+/***/ 1013:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15,7 +15,7 @@ webpackJsonp([70],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__framework_services_toastMessageService_toastMessage_service__ = __webpack_require__(162);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__myShoppingBasket_myShoppingBasketSharingData_services__ = __webpack_require__(368);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__framework_services_utilities_utilities__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__shared__ = __webpack_require__(1013);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__shared__ = __webpack_require__(1014);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_jquery__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_jquery__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__framework_appConfig__ = __webpack_require__(43);
@@ -183,7 +183,7 @@ var SettingsPage = (function () {
     };
     SettingsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-settings',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\Others\settings\settings.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Settings\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <ng-container *ngFor="let settingItem of settingsPage">\n      <button ion-item detail-none\n              (click)="gotoPage(settingItem.routeLink)"\n      >{{ settingItem.title }}</button>\n    </ng-container>\n    <button ion-item detail-none (click)="logout()">Logout</button>\n  </ion-list>\n\n\n  \n  <ion-row style="display: none;" \n  (click)="navCtrl.pop()"\n  id="SettingsPage-back-button">\n  </ion-row>\n</ion-content>\n'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\Others\settings\settings.html"*/,
+            selector: 'page-settings',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\Others\settings\settings.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Settings\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <ng-container *ngFor="let settingItem of settingsPage">\n      <button ion-item detail-none\n              (click)="gotoPage(settingItem.routeLink)"\n      >{{ settingItem.title }}</button>\n    </ng-container>\n    <button ion-item detail-none (click)="logout()">Logout</button>\n  </ion-list>\n\n\n  \n  <ion-row style="display: none;" \n  (click)="navCtrl.pop()"\n  id="SettingsPage-back-button">\n  </ion-row>\n</ion-content>\n'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\Others\settings\settings.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_3__framework_login_logoutData_service__["a" /* LogoutDataService */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
@@ -202,15 +202,15 @@ var SettingsPage = (function () {
 
 /***/ }),
 
-/***/ 1013:
+/***/ 1014:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__nav_service__ = __webpack_require__(369);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__nav_service__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__get_key_string_pipe__ = __webpack_require__(376);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__get_key_string_pipe__ = __webpack_require__(377);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_module__ = __webpack_require__(372);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_module__ = __webpack_require__(373);
 /* unused harmony namespace reexport */
 
 
@@ -227,7 +227,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SettingsPageModule", function() { return SettingsPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__settings__ = __webpack_require__(1012);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__settings__ = __webpack_require__(1013);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);

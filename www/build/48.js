@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrderDiscountGiftCard3DSModule", function() { return OrderDiscountGiftCard3DSModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__orderDiscountGiftCard3DS__ = __webpack_require__(978);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__orderDiscountGiftCard3DS__ = __webpack_require__(979);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -187,7 +187,7 @@ var OrderDiscountGiftCardSharingDataService = (function () {
 
 /***/ }),
 
-/***/ 978:
+/***/ 979:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -199,7 +199,7 @@ var OrderDiscountGiftCardSharingDataService = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__framework_services_loadingIndicatorService_loadingIndicator_service__ = __webpack_require__(365);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jquery__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__orderDiscountGiftCard3DS_service__ = __webpack_require__(979);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__orderDiscountGiftCard3DS_service__ = __webpack_require__(980);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__orderDiscountGiftCardSharingData_services__ = __webpack_require__(809);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__framework_appConfig__ = __webpack_require__(43);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -345,7 +345,7 @@ var OrderDiscountGiftCard3DSPage = (function () {
     };
     OrderDiscountGiftCard3DSPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-orderDiscountGiftCard3DS',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\orderManagement\orderDiscountGiftCard\orderDiscountGiftCard3DS\orderDiscountGiftCard3DS.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-buttons left>\n      <button  ion-button icon-only (click)="goBack()">\n        <ion-icon name="ios-arrow-back"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>3D Secure</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <form ngNoForm action="{{bankPayment?.url}}" style="display: none" target="ACSframe" method="POST">\n            <textarea name="PaReq"\n                      value="{{bankPayment?.paReq}}" style="display: none"></textarea>\n          <input\n            name="TermUrl"\n            value="javascript:window.parent.postMessage(document.getElementsByName(\'PaRes\')[0].value, \'*\');" style="display: none"/>\n          <input\n            name="MD" style="display: none"\n            value="{{dataAfterGenerateOrder?.orderNumber}}"/>\n          <button type="submit" style="display: none" id="submitIframe3D">Submit</button>\n        </form>\n\n        <iframe #iframe id="paymentIframe"\n                class="iframe__content--full"\n                src="about:blank"\n                name="ACSframe"></iframe>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n\n\n<ion-row style="display: none;" \n(click)="goBack()"\nid="OrderDiscountGiftCard3DSPage-back-button">\n</ion-row>'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\orderManagement\orderDiscountGiftCard\orderDiscountGiftCard3DS\orderDiscountGiftCard3DS.html"*/,
+            selector: 'page-orderDiscountGiftCard3DS',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\orderManagement\orderDiscountGiftCard\orderDiscountGiftCard3DS\orderDiscountGiftCard3DS.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-buttons left>\n      <button  ion-button icon-only (click)="goBack()">\n        <ion-icon name="ios-arrow-back"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>3D Secure</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <form ngNoForm action="{{bankPayment?.url}}" style="display: none" target="ACSframe" method="POST">\n            <textarea name="PaReq"\n                      value="{{bankPayment?.paReq}}" style="display: none"></textarea>\n          <input\n            name="TermUrl"\n            value="javascript:window.parent.postMessage(document.getElementsByName(\'PaRes\')[0].value, \'*\');" style="display: none"/>\n          <input\n            name="MD" style="display: none"\n            value="{{dataAfterGenerateOrder?.orderNumber}}"/>\n          <button type="submit" style="display: none" id="submitIframe3D">Submit</button>\n        </form>\n\n        <iframe #iframe id="paymentIframe"\n                class="iframe__content--full"\n                src="about:blank"\n                name="ACSframe"></iframe>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n\n\n<ion-row style="display: none;" \n(click)="goBack()"\nid="OrderDiscountGiftCard3DSPage-back-button">\n</ion-row>'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\orderManagement\orderDiscountGiftCard\orderDiscountGiftCard3DS\orderDiscountGiftCard3DS.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_6__orderDiscountGiftCard3DS_service__["a" /* OrderDiscountGiftCard3DSService */]
             ]
@@ -363,7 +363,7 @@ var OrderDiscountGiftCard3DSPage = (function () {
 
 /***/ }),
 
-/***/ 979:
+/***/ 980:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

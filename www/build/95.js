@@ -1,6 +1,6 @@
 webpackJsonp([95],{
 
-/***/ 1011:
+/***/ 1012:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -45,7 +45,7 @@ var MorePage = (function () {
     };
     MorePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-more',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\Others\more\more.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      More\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <ng-container *ngFor="let settingItem of settingsPage">\n      <button ion-item detail-none\n              (click)="gotoPage(settingItem.routeLink)"\n      >{{ settingItem.title }}</button>\n    </ng-container>\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\Others\more\more.html"*/,
+            selector: 'page-more',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\Others\more\more.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      More\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <ng-container *ngFor="let settingItem of settingsPage">\n      <button ion-item detail-none\n              (click)="gotoPage(settingItem.routeLink)"\n      >{{ settingItem.title }}</button>\n    </ng-container>\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\Others\more\more.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_3__framework_login_logoutData_service__["a" /* LogoutDataService */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
@@ -67,7 +67,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MorePageModule", function() { return MorePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__more__ = __webpack_require__(1011);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__more__ = __webpack_require__(1012);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);

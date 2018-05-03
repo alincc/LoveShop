@@ -1,14 +1,16 @@
 webpackJsonp([11],{
 
-/***/ 714:
+/***/ 749:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterStep3PageModule", function() { return RegisterStep3PageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddCardPhysicalMasterCardPageModule", function() { return AddCardPhysicalMasterCardPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__registerStep3__ = __webpack_require__(867);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(372);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__addCardPhysicalMasterCard__ = __webpack_require__(924);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__httpAddCard_service__ = __webpack_require__(810);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,22 +20,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var RegisterStep3PageModule = (function () {
-    function RegisterStep3PageModule() {
+
+
+var AddCardPhysicalMasterCardPageModule = (function () {
+    function AddCardPhysicalMasterCardPageModule() {
     }
-    RegisterStep3PageModule = __decorate([
+    AddCardPhysicalMasterCardPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
-            declarations: [__WEBPACK_IMPORTED_MODULE_2__registerStep3__["a" /* RegisterStep3Page */]],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__registerStep3__["a" /* RegisterStep3Page */])
-            ],
-            exports: [__WEBPACK_IMPORTED_MODULE_2__registerStep3__["a" /* RegisterStep3Page */]]
+            declarations: [__WEBPACK_IMPORTED_MODULE_3__addCardPhysicalMasterCard__["a" /* AddCardPhysicalMasterCardPage */]],
+            imports: [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__addCardPhysicalMasterCard__["a" /* AddCardPhysicalMasterCardPage */])],
+            exports: [__WEBPACK_IMPORTED_MODULE_3__addCardPhysicalMasterCard__["a" /* AddCardPhysicalMasterCardPage */]],
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__["a" /* Camera */],
+                __WEBPACK_IMPORTED_MODULE_4__httpAddCard_service__["a" /* HttpAddCardService */]
+            ]
         })
-    ], RegisterStep3PageModule);
-    return RegisterStep3PageModule;
+    ], AddCardPhysicalMasterCardPageModule);
+    return AddCardPhysicalMasterCardPageModule;
 }());
 
-//# sourceMappingURL=registerStep3.module.js.map
+//# sourceMappingURL=addCardPhysicalMasterCard.module.js.map
 
 /***/ }),
 
@@ -131,13 +137,16 @@ function errorMessagePIN(fieldName, length) {
 
 /***/ }),
 
-/***/ 814:
+/***/ 808:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = minlengthFieldValidator;
-/* harmony export (immutable) */ __webpack_exports__["b"] = minlengthFieldValidatorPostcode;
-/* unused harmony export MinlengthFieldValidatorDirective */
+/* harmony export (immutable) */ __webpack_exports__["a"] = minlengthValidator;
+/* harmony export (immutable) */ __webpack_exports__["b"] = minlengthValidatorCSC;
+/* unused harmony export minlengthValidatorPostCode */
+/* unused harmony export minlengthValidatorSerialNumber */
+/* harmony export (immutable) */ __webpack_exports__["c"] = minlengthValidatorPIN;
+/* unused harmony export MinLengthValidatorDirective */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__appConfig__ = __webpack_require__(43);
@@ -153,13 +162,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-function minlengthFieldValidator(length, fieldName) {
+function minlengthValidator(length, fieldName) {
     if (fieldName === void 0) { fieldName = 'field'; }
     return function (control) {
         var input = control.value;
-        if (input !== null && typeof input !== 'undefined') {
+        if (input !== null && typeof input !== 'undefined' && input !== '' && input.trim() !== '') {
             return (input.length < length)
-                ? { minlengthField: errorMessage(fieldName, length) }
+                ? { minlength: errorMessage(fieldName, length) }
                 : null;
         }
         return null;
@@ -167,15 +176,32 @@ function minlengthFieldValidator(length, fieldName) {
 }
 function errorMessage(fieldName, length) {
     if (fieldName === void 0) { fieldName = 'field'; }
-    return fieldName + " can be no less than " + length + " characters in length.";
+    return fieldName + " must be at least " + length + " characters in length.";
 }
-function minlengthFieldValidatorPostcode(length, fieldName) {
+function minlengthValidatorCSC(length, fieldName) {
     if (fieldName === void 0) { fieldName = 'field'; }
     return function (control) {
         var input = control.value;
         if (input !== null && typeof input !== 'undefined') {
             return (input.length < length)
-                ? { minlengthField: errorMessagePostCode(fieldName, length) }
+                ? { minlength: errorMessageCSC(fieldName, length) }
+                : null;
+        }
+        return null;
+    };
+}
+function errorMessageCSC(fieldName, length) {
+    if (fieldName === void 0) { fieldName = 'field'; }
+    // return `The CSC must contain 3 digit numbers.`;
+    return __WEBPACK_IMPORTED_MODULE_2__appConfig__["a" /* AppConfig */].Configuration.ContentMessage.cardCsc_less_than_min;
+}
+function minlengthValidatorPostCode(length, fieldName) {
+    if (fieldName === void 0) { fieldName = 'field'; }
+    return function (control) {
+        var input = control.value;
+        if (input !== null && typeof input !== 'undefined') {
+            return (input.length < length)
+                ? { minlength: errorMessagePostCode(fieldName, length) }
                 : null;
         }
         return null;
@@ -185,58 +211,103 @@ function errorMessagePostCode(fieldName, length) {
     if (fieldName === void 0) { fieldName = 'field'; }
     return __WEBPACK_IMPORTED_MODULE_2__appConfig__["a" /* AppConfig */].Configuration.ContentMessage.park_api_invalid_postcode;
 }
-var MinlengthFieldValidatorDirective = (function () {
-    function MinlengthFieldValidatorDirective() {
+function errorMessageSerialNumber(fieldName, length) {
+    if (fieldName === void 0) { fieldName = 'field'; }
+    return "Must be " + length + " digit numbers.";
+}
+function minlengthValidatorSerialNumber(length, fieldName) {
+    if (fieldName === void 0) { fieldName = 'field'; }
+    return function (control) {
+        var input = control.value;
+        if (input !== null && typeof input !== 'undefined') {
+            return (input.length < length)
+                ? { minlength: errorMessageSerialNumber(fieldName, length) }
+                : null;
+        }
+        return null;
+    };
+}
+function minlengthValidatorPIN(length, fieldName) {
+    if (fieldName === void 0) { fieldName = 'field'; }
+    return function (control) {
+        var input = control.value;
+        if (input !== null && typeof input !== 'undefined') {
+            return (input.length < length)
+                ? { minlength: errorMessagePIN(fieldName, length) }
+                : null;
+        }
+        return null;
+    };
+}
+function errorMessagePIN(fieldName, length) {
+    if (fieldName === void 0) { fieldName = 'field'; }
+    return __WEBPACK_IMPORTED_MODULE_2__appConfig__["a" /* AppConfig */].Configuration.ContentMessage.PIN_4_digits;
+}
+var MinLengthValidatorDirective = (function () {
+    function MinLengthValidatorDirective() {
         this.valFn = __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].nullValidator;
     }
-    MinlengthFieldValidatorDirective_1 = MinlengthFieldValidatorDirective;
-    MinlengthFieldValidatorDirective.prototype.ngOnChanges = function (changes) {
-        var change = changes['minlengthField'];
+    MinLengthValidatorDirective_1 = MinLengthValidatorDirective;
+    MinLengthValidatorDirective.prototype.ngOnChanges = function (changes) {
+        var change = changes['minlength'];
         if (change) {
-            this.valFn = minlengthFieldValidator(parseInt(change.currentValue, 0));
+            this.valFn = minlengthValidator(parseInt(change.currentValue, 0));
         }
         else {
             this.valFn = __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].nullValidator;
         }
     };
-    MinlengthFieldValidatorDirective.prototype.validate = function (control) {
+    MinLengthValidatorDirective.prototype.validate = function (control) {
         return this.valFn(control);
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
         __metadata("design:type", String)
-    ], MinlengthFieldValidatorDirective.prototype, "minlengthField", void 0);
-    MinlengthFieldValidatorDirective = MinlengthFieldValidatorDirective_1 = __decorate([
+    ], MinLengthValidatorDirective.prototype, "minlength", void 0);
+    MinLengthValidatorDirective = MinLengthValidatorDirective_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* Directive */])({
-            selector: '[minlengthField]',
+            selector: '[minlength]',
             providers: [{
                     provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* NG_VALIDATORS */],
-                    useExisting: MinlengthFieldValidatorDirective_1,
+                    useExisting: MinLengthValidatorDirective_1,
                     multi: true
                 }]
         }),
         __metadata("design:paramtypes", [])
-    ], MinlengthFieldValidatorDirective);
-    return MinlengthFieldValidatorDirective;
-    var MinlengthFieldValidatorDirective_1;
+    ], MinLengthValidatorDirective);
+    return MinLengthValidatorDirective;
+    var MinLengthValidatorDirective_1;
 }());
 
-//# sourceMappingURL=validator-minlengthField.directive.js.map
+//# sourceMappingURL=validator-minlength.directive.js.map
 
 /***/ }),
 
-/***/ 820:
+/***/ 810:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = containsCharactersValidator;
-/* harmony export (immutable) */ __webpack_exports__["c"] = containsOnlyLeterValidator;
-/* harmony export (immutable) */ __webpack_exports__["b"] = containsCharactersValidatorPostCode;
-/* unused harmony export ContainsCharactersValidatorDirective */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HttpAddCardService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_utilities_utilities__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__appConfig__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_retry__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_retry___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_retry__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_timeout__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_timeout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_timeout__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_delay__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_delay___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_delay__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__framework_appConfig__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__framework_services_utilities_utilities__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__framework_services_toastMessageService_toastMessage_service__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__framework_services_mobileDeviceService_mobileDeviceService_service__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__framework_login_authenticationGuard_service__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ionic_angular__ = __webpack_require__(22);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -246,341 +317,272 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+// Imports
+
+
+
+// Import RxJs required methods
 
 
 
 
-function containsCharactersValidator(fieldName) {
-    return function (control) {
-        var pattern = /^[0-9a-zA-Z &\-'\u2018\u2019\u201A\u201B\u0060,\.\\\/]+$/;
-        var field = control.value;
-        if (__WEBPACK_IMPORTED_MODULE_2__services_utilities_utilities__["a" /* Utils */].isNotNull(field) && field !== '' && !pattern.test(field)) {
-            return { containsCharacters: errorMessage(fieldName) };
-        }
-        return null;
+
+
+
+
+
+
+
+var DEFAULT_ERROR_MSG = __WEBPACK_IMPORTED_MODULE_8__framework_appConfig__["a" /* AppConfig */].Configuration.HttpService.DEFAULT_ERROR_MSG;
+var API_Authentication = __WEBPACK_IMPORTED_MODULE_8__framework_appConfig__["a" /* AppConfig */].Configuration.HttpService.API_Authentication;
+var NO_CONNECTION_MSG = __WEBPACK_IMPORTED_MODULE_8__framework_appConfig__["a" /* AppConfig */].Configuration.HttpService.NO_CONNECTION_MSG;
+var TOKEN_INVALID = __WEBPACK_IMPORTED_MODULE_8__framework_appConfig__["a" /* AppConfig */].Configuration.HttpService.TOKEN_INVALID;
+var HttpAddCardService = (function () {
+    function HttpAddCardService(authenticationService, events, http) {
+        this.authenticationService = authenticationService;
+        this.events = events;
+        this.http = http;
+        this.receiveTimeout = 120000;
+    }
+    HttpAddCardService.prototype.post = function (api, requestType, body) {
+        var _this = this;
+        // Stringify payload
+        var bodyString = JSON.stringify(body);
+        // ...using post request
+        return this.http
+            .post(this.getFullApiUrl(api), bodyString, this.headerOptions(requestType))
+            .timeout(this.receiveTimeout)
+            .map(this.extractData.bind(this))
+            .catch(function (error) {
+            return _this.extractData(error);
+        });
     };
-}
-function containsOnlyLeterValidator(fieldName) {
-    return function (control) {
-        var pattern = /^[a-zA-Z \-'\u2018\u2019\u201A\u201B\u0060]+$/;
-        var field = control.value;
-        if (__WEBPACK_IMPORTED_MODULE_2__services_utilities_utilities__["a" /* Utils */].isNotNull(field) && !pattern.test(field)) {
-            return { containsCharacters: errorMessage(fieldName) };
-        }
-        return null;
+    HttpAddCardService.prototype.getFullApiUrl = function (api) {
+        return api.indexOf("http") === -1
+            ? __WEBPACK_IMPORTED_MODULE_8__framework_appConfig__["a" /* AppConfig */].Configuration.HttpService.baseApiUrl + api
+            : api;
     };
-}
-function errorMessageEmail(fieldName) {
-    return fieldName + " contains invalid characters";
-}
-function errorMessage(fieldName) {
-    return fieldName + " contains invalid characters";
-}
-function containsCharactersValidatorPostCode(fieldName) {
-    return function (control) {
-        var patternStr = '$@!%*#?&,£()=+"';
-        var input = control.value;
-        for (var r = 0; r < patternStr.length; r++) {
-            if (__WEBPACK_IMPORTED_MODULE_2__services_utilities_utilities__["a" /* Utils */].isNotNull(input)) {
-                if (input.indexOf(patternStr[r]) !== -1) {
-                    return { containsCharacters: errorMessagePostCode(fieldName) };
+    HttpAddCardService.prototype.headerOptions = function (requestType) {
+        // ... Set content type to JSON
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({
+            'Content-Type': 'application/json',
+            'API_Authentication': API_Authentication,
+            'Authorization': this.authenticationService.getToken(),
+            'Device_Name': __WEBPACK_IMPORTED_MODULE_11__framework_services_mobileDeviceService_mobileDeviceService_service__["a" /* MobileDeviceService */].getInstance().getDeviceType(),
+            'Request_Type': requestType
+        });
+        // Create a request option
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return options;
+    };
+    HttpAddCardService.prototype.extractData = function (res) {
+        if (res.status <= 4) {
+            __WEBPACK_IMPORTED_MODULE_10__framework_services_toastMessageService_toastMessage_service__["a" /* ToastMessageService */].getInstance().showToastMessage(NO_CONNECTION_MSG);
+            return;
+        }
+        else if (res.status === 401) {
+            var errors = res.json().errors;
+            var message = '';
+            if (__WEBPACK_IMPORTED_MODULE_9__framework_services_utilities_utilities__["a" /* Utils */].lengthGreaterThan0(errors)) {
+                if (errors[0].code === "token.invalid" || errors[0].code === "park-api.token.expired") {
+                    this.authenticationService.invalidToken$.next({
+                        message: TOKEN_INVALID
+                    });
+                }
+                message = errors[0].message;
+            }
+            else {
+                message = DEFAULT_ERROR_MSG;
+            }
+            __WEBPACK_IMPORTED_MODULE_10__framework_services_toastMessageService_toastMessage_service__["a" /* ToastMessageService */].getInstance().showToastMessage(message, __WEBPACK_IMPORTED_MODULE_8__framework_appConfig__["a" /* AppConfig */].Configuration.HttpService.time2ShowToast);
+            return;
+        }
+        else if (res.status !== 200) {
+            var message = '';
+            var result_1;
+            try {
+                result_1 = res.json();
+            }
+            catch (e) { }
+            if (__WEBPACK_IMPORTED_MODULE_9__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(result_1) && __WEBPACK_IMPORTED_MODULE_9__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(result_1.errors) && result_1.errors.length > 0) {
+                if (__WEBPACK_IMPORTED_MODULE_9__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(result_1.errors[0].message)) {
+                    message = result_1.errors[0].message;
+                }
+                else {
+                    var code = result_1.errors[0].code;
+                    if (__WEBPACK_IMPORTED_MODULE_9__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(code)) {
+                        this.getMessage('cms/message/code=' + code);
+                    }
+                    else {
+                        message = DEFAULT_ERROR_MSG;
+                    }
                 }
             }
+            else {
+                message = DEFAULT_ERROR_MSG;
+            }
+            __WEBPACK_IMPORTED_MODULE_10__framework_services_toastMessageService_toastMessage_service__["a" /* ToastMessageService */].getInstance().showToastMessage(message);
+            return;
         }
-        return null;
-    };
-}
-function errorMessagePostCode(fieldName) {
-    return __WEBPACK_IMPORTED_MODULE_3__appConfig__["a" /* AppConfig */].Configuration.ContentMessage.park_api_invalid_postcode;
-}
-var ContainsCharactersValidatorDirective = (function () {
-    function ContainsCharactersValidatorDirective() {
-        this.valFn = __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].nullValidator;
-    }
-    ContainsCharactersValidatorDirective_1 = ContainsCharactersValidatorDirective;
-    ContainsCharactersValidatorDirective.prototype.ngOnChanges = function (changes) {
-        var change = changes['containsCharacters'];
-        if (change) {
-            var val = change.currentValue;
-            this.valFn = containsCharactersValidator(val);
+        var result;
+        if (res.ok === true) {
+            result = res.json() || {};
         }
         else {
-            this.valFn = __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].nullValidator;
+            result = __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__["Observable"].of(res);
         }
+        result.ok = res.ok;
+        result.status = res.status;
+        return result;
     };
-    ContainsCharactersValidatorDirective.prototype.validate = function (control) {
-        return this.valFn(control);
+    HttpAddCardService.prototype.getMessage = function (api) {
+        return this.http
+            .get(this.getFullApiUrl(api), this.headerOptionsGetContent())
+            .subscribe(function (res) {
+            var message = DEFAULT_ERROR_MSG;
+            try {
+                var body = res.json();
+                if (body && body.response && body.response.message) {
+                    message = body.response.message;
+                }
+                else if (body && Array.isArray(body.errors) && body.errors.length > 0) {
+                    message = body.errors[0];
+                }
+                else {
+                    message = DEFAULT_ERROR_MSG;
+                }
+            }
+            catch (error) {
+                message = DEFAULT_ERROR_MSG;
+            }
+            __WEBPACK_IMPORTED_MODULE_10__framework_services_toastMessageService_toastMessage_service__["a" /* ToastMessageService */].getInstance().showToastMessage(message);
+        }, function (error) {
+            __WEBPACK_IMPORTED_MODULE_10__framework_services_toastMessageService_toastMessage_service__["a" /* ToastMessageService */].getInstance().showToastMessage(DEFAULT_ERROR_MSG);
+        });
     };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
-        __metadata("design:type", String)
-    ], ContainsCharactersValidatorDirective.prototype, "containsCharacters", void 0);
-    ContainsCharactersValidatorDirective = ContainsCharactersValidatorDirective_1 = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* Directive */])({
-            selector: '[containsCharacters]',
-            providers: [{
-                    provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* NG_VALIDATORS */],
-                    useExisting: ContainsCharactersValidatorDirective_1,
-                    multi: true
-                }]
-        }),
-        __metadata("design:paramtypes", [])
-    ], ContainsCharactersValidatorDirective);
-    return ContainsCharactersValidatorDirective;
-    var ContainsCharactersValidatorDirective_1;
-}());
-
-//# sourceMappingURL=validator-containsCharacters.directive.js.map
-
-/***/ }),
-
-/***/ 821:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterDataService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__framework_services_httpService_http_service__ = __webpack_require__(161);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var RegisterDataService = (function () {
-    function RegisterDataService(http) {
-        this.http = http;
-    }
-    RegisterDataService.prototype.getPasswordValidationRules = function () {
-        return this.http.get("account/password-policy");
+    HttpAddCardService.prototype.headerOptionsGetContent = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({
+            'Content-Type': 'application/json',
+            'API_Authentication': API_Authentication,
+            'Device_Name': __WEBPACK_IMPORTED_MODULE_11__framework_services_mobileDeviceService_mobileDeviceService_service__["a" /* MobileDeviceService */].getInstance().getDeviceType(),
+        });
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return options;
     };
-    RegisterDataService.prototype.validateEmailAddress = function (email) {
-        return this.http.post("account/email", email);
-    };
-    RegisterDataService.prototype.searchPostcodeAutoComplete = function (url) {
-        return this.http.getExternal(url);
-    };
-    RegisterDataService.prototype.lookUpAddress = function (url) {
-        return this.http.getExternal(url);
-    };
-    RegisterDataService.prototype.createAccount = function (userData) {
-        return this.http.post("account", userData);
-    };
-    RegisterDataService.prototype.getContentFromRetreiveContent = function (code) {
-        return this.http.get('cms/message/code=' + code);
-    };
-    RegisterDataService = __decorate([
+    HttpAddCardService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__framework_services_httpService_http_service__["a" /* HttpService */]])
-    ], RegisterDataService);
-    return RegisterDataService;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_12__framework_login_authenticationGuard_service__["a" /* AuththenticationGuardService */],
+            __WEBPACK_IMPORTED_MODULE_13_ionic_angular__["d" /* Events */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
+    ], HttpAddCardService);
+    return HttpAddCardService;
 }());
 
-//# sourceMappingURL=registerData.service.js.map
+//# sourceMappingURL=httpAddCard.service.js.map
 
 /***/ }),
 
-/***/ 822:
+/***/ 811:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterSharingDataService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Rx__ = __webpack_require__(92);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Rx__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CardDetailSharingDataService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_BehaviorSubject__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_BehaviorSubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_BehaviorSubject__);
 
-var RegisterSharingDataService = (function () {
-    function RegisterSharingDataService() {
+var CardDetailSharingDataService = (function () {
+    function CardDetailSharingDataService() {
         this.defaultMasterData = {};
         this.currentMasterData = Object.assign({}, this.defaultMasterData);
-        this._state$ = new __WEBPACK_IMPORTED_MODULE_0_rxjs_Rx__["BehaviorSubject"](this.currentMasterData);
-        if (RegisterSharingDataService._instance) {
+        this._state$ = new __WEBPACK_IMPORTED_MODULE_0_rxjs_BehaviorSubject__["BehaviorSubject"](this.currentMasterData);
+        if (CardDetailSharingDataService._instance) {
             throw new Error('Error: Instantiation failed: '
-                + 'Use RegisterSharingDataService.getInstance() instead of new.');
+                + 'Use CardDetailSharingDataService.getInstance() instead of new.');
         }
-        RegisterSharingDataService._instance = this;
+        CardDetailSharingDataService._instance = this;
     }
-    Object.defineProperty(RegisterSharingDataService.prototype, "state$", {
+    Object.defineProperty(CardDetailSharingDataService.prototype, "state$", {
         get: function () {
             return this._state$;
         },
         enumerable: true,
         configurable: true
     });
-    RegisterSharingDataService.prototype.resetState = function () {
+    CardDetailSharingDataService.prototype.resetState = function () {
         this.currentMasterData = Object.assign({}, this.defaultMasterData);
         this._state$.next(this.currentMasterData);
     };
-    RegisterSharingDataService.prototype.saveStep1Screen = function (step1Model) {
+    CardDetailSharingDataService.prototype.saveStep1Screen = function (step1Model) {
         this.currentMasterData.step1Model = step1Model;
     };
-    RegisterSharingDataService.prototype.saveStep2Screen = function (step2Model) {
+    CardDetailSharingDataService.prototype.saveStep2Screen = function (step2Model) {
         this.currentMasterData.step2Model = step2Model;
     };
-    RegisterSharingDataService.prototype.getEmailAddressAtStep3 = function () {
-        return this.currentMasterData.step2Model.emailAddress;
+    CardDetailSharingDataService.prototype.getAmountTopupAtStep1 = function () {
+        return this.currentMasterData.step1Model.topUpInput;
     };
-    RegisterSharingDataService.prototype.saveStep3Screen = function (step3Model) {
-        this.currentMasterData.step3Model = step3Model;
+    CardDetailSharingDataService.prototype.savePrimaryCard = function (primaryCard) {
+        this.primaryCard = primaryCard;
     };
-    RegisterSharingDataService.prototype.saveStep4Screen = function (step4Model) {
-        this.currentMasterData.step4Model = step4Model;
+    CardDetailSharingDataService.prototype.getPrimaryCard = function () {
+        return this.primaryCard;
     };
-    RegisterSharingDataService.prototype.getRegisterData = function () {
-        var registerModel = {
-            // step 1
-            title: this.currentMasterData.step1Model.title,
-            firstName: this.currentMasterData.step1Model.firstName,
-            lastName: this.currentMasterData.step1Model.lastName,
-            dob: this.currentMasterData.step1Model.dob,
-            termsAgreed: this.currentMasterData.step1Model.termsAgreed,
-            // step 2
-            emailAddress: this.currentMasterData.step2Model.emailAddress,
-            password: this.currentMasterData.step2Model.password,
-            marketingOptOut: this.currentMasterData.step2Model.marketingOptOut,
-            // step 3
-            addressLine1: this.currentMasterData.step3Model.addressLine1,
-            addressLine2: this.currentMasterData.step3Model.addressLine2,
-            country: this.currentMasterData.step3Model.country,
-            county: this.currentMasterData.step3Model.county,
-            postcode: this.currentMasterData.step3Model.postcode,
-            telephoneNumber: this.currentMasterData.step3Model.telephoneNumber,
-            town: this.currentMasterData.step3Model.town,
-            accountType: "B2C",
-            businessName: ""
-        };
-        return registerModel;
+    CardDetailSharingDataService.prototype.resetPrimaryCard = function () {
+        this.primaryCard = null;
     };
-    RegisterSharingDataService.getInstance = function () {
-        return RegisterSharingDataService._instance;
+    CardDetailSharingDataService.prototype.saveCurrentCard = function (currentCard) {
+        this.currentCard = currentCard;
+    };
+    CardDetailSharingDataService.prototype.getCurrentCard = function () {
+        return this.currentCard;
+    };
+    CardDetailSharingDataService.prototype.resetCurrentCard = function () {
+        this.currentCard = null;
+    };
+    Object.defineProperty(CardDetailSharingDataService.prototype, "gotoCardData", {
+        get: function () {
+            return this._gotoCardData;
+        },
+        set: function (card) {
+            this._gotoCardData = card;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CardDetailSharingDataService.prototype, "gotoCardDataReload", {
+        get: function () {
+            return this._gotoCardDataReload;
+        },
+        set: function (card) {
+            this._gotoCardDataReload = card;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    CardDetailSharingDataService.getInstance = function () {
+        return CardDetailSharingDataService._instance;
     };
     // tslint:disable-next-line:member-ordering
-    RegisterSharingDataService._instance = new RegisterSharingDataService();
-    return RegisterSharingDataService;
+    CardDetailSharingDataService._instance = new CardDetailSharingDataService();
+    return CardDetailSharingDataService;
 }());
 
-//# sourceMappingURL=registerSharingData.service.js.map
+//# sourceMappingURL=cardDetailsSharing.services.js.map
 
 /***/ }),
 
-/***/ 834:
+/***/ 816:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = phoneValidator;
-/* unused harmony export PhoneValidatorDirective */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddCardDataService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_utilities_utilities__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__appConfig__ = __webpack_require__(43);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-function phoneValidator() {
-    return function (control) {
-        var phone = control.value;
-        if (isNaN(phone)) {
-            return { phoneError: __WEBPACK_IMPORTED_MODULE_3__appConfig__["a" /* AppConfig */].Configuration.ContentMessage.invalid_phone_format };
-        }
-        if (__WEBPACK_IMPORTED_MODULE_2__services_utilities_utilities__["a" /* Utils */].isNotNull(phone)) {
-            var isPhoneOk = false;
-            // check home phome start with 01 or 02 or 0845
-            isPhoneOk = phone.substring(0, 2) === '01'
-                || phone.substring(0, 2) === '02'
-                || phone.substring(0, 4) === '0845';
-            if (isPhoneOk === true) {
-                if (phone.length === 11) {
-                    return null;
-                }
-            }
-            // check phone start with '07'
-            isPhoneOk = phone.substring(0, 2) === '07';
-            if (isPhoneOk === true) {
-                if ((phone.length === 10)
-                    || (phone.length === 11)) {
-                    return null;
-                }
-            }
-            // check phone start with '03'
-            isPhoneOk = phone.substring(0, 2) === '03';
-            if (isPhoneOk === true) {
-                if (phone.length === 11) {
-                    return null;
-                }
-            }
-        }
-        return { phoneError: __WEBPACK_IMPORTED_MODULE_3__appConfig__["a" /* AppConfig */].Configuration.ContentMessage.invalid_phone_format };
-    };
-}
-var PhoneValidatorDirective = (function () {
-    function PhoneValidatorDirective() {
-        this.valFn = __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].nullValidator;
-        this.valFn = phoneValidator();
-    }
-    PhoneValidatorDirective_1 = PhoneValidatorDirective;
-    PhoneValidatorDirective.prototype.validate = function (control) {
-        return this.valFn(control);
-    };
-    PhoneValidatorDirective = PhoneValidatorDirective_1 = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* Directive */])({
-            selector: '[isPhone]',
-            providers: [{
-                    provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* NG_VALIDATORS */],
-                    useExisting: PhoneValidatorDirective_1,
-                    multi: true
-                }]
-        }),
-        __metadata("design:paramtypes", [])
-    ], PhoneValidatorDirective);
-    return PhoneValidatorDirective;
-    var PhoneValidatorDirective_1;
-}());
-
-//# sourceMappingURL=validator-phone.directive.js.map
-
-/***/ }),
-
-/***/ 867:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterStep3Page; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__registerSharingData_service__ = __webpack_require__(822);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__registerData_service__ = __webpack_require__(821);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__framework_services_loadingIndicatorService_loadingIndicator_service__ = __webpack_require__(365);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__framework_services_utilities_utilities__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__framework_validations_validator_required_directive__ = __webpack_require__(367);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__framework_validations_validator_phone_directive__ = __webpack_require__(834);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__framework_validations_validator_containsCharacters_directive__ = __webpack_require__(820);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__framework_validations_validator_minlengthField_directive__ = __webpack_require__(814);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__framework_services_routeManager_routeManager_service__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__framework_login_authenticationGuard_service__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__framework_login_authenticationDataSharing_service__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__framework_services_toastMessageService_toastMessage_service__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_rxjs_Subject__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_rxjs_Subject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_rxjs_Observable__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__framework_validations_validator_maxlengthField_directive__ = __webpack_require__(807);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__framework_appConfig__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__CardManagement_cardDetails_yourCardDetails_yourCardDetailsSharingData_services__ = __webpack_require__(366);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__httpAddCard_service__ = __webpack_require__(810);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__framework_services_httpService_http_service__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__cardDetails_cardDetailsSharing_services__ = __webpack_require__(811);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_nav_service__ = __webpack_require__(369);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__cardDetails_yourCardDetails_yourCardDetailsSharingData_services__ = __webpack_require__(366);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -597,337 +599,537 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-var DEFAULT_ERROR_MSG = __WEBPACK_IMPORTED_MODULE_18__framework_appConfig__["a" /* AppConfig */].Configuration.HttpService.DEFAULT_ERROR_MSG;
-var RegisterStep3Page = (function () {
-    function RegisterStep3Page(formBuilder, alertCtrl, routeManager, authService, navCtrl, registerDataService) {
-        var _this = this;
-        this.formBuilder = formBuilder;
-        this.alertCtrl = alertCtrl;
-        this.routeManager = routeManager;
-        this.authService = authService;
+var AddCardDataService = (function () {
+    function AddCardDataService(http, httpAddCard, navCtrl, navSvc, viewCtrl) {
+        this.http = http;
+        this.httpAddCard = httpAddCard;
         this.navCtrl = navCtrl;
-        this.registerDataService = registerDataService;
-        this.keyPCA = __WEBPACK_IMPORTED_MODULE_18__framework_appConfig__["a" /* AppConfig */].Configuration.LocationService.PCA_KEY;
-        this.enter_postcode_or_search_for_an_address = __WEBPACK_IMPORTED_MODULE_18__framework_appConfig__["a" /* AppConfig */].Configuration.ContentMessage.enter_postcode_or_search_for_an_address;
-        this.enter_address_manually = __WEBPACK_IMPORTED_MODULE_18__framework_appConfig__["a" /* AppConfig */].Configuration.ContentMessage.enter_address_manually;
-        this.txtPostCode = "";
-        this.model = {
-            addressLine1: '',
-            addressLine2: '',
-            town: '',
-            county: '',
-            postcode: '',
-            telephoneNumber: '',
-            country: '',
-        };
-        this.countryLists = [
-            {
-                countryId: "UK",
-                countryName: "United Kingdom"
-            }
-        ];
-        this.showStyle = true;
-        this.isShowAddress = false;
-        this.suggestSearch$ = new __WEBPACK_IMPORTED_MODULE_15_rxjs_Subject__["Subject"]();
-        this.showList = false;
-        this.formErrors = {
-            'addressLine1': '',
-            'addressLine2': '',
-            'town': '',
-            'county': '',
-            'postcode': '',
-            'telephoneNumber': '',
-            'isShowAddress': ''
-        };
-        this.buildForm();
-        this.searchStream = this.suggestSearch$
-            .debounceTime(250)
-            .switchMap(function (keyword) {
-            var term = '';
-            var lastId = undefined;
-            if (typeof keyword === 'string') {
-                term = keyword;
-            }
-            else if (typeof keyword === 'object') {
-                term = keyword['keyword'];
-                lastId = keyword['lastId'];
-            }
-            return _this.getItems(term, lastId);
-        }, function (outerValue, innerValue) { return ({
-            keywordPostcode: outerValue,
-            response: innerValue
-        }); })
-            .filter(function (x) { return !!(x.response); });
+        this.navSvc = navSvc;
+        this.viewCtrl = viewCtrl;
     }
-    RegisterStep3Page.prototype.dirtySelectValue = function () {
-        if (this.showStyle) {
-            return "input-has-value";
+    AddCardDataService.prototype.checkCardTypeToAddCard = function (cardID) {
+        return this.httpAddCard.post("card/type", 'ADD_CARD', cardID);
+    };
+    AddCardDataService.prototype.checkCardTypeBalance = function (cardID) {
+        return this.httpAddCard.post("card/type", 'BALANCE', cardID);
+    };
+    AddCardDataService.prototype.addCard = function (cardModel) {
+        return this.httpAddCard.post("card", "", cardModel);
+    };
+    AddCardDataService.prototype.getHelp = function (code) {
+        return this.http.get("cms/message/code=" + code);
+    };
+    AddCardDataService.prototype.getRetrieveCardsInfo = function () {
+        return this.http.get("card");
+    };
+    AddCardDataService.prototype.gotoCardDetailAndReload = function (cardId, cardNumber) {
+        __WEBPACK_IMPORTED_MODULE_6__cardDetails_yourCardDetails_yourCardDetailsSharingData_services__["a" /* YourCardDetailsSharingDataService */].getInstance().goToFromAddCard = true;
+        //variable is not make sense but cardId:CardNumber is correct
+        var needBackToYourCard = __WEBPACK_IMPORTED_MODULE_6__cardDetails_yourCardDetails_yourCardDetailsSharingData_services__["a" /* YourCardDetailsSharingDataService */].getInstance().needBackToYourCard;
+        if (needBackToYourCard === true) {
+            __WEBPACK_IMPORTED_MODULE_6__cardDetails_yourCardDetails_yourCardDetailsSharingData_services__["a" /* YourCardDetailsSharingDataService */].getInstance().needBackToYourCard = false;
+            var card = {
+                reloadData: true,
+                cardId: cardNumber,
+                cardNumber: cardId,
+            };
+            __WEBPACK_IMPORTED_MODULE_4__cardDetails_cardDetailsSharing_services__["a" /* CardDetailSharingDataService */].getInstance().gotoCardDataReload = card;
+            this.navCtrl.popToRoot();
         }
         else {
-            return "";
+            this.navCtrl.setRoot('TabsPage');
         }
     };
-    RegisterStep3Page.prototype.ionViewDidEnter = function () {
-        var _this = this;
-        this.searchSub = this.searchStream.subscribe(function (res) { return _this.responseHandler(res); });
+    AddCardDataService.prototype.saveNavigationState = function (linkPage) {
+        this.linkPage = linkPage;
     };
-    RegisterStep3Page.prototype.ionViewDidLeave = function () {
-        this.searchSub && this.searchSub.unsubscribe();
+    AddCardDataService.prototype.resetNavigationState = function () {
+        this.linkPage = null;
     };
-    RegisterStep3Page.prototype.formatLocationAddress = function (item) {
-        if (__WEBPACK_IMPORTED_MODULE_6__framework_services_utilities_utilities__["a" /* Utils */].lengthGreaterThan0(item.Description)) {
-            return item.Text + " " + item.Description;
-        }
-        else {
-            return item.Text;
-        }
-    };
-    RegisterStep3Page.prototype.getItems = function (keywordPostcode, lastId) {
-        if (lastId === void 0) { lastId = 'GBR|'; }
-        // if the value is an empty string don't filter the items
-        if (keywordPostcode && keywordPostcode.trim() != '' && keywordPostcode.trim().length > 2) {
-            var url = 'https://services.postcodeanywhere.co.uk/CapturePlus/Interactive/Find/v2.10/json3.ws?'
-                + 'Key=' + this.keyPCA
-                + '&Country=GBR'
-                + '&SearchTerm=' + encodeURI(keywordPostcode)
-                + '&LanguagePreference=EN'
-                + '&LastId=' + encodeURI(lastId)
-                + '&SearchFor=Everything'
-                + '&MaxSuggestions=10'
-                + '&MaxResults=';
-            return this.registerDataService
-                .searchPostcodeAutoComplete(url);
-        }
-        else {
-            // hide the results when the query is empty
-            this.showList = false;
-            return __WEBPACK_IMPORTED_MODULE_16_rxjs_Observable__["Observable"].of(null);
-        }
-    };
-    RegisterStep3Page.prototype.pickupAddress = function (item) {
-        var _this = this;
-        if (item && item.Next && item.Next.toLowerCase() === 'find') {
-            this.suggestSearch$.next({
-                keyword: item.Text,
-                lastId: item.Id
-            });
-            return;
-        }
-        __WEBPACK_IMPORTED_MODULE_5__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().showLoadingIndicator();
-        var url = 'https://services.postcodeanywhere.co.uk/CapturePlus/Interactive/Retrieve/v2.10/json3.ws?'
-            + 'Key=' + this.keyPCA
-            + '&Id=' + item.Id;
-        this.registerDataService
-            .lookUpAddress(url)
-            .subscribe(function (response) {
-            var addressItem = response.Items[0];
-            if (addressItem && !addressItem.Error) {
-                _this.model = {
-                    addressLine1: addressItem.Line1,
-                    addressLine2: addressItem.Line2,
-                    town: addressItem.City,
-                    county: addressItem.ProvinceName || addressItem.Province || '',
-                    postcode: addressItem.PostalCode,
-                    country: _this.countryLists[0].countryName,
-                    telephoneNumber: '',
-                    isShowAddress: true
-                };
-                _this.registerUserForm.setValue(_this.model);
-                _this.showList = false;
-                _this.isShowAddress = true;
+    AddCardDataService.prototype.navigationPage = function (body, cardID) {
+        if (body.cardType === 'FLEXECASH') {
+            var index = this.viewCtrl.index;
+            if (index > 1) {
+                this.navCtrl.remove(index, 1, { animate: false, duration: 0 });
             }
-        }, function () {
-        }, function () {
-            __WEBPACK_IMPORTED_MODULE_5__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
-        });
-    };
-    RegisterStep3Page.prototype.submitRegisterData = function () {
-        var _this = this;
-        if (this.registerUserForm.valid) {
-            this._unsubscribe();
-            this.registerUserForm.value.isShowAddress = this.isShowAddress;
-            __WEBPACK_IMPORTED_MODULE_3__registerSharingData_service__["a" /* RegisterSharingDataService */].getInstance().saveStep3Screen(this.registerUserForm.value);
-            var authShareService_1 = __WEBPACK_IMPORTED_MODULE_13__framework_login_authenticationDataSharing_service__["a" /* AuthenticationDataSharingService */].getInstance();
-            var registerModel_1 = __WEBPACK_IMPORTED_MODULE_3__registerSharingData_service__["a" /* RegisterSharingDataService */].getInstance().getRegisterData();
-            __WEBPACK_IMPORTED_MODULE_5__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().showLoadingIndicator();
-            this._submitregister = this.registerDataService
-                .createAccount(registerModel_1)
-                .subscribe(function (res) {
-                if (!res.ok) {
-                    return;
-                }
-                var body = res.response;
-                var authInfo = {
-                    token: body.accessToken,
-                    accessTokenExpiry: body.accessTokenExpiry,
-                    emailAddress: registerModel_1.emailAddress
-                };
-                _this.authService.authenticated(authInfo);
-                // storage email address for later use
-                authShareService_1.loginEmail = registerModel_1.emailAddress;
-                __WEBPACK_IMPORTED_MODULE_19__CardManagement_cardDetails_yourCardDetails_yourCardDetailsSharingData_services__["a" /* YourCardDetailsSharingDataService */].getInstance().goToFromLogin = true;
-                _this.navCtrl.setRoot('RegisterStep4Page');
-            }, function (error) {
-                __WEBPACK_IMPORTED_MODULE_5__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
-            }, function () {
-                __WEBPACK_IMPORTED_MODULE_5__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
+            this.navCtrl.push('AddFlexCashPage', { 'cardNumber': cardID, 'termsPath': body.termsPath, animate: false, duration: 0 });
+        }
+        else if (body.cardType === 'FLEXECODE_2.0') {
+            var index = this.viewCtrl.index;
+            if (index > 1) {
+                this.navCtrl.remove(index, 1, { animate: false, duration: 0 });
+            }
+            this.navCtrl.push('AddFlexECodePage', { 'cardNumber': cardID, animate: false, duration: 0 });
+        }
+        else if (body.cardType === 'MASTERCARD') {
+            var index = this.viewCtrl.index;
+            if (index > 1) {
+                this.navCtrl.remove(index, 1, { animate: false, duration: 0 });
+            }
+            this.navCtrl.push('AddCardPhysicalMasterCardPage', {
+                'cardNumber': cardID,
+                'termsPath': body.termsPath,
+                'bodyCardType': body,
+                animate: false,
+                duration: 0
             });
         }
+        else if (body.cardType === 'STORECARD' && body.doubleEnterFields === 'CARD_NUMBER') {
+            var index = this.viewCtrl.index;
+            if (index > 1) {
+                this.navCtrl.remove(index, 1, { animate: false, duration: 0 });
+            }
+            this.navCtrl.push('AddCardTescoPage', { 'cardNumber': cardID, animate: false, duration: 0 });
+        }
+        else if (body.cardType === 'STORECARD' && body.doubleEnterFields === 'SERIAL_NUMBER') {
+            var index = this.viewCtrl.index;
+            if (index > 1) {
+                this.navCtrl.remove(index, 1, { animate: false, duration: 0 });
+            }
+            this.navCtrl.push('AddCardSainsburysPage', { 'cardNumber': cardID, animate: false, duration: 0 });
+        }
     };
-    RegisterStep3Page.prototype.buildForm = function () {
+    AddCardDataService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__framework_services_httpService_http_service__["a" /* HttpService */],
+            __WEBPACK_IMPORTED_MODULE_1__httpAddCard_service__["a" /* HttpAddCardService */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["l" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_5__shared_nav_service__["a" /* NavService */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["u" /* ViewController */]])
+    ], AddCardDataService);
+    return AddCardDataService;
+}());
+
+//# sourceMappingURL=addCardData.service.js.map
+
+/***/ }),
+
+/***/ 819:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddCardSharingDataService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Rx__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Rx__);
+
+var AddCardSharingDataService = (function () {
+    function AddCardSharingDataService() {
+        this.defaultMasterData = {};
+        this.currentMasterData = Object.assign({}, this.defaultMasterData);
+        this._state$ = new __WEBPACK_IMPORTED_MODULE_0_rxjs_Rx__["BehaviorSubject"](this.currentMasterData);
+        if (AddCardSharingDataService._instance) {
+            throw new Error('Error: Instantiation failed: '
+                + 'Use AddCardSharingDataService.getInstance() instead of new.');
+        }
+        AddCardSharingDataService._instance = this;
+    }
+    Object.defineProperty(AddCardSharingDataService.prototype, "state$", {
+        get: function () {
+            return this._state$;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    AddCardSharingDataService.prototype.resetState = function () {
+        this.currentMasterData = Object.assign({}, this.defaultMasterData);
+        this._state$.next(this.currentMasterData);
+    };
+    AddCardSharingDataService.prototype.saveStep1Screen = function (step1Model) {
+        this.currentMasterData.step1Model = step1Model;
+    };
+    AddCardSharingDataService.prototype.saveStep2Screen = function (step2Model) {
+        this.currentMasterData.step2Model = step2Model;
+    };
+    AddCardSharingDataService.prototype.getStep1Model = function () {
+        return Object.assign({}, this.currentMasterData.step1Model);
+    };
+    AddCardSharingDataService.prototype.getCardNumberAtStep1 = function () {
+        return this.currentMasterData.step1Model.cardID;
+    };
+    AddCardSharingDataService.prototype.getTopUpData = function () {
+        var cardModel = {
+            // step 1
+            amountTopUp: this.currentMasterData.step1Model.cardID,
+        };
+        return cardModel;
+    };
+    AddCardSharingDataService.prototype.getDisplayCard = function (cardID) {
+        var displayCard = cardID.toString().replace(/-/g, '');
+        displayCard = displayCard.substring(0, displayCard.length - 4).replace(/./g, '*') +
+            displayCard.substring(displayCard.length - 4);
+        return displayCard;
+    };
+    AddCardSharingDataService.getInstance = function () {
+        return AddCardSharingDataService._instance;
+    };
+    // tslint:disable-next-line:member-ordering
+    AddCardSharingDataService._instance = new AddCardSharingDataService();
+    return AddCardSharingDataService;
+}());
+
+//# sourceMappingURL=addCardSharing.services.js.map
+
+/***/ }),
+
+/***/ 924:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddCardPhysicalMasterCardPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__framework_validations_validator_required_directive__ = __webpack_require__(367);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__addCardData_service__ = __webpack_require__(816);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__httpAddCard_service__ = __webpack_require__(810);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__ = __webpack_require__(365);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__framework_services_routeManager_routeManager_service__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__framework_validations_validator_minlength_directive__ = __webpack_require__(808);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__framework_services_utilities_utilities__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__framework_services_toastMessageService_toastMessage_service__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_in_app_browser__ = __webpack_require__(371);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__framework_validations_validator_numeric_directive__ = __webpack_require__(370);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__framework_validations_validator_maxlengthField_directive__ = __webpack_require__(807);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__addCardSharing_services__ = __webpack_require__(819);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__framework_appConfig__ = __webpack_require__(43);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var AddCardPhysicalMasterCardPage = (function () {
+    function AddCardPhysicalMasterCardPage(routeManager, formBuilder, addCardDataService, alertCtrl, navCtrl, iab, navParams) {
+        this.routeManager = routeManager;
+        this.formBuilder = formBuilder;
+        this.addCardDataService = addCardDataService;
+        this.alertCtrl = alertCtrl;
+        this.navCtrl = navCtrl;
+        this.iab = iab;
+        this.navParams = navParams;
+        this.model = {
+            cardID: '',
+            csc: '',
+            nickname: '',
+            termsAgreed: ''
+        };
+        this.formErrors = {
+            cardID: '',
+            csc: '',
+            nickname: '',
+            termsAgreed: false,
+            cardOwner: false,
+        };
+        this.enter_all_digits = __WEBPACK_IMPORTED_MODULE_15__framework_appConfig__["a" /* AppConfig */].Configuration.ContentMessage.enter_all_digits;
+        this.must_read_ts_cs = __WEBPACK_IMPORTED_MODULE_15__framework_appConfig__["a" /* AppConfig */].Configuration.ContentMessage.must_read_ts_cs;
+        this.account_management_confirm_user_of_card = __WEBPACK_IMPORTED_MODULE_15__framework_appConfig__["a" /* AppConfig */].Configuration.ContentMessage.account_management_confirm_user_of_card;
+        this.account_management_confirm_user = __WEBPACK_IMPORTED_MODULE_15__framework_appConfig__["a" /* AppConfig */].Configuration.ContentMessage.account_management_confirm_user;
+        this.buildForm();
+    }
+    AddCardPhysicalMasterCardPage.prototype.buildForm = function () {
         var _this = this;
-        this.registerUserForm = this.formBuilder.group({
-            'addressLine1': [this.model.addressLine1, [
-                    Object(__WEBPACK_IMPORTED_MODULE_7__framework_validations_validator_required_directive__["a" /* requireValidator */])('Address Line 1'),
-                    Object(__WEBPACK_IMPORTED_MODULE_10__framework_validations_validator_minlengthField_directive__["a" /* minlengthFieldValidator */])(2, "Address Line 1"),
-                    Object(__WEBPACK_IMPORTED_MODULE_17__framework_validations_validator_maxlengthField_directive__["a" /* maxlengthFieldValidator */])(40, "Address Line 1"),
-                    Object(__WEBPACK_IMPORTED_MODULE_9__framework_validations_validator_containsCharacters_directive__["a" /* containsCharactersValidator */])('Address Line 1'),
+        this.addCardForm = this.formBuilder.group({
+            cardID: ['', [
+                    Object(__WEBPACK_IMPORTED_MODULE_3__framework_validations_validator_required_directive__["a" /* requireValidator */])('cardID'),
+                    Object(__WEBPACK_IMPORTED_MODULE_13__framework_validations_validator_maxlengthField_directive__["a" /* maxlengthFieldValidator */])(19, 'Card or e-code number')
                 ]],
-            'addressLine2': [this.model.addressLine2, [
-                    Object(__WEBPACK_IMPORTED_MODULE_17__framework_validations_validator_maxlengthField_directive__["a" /* maxlengthFieldValidator */])(40, "Address Line 2"),
-                    Object(__WEBPACK_IMPORTED_MODULE_9__framework_validations_validator_containsCharacters_directive__["a" /* containsCharactersValidator */])('Address Line 2'),
+            csc: ['', [
+                    Object(__WEBPACK_IMPORTED_MODULE_3__framework_validations_validator_required_directive__["a" /* requireValidator */])('csc'),
+                    Object(__WEBPACK_IMPORTED_MODULE_8__framework_validations_validator_minlength_directive__["b" /* minlengthValidatorCSC */])(3, 'CSC'),
+                    Object(__WEBPACK_IMPORTED_MODULE_13__framework_validations_validator_maxlengthField_directive__["b" /* maxlengthFieldValidatorCSC */])(3, 'CSC'),
+                    Object(__WEBPACK_IMPORTED_MODULE_12__framework_validations_validator_numeric_directive__["b" /* numericValidatorCSC */])(),
                 ]],
-            'town': [this.model.town, [
-                    Object(__WEBPACK_IMPORTED_MODULE_7__framework_validations_validator_required_directive__["a" /* requireValidator */])('Town'),
-                    Object(__WEBPACK_IMPORTED_MODULE_9__framework_validations_validator_containsCharacters_directive__["a" /* containsCharactersValidator */])('Town'),
-                    Object(__WEBPACK_IMPORTED_MODULE_10__framework_validations_validator_minlengthField_directive__["a" /* minlengthFieldValidator */])(1, "Town"),
-                    Object(__WEBPACK_IMPORTED_MODULE_17__framework_validations_validator_maxlengthField_directive__["a" /* maxlengthFieldValidator */])(40, "Town")
+            nickname: ['',],
+            termsAgreed: [false, [
+                    __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].requiredTrue
                 ]],
-            'county': [this.model.county, [
-                    Object(__WEBPACK_IMPORTED_MODULE_9__framework_validations_validator_containsCharacters_directive__["a" /* containsCharactersValidator */])('County'),
-                    Object(__WEBPACK_IMPORTED_MODULE_17__framework_validations_validator_maxlengthField_directive__["a" /* maxlengthFieldValidator */])(40, "County")
-                ]],
-            'postcode': [this.model.postcode, [
-                    Object(__WEBPACK_IMPORTED_MODULE_7__framework_validations_validator_required_directive__["a" /* requireValidator */])('Postcode'),
-                    Object(__WEBPACK_IMPORTED_MODULE_10__framework_validations_validator_minlengthField_directive__["b" /* minlengthFieldValidatorPostcode */])(1, "Postcode"),
-                    Object(__WEBPACK_IMPORTED_MODULE_17__framework_validations_validator_maxlengthField_directive__["e" /* maxlengthFieldValidatorPostcode */])(8, "Postcode"),
-                    Object(__WEBPACK_IMPORTED_MODULE_9__framework_validations_validator_containsCharacters_directive__["b" /* containsCharactersValidatorPostCode */])('Postcode'),
-                ]],
-            'country': [this.countryLists[0].countryName],
-            'telephoneNumber': [this.model.telephoneNumber, [
-                    Object(__WEBPACK_IMPORTED_MODULE_7__framework_validations_validator_required_directive__["a" /* requireValidator */])('telephoneNumber'),
-                    Object(__WEBPACK_IMPORTED_MODULE_8__framework_validations_validator_phone_directive__["a" /* phoneValidator */])()
-                ]],
-            'isShowAddress': ['']
+            cardOwner: [false, [
+                    __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].requiredTrue
+                ]]
         }, {
             validator: {
                 updateOn: 'blur'
             }
         });
-        this.registerUserForm.statusChanges.subscribe(function () {
+        this.addCardForm.statusChanges.subscribe(function () {
             if (_this.textInputs) {
                 _this.textInputs.forEach(function (input) { return input && input._inputUpdated && input._inputUpdated(); });
             }
         });
-        __WEBPACK_IMPORTED_MODULE_3__registerSharingData_service__["a" /* RegisterSharingDataService */].getInstance().state$.subscribe(function (res) {
-            if (__WEBPACK_IMPORTED_MODULE_6__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(res.step3Model)) {
-                _this.registerUserForm.setValue(res.step3Model);
-                _this.isShowAddress = res.step3Model.isShowAddress;
-            }
-        });
     };
-    RegisterStep3Page.prototype.errorMessage = function (path) {
-        var control = this.registerUserForm.get(path);
-        var requiredMsg = __WEBPACK_IMPORTED_MODULE_18__framework_appConfig__["a" /* AppConfig */].Configuration.ContentMessage.required;
+    AddCardPhysicalMasterCardPage.prototype.errorMessage = function (path) {
+        var control = this.addCardForm.get(path);
+        var requiredMsg = __WEBPACK_IMPORTED_MODULE_15__framework_appConfig__["a" /* AppConfig */].Configuration.ContentMessage.required;
         if (control.valid) {
             return '';
         }
-        if (path === 'addressLine1' ||
-            path === 'addressLine2' ||
-            path === 'town' ||
-            path === 'county' ||
-            path === 'telephoneNumber' ||
-            path === 'postcode') {
+        if (path === 'cardID' || path === 'csc' || path === 'termsAgreed' || path === 'cardOwner') {
             if (control.hasError('required')) {
                 return control.getError('required');
             }
             else {
-                if (control.hasError('minlengthField')) {
-                    return control.getError('minlengthField');
-                }
                 if (control.hasError('maxLengthField')) {
                     return control.getError('maxLengthField');
                 }
                 if (control.hasError('minlength')) {
                     return control.getError('minlength');
                 }
-                if (control.hasError('containsCharacters')) {
-                    return control.getError('containsCharacters');
-                }
-                if (control.hasError('phoneError')) {
-                    return control.getError('phoneError');
+                if (control.hasError('key')) {
+                    return control.getError('key');
                 }
             }
         }
     };
-    RegisterStep3Page.prototype._showError = function (message) {
-        __WEBPACK_IMPORTED_MODULE_14__framework_services_toastMessageService_toastMessage_service__["a" /* ToastMessageService */].getInstance().showToastMessage(message);
+    AddCardPhysicalMasterCardPage.prototype.getHelpContent = function (code) {
+        var _this = this;
+        __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().showLoadingIndicator();
+        var observer = {
+            next: function (res) {
+                if (!res.ok) {
+                    return;
+                }
+                if (res && res.response && res.response.message) {
+                    _this.showAlertHelp(res.response.message);
+                }
+            },
+            error: function (error) {
+                __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
+            },
+            complete: function () {
+                __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
+            }
+        };
+        this.addCardDataService
+            .getHelp(code)
+            .subscribe(observer);
     };
-    RegisterStep3Page.prototype._unsubscribe = function () {
-        if (this._submitregister) {
-            this._submitregister.unsubscribe();
+    AddCardPhysicalMasterCardPage.prototype.showAlertHelp = function (message) {
+        var alert = this.alertCtrl.create({
+            title: '',
+            cssClass: 'l2s-alert--flat l2s-alert--default',
+            message: message,
+            buttons: [
+                {
+                    text: 'OK',
+                    cssClass: 'main-button',
+                    handler: function (data) {
+                    }
+                }, {
+                    text: '',
+                    cssClass: 'close-button icon icon-ios ion-ios-close',
+                    handler: function (data) {
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    AddCardPhysicalMasterCardPage.prototype.gotoYourCard = function () {
+        this.navCtrl.setRoot('AddCardNumberPage');
+    };
+    AddCardPhysicalMasterCardPage.prototype._normalizeUrl = function (url) {
+        if (!url.startsWith('http://') && !url.startsWith('https://')) {
+            if (url.startsWith('/')) {
+                return 'https://www.love2shop.co.uk' + url;
+            }
+            return 'http://' + url;
+        }
+        return url;
+    };
+    AddCardPhysicalMasterCardPage.prototype.ionViewWillEnter = function () {
+        if (this.routeManager.ifNotLoggedInThenGoBackToLoginScreen() === false) {
+            if (this.navParams.get('cardNumber')) {
+                this.cardNumberOld = this.navParams.get('cardNumber');
+                this.addCardForm.patchValue({ 'cardID': this.cardNumberOld + '' });
+            }
+            if (this.navParams.get('termsPath')) {
+                this.termsPath = this.navParams.get('termsPath');
+            }
+            if (this.navParams.get('bodyCardType')) {
+                this.bodyCardType = this.navParams.get('bodyCardType');
+            }
+            if (__WEBPACK_IMPORTED_MODULE_9__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(this.bodyCardType) && __WEBPACK_IMPORTED_MODULE_9__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(this.bodyCardType.endUserPromptRequired)) {
+                if (this.bodyCardType.endUserPromptRequired !== true) {
+                    this.addCardForm.removeControl('cardOwner');
+                }
+            }
+            if (__WEBPACK_IMPORTED_MODULE_9__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(this.bodyCardType) && __WEBPACK_IMPORTED_MODULE_9__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(this.bodyCardType.termsRequired)) {
+                if (this.bodyCardType.termsRequired !== true) {
+                    this.addCardForm.removeControl('termsAgreed');
+                }
+            }
         }
     };
-    RegisterStep3Page.prototype._handleError = function (res) {
-        __WEBPACK_IMPORTED_MODULE_5__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
-        var msg = DEFAULT_ERROR_MSG;
-        try {
-            var body = JSON.parse(res._body);
-            msg = body.errors[0].message;
+    AddCardPhysicalMasterCardPage.prototype.onValueChanges = function (data) {
+        if (!this.addCardForm) {
+            return;
         }
-        catch (e) {
-            msg = DEFAULT_ERROR_MSG;
+        var form = this.addCardForm;
+        for (var fieldError in this.formErrors) {
+            this.formErrors[fieldError] = '';
+            var control = form.get(fieldError);
+            if (control && control.dirty && !control.valid) {
+                this.formErrors[fieldError] = control.errors[Object.keys(control.errors)[0]];
+            }
         }
-        this._showError(msg);
+        if (this.textInputs) {
+            this.textInputs.forEach(function (input) { return input && input._inputUpdated && input._inputUpdated(); });
+        }
     };
-    RegisterStep3Page.prototype.responseHandler = function (res) {
-        var response = res.response, keywordPostcode = res.keywordPostcode;
-        this.listAddressItems = response.Items || [];
-        this.showList = true;
-        if (this.listAddressItems.length === 1 && __WEBPACK_IMPORTED_MODULE_6__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(this.listAddressItems[0].Error)) {
-            this.listAddressItems[0].Text = "No results found.";
+    AddCardPhysicalMasterCardPage.prototype.detectChangeCard = function () {
+        var _this = this;
+        if (this.addCardForm.valid) {
+            var bodyPost = {
+                "cardID": this.addCardForm.value.cardID
+            };
+            __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().showLoadingIndicator();
+            var observer = {
+                next: function (res) {
+                    if (!res.ok) {
+                        return;
+                    }
+                    var body = res.response;
+                    if (__WEBPACK_IMPORTED_MODULE_9__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(body) && __WEBPACK_IMPORTED_MODULE_9__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(body.cardType)) {
+                        _this.addCardDataService.navigationPage(body, _this.addCardForm.value.cardID);
+                    }
+                },
+                error: function (error) {
+                    __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
+                },
+                complete: function () {
+                    __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
+                }
+            };
+            this.addCardDataService
+                .checkCardTypeToAddCard(bodyPost)
+                .subscribe(observer);
         }
-        if (this.listAddressItems.length <= 0) {
-            this.listAddressItems.push({
-                Text: "No results found."
-            });
+    };
+    AddCardPhysicalMasterCardPage.prototype.showAlert = function (cardId, nickname) {
+        var _this = this;
+        var displayCard = __WEBPACK_IMPORTED_MODULE_14__addCardSharing_services__["a" /* AddCardSharingDataService */].getInstance().getDisplayCard(cardId);
+        var alert = this.alertCtrl.create({
+            title: __WEBPACK_IMPORTED_MODULE_15__framework_appConfig__["a" /* AppConfig */].Configuration.ContentMessage.account_management_card_added_to_wallet,
+            cssClass: 'l2s-alert--flat l2s-alert--default',
+            message: "<p>You added: </p><p class='m-b-0'>" + nickname + "</p><p class='m-t-0'>" + displayCard + "</p><p class='m-t-10'>To your Card Wallet</p>",
+            buttons: [
+                {
+                    text: 'OK',
+                    cssClass: 'main-button',
+                    handler: function (data) {
+                        _this.addCardDataService.gotoCardDetailAndReload('', cardId);
+                    }
+                }, {
+                    text: '',
+                    cssClass: 'close-button icon icon-ios ion-ios-close',
+                    handler: function (data) {
+                    }
+                }
+            ],
+            enableBackdropDismiss: false
+        });
+        alert.present();
+    };
+    AddCardPhysicalMasterCardPage.prototype._convertCardId = function (cardId) {
+        if (!cardId) {
+            return null;
         }
+        var newCard = (cardId.substr(0, 4) + '-') +
+            (cardId.substr(4, 4) + '-') +
+            (cardId.substr(8, 4) + '-') +
+            (cardId.substr(12, 4));
+        return newCard;
+    };
+    AddCardPhysicalMasterCardPage.prototype.submitToAddPhysicalMasterCard = function () {
+        var _this = this;
+        var bodyPost = {
+            "cardID": this.addCardForm.value.cardID,
+            "csc": this.addCardForm.value.csc,
+            "nickname": this.addCardForm.value.nickname,
+            "endUserConfirmed": this.addCardForm.value.cardOwner,
+            "termsAgreed": this.addCardForm.value.termsAgreed,
+        };
+        if (this.cardNumberOld !== this.addCardForm.value.cardID) {
+            this.detectChangeCard();
+            return;
+        }
+        if (this.addCardForm.valid) {
+            __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().showLoadingIndicator();
+            var observer = {
+                next: function (res) {
+                    if (!res.ok) {
+                        return;
+                    }
+                    var body = res.response;
+                    if (__WEBPACK_IMPORTED_MODULE_9__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(body) && __WEBPACK_IMPORTED_MODULE_9__framework_services_utilities_utilities__["a" /* Utils */].isNotNull(body.cardAdded)) {
+                        if (body.cardAdded) {
+                            _this.showAlert(body.cardID, _this.addCardForm.value.nickname);
+                        }
+                        else {
+                            __WEBPACK_IMPORTED_MODULE_10__framework_services_toastMessageService_toastMessage_service__["a" /* ToastMessageService */].getInstance().showToastMessage(__WEBPACK_IMPORTED_MODULE_15__framework_appConfig__["a" /* AppConfig */].Configuration.HttpService.DEFAULT_ERROR_MSG);
+                        }
+                    }
+                },
+                error: function (error) {
+                    __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
+                },
+                complete: function () {
+                    __WEBPACK_IMPORTED_MODULE_6__framework_services_loadingIndicatorService_loadingIndicator_service__["a" /* LoadingIndicatorService */].getInstance().hideLoadingIndicator();
+                }
+            };
+            this.addCardDataService
+                .addCard(bodyPost)
+                .subscribe(observer);
+        }
+    };
+    AddCardPhysicalMasterCardPage.prototype.gotoTermsPage = function () {
+        var url = this._normalizeUrl(this.termsPath);
+        var browser = this.iab.create(url, "_system", "location=true");
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChildren */])(__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["s" /* TextInput */]),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChildren */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* TextInput */]),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* QueryList */])
-    ], RegisterStep3Page.prototype, "textInputs", void 0);
-    RegisterStep3Page = __decorate([
+    ], AddCardPhysicalMasterCardPage.prototype, "textInputs", void 0);
+    AddCardPhysicalMasterCardPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-registerStep3',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\AccountManagement\register\registerStep3\registerStep3.html"*/'\n\n<ion-content>\n  <ion-grid class="content-wrapper">\n    <ion-row>\n      <button (click)="navCtrl.pop()" ion-button="button-bar" class="fake-back-btn">\n        <ion-icon name="ios-arrow-back"></ion-icon>\n      </button>\n    </ion-row>\n    <ion-row>\n      <ion-col text-center>\n        <img class="l2s-logo" src="assets/images/l2s-logo.png"/>\n      </ion-col>\n    </ion-row>\n\n    <ion-row class="p-b-10 p-t-20">\n      <ion-col>\n        <ion-input type="hidden" [(ngModel)]="isShowAddress"></ion-input>\n        <p class="title montserrat-regular">Address <span float-right text-right class="madatory-note text-14">*mandatory fields</span></p>\n        <p class="title montserrat-bold text-14 p-t-10 text-underline" [hidden]="!isShowAddress" (click)="isShowAddress = !isShowAddress">Lookup postcode</p>\n      </ion-col>\n    </ion-row>\n\n    <ion-row class="lookup-address" [hidden]="isShowAddress">\n      <ion-col>\n        <ion-item>\n          <ion-label floating>{{enter_postcode_or_search_for_an_address}}</ion-label>\n          <ion-input (input)="suggestSearch$.next($event.target.value)" placeholder=""></ion-input>\n        </ion-item>\n        <ion-list *ngIf="showList" class="suggestion-address">\n          <ion-item *ngFor="let item of listAddressItems" (click)="pickupAddress(item)">\n            {{ formatLocationAddress(item) }}\n          </ion-item>\n        </ion-list>\n      </ion-col>\n    </ion-row>\n\n    <ion-row [hidden]="isShowAddress" class="p-b-13 p-t-10">\n      <ion-col>\n        <p class="title montserrat-bold text-14" (click)="isShowAddress = !isShowAddress">{{enter_address_manually}}</p>\n      </ion-col>\n    </ion-row>\n\n    <ion-row class="registerUserForm">\n      <ion-col>\n          <form [formGroup]="registerUserForm" class="form-register--wrapper">\n            <div *ngIf="isShowAddress">\n              <ion-row class="m-b-20">\n                <ion-item>\n                  <ion-label floating>Address line 1*</ion-label>\n                  <ion-input name="addressLine1" type="text"  formControlName="addressLine1"></ion-input>\n                </ion-item>\n\n                <ion-item-divider ion-item light no-lines class="error"\n                                  *ngIf="registerUserForm.get(\'addressLine1\').dirty && !registerUserForm.get(\'addressLine1\').valid">\n                  <p>{{errorMessage(\'addressLine1\')}}</p>\n                </ion-item-divider>\n              </ion-row>\n\n              <ion-row class="m-b-20">\n                <ion-item>\n                  <ion-label floating>Address line 2</ion-label>\n                  <ion-input name="addressLine2" type="text"  formControlName="addressLine2"></ion-input>\n                </ion-item>\n\n\n                <ion-item-divider ion-item light no-lines class="error"\n                                  *ngIf="registerUserForm.get(\'addressLine2\').dirty && !registerUserForm.get(\'addressLine2\').valid">\n                  <p>{{errorMessage(\'addressLine2\')}}</p>\n                </ion-item-divider>\n              </ion-row>\n\n              <ion-row class="m-b-20">\n                <ion-item>\n                  <ion-label floating>Town*</ion-label>\n                  <ion-input name="town" type="text"  formControlName="town"></ion-input>\n                </ion-item>\n\n                <ion-item-divider ion-item light no-lines class="error"\n                                  *ngIf="registerUserForm.get(\'town\').dirty && !registerUserForm.get(\'town\').valid">\n                  <p>{{errorMessage(\'town\')}}</p>\n                </ion-item-divider>\n              </ion-row>\n\n              <ion-row class="m-b-20">\n                <ion-item>\n                  <ion-label floating>County</ion-label>\n                  <ion-input name="county" type="text"  formControlName="county"></ion-input>\n                </ion-item>\n                <ion-item-divider ion-item light no-lines class="error"\n                                  *ngIf="registerUserForm.get(\'county\').dirty && !registerUserForm.get(\'county\').valid">\n                  <p>{{errorMessage(\'county\')}}</p>\n                </ion-item-divider>\n              </ion-row>\n\n              <ion-row class="m-b-20">\n                <ion-item>\n                  <ion-label floating>Postcode*</ion-label>\n                  <ion-input name="postcode" type="text" formControlName="postcode"></ion-input>\n                </ion-item>\n                <ion-item-divider ion-item light no-lines class="error"\n                                  *ngIf="registerUserForm.get(\'postcode\').dirty && !registerUserForm.get(\'postcode\').valid">\n                  <p>{{errorMessage(\'postcode\')}}</p>\n                </ion-item-divider>\n              </ion-row>\n\n              <ion-row class="m-b-20">\n                <ion-item [ngClass]="dirtySelectValue()">\n                  <ion-label floating>Country*</ion-label>\n                  <ion-select name="country" formControlName="country" disabled="true" (ionChange)="showStyle = true">\n                    <ion-option *ngFor="let countryItem of countryLists" value="{{ countryItem.countryName }}">\n                      {{ countryItem.countryName }}\n                    </ion-option>\n                  </ion-select>\n                </ion-item>\n              </ion-row>\n            </div>\n            <ion-row class="p-b-15">\n              <ion-col>\n                <div class="border-divider border-color"></div>\n              </ion-col>\n            </ion-row>\n            <ion-row class="m-b-20">\n              <ion-item class="telephoneNumber">\n                <div class="border-divider border-color"></div>\n                <ion-label floating>Telephone*</ion-label>\n                <ion-input name="telephoneNumber" type="tel" formControlName="telephoneNumber"\n                  (focus)="showList = false"\n                  placeholder=""></ion-input>\n              </ion-item>\n              <ion-item-divider ion-item light no-lines class="error"\n                                *ngIf="registerUserForm.get(\'telephoneNumber\').dirty && !registerUserForm.get(\'telephoneNumber\').valid">\n                <p>{{errorMessage(\'telephoneNumber\')}}</p>\n              </ion-item-divider>\n            </ion-row>\n          </form>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-row class="footer-wrapper">\n    <ion-col>\n      <button ion-button large block [disabled]="!registerUserForm.valid" (click)="submitRegisterData()">Next</button>\n    </ion-col>\n  </ion-row>\n\n  <ion-row style="display: none;" \n  (click)="navCtrl.pop()"\n  id="RegisterStep3Page-back-button">\n  </ion-row>\n</ion-content>\n\n'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\AccountManagement\register\registerStep3\registerStep3.html"*/,
+            selector: 'page-addCardPhysicalMasterCard',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\CardManagement\addcard\addCardPhysicalMasterCard\addCardPhysicalMasterCard.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Add A Card</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid class="content-wrapper" >\n    <ion-row>\n      <ion-col class="p-t-20">\n        <p class="text-14">{{enter_all_digits}}</p>\n      </ion-col>\n    </ion-row>\n    <ion-row >\n      <ion-col>\n      <form name="addCardForm" [formGroup]="addCardForm">\n        <ion-row class="m-b-12">\n          <ion-col>\n            <ion-item no-padding class="item-has-addon">\n              <ion-input name="cardID" type="text" formControlName=\'cardID\'\n                         placeholder="Card or e-code number"></ion-input>\n              <ion-icon name="camera" item-right (click)="scanButton()"></ion-icon>\n            </ion-item>\n            <ion-item-divider ion-item light no-lines class="error"\n                              *ngIf="addCardForm.get(\'cardID\').dirty && !addCardForm.get(\'cardID\').valid">\n              <p>{{errorMessage(\'cardID\')}}</p>\n            </ion-item-divider>\n          </ion-col>\n        </ion-row>\n        <ion-row class="m-b-12">\n          <ion-col>\n            <ion-item no-padding class="item-has-addon">\n              <ion-input name="csc" type="tel" formControlName=\'csc\' class="only-password"\n                         placeholder="Card Security Code"></ion-input>\n              <ion-icon name="help-circle" (click)="getHelpContent(\'flexewallet.add-card.form.alert.csc\')"\n                        item-right></ion-icon>\n            </ion-item>\n            <ion-item-divider ion-item light no-lines class="error"\n                              *ngIf="addCardForm.get(\'csc\').dirty && !addCardForm.get(\'csc\').valid">\n              <p>{{errorMessage(\'csc\')}}</p>\n            </ion-item-divider>\n          </ion-col>\n        </ion-row>\n        <ion-row class="p-b-20">\n          <ion-col>\n            <ion-item no-padding class="item-has-addon">\n              <ion-input type="text" formControlName=\'nickname\' placeholder="Card name"></ion-input>\n              <ion-icon name="help-circle"\n                        (click)="getHelpContent(\'flexewallet.add-card.form.alert.nickname.PMASTERCARD\')"\n                        item-right></ion-icon>\n            </ion-item>\n          </ion-col>\n        </ion-row>\n\n        <ion-row class="p-b-10" *ngIf="bodyCardType?.endUserPromptRequired">\n          <ion-col>\n            <ion-item class="item--no-border item-flex-start">\n              <ion-checkbox formControlName=\'cardOwner\'></ion-checkbox>\n              <ion-label text-wrap>\n                {{account_management_confirm_user}}\n              </ion-label>\n            </ion-item>\n            <ion-item-divider ion-item light no-lines class="error"\n                              *ngIf="addCardForm.get(\'cardOwner\').dirty && !addCardForm.get(\'cardOwner\').valid">\n              <p>{{account_management_confirm_user_of_card}}</p>\n            </ion-item-divider>\n          </ion-col>\n        </ion-row>\n\n        <ion-row *ngIf="bodyCardType?.termsRequired">\n          <ion-col>\n            <ion-item class="item--no-border item-flex-start">\n              <ion-checkbox formControlName=\'termsAgreed\'></ion-checkbox>\n              <ion-label text-wrap>\n                I have read and agree to <br>the <span class="text-underline" (click)="gotoTermsPage()"><b>terms &amp; conditions</b></span>\n              </ion-label>\n            </ion-item>\n            <ion-item-divider ion-item light no-lines class="error"\n                              *ngIf="addCardForm.get(\'termsAgreed\').dirty && !addCardForm.get(\'termsAgreed\').valid">\n              <p>{{must_read_ts_cs}}</p>\n            </ion-item-divider>\n          </ion-col>\n        </ion-row>\n      </form>\n      </ion-col>\n    </ion-row>\n\n  </ion-grid>\n  <ion-row class="footer-wrapper">\n    <ion-col>\n      <button ion-button block large [disabled]="!addCardForm.valid " (click)="submitToAddPhysicalMasterCard()">\n        Add card\n      </button>\n    </ion-col>\n  </ion-row>\n</ion-content>\n\n\n          \n<ion-row style="display: none;" \n(click)="navCtrl.pop()"\nid="AddCardPhysicalMasterCardPage-back-button">\n</ion-row>'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\CardManagement\addcard\addCardPhysicalMasterCard\addCardPhysicalMasterCard.html"*/,
             providers: [
-                __WEBPACK_IMPORTED_MODULE_4__registerData_service__["a" /* RegisterDataService */]
+                __WEBPACK_IMPORTED_MODULE_4__addCardData_service__["a" /* AddCardDataService */],
+                __WEBPACK_IMPORTED_MODULE_5__httpAddCard_service__["a" /* HttpAddCardService */],
+                __WEBPACK_IMPORTED_MODULE_11__ionic_native_in_app_browser__["a" /* InAppBrowser */],
             ]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_11__framework_services_routeManager_routeManager_service__["a" /* RouteManagerService */],
-            __WEBPACK_IMPORTED_MODULE_12__framework_login_authenticationGuard_service__["a" /* AuththenticationGuardService */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_4__registerData_service__["a" /* RegisterDataService */]])
-    ], RegisterStep3Page);
-    return RegisterStep3Page;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_7__framework_services_routeManager_routeManager_service__["a" /* RouteManagerService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_4__addCardData_service__["a" /* AddCardDataService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_11__ionic_native_in_app_browser__["a" /* InAppBrowser */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]])
+    ], AddCardPhysicalMasterCardPage);
+    return AddCardPhysicalMasterCardPage;
 }());
 
-//# sourceMappingURL=registerStep3.js.map
+//# sourceMappingURL=addCardPhysicalMasterCard.js.map
 
 /***/ })
 

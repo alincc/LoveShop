@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrderDiscountGiftCardAddPersonalMessageModule", function() { return OrderDiscountGiftCardAddPersonalMessageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__orderDiscountGiftCardAddPersonalMessage__ = __webpack_require__(980);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__orderDiscountGiftCardAddPersonalMessage__ = __webpack_require__(981);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -181,7 +181,7 @@ var OrderDiscountGiftCardSharingDataService = (function () {
 
 /***/ }),
 
-/***/ 980:
+/***/ 981:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -269,7 +269,7 @@ var OrderDiscountGiftCardAddPersonalMessage = (function () {
     ], OrderDiscountGiftCardAddPersonalMessage.prototype, "textInputs", void 0);
     OrderDiscountGiftCardAddPersonalMessage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-orderDiscountGiftCardAddPersonalMessage',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\orderManagement\orderDiscountGiftCard\orderDiscountGiftCardAddPersonalMessage\orderDiscountGiftCardAddPersonalMessage.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      add a message\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid class="content-wrapper">\n    <ion-row>\n      <ion-col>\n        <form [formGroup]="updatePersonalMsg">\n            <ion-input placeholder="To..." type="text" formControlName="to"></ion-input>\n            <ion-textarea maxlength="80" placeholder="Message..." class="text-area--wrapper" type="text"  formControlName="message"></ion-textarea>\n            <ion-textarea maxlength="40" placeholder="From..." class="text-area--wrapper" type="text"  formControlName="from"></ion-textarea>\n        </form>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <ion-row class="footer-wrapper" >\n    <div>\n        <button ion-button block large color="primary" (click)="addPersonalMessage()">Save & Continue</button>\n    </div>\n    <div>\n        <button ion-button block [outline]="true" (click)="navCtrl.pop()">Cancel</button>\n    </div>\n  </ion-row>\n</ion-content>\n\n\n          \n<ion-row style="display: none;" \n(click)="navCtrl.pop()"\nid="OrderDiscountGiftCardAddPersonalMessage-back-button">\n</ion-row>'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\orderManagement\orderDiscountGiftCard\orderDiscountGiftCardAddPersonalMessage\orderDiscountGiftCardAddPersonalMessage.html"*/
+            selector: 'page-orderDiscountGiftCardAddPersonalMessage',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\orderManagement\orderDiscountGiftCard\orderDiscountGiftCardAddPersonalMessage\orderDiscountGiftCardAddPersonalMessage.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      add a message\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid class="content-wrapper">\n    <ion-row>\n      <ion-col>\n        <form [formGroup]="updatePersonalMsg">\n            <ion-input placeholder="To..." type="text" formControlName="to"></ion-input>\n            <ion-textarea maxlength="80" placeholder="Message..." class="text-area--wrapper" type="text"  formControlName="message"></ion-textarea>\n            <ion-textarea maxlength="40" placeholder="From..." class="text-area--wrapper" type="text"  formControlName="from"></ion-textarea>\n        </form>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <ion-row class="footer-wrapper" >\n    <div>\n        <button ion-button block large color="primary" (click)="addPersonalMessage()">Save & Continue</button>\n    </div>\n    <div>\n        <button ion-button block [outline]="true" (click)="navCtrl.pop()">Cancel</button>\n    </div>\n  </ion-row>\n</ion-content>\n\n\n          \n<ion-row style="display: none;" \n(click)="navCtrl.pop()"\nid="OrderDiscountGiftCardAddPersonalMessage-back-button">\n</ion-row>'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\orderManagement\orderDiscountGiftCard\orderDiscountGiftCardAddPersonalMessage\orderDiscountGiftCardAddPersonalMessage.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__framework_services_routeManager_routeManager_service__["a" /* RouteManagerService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */],

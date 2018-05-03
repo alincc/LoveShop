@@ -1,6 +1,6 @@
 webpackJsonp([20],{
 
-/***/ 1014:
+/***/ 1015:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ webpackJsonp([20],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__framework_services_routeManager_routeManager_service__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__checkConnectionNetwork_service__ = __webpack_require__(1015);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__checkConnectionNetwork_service__ = __webpack_require__(1016);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__httpCheckNetwork_service__ = __webpack_require__(842);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__framework_login_authenticationGuard_service__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__framework_services_pinCodeService_pinCode_service__ = __webpack_require__(170);
@@ -16,7 +16,7 @@ webpackJsonp([20],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__AccountManagement_verifyPIN_verifyPIN_service__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__framework_services_loadingIndicatorService_loadingIndicator_service__ = __webpack_require__(365);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__whereToSpend_where2SpendSharingData_services__ = __webpack_require__(813);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__welcome_service__ = __webpack_require__(1016);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__welcome_service__ = __webpack_require__(1017);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_rxjs_Observable__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_rxjs_Observable__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__framework_appConfig__ = __webpack_require__(43);
@@ -171,7 +171,7 @@ var WelcomePage = (function () {
     };
     WelcomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-welcome',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\welcome\welcome.html"*/'<ion-content >\n  <ion-grid class="full-h-flex content-wrapper">\n    <ng-container *ngIf="!authGuardService.isAuthenticated(); else loading;">\n      <ion-row>\n        <ion-col text-center class="p-t-30 clearfix">\n          <img class="l2s-logo" src="assets/images/l2s-logo.png"/>\n\n        </ion-col>\n      </ion-row>\n      <ion-row >\n        <ion-col class="clearfix">\n          <div class="p-b-20">\n            <button (click)="navCtrl.push(\'LoginPage\')" ion-button large block\n                    class="l2s-btn l2s-btn--default">Login\n            </button>\n          </div>\n          <div>\n            <button (click)="navCtrl.push(\'RegisterStep1Page\')" ion-button large block\n                    class="l2s-btn l2s-btn--primary">Register\n            </button>\n          </div>\n        </ion-col>\n      </ion-row>\n      <!--<ion-row>-->\n        <!--<div pinch-zoom>-->\n          <!--<img src="https://static.pexels.com/photos/160699/girl-dandelion-yellow-flowers-160699.jpeg" style="max-width: 100%" />-->\n        <!--</div>-->\n      <!--</ion-row>-->\n\n      <ion-row>\n        <ion-col>\n          <ion-row padding-bottom>\n            <button (click)="navCtrl.push(\'AddMyCardPage\')" ion-button large block outline\n                    class="l2s-btn l2s-btn--outline">Add my card\n            </button>\n          </ion-row>\n\n          <ion-row>\n            <ion-col class="p-r-6">\n              <button (click)="navCtrl.setRoot(\'CheckBalanceStep1Page\')" ion-button large block outline\n                      class="l2s-btn l2s-btn--outline">Check my balance\n              </button>\n            </ion-col>\n            <ion-col class="p-l-6">\n              <button (click)="goToW2S()" ion-button large block outline\n                      class="l2s-btn l2s-btn--outline">Where to spend\n              </button>\n            </ion-col>\n          </ion-row>\n        </ion-col>\n      </ion-row>\n\n\n      <ng-template #loading>\n        <h3>Loading...</h3>\n      </ng-template>\n    </ng-container>\n  </ion-grid>\n</ion-content>\n\n'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\welcome\welcome.html"*/,
+            selector: 'page-welcome',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\welcome\welcome.html"*/'<ion-content >\n  <ion-grid class="full-h-flex content-wrapper">\n    <ng-container *ngIf="!authGuardService.isAuthenticated(); else loading;">\n      <ion-row>\n        <ion-col text-center class="p-t-30 clearfix">\n          <img class="l2s-logo" src="assets/images/l2s-logo.png"/>\n\n        </ion-col>\n      </ion-row>\n      <ion-row >\n        <ion-col class="clearfix">\n          <div class="p-b-20">\n            <button (click)="navCtrl.push(\'LoginPage\')" ion-button large block\n                    class="l2s-btn l2s-btn--default">Login\n            </button>\n          </div>\n          <div>\n            <button (click)="navCtrl.push(\'RegisterStep1Page\')" ion-button large block\n                    class="l2s-btn l2s-btn--primary">Register\n            </button>\n          </div>\n        </ion-col>\n      </ion-row>\n      <!--<ion-row>-->\n        <!--<div pinch-zoom>-->\n          <!--<img src="https://static.pexels.com/photos/160699/girl-dandelion-yellow-flowers-160699.jpeg" style="max-width: 100%" />-->\n        <!--</div>-->\n      <!--</ion-row>-->\n\n      <ion-row>\n        <ion-col>\n          <ion-row padding-bottom>\n            <button (click)="navCtrl.push(\'AddMyCardPage\')" ion-button large block outline\n                    class="l2s-btn l2s-btn--outline">Add my card\n            </button>\n          </ion-row>\n\n          <ion-row>\n            <ion-col class="p-r-6">\n              <button (click)="navCtrl.setRoot(\'CheckBalanceStep1Page\')" ion-button large block outline\n                      class="l2s-btn l2s-btn--outline">Check my balance\n              </button>\n            </ion-col>\n            <ion-col class="p-l-6">\n              <button (click)="goToW2S()" ion-button large block outline\n                      class="l2s-btn l2s-btn--outline">Where to spend\n              </button>\n            </ion-col>\n          </ion-row>\n        </ion-col>\n      </ion-row>\n\n\n      <ng-template #loading>\n        <h3>Loading...</h3>\n      </ng-template>\n    </ng-container>\n  </ion-grid>\n</ion-content>\n\n'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\welcome\welcome.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_3__checkConnectionNetwork_service__["a" /* CheckConnectionNetworkService */],
                 __WEBPACK_IMPORTED_MODULE_4__httpCheckNetwork_service__["a" /* HttpCheckNetworkService */],
@@ -191,7 +191,7 @@ var WelcomePage = (function () {
 
 /***/ }),
 
-/***/ 1015:
+/***/ 1016:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -227,7 +227,7 @@ var CheckConnectionNetworkService = (function () {
 
 /***/ }),
 
-/***/ 1016:
+/***/ 1017:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -274,7 +274,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WelcomePageModule", function() { return WelcomePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__welcome__ = __webpack_require__(1014);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__welcome__ = __webpack_require__(1015);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__httpCheckNetwork_service__ = __webpack_require__(842);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -363,21 +363,21 @@ var Where2SpendSharingDataService = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__framework_services_utilities_utilities__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__framework_services_toastMessageService_toastMessage_service__ = __webpack_require__(162);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(169);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Rx__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_Rx__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_catch__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_catch__ = __webpack_require__(164);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_retry__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_retry__ = __webpack_require__(167);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_retry___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_retry__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_timeout__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_timeout__ = __webpack_require__(168);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_timeout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_timeout__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_delay__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_delay__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_delay___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_delay__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__framework_login_authenticationGuard_service__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__framework_services_mobileDeviceService_mobileDeviceService_service__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__framework_services_mobileDeviceService_mobileDeviceService_service__ = __webpack_require__(163);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__framework_appConfig__ = __webpack_require__(43);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;

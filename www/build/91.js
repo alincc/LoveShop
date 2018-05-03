@@ -1,6 +1,6 @@
 webpackJsonp([91],{
 
-/***/ 746:
+/***/ 745:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HolidaysPageModule", function() { return HolidaysPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__holidays__ = __webpack_require__(920);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__holidays__ = __webpack_require__(918);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -35,7 +35,7 @@ var HolidaysPageModule = (function () {
 
 /***/ }),
 
-/***/ 920:
+/***/ 918:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -90,7 +90,7 @@ var HolidaysPage = (function () {
     };
     HolidaysPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-holidays',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\benefits\exchange\holidays\holidays.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Holidays\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="holidays" padding>\n  <ion-row>\n    <div class="holidays__desc" [innerHTML]="benefit?.longDescription"></div>\n  </ion-row>\n  <ion-item-divider></ion-item-divider>\n\n\n  <ion-row style="display: none;" \n  (click)="navCtrl.pop()"\n  id="HolidaysPage-back-button">\n  </ion-row>\n</ion-content>'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\benefits\exchange\holidays\holidays.html"*/
+            selector: 'page-holidays',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\benefits\exchange\holidays\holidays.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Holidays\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="holidays" padding>\n  <ion-row>\n    <div class="holidays__desc" [innerHTML]="benefit?.longDescription"></div>\n  </ion-row>\n  <ion-item-divider></ion-item-divider>\n\n\n  <ion-row style="display: none;" \n  (click)="navCtrl.pop()"\n  id="HolidaysPage-back-button">\n  </ion-row>\n</ion-content>'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\benefits\exchange\holidays\holidays.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_2__framework_services_routeManager_routeManager_service__["a" /* RouteManagerService */],

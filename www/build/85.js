@@ -94,7 +94,7 @@ var AboutPage = (function () {
     };
     AboutPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-about',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\AppInforManagement\about\about.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      About Us\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <div class="text-14" [innerHTML]="aboutContent">\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n          \n  <ion-row style="display: none;" \n  (click)="navCtrl.pop()"\n  id="AboutPage-back-button">\n  </ion-row>\n</ion-content>\n'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\AppInforManagement\about\about.html"*/,
+            selector: 'page-about',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\AppInforManagement\about\about.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      About Us\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <div class="text-14" [innerHTML]="aboutContent">\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n          \n  <ion-row style="display: none;" \n  (click)="navCtrl.pop()"\n  id="AboutPage-back-button">\n  </ion-row>\n</ion-content>\n'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\AppInforManagement\about\about.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_2__aboutUs_service__["a" /* AboutUsService */]
             ]

@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CardFAQPageModule", function() { return CardFAQPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cardfaq__ = __webpack_require__(942);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cardfaq__ = __webpack_require__(943);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -56,7 +56,7 @@ var CardType = (function () {
 
 /***/ }),
 
-/***/ 942:
+/***/ 943:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -108,7 +108,7 @@ var CardFAQPage = (function () {
     };
     CardFAQPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-cardfaq',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\CardManagement\cardDetails\yourCardDetails\cardFaq\cardfaq.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      FAQ\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <div [innerHTML]="textContent"></div>\n</ion-content>'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\CardManagement\cardDetails\yourCardDetails\cardFaq\cardfaq.html"*/
+            selector: 'page-cardfaq',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\CardManagement\cardDetails\yourCardDetails\cardFaq\cardfaq.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      FAQ\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <div [innerHTML]="textContent"></div>\n</ion-content>'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\CardManagement\cardDetails\yourCardDetails\cardFaq\cardfaq.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_4__framework_services_httpService_http_service__["a" /* HttpService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]])
     ], CardFAQPage);

@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddMyCardPageModule", function() { return AddMyCardPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__addMyCard__ = __webpack_require__(932);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__addMyCard__ = __webpack_require__(933);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -284,7 +284,7 @@ var EmailValidatorDirective = (function () {
 
 /***/ }),
 
-/***/ 932:
+/***/ 933:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -292,7 +292,7 @@ var EmailValidatorDirective = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__framework_services_loadingIndicatorService_loadingIndicator_service__ = __webpack_require__(365);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__addMyCard_service__ = __webpack_require__(933);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__addMyCard_service__ = __webpack_require__(934);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__framework_validations_validator_required_directive__ = __webpack_require__(367);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__framework_login_authenticationGuard_service__ = __webpack_require__(47);
@@ -440,7 +440,7 @@ var AddMyCardPage = (function () {
     ], AddMyCardPage.prototype, "textInputs", void 0);
     AddMyCardPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-addMyCard',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\CardManagement\addMyCard\addMyCard.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title center>\n      Add My Card\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid class="content-wrapper">\n    <ion-row>\n    <ion-col>\n      <p class="no-mg">{{account_management_to_add_card_register}}</p>\n      </ion-col>\n    </ion-row>\n    <ion-item-divider></ion-item-divider>\n    <ion-row>\n      <ion-col>\n        <button ion-button large  block (click)="navCtrl.push(\'RegisterStep1Page\')">{{account_management_register_addcard}}</button>\n      </ion-col>\n    </ion-row>\n    <ion-item-divider></ion-item-divider>\n    <ion-row class="or-text">\n      <ion-col>\n        <p class="or-divider"><span>OR</span></p>\n        <p text-center>{{account_management_already_have_account}}</p>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n\n        <form [formGroup]="userLoginForm">\n          <ion-row class="m-b-10">\n            <ion-item>\n              <ion-label floating>Email Address</ion-label>\n              <ion-input name="emailAddress" formControlName="emailAddress" ></ion-input>\n            </ion-item>\n            <ion-item-divider ion-item light no-lines class="error"\n                              *ngIf="userLoginForm.get(\'emailAddress\').dirty && !userLoginForm.get(\'emailAddress\').valid">\n              <p>{{errorMessage(\'emailAddress\')}}</p>\n            </ion-item-divider>\n          </ion-row>\n          <ion-row>\n            <ion-item class="l2s-input-md">\n              <ion-label floating>Password</ion-label>\n              <ion-input name="password" type="password" formControlName="password"></ion-input>\n            </ion-item>\n          </ion-row>\n\n          <ion-item-divider ion-item light no-lines class="error"\n                            *ngIf="userLoginForm.get(\'password\').dirty && !userLoginForm.get(\'password\').valid">\n            <p>{{errorMessage(\'password\')}}</p>\n          </ion-item-divider>\n          <ion-item-divider></ion-item-divider>\n          <ion-row>\n            <ion-col>\n              <p class="text-link-item" text-center >\n                <a (click)="navCtrl.push(\'ForgotPasswordPage\')">\n                  {{ForgotPassword_en_properties}}\n                </a>\n              </p>\n            </ion-col>\n          </ion-row>\n        </form>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-row class="footer-wrapper">\n    <ion-col>\n      <button ion-button block large [disabled]="!userLoginForm.valid" (click)="doLoginToAddCard()">Login & Add card</button>\n    </ion-col>\n  </ion-row>\n\n  <ion-row style="display: none;" \n  (click)="navCtrl.pop()"\n  id="AddMyCardPage-back-button">\n  </ion-row>\n</ion-content>'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\CardManagement\addMyCard\addMyCard.html"*/,
+            selector: 'page-addMyCard',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\CardManagement\addMyCard\addMyCard.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title center>\n      Add My Card\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid class="content-wrapper">\n    <ion-row>\n    <ion-col>\n      <p class="no-mg">{{account_management_to_add_card_register}}</p>\n      </ion-col>\n    </ion-row>\n    <ion-item-divider></ion-item-divider>\n    <ion-row>\n      <ion-col>\n        <button ion-button large  block (click)="navCtrl.push(\'RegisterStep1Page\')">{{account_management_register_addcard}}</button>\n      </ion-col>\n    </ion-row>\n    <ion-item-divider></ion-item-divider>\n    <ion-row class="or-text">\n      <ion-col>\n        <p class="or-divider"><span>OR</span></p>\n        <p text-center>{{account_management_already_have_account}}</p>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n\n        <form [formGroup]="userLoginForm">\n          <ion-row class="m-b-10">\n            <ion-item>\n              <ion-label floating>Email Address</ion-label>\n              <ion-input name="emailAddress" formControlName="emailAddress" ></ion-input>\n            </ion-item>\n            <ion-item-divider ion-item light no-lines class="error"\n                              *ngIf="userLoginForm.get(\'emailAddress\').dirty && !userLoginForm.get(\'emailAddress\').valid">\n              <p>{{errorMessage(\'emailAddress\')}}</p>\n            </ion-item-divider>\n          </ion-row>\n          <ion-row>\n            <ion-item class="l2s-input-md">\n              <ion-label floating>Password</ion-label>\n              <ion-input name="password" type="password" formControlName="password"></ion-input>\n            </ion-item>\n          </ion-row>\n\n          <ion-item-divider ion-item light no-lines class="error"\n                            *ngIf="userLoginForm.get(\'password\').dirty && !userLoginForm.get(\'password\').valid">\n            <p>{{errorMessage(\'password\')}}</p>\n          </ion-item-divider>\n          <ion-item-divider></ion-item-divider>\n          <ion-row>\n            <ion-col>\n              <p class="text-link-item" text-center >\n                <a (click)="navCtrl.push(\'ForgotPasswordPage\')">\n                  {{ForgotPassword_en_properties}}\n                </a>\n              </p>\n            </ion-col>\n          </ion-row>\n        </form>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-row class="footer-wrapper">\n    <ion-col>\n      <button ion-button block large [disabled]="!userLoginForm.valid" (click)="doLoginToAddCard()">Login & Add card</button>\n    </ion-col>\n  </ion-row>\n\n  <ion-row style="display: none;" \n  (click)="navCtrl.pop()"\n  id="AddMyCardPage-back-button">\n  </ion-row>\n</ion-content>'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\CardManagement\addMyCard\addMyCard.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_3__addMyCard_service__["a" /* AddMyCardService */]
             ]
@@ -459,7 +459,7 @@ var AddMyCardPage = (function () {
 
 /***/ }),
 
-/***/ 933:
+/***/ 934:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

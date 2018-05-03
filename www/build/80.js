@@ -99,7 +99,7 @@ var FAQPage = (function () {
     };
     FAQPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-faq',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\AppInforManagement\faq\faq.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      FAQ\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <div [innerHTML]="textContent"></div>\n</ion-content>\n\n          \n<ion-row style="display: none;" \n(click)="navCtrl.pop()"\nid="FAQPage-back-button">\n</ion-row>'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\AppInforManagement\faq\faq.html"*/,
+            selector: 'page-faq',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\AppInforManagement\faq\faq.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      FAQ\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <div [innerHTML]="textContent"></div>\n</ion-content>\n\n          \n<ion-row style="display: none;" \n(click)="navCtrl.pop()"\nid="FAQPage-back-button">\n</ion-row>'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\AppInforManagement\faq\faq.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_5__faq_service__["a" /* FAQService */]
             ]

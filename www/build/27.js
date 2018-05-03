@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CheckBalanceStep1PageModule", function() { return CheckBalanceStep1PageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__checkBalanceStep1__ = __webpack_require__(951);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__checkBalanceStep1__ = __webpack_require__(952);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -337,7 +337,7 @@ var CardIO = (function (_super) {
 
 /***/ }),
 
-/***/ 951:
+/***/ 952:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -350,7 +350,7 @@ var CardIO = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__framework_validations_validator_required_directive__ = __webpack_require__(367);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__cardBalanceSharingData_service__ = __webpack_require__(830);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__framework_services_loadingIndicatorService_loadingIndicator_service__ = __webpack_require__(365);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__checkBalanceStep1_service__ = __webpack_require__(952);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__checkBalanceStep1_service__ = __webpack_require__(953);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__framework_services_routeManager_routeManager_service__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__framework_validations_validator_maxlengthField_directive__ = __webpack_require__(807);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__framework_appConfig__ = __webpack_require__(43);
@@ -518,7 +518,7 @@ var CheckBalanceStep1Page = (function () {
     ], CheckBalanceStep1Page.prototype, "textInputs", void 0);
     CheckBalanceStep1Page = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-checkBalanceStep1',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\CardManagement\checkBalance\checkBalanceStep1\checkBalanceStep1.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-buttons left>\n      <button  ion-button icon-only (click)="gotoWelcome()">\n        <ion-icon name="ios-arrow-back"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>\n      Check my Balance\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="form-balance--container">\n  <ion-grid class="content-wrapper">\n    <ion-row>\n      <ion-col>\n        <form [formGroup]="checkBalanceForm">\n          <ion-item no-padding class="item-has-addon">\n            <ion-input name="cardNumber" type="text"  formControlName="cardNumber" placeholder="Card or e-code number"></ion-input>\n            <ion-icon name="camera" item-right (click)="scanButton()"></ion-icon>\n          </ion-item>\n          <ion-item-divider ion-item light no-lines class="error"\n                            *ngIf="checkBalanceForm.get(\'cardNumber\').dirty && !checkBalanceForm.get(\'cardNumber\').valid">\n            <p>{{errorMessage(\'cardNumber\')}}</p>\n          </ion-item-divider>\n        </form>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-row class="footer-wrapper">\n    <ion-col>\n      <button [disabled]="!checkBalanceForm.valid" (click)="submitToCheckCardBalance()" ion-button large block>Submit</button>\n    </ion-col>\n  </ion-row>\n\n  \n  <ion-row style="display: none;" \n  (click)="gotoWelcome()"\n  id="CheckBalanceStep1Page-back-button">\n  </ion-row>\n</ion-content>\n'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\CardManagement\checkBalance\checkBalanceStep1\checkBalanceStep1.html"*/,
+            selector: 'page-checkBalanceStep1',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\CardManagement\checkBalance\checkBalanceStep1\checkBalanceStep1.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-buttons left>\n      <button  ion-button icon-only (click)="gotoWelcome()">\n        <ion-icon name="ios-arrow-back"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>\n      Check my Balance\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="form-balance--container">\n  <ion-grid class="content-wrapper">\n    <ion-row>\n      <ion-col>\n        <form [formGroup]="checkBalanceForm">\n          <ion-item no-padding class="item-has-addon">\n            <ion-input name="cardNumber" type="text"  formControlName="cardNumber" placeholder="Card or e-code number"></ion-input>\n            <ion-icon name="camera" item-right (click)="scanButton()"></ion-icon>\n          </ion-item>\n          <ion-item-divider ion-item light no-lines class="error"\n                            *ngIf="checkBalanceForm.get(\'cardNumber\').dirty && !checkBalanceForm.get(\'cardNumber\').valid">\n            <p>{{errorMessage(\'cardNumber\')}}</p>\n          </ion-item-divider>\n        </form>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-row class="footer-wrapper">\n    <ion-col>\n      <button [disabled]="!checkBalanceForm.valid" (click)="submitToCheckCardBalance()" ion-button large block>Submit</button>\n    </ion-col>\n  </ion-row>\n\n  \n  <ion-row style="display: none;" \n  (click)="gotoWelcome()"\n  id="CheckBalanceStep1Page-back-button">\n  </ion-row>\n</ion-content>\n'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\CardManagement\checkBalance\checkBalanceStep1\checkBalanceStep1.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_6__cardBalanceSharingData_service__["a" /* CardBalanceSharingDataService */],
                 __WEBPACK_IMPORTED_MODULE_8__checkBalanceStep1_service__["a" /* ChangeBalanceStep1Service */],
@@ -539,7 +539,7 @@ var CheckBalanceStep1Page = (function () {
 
 /***/ }),
 
-/***/ 952:
+/***/ 953:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

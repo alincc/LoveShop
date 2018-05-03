@@ -81,7 +81,7 @@ var BusinessEnquiriesPage = (function () {
     };
     BusinessEnquiriesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-businessEnquiries',template:/*ion-inline-start:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\benefits\buy\businessEnquiries\businessEnquiries.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Business Enquiries\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <div [innerHTML]="textContent"></div>\n</ion-content>\n\n          \n<ion-row style="display: none;" \n(click)="navCtrl.pop()"\nid="BusinessEnquiriesPage-back-button">\n</ion-row>'/*ion-inline-end:"D:\Love2Shop\Development\Branches\L2S-New2310\src\spa\+screens\benefits\buy\businessEnquiries\businessEnquiries.html"*/
+            selector: 'page-businessEnquiries',template:/*ion-inline-start:"D:\L2S-New2310\src\spa\+screens\benefits\buy\businessEnquiries\businessEnquiries.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Business Enquiries\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <div [innerHTML]="textContent"></div>\n</ion-content>\n\n          \n<ion-row style="display: none;" \n(click)="navCtrl.pop()"\nid="BusinessEnquiriesPage-back-button">\n</ion-row>'/*ion-inline-end:"D:\L2S-New2310\src\spa\+screens\benefits\buy\businessEnquiries\businessEnquiries.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__framework_services_httpService_http_service__["a" /* HttpService */]])
     ], BusinessEnquiriesPage);
